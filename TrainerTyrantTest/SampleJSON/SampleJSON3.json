@@ -1,0 +1,99 @@
+﻿{
+	"Trainer Data": {
+		"Identification": {
+			"Number ID": 38,
+			"Name ID": {
+				"Name": "Shauntal"
+			}
+		},
+		"Trainer Class": {
+			"Number ID": 78
+		},
+		"Battle Type": "Single",
+		"Base Money": 1200,
+		"Items": [
+			"Full Restore",
+			null,
+			null,
+			null
+		],
+		"AI Flags": {
+			"Check Bad Moves": true,
+			"Evaluate Attacks": true,
+			"Expert": true,
+			"Setup First Turn": false,
+			"Risky": false,
+			"Prefer Strong Moves": false,
+			"Prefer Baton Pass": false
+		}
+	},
+	"Pokemon Data": [
+		{
+			"Pokemon": "Cofagrigus",
+			"Form": 0,
+			"Level": 56,
+			"Difficulty": 200,
+			"Miscellaneous": {
+				"Gender": "Random",
+				"Ability": 0
+			},
+			"Moves": [
+				"Will-O-Wisp",
+				"Grass Knot",
+				"Psychic",
+				"Shadow Ball"
+			]
+		},
+		{
+			"Pokemon": "Drifblim",
+			"Form": 0,
+			"Level": 56,
+			"Difficulty": 200,
+			"Miscellaneous": {
+				"Gender": "Random",
+				"Ability": 0
+			},
+			"Moves": [
+				"Psychic",
+				"Thunderbolt",
+				"Acrobatics",
+				"Shadow Ball"
+			],
+			"Item": null
+		},
+		{
+			"Pokemon": "Golurk",
+			"Form": 0,
+			"Level": 56,
+			"Difficulty": 200,
+			"Miscellaneous": {
+				"Gender": "Random",
+				"Ability": 0
+			},
+			"Moves": [
+				"Heavy Slam",
+				"Earthquake",
+				"Brick Break",
+				"Shadow Punch"
+			],
+			"Item": null
+		},
+		{
+			"Pokemon": "Chandelure",
+			"Form": 0,
+			"Level": 58,
+			"Difficulty": 250,
+			"Miscellaneous": {
+				"Gender": "Random",
+				"Ability": 1
+			},
+			"Moves": [
+				"Energy Ball",
+				"Fire Blast",
+				"Psychic",
+				"Shadow Ball"
+			],
+			"Item": "Sitrus Berry"
+		}
+	]
+}
