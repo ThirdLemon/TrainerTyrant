@@ -616,27 +616,70 @@ namespace TrainerTyrant
 
         private readonly static JSchema MultiTrainerRepresentationValidator = JSchema.Parse(PlainTextMultiSchema);
 
+        /**
+         * 
+         */
         public static bool ValidateTrainerJSON(string JSON)
         {
-            Newtonsoft.Json.Linq.JObject parsedJSON = Newtonsoft.Json.Linq.JObject.Parse(JSON);
+            try
+            {
+                Newtonsoft.Json.Linq.JObject parsedJSON = Newtonsoft.Json.Linq.JObject.Parse(JSON);
 
-            return parsedJSON.IsValid(TrainerRepresentationValidator);
+                return parsedJSON.IsValid(TrainerRepresentationValidator);
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public static bool ValidateTrainerJSON(string JSON, out IList<string> errors)
         {
-            Newtonsoft.Json.Linq.JObject parsedJSON = Newtonsoft.Json.Linq.JObject.Parse(JSON);
+            try
+            {
+                Newtonsoft.Json.Linq.JObject parsedJSON = Newtonsoft.Json.Linq.JObject.Parse(JSON);
 
-            bool result =  parsedJSON.IsValid(TrainerRepresentationValidator, out errors);
+                bool result = parsedJSON.IsValid(TrainerRepresentationValidator, out errors);
 
-            return result;
+                return result;
+            }
+            catch
+            {
+                errors = new List<string>() { "JSON provided was not an object or some other error occured." };
+
+                return false;
+            }
         }
 
         public static bool ValidateTrainerListJSON(string JSON)
         {
-            Newtonsoft.Json.Linq.JObject parsedJSON = Newtonsoft.Json.Linq.JObject.Parse(JSON);
+            try
+            {
+                Newtonsoft.Json.Linq.JArray parsedJSON = Newtonsoft.Json.Linq.JArray.Parse(JSON);
+                return parsedJSON.IsValid(MultiTrainerRepresentationValidator);
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
-            return parsedJSON.IsValid(MultiTrainerRepresentationValidator);
+        public static bool ValidateTrainerListJSON(string JSON, out IList<string> errors)
+        {
+            try
+            {
+                Newtonsoft.Json.Linq.JArray parsedJSON = Newtonsoft.Json.Linq.JArray.Parse(JSON);
+
+                bool result = parsedJSON.IsValid(MultiTrainerRepresentationValidator, out errors);
+
+                return result;
+            }
+            catch
+            {
+                errors = new List<string>() { "JSON provided was not an array or some other error occured." };
+
+                return false;
+            }
         }
     }
 }

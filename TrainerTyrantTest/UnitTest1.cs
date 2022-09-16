@@ -3,6 +3,7 @@ using System;
 using TrainerTyrant;
 using Newtonsoft.Json;
 using System.IO;
+using System.Collections.Generic;
 
 namespace TrainerTyrantTest
 {
@@ -12,6 +13,7 @@ namespace TrainerTyrantTest
         private string shauntalJSON;
         private string strangeJSON;
         private string incompleteJSON;
+        private string multiJSON;
 
         [TestInitialize]
         public void TestInit()
@@ -21,6 +23,8 @@ namespace TrainerTyrantTest
             strangeJSON = File.ReadAllText("../../../SampleJSON/sampleJSON2.json");
 
             incompleteJSON = File.ReadAllText("../../../SampleJSON/sampleJSON3.json");
+
+            multiJSON = File.ReadAllText("../../../SampleJSON/sampleJSON4.json");
         }
 
         [TestMethod]
@@ -134,7 +138,23 @@ namespace TrainerTyrantTest
         [TestMethod]
         public void ValidateCorrectJSON()
         {
-            Assert.IsTrue(TrainerTyrant.TrainerJSONValidator.ValidateTrainerJSON(shauntalJSON));
+            Assert.IsTrue(TrainerJSONValidator.ValidateTrainerListJSON(multiJSON));
+            Assert.IsTrue(TrainerJSONValidator.ValidateTrainerJSON(shauntalJSON));
+            Assert.IsTrue(TrainerJSONValidator.ValidateTrainerJSON(shauntalJSON, out IList<string> errors));
+            Assert.AreEqual(errors.Count, 0);
+            Assert.IsTrue(TrainerJSONValidator.ValidateTrainerListJSON(multiJSON, out errors));
+            Assert.AreEqual(errors.Count, 0);
+        }
+
+        [TestMethod]
+        public void WrongInputJSONValidationFails()
+        {
+            Assert.IsFalse(TrainerJSONValidator.ValidateTrainerJSON(multiJSON));
+            Assert.IsFalse(TrainerJSONValidator.ValidateTrainerListJSON(shauntalJSON));
+            Assert.IsFalse(TrainerJSONValidator.ValidateTrainerJSON(multiJSON, out IList<string> errors));
+            Assert.AreEqual(errors.Count, 1);
+            Assert.IsFalse(TrainerJSONValidator.ValidateTrainerListJSON(shauntalJSON, out errors));
+            Assert.AreEqual(errors.Count, 1);
         }
 
         [TestMethod]
@@ -144,9 +164,14 @@ namespace TrainerTyrantTest
         }
 
         [TestMethod]
-        public void ValidateFailureIncompleteJSON()
+        public void FailToValidateIncompleteJSON()
         {
             Assert.IsFalse(TrainerJSONValidator.ValidateTrainerJSON(incompleteJSON));
+            Assert.IsFalse(TrainerJSONValidator.ValidateTrainerJSON(incompleteJSON, out IList<string> errors));
+            Console.WriteLine(errors.Count);
+            Console.WriteLine(errors[0]);
+            // There are more mistakes with the json than 1 mistake, but only 1 error is written to the IList. Why is this? Is this correct behaviour?
+            Assert.IsTrue(errors.Count > 0);
         }
 
         [TestMethod]

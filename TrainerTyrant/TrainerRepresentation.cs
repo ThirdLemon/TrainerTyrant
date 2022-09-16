@@ -21,6 +21,7 @@ namespace TrainerTyrant
         [JsonProperty(PropertyName = "Pokemon Data")]
         public PokemonData[] PokemonData { get; set; }
 
+        [JsonIgnore]
         public int PokemonCount { get { return PokemonData.Length; } }
     }
 
