@@ -23,6 +23,43 @@ namespace TrainerTyrant
 
         [JsonIgnore]
         public int PokemonCount { get { return PokemonData.Length; } }
+
+        public static TrainerRepresentation DeserializeJSON(string JSON)
+        {
+            //Validate the JSON
+            if (TrainerJSONValidator.ValidateTrainerJSON(JSON))
+                return JsonConvert.DeserializeObject<TrainerRepresentation>(JSON);
+
+            return null;
+        }
+
+        public static TrainerRepresentation DeserializeJSON(string JSON, out IList<string> errors)
+        {
+            bool valid = TrainerJSONValidator.ValidateTrainerJSON(JSON, out errors);
+
+            if (valid)
+                return JsonConvert.DeserializeObject<TrainerRepresentation>(JSON);
+
+            return null;
+        }
+
+        public static List<TrainerRepresentation> DeserializeListJSON(string JSON)
+        {
+            if (TrainerJSONValidator.ValidateTrainerListJSON(JSON))
+                return JsonConvert.DeserializeObject<List<TrainerRepresentation>>(JSON);
+
+            return null;
+        }
+
+        public static List<TrainerRepresentation> DeserializeListJSON(string JSON, out IList<string> errors)
+        {
+            bool valid = TrainerJSONValidator.ValidateTrainerListJSON(JSON, out errors);
+
+            if (valid)
+                return JsonConvert.DeserializeObject<List<TrainerRepresentation>>(JSON);
+
+            return null;
+        }
     }
 
     public class TrainerData

@@ -28,11 +28,9 @@ namespace TrainerTyrantTest
         }
 
         [TestMethod]
-        public void DeserializeNoErrors()
+        public void BaseDeserializeNoErrors()
         {
-            
-
-            TrainerRepresentation shauntal = Newtonsoft.Json.JsonConvert.DeserializeObject<TrainerRepresentation>(shauntalJSON);
+            TrainerRepresentation shauntal = JsonConvert.DeserializeObject<TrainerRepresentation>(shauntalJSON);
 
             Assert.AreEqual(shauntal.TrainerData.Identification.NumberID, 38);
             Assert.AreEqual(shauntal.TrainerData.Identification.NameID.Name, "Shauntal");
@@ -43,6 +41,101 @@ namespace TrainerTyrantTest
             Assert.IsTrue(shauntal.TrainerData.AIFlags.CheckBadMoves);
             Assert.IsTrue(shauntal.PokemonData.Length == 4);
             Assert.AreEqual(shauntal.PokemonCount, shauntal.PokemonData.Length);
+        }
+
+        [TestMethod]
+        public void Deserialize()
+        {
+            TrainerRepresentation shauntal = TrainerRepresentation.DeserializeJSON(shauntalJSON);
+            Assert.AreEqual(38, shauntal.TrainerData.Identification.NumberID);
+            Assert.AreEqual("Shauntal", shauntal.TrainerData.Identification.NameID.Name);
+            Assert.AreEqual(0, shauntal.TrainerData.Identification.NameID.Variation);
+            Assert.AreEqual(78, shauntal.TrainerData.TrainerClass.NumberID);
+            Assert.AreEqual("Single", shauntal.TrainerData.BattleType);
+            Assert.IsTrue(shauntal.TrainerData.Format.Moves);
+            Assert.IsTrue(shauntal.TrainerData.Format.Items);
+            Assert.AreEqual(1200, shauntal.TrainerData.BaseMoney);
+            Assert.AreEqual(4, shauntal.TrainerData.Items.Length);
+            Assert.AreEqual("Full Restore", shauntal.TrainerData.Items[0]);
+            for(int i = 1; i < 4; i++)
+                Assert.AreEqual(null, shauntal.TrainerData.Items[i]);
+            Assert.AreEqual(7, shauntal.TrainerData.AIFlags.Bitmap);
+            Assert.IsFalse(shauntal.TrainerData.Healer);
+            Assert.AreEqual(4, shauntal.PokemonCount);
+            Assert.AreEqual(4, shauntal.PokemonData.Length);
+            string[] monnames = { "Cofagrigus", "Drifblim", "Golurk", "Chandelure" };
+            for (int i = 0; i < 4; i++)
+            {
+                Assert.AreEqual(monnames[i], shauntal.PokemonData[i].Pokemon);
+                Assert.AreEqual(0, shauntal.PokemonData[i].Form);
+                Assert.AreEqual("Random", shauntal.PokemonData[i].Miscellaneous.Gender);
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                Assert.AreEqual(56, shauntal.PokemonData[i].Level);
+                Assert.AreEqual(200, shauntal.PokemonData[i].Difficulty);
+                Assert.AreEqual(0, shauntal.PokemonData[i].Miscellaneous.Ability);
+                Assert.AreEqual(null, shauntal.PokemonData[i].Item);
+            }
+            Assert.AreEqual(58, shauntal.PokemonData[3].Level);
+            Assert.AreEqual(250, shauntal.PokemonData[3].Difficulty);
+            Assert.AreEqual(1, shauntal.PokemonData[3].Miscellaneous.Ability);
+            Assert.AreEqual("Sitrus Berry", shauntal.PokemonData[3].Item);
+            string[,] monmoves = { { "Will-O-Wisp", "Grass Knot", "Psychic", "Shadow Ball" }, 
+                                    { "Psychic", "Thunderbolt", "Acrobatics", "Shadow Ball" }, 
+                                    { "Heavy Slam", "Earthquake", "Brick Break", "Shadow Punch" },
+                                    { "Energy Ball", "Fire Blast", "Psychic", "Shadow Ball"} };
+            for (int i = 0; i < 4; i++)
+                for (int j = 0; j < 4; j++)
+                    Assert.AreEqual(monmoves[i,j], shauntal.PokemonData[i].Moves[j]);
+        }
+
+        [TestMethod]
+        public void DeserializeWOut()
+        {
+            TrainerRepresentation shauntal = TrainerRepresentation.DeserializeJSON(shauntalJSON, out IList<string> errors);
+            Assert.AreEqual(0, errors.Count);
+            Assert.AreEqual(38, shauntal.TrainerData.Identification.NumberID);
+            Assert.AreEqual("Shauntal", shauntal.TrainerData.Identification.NameID.Name);
+            Assert.AreEqual(0, shauntal.TrainerData.Identification.NameID.Variation);
+            Assert.AreEqual(78, shauntal.TrainerData.TrainerClass.NumberID);
+            Assert.AreEqual("Single", shauntal.TrainerData.BattleType);
+            Assert.IsTrue(shauntal.TrainerData.Format.Moves);
+            Assert.IsTrue(shauntal.TrainerData.Format.Items);
+            Assert.AreEqual(1200, shauntal.TrainerData.BaseMoney);
+            Assert.AreEqual(4, shauntal.TrainerData.Items.Length);
+            Assert.AreEqual("Full Restore", shauntal.TrainerData.Items[0]);
+            for (int i = 1; i < 4; i++)
+                Assert.AreEqual(null, shauntal.TrainerData.Items[i]);
+            Assert.AreEqual(7, shauntal.TrainerData.AIFlags.Bitmap);
+            Assert.IsFalse(shauntal.TrainerData.Healer);
+            Assert.AreEqual(4, shauntal.PokemonCount);
+            Assert.AreEqual(4, shauntal.PokemonData.Length);
+            string[] monnames = { "Cofagrigus", "Drifblim", "Golurk", "Chandelure" };
+            for (int i = 0; i < 4; i++)
+            {
+                Assert.AreEqual(monnames[i], shauntal.PokemonData[i].Pokemon);
+                Assert.AreEqual(0, shauntal.PokemonData[i].Form);
+                Assert.AreEqual("Random", shauntal.PokemonData[i].Miscellaneous.Gender);
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                Assert.AreEqual(56, shauntal.PokemonData[i].Level);
+                Assert.AreEqual(200, shauntal.PokemonData[i].Difficulty);
+                Assert.AreEqual(0, shauntal.PokemonData[i].Miscellaneous.Ability);
+                Assert.AreEqual(null, shauntal.PokemonData[i].Item);
+            }
+            Assert.AreEqual(58, shauntal.PokemonData[3].Level);
+            Assert.AreEqual(250, shauntal.PokemonData[3].Difficulty);
+            Assert.AreEqual(1, shauntal.PokemonData[3].Miscellaneous.Ability);
+            Assert.AreEqual("Sitrus Berry", shauntal.PokemonData[3].Item);
+            string[,] monmoves = { { "Will-O-Wisp", "Grass Knot", "Psychic", "Shadow Ball" },
+                                    { "Psychic", "Thunderbolt", "Acrobatics", "Shadow Ball" },
+                                    { "Heavy Slam", "Earthquake", "Brick Break", "Shadow Punch" },
+                                    { "Energy Ball", "Fire Blast", "Psychic", "Shadow Ball"} };
+            for (int i = 0; i < 4; i++)
+                for (int j = 0; j < 4; j++)
+                    Assert.AreEqual(monmoves[i, j], shauntal.PokemonData[i].Moves[j]);
         }
 
         [TestMethod]
@@ -69,7 +162,7 @@ namespace TrainerTyrantTest
             shauntal.PokemonData[0].Moves = new string[] { "Will-O-Wisp", "Grass Knot", "Psychic", "Shadow Ball" };
             shauntal.PokemonData[0].Item = null;
 
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(shauntal, Newtonsoft.Json.Formatting.Indented);
+            string json = JsonConvert.SerializeObject(shauntal, Formatting.Indented);
 
             Console.WriteLine(json);
         }
@@ -121,7 +214,7 @@ namespace TrainerTyrantTest
 
             TrainerRepresentation[] trainers = new TrainerRepresentation[] { shauntal, marshal };
 
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(trainers, Newtonsoft.Json.Formatting.Indented);
+            string json = JsonConvert.SerializeObject(trainers, Formatting.Indented);
 
             Console.WriteLine(json);
         }
@@ -129,7 +222,7 @@ namespace TrainerTyrantTest
         [TestMethod]
         public void DeserializeWithStrangeProperties()
         {
-            TrainerRepresentation shauntal = Newtonsoft.Json.JsonConvert.DeserializeObject<TrainerRepresentation>(strangeJSON);
+            TrainerRepresentation shauntal = JsonConvert.DeserializeObject<TrainerRepresentation>(strangeJSON);
 
             Console.WriteLine(shauntal.TrainerData.Identification.NameID.Name);
             Console.WriteLine(shauntal.TrainerData.Identification.NameID.Variation);
