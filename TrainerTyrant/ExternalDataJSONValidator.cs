@@ -12,36 +12,36 @@ namespace TrainerTyrant
     {
         private static readonly string MoveListSchema = @"{
                                                             'properties': {
-                                                            'Move Data': {
+                                                            'Moves': {
                                                                 'items': {
                                                                 'type': 'string',
                                                                 'description': 'Move name.'
                                                                 }
                                                             }
                                                             },
-                                                            'required': ['Move Data']
+                                                            'required': ['Moves']
                                                         }";
         private static readonly string PokemonListSchema = @"{
                                                             'properties': {
-                                                            'Pokemon Data': {
+                                                            'Pokemon': {
                                                                 'items': {
                                                                 'type': 'string',
                                                                 'description': 'Pokemon Name.'
                                                                 }
                                                             }
                                                             },
-                                                            'required': ['Pokemon Data']
+                                                            'required': ['Pokemon']
                                                         }";
         private static readonly string ItemListSchema = @"{
                                                           'properties': {
-                                                            'Item Data': {
+                                                            'Items': {
                                                               'items': {
                                                                 'type': 'string',
                                                                 'description': 'Item Name.'
                                                               }
                                                             }
                                                           },
-                                                          'required': ['Item Data']
+                                                          'required': ['Items']
                                                         }";
 
 

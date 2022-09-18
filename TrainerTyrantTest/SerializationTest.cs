@@ -340,7 +340,7 @@ namespace TrainerTyrantTest
         }
 
         [TestMethod]
-        public void WrongInputJSONValidationFails()
+        public void FailIncorrectJSON()
         {
             Assert.IsFalse(TrainerJSONValidator.ValidateTrainerJSON(multiJSON));
             Assert.IsFalse(TrainerJSONValidator.ValidateTrainerListJSON(shauntalJSON));
