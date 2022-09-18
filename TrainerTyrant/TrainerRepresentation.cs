@@ -35,9 +35,7 @@ namespace TrainerTyrant
 
         public static TrainerRepresentation DeserializeJSON(string JSON, out IList<string> errors)
         {
-            bool valid = TrainerJSONValidator.ValidateTrainerJSON(JSON, out errors);
-
-            if (valid)
+            if (TrainerJSONValidator.ValidateTrainerJSON(JSON, out errors))
                 return JsonConvert.DeserializeObject<TrainerRepresentation>(JSON);
 
             return null;
