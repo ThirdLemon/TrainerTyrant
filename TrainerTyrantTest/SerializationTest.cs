@@ -589,5 +589,18 @@ namespace TrainerTyrantTest
             for (int i = 0; i < target.Length; i++)
                 Assert.AreEqual(target[i], byteRepresenation[i]);
         }
+
+        [TestMethod]
+        public void CheckSlotIDCalculation()
+        {
+            ExternalTrainerSlotList slotList = ExternalTrainerSlotList.DeserializeJSON(slotlistJSON);
+
+            TrainerRepresentation shauntal = TrainerRepresentation.DeserializeJSON(shauntalJSON);
+            TrainerRepresentation hugh = TrainerRepresentation.DeserializeJSON(hugh9JSON);
+
+            Assert.AreEqual(38, shauntal.GetSlotID(slotList));
+            Assert.AreEqual(378, hugh.GetSlotID(slotList));
+        }
     }
+
 }

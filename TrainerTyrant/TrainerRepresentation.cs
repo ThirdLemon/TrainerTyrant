@@ -159,6 +159,15 @@ namespace TrainerTyrant
 
             return to_return;
         }
+
+        //Not necessarily the slot in the list, as the list is missing the "null" item 0.
+        public int GetSlotID(ExternalTrainerSlotList slotList)
+        {
+            //If you have a number ID, automatically use it.
+            if (TrainerData.Identification.NumberID >= 0)
+                return TrainerData.Identification.NumberID;
+            return slotList.GetIndexOfSlot(TrainerData.Identification.NameID.Name, TrainerData.Identification.NameID.Variation) + 1;
+        }
     }
 
     public class TrainerData
