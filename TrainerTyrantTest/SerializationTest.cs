@@ -69,7 +69,7 @@ namespace TrainerTyrantTest
             Assert.AreEqual("Single", shauntal.TrainerData.BattleType);
             Assert.IsTrue(shauntal.TrainerData.Format.Moves);
             Assert.IsTrue(shauntal.TrainerData.Format.Items);
-            Assert.AreEqual(1200, shauntal.TrainerData.BaseMoney);
+            Assert.AreEqual(30, shauntal.TrainerData.BaseMoney);
             Assert.AreEqual(4, shauntal.TrainerData.Items.Length);
             Assert.AreEqual("Full Restore", shauntal.TrainerData.Items[0]);
             for(int i = 1; i < 4; i++)
@@ -117,7 +117,7 @@ namespace TrainerTyrantTest
             Assert.AreEqual("Single", shauntal.TrainerData.BattleType);
             Assert.IsTrue(shauntal.TrainerData.Format.Moves);
             Assert.IsTrue(shauntal.TrainerData.Format.Items);
-            Assert.AreEqual(1200, shauntal.TrainerData.BaseMoney);
+            Assert.AreEqual(30, shauntal.TrainerData.BaseMoney);
             Assert.AreEqual(4, shauntal.TrainerData.Items.Length);
             Assert.AreEqual("Full Restore", shauntal.TrainerData.Items[0]);
             for (int i = 1; i < 4; i++)
@@ -166,7 +166,7 @@ namespace TrainerTyrantTest
             Assert.AreEqual("Single", shauntal.TrainerData.BattleType);
             Assert.IsTrue(shauntal.TrainerData.Format.Moves);
             Assert.IsTrue(shauntal.TrainerData.Format.Items);
-            Assert.AreEqual(1200, shauntal.TrainerData.BaseMoney);
+            Assert.AreEqual(30, shauntal.TrainerData.BaseMoney);
             Assert.AreEqual(4, shauntal.TrainerData.Items.Length);
             Assert.AreEqual("Full Restore", shauntal.TrainerData.Items[0]);
             for (int i = 1; i < 4; i++)
@@ -209,7 +209,7 @@ namespace TrainerTyrantTest
             Assert.AreEqual("Single", marshal.TrainerData.BattleType);
             Assert.IsTrue(marshal.TrainerData.Format.Moves);
             Assert.IsTrue(marshal.TrainerData.Format.Items);
-            Assert.AreEqual(1200, marshal.TrainerData.BaseMoney);
+            Assert.AreEqual(30, marshal.TrainerData.BaseMoney);
             Assert.AreEqual(4, marshal.TrainerData.Items.Length);
             Assert.AreEqual("Full Restore", marshal.TrainerData.Items[0]);
             for (int i = 1; i < 4; i++)
@@ -253,7 +253,7 @@ namespace TrainerTyrantTest
             shauntal.TrainerData.BattleType = "Single";
             shauntal.TrainerData.Format.Moves = true;
             shauntal.TrainerData.Format.Items = true;
-            shauntal.TrainerData.BaseMoney = 1200;
+            shauntal.TrainerData.BaseMoney = 30;
             shauntal.TrainerData.Items = new string[] { "Full Restore", null, null, null };
             shauntal.TrainerData.AIFlags.CheckBadMoves = true;
             shauntal.TrainerData.AIFlags.EvaluateAttacks = true;
@@ -282,7 +282,7 @@ namespace TrainerTyrantTest
             shauntal.TrainerData.BattleType = "Single";
             shauntal.TrainerData.Format.Moves = true;
             shauntal.TrainerData.Format.Items = true;
-            shauntal.TrainerData.BaseMoney = 1200;
+            shauntal.TrainerData.BaseMoney = 30;
             shauntal.TrainerData.Items = new string[] { "Full Restore", null, null, null };
             shauntal.TrainerData.AIFlags.CheckBadMoves = true;
             shauntal.TrainerData.AIFlags.EvaluateAttacks = true;
@@ -303,7 +303,7 @@ namespace TrainerTyrantTest
             marshal.TrainerData.BattleType = "Single";
             marshal.TrainerData.Format.Moves = true;
             marshal.TrainerData.Format.Items = true;
-            marshal.TrainerData.BaseMoney = 1200;
+            marshal.TrainerData.BaseMoney = 30;
             marshal.TrainerData.Items = new string[] { null, null, null, null };
             marshal.TrainerData.AIFlags.CheckBadMoves = true;
             marshal.TrainerData.AIFlags.EvaluateAttacks = true;

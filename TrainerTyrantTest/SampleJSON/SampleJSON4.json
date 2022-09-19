@@ -16,7 +16,7 @@
 				"Moves": true,
 				"Items": true
 			},
-			"Base Money": 1200,
+			"Base Money": 30,
 			"Items": [
 				"Full Restore",
 				null,
@@ -122,7 +122,7 @@
 				"Moves": true,
 				"Items": true
 			},
-			"Base Money": 1200,
+			"Base Money": 30,
 			"Items": [
 				"Full Restore",
 				null,

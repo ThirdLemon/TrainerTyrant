@@ -17,7 +17,7 @@
 			"Moves": true,
 			"Items": true
 		},
-		"Base Money": 1200,
+		"Base Money": 30,
 		"Strange Property":  null,
 		"Items": [
 			"Full Restore",
