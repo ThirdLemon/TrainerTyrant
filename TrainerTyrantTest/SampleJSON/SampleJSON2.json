@@ -45,7 +45,7 @@
 			"Difficulty": 200,
 			"Miscellaneous": {
 				"Gender": "Random",
-				"Ability": 0
+				"Ability": 1
 			},
 			"Moves": [
 				"Will-O-Wisp",
@@ -63,7 +63,7 @@
 			"Difficulty": 200,
 			"Miscellaneous": {
 				"Gender": "Random",
-				"Ability": 0
+				"Ability": 1
 			},
 			"Moves": [
 				"Psychic",
@@ -80,7 +80,7 @@
 			"Difficulty": 200,
 			"Miscellaneous": {
 				"Gender": "Random",
-				"Ability": 0
+				"Ability": 1
 			},
 			"Moves": [
 				"Heavy Slam",
@@ -97,7 +97,7 @@
 			"Difficulty": 250,
 			"Miscellaneous": {
 				"Gender": "Random",
-				"Ability": 1
+				"Ability": 2
 			},
 			"Moves": [
 				"Energy Ball",

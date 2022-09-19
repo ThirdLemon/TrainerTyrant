@@ -89,12 +89,12 @@ namespace TrainerTyrantTest
             {
                 Assert.AreEqual(56, shauntal.PokemonData[i].Level);
                 Assert.AreEqual(200, shauntal.PokemonData[i].Difficulty);
-                Assert.AreEqual(0, shauntal.PokemonData[i].Miscellaneous.Ability);
+                Assert.AreEqual(1, shauntal.PokemonData[i].Miscellaneous.Ability);
                 Assert.AreEqual(null, shauntal.PokemonData[i].Item);
             }
             Assert.AreEqual(58, shauntal.PokemonData[3].Level);
             Assert.AreEqual(250, shauntal.PokemonData[3].Difficulty);
-            Assert.AreEqual(1, shauntal.PokemonData[3].Miscellaneous.Ability);
+            Assert.AreEqual(2, shauntal.PokemonData[3].Miscellaneous.Ability);
             Assert.AreEqual("Sitrus Berry", shauntal.PokemonData[3].Item);
             string[,] monmoves = { { "Will-O-Wisp", "Grass Knot", "Psychic", "Shadow Ball" }, 
                                     { "Psychic", "Thunderbolt", "Acrobatics", "Shadow Ball" }, 
@@ -137,12 +137,12 @@ namespace TrainerTyrantTest
             {
                 Assert.AreEqual(56, shauntal.PokemonData[i].Level);
                 Assert.AreEqual(200, shauntal.PokemonData[i].Difficulty);
-                Assert.AreEqual(0, shauntal.PokemonData[i].Miscellaneous.Ability);
+                Assert.AreEqual(1, shauntal.PokemonData[i].Miscellaneous.Ability);
                 Assert.AreEqual(null, shauntal.PokemonData[i].Item);
             }
             Assert.AreEqual(58, shauntal.PokemonData[3].Level);
             Assert.AreEqual(250, shauntal.PokemonData[3].Difficulty);
-            Assert.AreEqual(1, shauntal.PokemonData[3].Miscellaneous.Ability);
+            Assert.AreEqual(2, shauntal.PokemonData[3].Miscellaneous.Ability);
             Assert.AreEqual("Sitrus Berry", shauntal.PokemonData[3].Item);
             string[,] monmoves = { { "Will-O-Wisp", "Grass Knot", "Psychic", "Shadow Ball" },
                                     { "Psychic", "Thunderbolt", "Acrobatics", "Shadow Ball" },
@@ -186,12 +186,12 @@ namespace TrainerTyrantTest
             {
                 Assert.AreEqual(56, shauntal.PokemonData[i].Level);
                 Assert.AreEqual(200, shauntal.PokemonData[i].Difficulty);
-                Assert.AreEqual(0, shauntal.PokemonData[i].Miscellaneous.Ability);
+                Assert.AreEqual(1, shauntal.PokemonData[i].Miscellaneous.Ability);
                 Assert.AreEqual(null, shauntal.PokemonData[i].Item);
             }
             Assert.AreEqual(58, shauntal.PokemonData[3].Level);
             Assert.AreEqual(250, shauntal.PokemonData[3].Difficulty);
-            Assert.AreEqual(1, shauntal.PokemonData[3].Miscellaneous.Ability);
+            Assert.AreEqual(2, shauntal.PokemonData[3].Miscellaneous.Ability);
             Assert.AreEqual("Sitrus Berry", shauntal.PokemonData[3].Item);
             string[,] monmoves = { { "Will-O-Wisp", "Grass Knot", "Psychic", "Shadow Ball" },
                                     { "Psychic", "Thunderbolt", "Acrobatics", "Shadow Ball" },
@@ -224,7 +224,7 @@ namespace TrainerTyrantTest
                 Assert.AreEqual(marshalmonnames[i], marshal.PokemonData[i].Pokemon);
                 Assert.AreEqual(0, marshal.PokemonData[i].Form);
                 Assert.AreEqual("Random", marshal.PokemonData[i].Miscellaneous.Gender);
-                Assert.AreEqual(0, marshal.PokemonData[i].Miscellaneous.Ability);
+                Assert.AreEqual(1, marshal.PokemonData[i].Miscellaneous.Ability);
             }
             for (int i = 0; i < 3; i++)
             {
@@ -525,9 +525,7 @@ namespace TrainerTyrantTest
             Assert.IsNotNull(byteRepresenation);
             Assert.AreEqual(target.Length, byteRepresenation.Length);
             for (int i = 0; i < target.Length; i++)
-                //abilities are currently bugged, if statement to not break on it
-                if ((i - i / 18 * 18) != 1)
-                    Assert.AreEqual(target[i], byteRepresenation[i]);
+                Assert.AreEqual(target[i], byteRepresenation[i]);
         }
     }
 }

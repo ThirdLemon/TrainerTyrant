@@ -211,7 +211,7 @@ namespace TrainerTyrant
                                     'type': 'integer',
                                   'description': 'The ability slot of the pokemon. 0 and 1 are abilities 1 and 2, and 2 is the hidden ability.',
                                   'minimum': 0,
-                                  'maximum': 2
+                                  'maximum': 3
                                 }
                             },
                               'required': [
