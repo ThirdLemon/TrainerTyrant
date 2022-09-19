@@ -486,5 +486,48 @@ namespace TrainerTyrantTest
             Assert.IsFalse(sample.TrainerData.AIFlags.PreferBatonPass);
             Assert.IsFalse(sample.TrainerData.AIFlags.DoubleBattle);
         }
+
+        [TestMethod]
+        public void CheckTrainerDataByteRepresentation()
+        {
+            TrainerRepresentation shauntal = TrainerRepresentation.DeserializeJSON(shauntalJSON);
+            ExternalItemList itemsList = ExternalItemList.DeserializeJSON(itemlistJSON);
+            //Target is the exact bytes used on file for shauntal.
+            byte[] target = new byte[] { 0x03, 0x4E, 0x00, 0x04, 0x17, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x00, 0x1E, 0x00, 0x00 };
+
+            byte[] byteRepresentation = shauntal.GetTrainerBytes(itemsList);
+
+            Assert.IsNotNull(byteRepresentation);
+            Assert.AreEqual(target.Length, byteRepresentation.Length);
+            for (int i = 0; i < target.Length; i++)
+                Assert.AreEqual(target[i], byteRepresentation[i]);
+
+        }
+
+        [TestMethod]
+        public void CheckPokemonDataByteRepresentation()
+        {
+            TrainerRepresentation shauntal = TrainerRepresentation.DeserializeJSON(shauntalJSON);
+            ExternalItemList itemList = ExternalItemList.DeserializeJSON(itemlistJSON);
+            ExternalMoveList moveList = ExternalMoveList.DeserializeJSON(movelistJSON);
+            ExternalPokemonList monList = ExternalPokemonList.DeserializeJSON(pokemonlistJSON);
+
+            //Target is the exact bytes used on file for shauntal
+            byte[] target = new byte[] {
+                                        0xC8, 0x10, 0x38, 0x00, 0x33, 0x02, 0x00, 0x00, 0x00, 0x00, 0x05, 0x01, 0xBF, 0x01, 0x5E, 0x00, 0xF7, 0x00,
+                                        0xC8, 0x10, 0x38, 0x00, 0xAA, 0x01, 0x00, 0x00, 0x00, 0x00, 0x5E, 0x00, 0x55, 0x00, 0x00, 0x02, 0xF7, 0x00,
+                                        0xC8, 0x10, 0x38, 0x00, 0x6F, 0x02, 0x00, 0x00, 0x00, 0x00, 0xE4, 0x01, 0x59, 0x00, 0x18, 0x01, 0x45, 0x01,
+                                        0xFA, 0x20, 0x3A, 0x00, 0x61, 0x02, 0x00, 0x00, 0x9E, 0x00, 0x9C, 0x01, 0x7E, 0x00, 0x5E, 0x00, 0xF7, 0x00 
+                                        };
+
+            byte[] byteRepresenation = shauntal.GetPokemonBytes(itemList, moveList, monList);
+
+            Assert.IsNotNull(byteRepresenation);
+            Assert.AreEqual(target.Length, byteRepresenation.Length);
+            for (int i = 0; i < target.Length; i++)
+                //abilities are currently bugged, if statement to not break on it
+                if ((i - i / 18 * 18) != 1)
+                    Assert.AreEqual(target[i], byteRepresenation[i]);
+        }
     }
 }

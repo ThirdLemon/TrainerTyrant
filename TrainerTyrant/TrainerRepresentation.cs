@@ -59,7 +59,7 @@ namespace TrainerTyrant
             return null;
         }
 
-        public byte[] GetTrainerBytes(ExternalItemList items, ExternalMoveList moves, ExternalPokemonList pokemon, ExternalTrainerSlotList slots)
+        public byte[] GetTrainerBytes(ExternalItemList items)
         {
             byte[] to_return = new byte[20];
 
@@ -68,13 +68,96 @@ namespace TrainerTyrant
             //Write the selected trainer class to the second byte
             to_return[1] = (byte)TrainerData.TrainerClass.NumberID;
             //write the battle type to the third byte
-
+            to_return[2] = TrainerData.BattleTypeByte();
             //Write the pokemon count to the fourth byte
             to_return[3] = (byte)PokemonCount;
             //Write item 1's id to the fifth and sixth bytes
-            
+            int id = TrainerData.ItemIndex(items, 0);
+            to_return[4] = (byte)(id - id / 256 * 256);
+            to_return[5] = (byte)(id / 256);
+            //Write item 2's id to the seventh and eight bytes
+            id = TrainerData.ItemIndex(items, 1);
+            to_return[6] = (byte)(id - id / 256 * 256);
+            to_return[7] = (byte)(id / 256);
+            //Write item 3's id to the ninth and tenth bytes
+            id = TrainerData.ItemIndex(items, 1);
+            to_return[8] = (byte)(id - id / 256 * 256);
+            to_return[9] = (byte)(id / 256);
+            //Write item 4's id to the eleventh and twelth bytes
+            id = TrainerData.ItemIndex(items, 1);
+            to_return[10] = (byte)(id - id / 256 * 256);
+            to_return[11] = (byte)(id / 256);
+            //Write the ai value to the thirteenth byte
+            to_return[12] = TrainerData.AIFlags.Bitmap;
+            //Write nothing to the fourteenth, fifteenth, and sixteenth byte
+            //Write healer to the seventeeth byte
+            to_return[16] = Convert.ToByte(TrainerData.Healer);
+            //Write basemoney to the eigtheenth byte
+            to_return[17] = (byte)TrainerData.BaseMoney;
+            //Write nothing to the nineteenth and twentieth bytes
 
-            return null;
+            return to_return;
+        }
+
+        public byte[] GetPokemonBytes(ExternalItemList items, ExternalMoveList moves, ExternalPokemonList pokemon)
+        {
+            //8 bytes are given to general data. 2 bytes given to items, and 8 to moves.
+            int segmentLength = 8 + Convert.ToInt32(TrainerData.Format.Items) * 2 + Convert.ToInt32(TrainerData.Format.Moves) * 8;
+            byte[] to_return = new byte[PokemonCount * segmentLength];
+
+            //Write for each pokemon
+            for(int mon = 0; mon < PokemonCount; mon++)
+            {
+                //The first byte in the byte array allocated to the mon
+                int monStart = mon * segmentLength;
+                //General data
+                //Write the difficulty to the first byte
+                to_return[monStart] = (byte)PokemonData[mon].Difficulty;
+                //Write miscellaneous to the second byte
+                to_return[monStart + 1] = PokemonData[mon].Miscellaneous.GetByte();
+                //Write level to the third byte
+                to_return[monStart + 2] = (byte)PokemonData[mon].Level;
+                //Write nothing to the fourth byte
+                //Write pokemon index to the fifth and sixth bytes
+                int id = pokemon.GetIndexOfPokemon(PokemonData[mon].Pokemon);
+                //Currently no tracking for whether valid pokemon is given here. The invalid Pokemon "0" may be put here.
+                to_return[monStart + 4] = (byte)(id - id / 256 * 256);
+                to_return[monStart + 5] = (byte)(id / 256);
+                //Write form number to the seventh byte
+                to_return[monStart + 6] = (byte)(PokemonData[mon].Form);
+                //Write nothing to the eight byte
+                //end of general data.
+
+                //update monstart to start of next section for convenience
+                monStart += 8;
+
+                //Items are written before moves
+                if (TrainerData.Format.Items)
+                {
+                    id = items.GetIndexOfItem(PokemonData[mon].Item);
+                    //Write the item id to the first and second bytes
+                    to_return[monStart] = (byte)(id - id / 256 * 256);
+                    to_return[monStart + 1] = (byte)(id / 256);
+                    //End of item data
+
+                    //update monstart so that its after item data incase move data is also written
+                    monStart += 2;
+                }
+                //Write movedata
+                if (TrainerData.Format.Moves)
+                {
+                    //Run the same code for each move
+                    for (int i = 0; i < 4; i++)
+                    {
+                        //Write the move data into the two byte pairs through each of the eight bytes allocated
+                        id = moves.GetIndexOfMove(PokemonData[mon].Moves[i]);
+                        to_return[monStart + i * 2] = (byte)(id - id / 256 * 256);
+                        to_return[monStart + i * 2 + 1] = (byte)(id / 256);
+                    }
+                }
+            }
+
+            return to_return;
         }
     }
 
@@ -105,6 +188,22 @@ namespace TrainerTyrant
         public AIFlags AIFlags { get; set; }
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public bool Healer { get; set; }
+
+        public byte BattleTypeByte()
+        {
+            switch (BattleType)
+            {
+                case "Double":
+                    return 1;
+                case "Triple":
+                    return 2;
+                case "Rotation":
+                    return 3;
+                case "Single":
+                default:
+                    return 0;
+            }
+        }
 
         public int ItemIndex(ExternalItemList itemList, int itemIndex)
         {
@@ -245,6 +344,26 @@ namespace TrainerTyrant
         public string Gender { get; set; }
         //Ability should always fall within the range of 0-2.
         public int Ability { get; set; }
+
+        public byte GetByte()
+        {
+            int genderRepr;
+            switch(Gender)
+            {
+                case "Male":
+                    genderRepr = 1;
+                    break;
+                case "Female":
+                    genderRepr = 2;
+                    break;
+                case "Random":
+                default:
+                    genderRepr = 0;
+                    break;
+            }
+
+            return (byte)(genderRepr + (16 * Ability));
+        }
     }
 
 
