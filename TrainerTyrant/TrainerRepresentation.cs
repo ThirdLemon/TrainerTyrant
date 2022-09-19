@@ -58,6 +58,24 @@ namespace TrainerTyrant
 
             return null;
         }
+
+        public byte[] GetTrainerBytes(ExternalItemList items, ExternalMoveList moves, ExternalPokemonList pokemon, ExternalTrainerSlotList slots)
+        {
+            byte[] to_return = new byte[20];
+
+            //write the format to the first byte
+            to_return[0] = TrainerData.Format.BitFlag;
+            //Write the selected trainer class to the second byte
+            to_return[1] = (byte)TrainerData.TrainerClass.NumberID;
+            //write the battle type to the third byte
+
+            //Write the pokemon count to the fourth byte
+            to_return[3] = (byte)PokemonCount;
+            //Write item 1's id to the fifth and sixth bytes
+            
+
+            return null;
+        }
     }
 
     public class TrainerData
@@ -87,6 +105,13 @@ namespace TrainerTyrant
         public AIFlags AIFlags { get; set; }
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public bool Healer { get; set; }
+
+        public int ItemIndex(ExternalItemList itemList, int itemIndex)
+        {
+            if (itemIndex < 0 || itemIndex >= 4)
+                return 0;
+            return itemList.GetIndexOfItem(Items[itemIndex]);
+        }
     }
 
     public class Identification
@@ -131,6 +156,9 @@ namespace TrainerTyrant
 
         public bool Moves { get; set; }
         public bool Items { get; set; }
+
+        [JsonIgnore]
+        public byte BitFlag { get { return (byte)(Convert.ToByte(Moves) + (Convert.ToByte(Items) * 2));  } }
     }
 
     public class AIFlags

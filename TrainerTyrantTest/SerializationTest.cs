@@ -17,6 +17,7 @@ namespace TrainerTyrantTest
         private string movelistJSON;
         private string pokemonlistJSON;
         private string itemlistJSON;
+        private string slotlistJSON;
         private string emptyJSON;
 
         [TestInitialize]
@@ -35,6 +36,8 @@ namespace TrainerTyrantTest
             pokemonlistJSON = File.ReadAllText("../../../SampleJSON/External/PokemonList1.json");
 
             itemlistJSON = File.ReadAllText("../../../SampleJSON/External/ItemList1.json");
+
+            slotlistJSON = File.ReadAllText("../../../SampleJSON/External/SlotList1.json");
 
             emptyJSON = File.ReadAllText("../../../SampleJSON/External/Empty.json");
         }
@@ -376,12 +379,15 @@ namespace TrainerTyrantTest
             Assert.IsTrue(ExternalDataJSONValidator.ValidateItemListJSON(itemlistJSON));
             Assert.IsTrue(ExternalDataJSONValidator.ValidateMoveListJSON(movelistJSON));
             Assert.IsTrue(ExternalDataJSONValidator.ValidatePokemonListJSON(pokemonlistJSON));
+            Assert.IsTrue(ExternalDataJSONValidator.ValidateSlotListJSON(slotlistJSON));
 
             Assert.IsTrue(ExternalDataJSONValidator.ValidateItemListJSON(itemlistJSON, out IList<string> errors));
             Assert.AreEqual(0, errors.Count);
             Assert.IsTrue(ExternalDataJSONValidator.ValidateMoveListJSON(movelistJSON, out errors));
             Assert.AreEqual(0, errors.Count);
             Assert.IsTrue(ExternalDataJSONValidator.ValidatePokemonListJSON(pokemonlistJSON, out errors));
+            Assert.AreEqual(0, errors.Count);
+            Assert.IsTrue(ExternalDataJSONValidator.ValidateSlotListJSON(slotlistJSON, out errors));
             Assert.AreEqual(0, errors.Count);
         }
 
@@ -391,9 +397,65 @@ namespace TrainerTyrantTest
             Assert.IsFalse(ExternalDataJSONValidator.ValidateItemListJSON(emptyJSON));
             Assert.IsFalse(ExternalDataJSONValidator.ValidateMoveListJSON(emptyJSON));
             Assert.IsFalse(ExternalDataJSONValidator.ValidatePokemonListJSON(emptyJSON));
+            Assert.IsFalse(ExternalDataJSONValidator.ValidateSlotListJSON(emptyJSON));
+
             Assert.IsFalse(ExternalDataJSONValidator.ValidateItemListJSON(emptyJSON, out IList<string> errors));
             Assert.IsFalse(ExternalDataJSONValidator.ValidateMoveListJSON(emptyJSON, out errors));
             Assert.IsFalse(ExternalDataJSONValidator.ValidatePokemonListJSON(emptyJSON, out errors));
+            Assert.IsFalse(ExternalDataJSONValidator.ValidateSlotListJSON(emptyJSON, out errors));
+        }
+
+        [TestMethod]
+        public void DeserializeExternalData()
+        {
+            ExternalItemList itemList = ExternalItemList.DeserializeJSON(itemlistJSON);
+            Assert.IsNotNull(itemList);
+            Assert.AreEqual(627, itemList.ItemData.Count);
+            Assert.AreEqual("None", itemList.ItemData[0]);
+            Assert.AreEqual("Master Ball", itemList.ItemData[1]);
+            Assert.AreEqual("Xtransceiver", itemList.ItemData[626]);
+            Assert.AreEqual(0, itemList.GetIndexOfItem(null));
+            Assert.AreEqual(0, itemList.GetIndexOfItem("Garbage Data"));
+            Assert.AreEqual(1, itemList.GetIndexOfItem("Master Ball"));
+            Assert.AreEqual(610, itemList.GetIndexOfItem("X Accuracy 6"));
+
+            ExternalMoveList moveList = ExternalMoveList.DeserializeJSON(movelistJSON);
+            Assert.IsNotNull(moveList);
+            Assert.AreEqual(560, moveList.MoveData.Count);
+            Assert.AreEqual("-----", moveList.MoveData[0]);
+            Assert.AreEqual("Pound", moveList.MoveData[1]);
+            Assert.AreEqual("V-create", moveList.MoveData[557]);
+            Assert.AreEqual(0, moveList.GetIndexOfMove(null));
+            Assert.AreEqual(0, moveList.GetIndexOfMove("Garbage Data"));
+            Assert.AreEqual(1, moveList.GetIndexOfMove("Pound"));
+            Assert.AreEqual(557, moveList.GetIndexOfMove("V-Create"));
+
+            ExternalPokemonList monList = ExternalPokemonList.DeserializeJSON(pokemonlistJSON);
+            Assert.IsNotNull(monList);
+            Assert.AreEqual(650, monList.PokemonData.Count);
+            Assert.AreEqual("-----", monList.PokemonData[0]);
+            Assert.AreEqual("Bulbasaur", monList.PokemonData[1]);
+            Assert.AreEqual("Victini", monList.PokemonData[494]);
+            Assert.AreEqual("Genesect", monList.PokemonData[649]);
+            Assert.AreEqual(0, monList.GetIndexOfPokemon(null));
+            Assert.AreEqual(0, monList.GetIndexOfPokemon("Garbage Data"));
+            Assert.AreEqual(1, monList.GetIndexOfPokemon("Bulbasaur"));
+            Assert.AreEqual(649, monList.GetIndexOfPokemon("Genesect"));
+
+            ExternalTrainerSlotList trainerList = ExternalTrainerSlotList.DeserializeJSON(slotlistJSON);
+            Assert.IsNotNull(trainerList);
+            Assert.AreEqual(813, trainerList.SlotData.Count);
+            Assert.AreEqual("Elena", trainerList.SlotData[0].Name);
+            Assert.AreEqual(0, trainerList.SlotData[0].Variation);
+            Assert.AreEqual("Elena - 1", trainerList.SlotData[0].ExportName);
+            Assert.AreEqual("Iris", trainerList.SlotData[535].Name);
+            Assert.AreEqual(1, trainerList.SlotData[535].Variation);
+            Assert.AreEqual("Iris - Rematch (Normal Mode)", trainerList.SlotData[535].ExportName);
+            Assert.AreEqual(-1, trainerList.GetIndexOfSlot(null, 0));
+            Assert.AreEqual(-1, trainerList.GetIndexOfSlot("Garbage Data", 0));
+            Assert.AreEqual(-1, trainerList.GetIndexOfSlot("Iris", 222));
+            Assert.AreEqual(2, trainerList.GetIndexOfSlot("Aspen", 0));
+            Assert.AreEqual(762, trainerList.GetIndexOfSlot("Grunt", 47));
         }
 
         [TestMethod]

@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace TrainerTyrant
 {
-    class ExternalPokemonList
+    public class ExternalPokemonList
     {
         [JsonProperty(PropertyName = "Pokemon")]
         public List<string> PokemonData { get; set; }
@@ -17,7 +17,12 @@ namespace TrainerTyrant
          */
         public int GetIndexOfPokemon(string pokemonname)
         {
-            return PokemonData.FindIndex(a => a.Equals(pokemonname, StringComparison.OrdinalIgnoreCase));
+            if (pokemonname == null)
+                return 0;
+
+            int r = PokemonData.FindIndex(a => a.Equals(pokemonname, StringComparison.OrdinalIgnoreCase));
+
+            return r == -1 ? 0 : r;
         }
 
         public static ExternalPokemonList DeserializeJSON(string JSON)
@@ -38,7 +43,7 @@ namespace TrainerTyrant
     }
 
     
-    class ExternalMoveList
+    public class ExternalMoveList
     {
         [JsonProperty(PropertyName = "Moves")]
         public List<string> MoveData { get; set; }
@@ -73,7 +78,7 @@ namespace TrainerTyrant
         }
     }
 
-    class ExternalItemList
+    public class ExternalItemList
     {
         [JsonProperty(PropertyName = "Items")]
         public List<string> ItemData { get; set; }
@@ -107,7 +112,7 @@ namespace TrainerTyrant
         }
     }
 
-    class ExternalTrainerSlotList
+    public class ExternalTrainerSlotList
     {
         [JsonProperty(PropertyName = "Slots")]
         public List<TrainerSlotData> SlotData { get; set; }
@@ -119,9 +124,25 @@ namespace TrainerTyrant
         {
             return SlotData.FindIndex(a => a.Name.Equals(trainername, StringComparison.OrdinalIgnoreCase) && a.Variation == variation);
         }
+
+        public static ExternalTrainerSlotList DeserializeJSON(string JSON)
+        {
+            if (ExternalDataJSONValidator.ValidateSlotListJSON(JSON))
+                return JsonConvert.DeserializeObject<ExternalTrainerSlotList>(JSON);
+
+            return null;
+        }
+
+        public static ExternalTrainerSlotList DeserializeJSON(string JSON, out IList<string> errors)
+        {
+            if (ExternalDataJSONValidator.ValidateSlotListJSON(JSON, out errors))
+                return JsonConvert.DeserializeObject<ExternalTrainerSlotList>(JSON);
+
+            return null;
+        }
     }
 
-    class TrainerSlotData
+    public class TrainerSlotData
     {
         public string Name { get; set; }
         public int Variation { get; set; }
