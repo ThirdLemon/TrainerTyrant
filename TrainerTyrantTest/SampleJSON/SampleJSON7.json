@@ -1,0 +1,67 @@
+﻿{
+	"Trainer Data": {
+		"Identification": {
+			"Name ID": {
+				"Name": "Fletcher",
+				"Variation": 0
+			}
+		},
+		"Trainer Class": {
+			"Number ID": 57
+		},
+		"Battle Type": "Single",
+		"Format": {
+			"Moves": false,
+			"Items": false
+		},
+		"Base Money": 6,
+		"Items": [
+			null,
+			null,
+			null,
+			null
+		],
+		"AI Flags": {
+			"Check Bad Moves": true,
+			"Evaluate Attacks": false,
+			"Expert": false,
+			"Setup First Turn": false,
+			"Risky": false,
+			"Prefer Strong Moves": false,
+			"Prefer Baton Pass": false,
+			"Double Battle": false
+		}
+	},
+	"Pokemon Data": [
+		{
+			"Pokemon": "Mightyena",
+			"Form": 0,
+			"Level": 60,
+			"Difficulty": 0,
+			"Miscellaneous": {
+				"Gender": "Random",
+				"Ability": 0
+			}
+		},
+		{
+			"Pokemon": "Skuntank",
+			"Form": 0,
+			"Level": 60,
+			"Difficulty": 0,
+			"Miscellaneous": {
+				"Gender": "Random",
+				"Ability": 0
+			}
+		},
+		{
+			"Pokemon": "Crawdaunt",
+			"Form": 0,
+			"Level": 60,
+			"Difficulty": 0,
+			"Miscellaneous": {
+				"Gender": "Random",
+				"Ability": 0
+			}
+		}
+	]
+}

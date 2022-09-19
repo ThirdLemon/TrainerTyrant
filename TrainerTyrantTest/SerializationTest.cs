@@ -14,6 +14,9 @@ namespace TrainerTyrantTest
         private string strangeJSON;
         private string incompleteJSON;
         private string multiJSON;
+        private string biancaJSON;
+        private string hugh9JSON;
+        private string fletcherJSON;
         private string movelistJSON;
         private string pokemonlistJSON;
         private string itemlistJSON;
@@ -30,6 +33,12 @@ namespace TrainerTyrantTest
             incompleteJSON = File.ReadAllText("../../../SampleJSON/sampleJSON3.json");
 
             multiJSON = File.ReadAllText("../../../SampleJSON/sampleJSON4.json");
+
+            biancaJSON = File.ReadAllText("../../../SampleJSON/sampleJSON5.json");
+
+            hugh9JSON = File.ReadAllText("../../../SampleJSON/sampleJSON6.json");
+
+            fletcherJSON = File.ReadAllText("../../../SampleJSON/sampleJSON7.json");
 
             movelistJSON = File.ReadAllText("../../../SampleJSON/External/MoveList1.json");
 
@@ -513,14 +522,67 @@ namespace TrainerTyrantTest
             ExternalPokemonList monList = ExternalPokemonList.DeserializeJSON(pokemonlistJSON);
 
             //Target is the exact bytes used on file for shauntal
-            byte[] target = new byte[] {
-                                        0xC8, 0x10, 0x38, 0x00, 0x33, 0x02, 0x00, 0x00, 0x00, 0x00, 0x05, 0x01, 0xBF, 0x01, 0x5E, 0x00, 0xF7, 0x00,
-                                        0xC8, 0x10, 0x38, 0x00, 0xAA, 0x01, 0x00, 0x00, 0x00, 0x00, 0x5E, 0x00, 0x55, 0x00, 0x00, 0x02, 0xF7, 0x00,
-                                        0xC8, 0x10, 0x38, 0x00, 0x6F, 0x02, 0x00, 0x00, 0x00, 0x00, 0xE4, 0x01, 0x59, 0x00, 0x18, 0x01, 0x45, 0x01,
-                                        0xFA, 0x20, 0x3A, 0x00, 0x61, 0x02, 0x00, 0x00, 0x9E, 0x00, 0x9C, 0x01, 0x7E, 0x00, 0x5E, 0x00, 0xF7, 0x00 
-                                        };
+            byte[] target = new byte[] 
+            {
+                0xC8, 0x10, 0x38, 0x00, 0x33, 0x02, 0x00, 0x00, 0x00, 0x00, 0x05, 0x01, 0xBF, 0x01, 0x5E, 0x00, 0xF7, 0x00,
+                0xC8, 0x10, 0x38, 0x00, 0xAA, 0x01, 0x00, 0x00, 0x00, 0x00, 0x5E, 0x00, 0x55, 0x00, 0x00, 0x02, 0xF7, 0x00,
+                0xC8, 0x10, 0x38, 0x00, 0x6F, 0x02, 0x00, 0x00, 0x00, 0x00, 0xE4, 0x01, 0x59, 0x00, 0x18, 0x01, 0x45, 0x01,
+                0xFA, 0x20, 0x3A, 0x00, 0x61, 0x02, 0x00, 0x00, 0x9E, 0x00, 0x9C, 0x01, 0x7E, 0x00, 0x5E, 0x00, 0xF7, 0x00 
+            };
 
             byte[] byteRepresenation = shauntal.GetPokemonBytes(itemList, moveList, monList);
+
+            Assert.IsNotNull(byteRepresenation);
+            Assert.AreEqual(target.Length, byteRepresenation.Length);
+            for (int i = 0; i < target.Length; i++)
+                Assert.AreEqual(target[i], byteRepresenation[i]);
+
+            //Run checks for trainers of all types of formats.
+            //Bianca has no items but has moves.
+            TrainerRepresentation bianca = TrainerRepresentation.DeserializeJSON(biancaJSON);
+
+            target = new byte[]
+            {
+                0xFA, 0x10, 0x28, 0x00, 0x06, 0x02, 0x00, 0x00, 0x5E, 0x00, 0x9C, 0x01, 0x5F, 0x00, 0xF7, 0x00,
+                0xFA, 0x10, 0x26, 0x00, 0xFC, 0x01, 0x00, 0x00, 0xA7, 0x01, 0xA8, 0x01, 0xA6, 0x01, 0xD8, 0x00,
+                0xFA, 0x10, 0x26, 0x00, 0x6B, 0x02, 0x00, 0x00, 0x99, 0x01, 0xFC, 0x00, 0x71, 0x01, 0x00, 0x02
+            };
+
+            byteRepresenation = bianca.GetPokemonBytes(itemList, moveList, monList);
+
+            Assert.IsNotNull(byteRepresenation);
+            Assert.AreEqual(target.Length, byteRepresenation.Length);
+            for (int i = 0; i < target.Length; i++)
+                Assert.AreEqual(target[i], byteRepresenation[i]);
+
+            //Fletcher has no items or moves
+            TrainerRepresentation fletcher = TrainerRepresentation.DeserializeJSON(fletcherJSON);
+
+            target = new byte[]
+            {
+                0x00, 0x00, 0x3C, 0x00, 0x06, 0x01, 0x00, 0x00,
+                0x00, 0x00, 0x3C, 0x00, 0xB3, 0x01, 0x00, 0x00,
+                0x00, 0x00, 0x3C, 0x00, 0x56, 0x01, 0x00, 0x00
+            };
+
+            byteRepresenation = fletcher.GetPokemonBytes(itemList, moveList, monList);
+
+            Assert.IsNotNull(byteRepresenation);
+            Assert.AreEqual(target.Length, byteRepresenation.Length);
+            for (int i = 0; i < target.Length; i++)
+                Assert.AreEqual(target[i], byteRepresenation[i]);
+
+            //Hugh has no moves but has items
+            TrainerRepresentation hugh = TrainerRepresentation.DeserializeJSON(hugh9JSON);
+
+            target = new byte[]
+            {
+                0x64, 0x10, 0x27, 0x00, 0x09, 0x02, 0x00, 0x00, 0xE8, 0x00,
+                0x64, 0x00, 0x27, 0x00, 0x04, 0x02, 0x00, 0x00, 0xF3, 0x00,
+                0x96, 0x00, 0x29, 0x00, 0xF4, 0x01, 0x00, 0x00, 0xF9, 0x00
+            };
+
+            byteRepresenation = hugh.GetPokemonBytes(itemList, moveList, monList);
 
             Assert.IsNotNull(byteRepresenation);
             Assert.AreEqual(target.Length, byteRepresenation.Length);

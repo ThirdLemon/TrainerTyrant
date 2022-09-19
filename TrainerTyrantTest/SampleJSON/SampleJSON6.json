@@ -1,0 +1,70 @@
+﻿{
+	"Trainer Data": {
+		"Identification": {
+			"Name ID": {
+				"Name": "Hugh",
+				"Variation": 9
+			}
+		},
+		"Trainer Class": {
+			"Number ID": 145
+		},
+		"Battle Type": "Single",
+		"Format": {
+			"Moves": false,
+			"Items": true
+		},
+		"Base Money": 25,
+		"Items": [
+			"Hyper Potion",
+			null,
+			null,
+			null
+		],
+		"AI Flags": {
+			"Check Bad Moves": true,
+			"Evaluate Attacks": true,
+			"Expert": true,
+			"Setup First Turn": false,
+			"Risky": false,
+			"Prefer Strong Moves": false,
+			"Prefer Baton Pass": false,
+			"Double Battle": false
+		}
+	},
+	"Pokemon Data": [
+		{
+			"Pokemon": "Unfezant",
+			"Form": 0,
+			"Level": 39,
+			"Difficulty": 100,
+			"Miscellaneous": {
+				"Gender": "Random",
+				"Ability": 1
+			},
+			"Item": "Scope Lens"
+		},
+		{
+			"Pokemon": "Simipour",
+			"Form": 0,
+			"Level": 39,
+			"Difficulty": 100,
+			"Miscellaneous": {
+				"Gender": "Random",
+				"Ability": 0
+			},
+			"Item": "Mystic Water"
+		},
+		{
+			"Pokemon": "Emboar",
+			"Form": 0,
+			"Level": 41,
+			"Difficulty": 150,
+			"Miscellaneous": {
+				"Gender": "Random",
+				"Ability": 0
+			},
+			"Item": "Charcoal"
+		}
+	]
+}
