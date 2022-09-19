@@ -17,6 +17,7 @@ namespace TrainerTyrantTest
         private string movelistJSON;
         private string pokemonlistJSON;
         private string itemlistJSON;
+        private string emptyJSON;
 
         [TestInitialize]
         public void TestInit()
@@ -34,6 +35,8 @@ namespace TrainerTyrantTest
             pokemonlistJSON = File.ReadAllText("../../../SampleJSON/External/PokemonList1.json");
 
             itemlistJSON = File.ReadAllText("../../../SampleJSON/External/ItemList1.json");
+
+            emptyJSON = File.ReadAllText("../../../SampleJSON/External/Empty.json");
         }
 
         [TestMethod]
@@ -380,6 +383,17 @@ namespace TrainerTyrantTest
             Assert.AreEqual(0, errors.Count);
             Assert.IsTrue(ExternalDataJSONValidator.ValidatePokemonListJSON(pokemonlistJSON, out errors));
             Assert.AreEqual(0, errors.Count);
+        }
+
+        [TestMethod]
+        public void FailIncorrectExternalDataJSON()
+        {
+            Assert.IsFalse(ExternalDataJSONValidator.ValidateItemListJSON(emptyJSON));
+            Assert.IsFalse(ExternalDataJSONValidator.ValidateMoveListJSON(emptyJSON));
+            Assert.IsFalse(ExternalDataJSONValidator.ValidatePokemonListJSON(emptyJSON));
+            Assert.IsFalse(ExternalDataJSONValidator.ValidateItemListJSON(emptyJSON, out IList<string> errors));
+            Assert.IsFalse(ExternalDataJSONValidator.ValidateMoveListJSON(emptyJSON, out errors));
+            Assert.IsFalse(ExternalDataJSONValidator.ValidatePokemonListJSON(emptyJSON, out errors));
         }
 
         [TestMethod]
