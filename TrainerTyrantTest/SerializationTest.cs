@@ -460,11 +460,11 @@ namespace TrainerTyrantTest
             Assert.AreEqual("Iris", trainerList.SlotData[535].Name);
             Assert.AreEqual(1, trainerList.SlotData[535].Variation);
             Assert.AreEqual("Iris - Rematch (Normal Mode)", trainerList.SlotData[535].ExportName);
-            Assert.AreEqual(-1, trainerList.GetIndexOfSlot(null, 0));
-            Assert.AreEqual(-1, trainerList.GetIndexOfSlot("Garbage Data", 0));
-            Assert.AreEqual(-1, trainerList.GetIndexOfSlot("Iris", 222));
-            Assert.AreEqual(2, trainerList.GetIndexOfSlot("Aspen", 0));
-            Assert.AreEqual(762, trainerList.GetIndexOfSlot("Grunt", 47));
+            Assert.AreEqual(0, trainerList.GetIndexOfSlot(null, 0));
+            Assert.AreEqual(0, trainerList.GetIndexOfSlot("Garbage Data", 0));
+            Assert.AreEqual(0, trainerList.GetIndexOfSlot("Iris", 222));
+            Assert.AreEqual(3, trainerList.GetIndexOfSlot("Aspen", 0));
+            Assert.AreEqual(763, trainerList.GetIndexOfSlot("Grunt", 47));
         }
 
         [TestMethod]
@@ -588,6 +588,71 @@ namespace TrainerTyrantTest
             Assert.AreEqual(target.Length, byteRepresenation.Length);
             for (int i = 0; i < target.Length; i++)
                 Assert.AreEqual(target[i], byteRepresenation[i]);
+        }
+
+        [TestMethod]
+        public void CheckByteUnpacking()
+        {
+            ExternalItemList items = ExternalItemList.DeserializeJSON(itemlistJSON);
+            ExternalMoveList moves = ExternalMoveList.DeserializeJSON(movelistJSON);
+            ExternalPokemonList mons = ExternalPokemonList.DeserializeJSON(pokemonlistJSON);
+            ExternalTrainerSlotList slots = ExternalTrainerSlotList.DeserializeJSON(slotlistJSON);
+
+            //the exact bytes used on file for shauntal.
+            byte[] shauntalTRData = new byte[] { 0x03, 0x4E, 0x00, 0x04, 0x17, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x00, 0x1E, 0x00, 0x00 };
+            //the exact bytes used on file for shauntal
+            byte[] shauntalTRPoke = new byte[]
+            {
+                0xC8, 0x10, 0x38, 0x00, 0x33, 0x02, 0x00, 0x00, 0x00, 0x00, 0x05, 0x01, 0xBF, 0x01, 0x5E, 0x00, 0xF7, 0x00,
+                0xC8, 0x10, 0x38, 0x00, 0xAA, 0x01, 0x00, 0x00, 0x00, 0x00, 0x5E, 0x00, 0x55, 0x00, 0x00, 0x02, 0xF7, 0x00,
+                0xC8, 0x10, 0x38, 0x00, 0x6F, 0x02, 0x00, 0x00, 0x00, 0x00, 0xE4, 0x01, 0x59, 0x00, 0x18, 0x01, 0x45, 0x01,
+                0xFA, 0x20, 0x3A, 0x00, 0x61, 0x02, 0x00, 0x00, 0x9E, 0x00, 0x9C, 0x01, 0x7E, 0x00, 0x5E, 0x00, 0xF7, 0x00
+            };
+
+            TrainerRepresentation shauntal = TrainerRepresentation.BuildFromBytes(shauntalTRData, shauntalTRPoke, 38, items, moves, mons, slots);
+
+            Assert.IsNotNull(shauntal);
+            Assert.AreEqual(38, shauntal.TrainerData.Identification.NumberID);
+            Assert.AreEqual("Shauntal", shauntal.TrainerData.Identification.NameID.Name);
+            Assert.AreEqual(0, shauntal.TrainerData.Identification.NameID.Variation);
+            Assert.AreEqual(78, shauntal.TrainerData.TrainerClass.NumberID);
+            Assert.AreEqual(BattleType.Single, shauntal.TrainerData.BattleType);
+            Assert.IsTrue(shauntal.TrainerData.Format.Moves);
+            Assert.IsTrue(shauntal.TrainerData.Format.Items);
+            Assert.AreEqual(30, shauntal.TrainerData.BaseMoney);
+            Assert.AreEqual(4, shauntal.TrainerData.Items.Length);
+            Assert.AreEqual("Full Restore", shauntal.TrainerData.Items[0]);
+            for (int i = 1; i < 4; i++)
+                Assert.AreEqual(null, shauntal.TrainerData.Items[i]);
+            Assert.AreEqual(7, shauntal.TrainerData.AIFlags.Bitmap);
+            Assert.IsFalse(shauntal.TrainerData.Healer);
+            Assert.AreEqual(4, shauntal.PokemonCount);
+            Assert.AreEqual(4, shauntal.PokemonData.Length);
+            string[] monnames = { "Cofagrigus", "Drifblim", "Golurk", "Chandelure" };
+            for (int i = 0; i < 4; i++)
+            {
+                Assert.AreEqual(monnames[i], shauntal.PokemonData[i].Pokemon);
+                Assert.AreEqual(0, shauntal.PokemonData[i].Form);
+                Assert.AreEqual(Gender.Random, shauntal.PokemonData[i].Miscellaneous.Gender);
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                Assert.AreEqual(56, shauntal.PokemonData[i].Level);
+                Assert.AreEqual(200, shauntal.PokemonData[i].Difficulty);
+                Assert.AreEqual(1, shauntal.PokemonData[i].Miscellaneous.Ability);
+                Assert.AreEqual(null, shauntal.PokemonData[i].Item);
+            }
+            Assert.AreEqual(58, shauntal.PokemonData[3].Level);
+            Assert.AreEqual(250, shauntal.PokemonData[3].Difficulty);
+            Assert.AreEqual(2, shauntal.PokemonData[3].Miscellaneous.Ability);
+            Assert.AreEqual("Sitrus Berry", shauntal.PokemonData[3].Item);
+            string[,] monmoves = { { "Will-O-Wisp", "Grass Knot", "Psychic", "Shadow Ball" },
+                                    { "Psychic", "Thunderbolt", "Acrobatics", "Shadow Ball" },
+                                    { "Heavy Slam", "Earthquake", "Brick Break", "Shadow Punch" },
+                                    { "Energy Ball", "Fire Blast", "Psychic", "Shadow Ball"} };
+            for (int i = 0; i < 4; i++)
+                for (int j = 0; j < 4; j++)
+                    Assert.AreEqual(monmoves[i, j], shauntal.PokemonData[i].Moves[j]);
         }
 
         [TestMethod]

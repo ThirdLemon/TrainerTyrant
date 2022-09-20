@@ -61,6 +61,100 @@ namespace TrainerTyrant
             return null;
         }
 
+        public static TrainerRepresentation BuildFromBytes(byte[] TRData, byte[] TRPoke, int slotID, ExternalItemList items, ExternalMoveList moves, ExternalPokemonList pokemon, ExternalTrainerSlotList trainers)
+        {
+            TrainerRepresentation to_return = new TrainerRepresentation();
+
+            //The first byte of TRData stores the format data
+            byte format = TRData[0];
+            if ((format & 2) == 2)
+                to_return.TrainerData.Format.Items = true;
+            if ((format & 1) == 1)
+                to_return.TrainerData.Format.Moves = true;
+            //The second byte of TRData stores trainer class
+            to_return.TrainerData.TrainerClass.NumberID = TRData[1];
+            //The thrid byte of TRData stores the battle type
+            to_return.TrainerData.BattleType = (BattleType)TRData[2];
+            //The fourth byte of TRData stores the pokemon count, which doesn't need to be stored
+            //Item id's are stored from fifth to twelth bytes
+            for(int itemNumber = 0; itemNumber < 4; itemNumber++)
+            {
+                int fullID = TRData[4 + itemNumber * 2] + TRData[5 + itemNumber * 2] * 256;
+                to_return.TrainerData.Items[itemNumber] = items.GetItem(fullID);
+            }
+            //The thirteenth byte stores the ai value
+            to_return.TrainerData.AIFlags.Bitmap = TRData[12];
+            //The use of the fourteenth, fifteenth, and sixteenth bytes is currently unknown
+            //The seventeenth byte stores the healer data
+            to_return.TrainerData.Healer = Convert.ToBoolean(TRData[16]);
+            //The eigteenth byte stored base money
+            to_return.TrainerData.BaseMoney = TRData[17];
+            //The use of the nineteenth and twentieth bytes are currently unknown
+
+            //Go onto the TRPoke data
+            //store segment length
+            int segmentLength = 8 + Convert.ToInt32(to_return.TrainerData.Format.Items) * 2 + Convert.ToInt32(to_return.TrainerData.Format.Moves) * 8;
+            //create space for the data. null filled initially.
+            to_return.PokemonData = new PokemonData[TRData[3]];
+            //loop for each pokemon
+            for(int pokemonNum = 0; pokemonNum < TRData[3]; pokemonNum++)
+            {
+                //initialize the pokemon data
+                to_return.PokemonData[pokemonNum] = new PokemonData();
+
+                //Set the reader to start at the beginning of the pokemon
+                int monStart = pokemonNum * segmentLength;
+
+                //Start of general data
+                //The first byte stores difficulty
+                to_return.PokemonData[pokemonNum].Difficulty = TRPoke[monStart + 0];
+                //The second byte stores miscellaneous
+                to_return.PokemonData[pokemonNum].Miscellaneous.Byte = TRPoke[monStart + 1];
+                //The third byte stores level
+                to_return.PokemonData[pokemonNum].Level = TRPoke[monStart + 2];
+                //The fourth byte stores nothing(probably)
+                //The fifth and sixth bytes store pokemon ID
+                int fullID = TRPoke[monStart + 4] + TRPoke[monStart + 5] * 256;
+                to_return.PokemonData[pokemonNum].Pokemon = pokemon.GetPokemon(fullID);
+                //The seventh byte stores form number
+                to_return.PokemonData[pokemonNum].Form = TRPoke[monStart + 6];
+                //The eight byte stores nothing(probably)
+
+                //push monstart past the general data
+                monStart += 8;
+                //Item data
+                if (to_return.TrainerData.Format.Items)
+                {
+                    //the two bytes here store the item
+                    fullID = TRPoke[monStart + 0] + TRPoke[monStart + 1] * 256;
+                    to_return.PokemonData[pokemonNum].Item = items.GetItem(fullID);
+                    //push monstart after the item data
+                    monStart += 2;
+                }
+                //Move data
+                if (to_return.TrainerData.Format.Moves)
+                {
+                    //the eight bytes stored here store the four moves id
+                    for (int moveNum = 0; moveNum < 4; moveNum++)
+                    {
+                        fullID = TRPoke[monStart + 0] + TRPoke[monStart + 1] * 256;
+                        to_return.PokemonData[pokemonNum].Moves[moveNum] = moves.GetMove(fullID);
+                        //move monstart after each data
+                        monStart += 2;
+                    }
+                }
+            }
+
+            //Store trainer slot data
+            to_return.TrainerData.Identification.NumberID = slotID;
+            TrainerSlotData tSlotData = trainers.GetSlot(slotID);
+            to_return.TrainerData.Identification.NameID = new NameID();
+            to_return.TrainerData.Identification.NameID.Name = tSlotData.Name;
+            to_return.TrainerData.Identification.NameID.Variation = tSlotData.Variation;
+
+            return to_return;
+        }
+
         public byte[] GetTrainerBytes(ExternalItemList items)
         {
             byte[] to_return = new byte[20];
@@ -70,7 +164,7 @@ namespace TrainerTyrant
             //Write the selected trainer class to the second byte
             to_return[1] = (byte)TrainerData.TrainerClass.NumberID;
             //write the battle type to the third byte
-            to_return[2] = TrainerData.BattleTypeByte();
+            to_return[2] = (byte)TrainerData.BattleType;
             //Write the pokemon count to the fourth byte
             to_return[3] = (byte)PokemonCount;
             //Write item 1's id to the fifth and sixth bytes
@@ -116,7 +210,7 @@ namespace TrainerTyrant
                 //Write the difficulty to the first byte
                 to_return[monStart] = (byte)PokemonData[mon].Difficulty;
                 //Write miscellaneous to the second byte
-                to_return[monStart + 1] = PokemonData[mon].Miscellaneous.GetByte();
+                to_return[monStart + 1] = PokemonData[mon].Miscellaneous.Byte;
                 //Write level to the third byte
                 to_return[monStart + 2] = (byte)PokemonData[mon].Level;
                 //Write nothing to the fourth byte
@@ -168,7 +262,7 @@ namespace TrainerTyrant
             //If you have a number ID, automatically use it.
             if (TrainerData.Identification.NumberID >= 0)
                 return TrainerData.Identification.NumberID;
-            return slotList.GetIndexOfSlot(TrainerData.Identification.NameID.Name, TrainerData.Identification.NameID.Variation) + 1;
+            return slotList.GetIndexOfSlot(TrainerData.Identification.NameID.Name, TrainerData.Identification.NameID.Variation);
         }
     }
 
@@ -199,11 +293,6 @@ namespace TrainerTyrant
         public AIFlags AIFlags { get; set; }
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public bool Healer { get; set; }
-
-        public byte BattleTypeByte()
-        {
-            return (byte)BattleType;
-        }
 
         public int ItemIndex(ExternalItemList itemList, int itemIndex)
         {
@@ -345,12 +434,7 @@ namespace TrainerTyrant
         //Ability should always fall within the range of 0-2.
         public int Ability { get; set; }
 
-        public byte GetByte()
-        {
-            int genderRepr = (int)Gender;
-
-            return (byte)(genderRepr + (16 * Ability));
-        }
+        public byte Byte { get { return (byte)((int)Gender + (16 * Ability));  } set { Ability = (value / 16); Gender = (Gender)(value - value / 16 * 16); } }
     }
 
 

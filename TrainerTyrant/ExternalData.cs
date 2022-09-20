@@ -25,6 +25,13 @@ namespace TrainerTyrant
             return r == -1 ? 0 : r;
         }
 
+        public string GetPokemon(int index)
+        {
+            if (index >= 0 && index < PokemonData.Count)
+                return PokemonData[index];
+            return null;
+        }
+
         public static ExternalPokemonList DeserializeJSON(string JSON)
         {
             if (ExternalDataJSONValidator.ValidatePokemonListJSON(JSON))
@@ -59,6 +66,13 @@ namespace TrainerTyrant
             int r = MoveData.FindIndex(a => a.Equals(movename, StringComparison.OrdinalIgnoreCase));
 
             return r == -1 ? 0 : r;
+        }
+
+        public string GetMove(int index)
+        {
+            if (index > 0 && index < MoveData.Count)
+                return MoveData[index];
+            return null;
         }
 
         public static ExternalMoveList DeserializeJSON(string JSON)
@@ -96,6 +110,13 @@ namespace TrainerTyrant
             return r == -1 ? 0 : r;
         }
 
+        public string GetItem(int index)
+        {
+            if (index > 0 && index < ItemData.Count)
+                return ItemData[index];
+            return null;
+        }
+
         public static ExternalItemList DeserializeJSON(string JSON)
         {
             if (ExternalDataJSONValidator.ValidateItemListJSON(JSON))
@@ -118,11 +139,21 @@ namespace TrainerTyrant
         public List<TrainerSlotData> SlotData { get; set; }
 
         /**
-         * Returns -1 if trainer is not found.
+         * Returns 0 if trainer is not found.
          */
         public int GetIndexOfSlot(string trainername, int variation)
         {
-            return SlotData.FindIndex(a => a.Name.Equals(trainername, StringComparison.OrdinalIgnoreCase) && a.Variation == variation);
+            return SlotData.FindIndex(a => a.Name.Equals(trainername, StringComparison.OrdinalIgnoreCase) && a.Variation == variation) + 1;
+        }
+
+        /**
+         * Slot "0" is the unset "select trainer" data. it cannot be accessed.
+         */
+        public TrainerSlotData GetSlot(int index)
+        {
+            if (index > 0 && index < SlotData.Count)
+                return SlotData[index-1];
+            return null;
         }
 
         public static ExternalTrainerSlotList DeserializeJSON(string JSON)
