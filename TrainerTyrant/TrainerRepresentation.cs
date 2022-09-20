@@ -7,6 +7,8 @@ using Newtonsoft.Json;
 
 namespace TrainerTyrant
 {
+    public enum BattleType:byte { Single, Double, Triple, Rotation }
+    public enum Gender:byte { Random, Male, Female }
 
     public class TrainerRepresentation
     {
@@ -176,7 +178,7 @@ namespace TrainerTyrant
         {
             Identification = new Identification();
             TrainerClass = new TrainerClass();
-            BattleType = "Single";
+            BattleType = BattleType.Single;
             Format = new Format();
             BaseMoney = 0;
             Items = new string[] { null, null, null, null };
@@ -188,7 +190,7 @@ namespace TrainerTyrant
         [JsonProperty(PropertyName = "Trainer Class")]
         public TrainerClass TrainerClass { get; set; }
         [JsonProperty(PropertyName = "Battle Type")]
-        public string BattleType { get; set; }
+        public BattleType BattleType { get; set; }
         public Format Format { get; set; }
         [JsonProperty(PropertyName = "Base Money")]
         public int BaseMoney { get; set; }
@@ -200,18 +202,7 @@ namespace TrainerTyrant
 
         public byte BattleTypeByte()
         {
-            switch (BattleType)
-            {
-                case "Double":
-                    return 1;
-                case "Triple":
-                    return 2;
-                case "Rotation":
-                    return 3;
-                case "Single":
-                default:
-                    return 0;
-            }
+            return (byte)BattleType;
         }
 
         public int ItemIndex(ExternalItemList itemList, int itemIndex)
@@ -345,31 +336,18 @@ namespace TrainerTyrant
     {
         public Miscellaneous()
         {
-            Gender = "Random";
+            Gender = Gender.Random;
             Ability = 0;
         }
 
         //Gender should be one of 'Random', 'Female', or 'Male'.
-        public string Gender { get; set; }
+        public Gender Gender { get; set; }
         //Ability should always fall within the range of 0-2.
         public int Ability { get; set; }
 
         public byte GetByte()
         {
-            int genderRepr;
-            switch(Gender)
-            {
-                case "Male":
-                    genderRepr = 1;
-                    break;
-                case "Female":
-                    genderRepr = 2;
-                    break;
-                case "Random":
-                default:
-                    genderRepr = 0;
-                    break;
-            }
+            int genderRepr = (int)Gender;
 
             return (byte)(genderRepr + (16 * Ability));
         }

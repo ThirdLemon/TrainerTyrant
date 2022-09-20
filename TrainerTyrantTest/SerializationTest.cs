@@ -58,7 +58,7 @@ namespace TrainerTyrantTest
 
             Assert.AreEqual(shauntal.TrainerData.Identification.NumberID, 38);
             Assert.AreEqual(shauntal.TrainerData.Identification.NameID.Name, "Shauntal");
-            Assert.AreEqual(shauntal.TrainerData.BattleType, "Single");
+            Assert.AreEqual(shauntal.TrainerData.BattleType, BattleType.Single);
             Assert.IsTrue(shauntal.TrainerData.Format.Items);
             Assert.IsTrue(shauntal.TrainerData.Items.Length == 4);
             Assert.IsTrue(shauntal.TrainerData.Items[0] == "Full Restore");
@@ -75,7 +75,7 @@ namespace TrainerTyrantTest
             Assert.AreEqual("Shauntal", shauntal.TrainerData.Identification.NameID.Name);
             Assert.AreEqual(0, shauntal.TrainerData.Identification.NameID.Variation);
             Assert.AreEqual(78, shauntal.TrainerData.TrainerClass.NumberID);
-            Assert.AreEqual("Single", shauntal.TrainerData.BattleType);
+            Assert.AreEqual(BattleType.Single, shauntal.TrainerData.BattleType);
             Assert.IsTrue(shauntal.TrainerData.Format.Moves);
             Assert.IsTrue(shauntal.TrainerData.Format.Items);
             Assert.AreEqual(30, shauntal.TrainerData.BaseMoney);
@@ -92,7 +92,7 @@ namespace TrainerTyrantTest
             {
                 Assert.AreEqual(monnames[i], shauntal.PokemonData[i].Pokemon);
                 Assert.AreEqual(0, shauntal.PokemonData[i].Form);
-                Assert.AreEqual("Random", shauntal.PokemonData[i].Miscellaneous.Gender);
+                Assert.AreEqual(Gender.Random, shauntal.PokemonData[i].Miscellaneous.Gender);
             }
             for (int i = 0; i < 3; i++)
             {
@@ -123,7 +123,7 @@ namespace TrainerTyrantTest
             Assert.AreEqual("Shauntal", shauntal.TrainerData.Identification.NameID.Name);
             Assert.AreEqual(0, shauntal.TrainerData.Identification.NameID.Variation);
             Assert.AreEqual(78, shauntal.TrainerData.TrainerClass.NumberID);
-            Assert.AreEqual("Single", shauntal.TrainerData.BattleType);
+            Assert.AreEqual(BattleType.Single, shauntal.TrainerData.BattleType);
             Assert.IsTrue(shauntal.TrainerData.Format.Moves);
             Assert.IsTrue(shauntal.TrainerData.Format.Items);
             Assert.AreEqual(30, shauntal.TrainerData.BaseMoney);
@@ -140,7 +140,7 @@ namespace TrainerTyrantTest
             {
                 Assert.AreEqual(monnames[i], shauntal.PokemonData[i].Pokemon);
                 Assert.AreEqual(0, shauntal.PokemonData[i].Form);
-                Assert.AreEqual("Random", shauntal.PokemonData[i].Miscellaneous.Gender);
+                Assert.AreEqual(Gender.Random, shauntal.PokemonData[i].Miscellaneous.Gender);
             }
             for (int i = 0; i < 3; i++)
             {
@@ -172,7 +172,7 @@ namespace TrainerTyrantTest
             Assert.AreEqual("Shauntal", shauntal.TrainerData.Identification.NameID.Name);
             Assert.AreEqual(0, shauntal.TrainerData.Identification.NameID.Variation);
             Assert.AreEqual(78, shauntal.TrainerData.TrainerClass.NumberID);
-            Assert.AreEqual("Single", shauntal.TrainerData.BattleType);
+            Assert.AreEqual(BattleType.Single, shauntal.TrainerData.BattleType);
             Assert.IsTrue(shauntal.TrainerData.Format.Moves);
             Assert.IsTrue(shauntal.TrainerData.Format.Items);
             Assert.AreEqual(30, shauntal.TrainerData.BaseMoney);
@@ -189,7 +189,7 @@ namespace TrainerTyrantTest
             {
                 Assert.AreEqual(monnames[i], shauntal.PokemonData[i].Pokemon);
                 Assert.AreEqual(0, shauntal.PokemonData[i].Form);
-                Assert.AreEqual("Random", shauntal.PokemonData[i].Miscellaneous.Gender);
+                Assert.AreEqual(Gender.Random, shauntal.PokemonData[i].Miscellaneous.Gender);
             }
             for (int i = 0; i < 3; i++)
             {
@@ -215,7 +215,7 @@ namespace TrainerTyrantTest
             Assert.AreEqual("Marshal", marshal.TrainerData.Identification.NameID.Name);
             Assert.AreEqual(0, marshal.TrainerData.Identification.NameID.Variation);
             Assert.AreEqual(79, marshal.TrainerData.TrainerClass.NumberID);
-            Assert.AreEqual("Single", marshal.TrainerData.BattleType);
+            Assert.AreEqual(BattleType.Single, marshal.TrainerData.BattleType);
             Assert.IsTrue(marshal.TrainerData.Format.Moves);
             Assert.IsTrue(marshal.TrainerData.Format.Items);
             Assert.AreEqual(30, marshal.TrainerData.BaseMoney);
@@ -232,7 +232,7 @@ namespace TrainerTyrantTest
             {
                 Assert.AreEqual(marshalmonnames[i], marshal.PokemonData[i].Pokemon);
                 Assert.AreEqual(0, marshal.PokemonData[i].Form);
-                Assert.AreEqual("Random", marshal.PokemonData[i].Miscellaneous.Gender);
+                Assert.AreEqual(Gender.Random, marshal.PokemonData[i].Miscellaneous.Gender);
                 Assert.AreEqual(1, marshal.PokemonData[i].Miscellaneous.Ability);
             }
             for (int i = 0; i < 3; i++)
@@ -259,7 +259,7 @@ namespace TrainerTyrantTest
             TrainerRepresentation shauntal = new();
             shauntal.TrainerData.Identification.NumberID = 38;
             shauntal.TrainerData.TrainerClass.NumberID = 78;
-            shauntal.TrainerData.BattleType = "Single";
+            shauntal.TrainerData.BattleType = BattleType.Single;
             shauntal.TrainerData.Format.Moves = true;
             shauntal.TrainerData.Format.Items = true;
             shauntal.TrainerData.BaseMoney = 30;
@@ -272,7 +272,7 @@ namespace TrainerTyrantTest
             shauntal.PokemonData[0].Form = 0;
             shauntal.PokemonData[0].Level = 56;
             shauntal.PokemonData[0].Difficulty = 200;
-            shauntal.PokemonData[0].Miscellaneous.Gender = "Random";
+            shauntal.PokemonData[0].Miscellaneous.Gender = Gender.Random;
             shauntal.PokemonData[0].Miscellaneous.Ability = 0;
             shauntal.PokemonData[0].Moves = new string[] { "Will-O-Wisp", "Grass Knot", "Psychic", "Shadow Ball" };
             shauntal.PokemonData[0].Item = null;
@@ -288,7 +288,7 @@ namespace TrainerTyrantTest
             TrainerRepresentation shauntal = new();
             shauntal.TrainerData.Identification.NumberID = 38;
             shauntal.TrainerData.TrainerClass.NumberID = 78;
-            shauntal.TrainerData.BattleType = "Single";
+            shauntal.TrainerData.BattleType = BattleType.Single;
             shauntal.TrainerData.Format.Moves = true;
             shauntal.TrainerData.Format.Items = true;
             shauntal.TrainerData.BaseMoney = 30;
@@ -301,7 +301,7 @@ namespace TrainerTyrantTest
             shauntal.PokemonData[0].Form = 0;
             shauntal.PokemonData[0].Level = 56;
             shauntal.PokemonData[0].Difficulty = 200;
-            shauntal.PokemonData[0].Miscellaneous.Gender = "Random";
+            shauntal.PokemonData[0].Miscellaneous.Gender = Gender.Random;
             shauntal.PokemonData[0].Miscellaneous.Ability = 0;
             shauntal.PokemonData[0].Moves = new string[] { "Will-O-Wisp", "Grass Knot", "Psychic", "Shadow Ball" };
             shauntal.PokemonData[0].Item = null;
@@ -309,7 +309,7 @@ namespace TrainerTyrantTest
             TrainerRepresentation marshal = new();
             marshal.TrainerData.Identification.NumberID = 39;
             marshal.TrainerData.TrainerClass.NumberID = 79;
-            marshal.TrainerData.BattleType = "Single";
+            marshal.TrainerData.BattleType = BattleType.Single;
             marshal.TrainerData.Format.Moves = true;
             marshal.TrainerData.Format.Items = true;
             marshal.TrainerData.BaseMoney = 30;
@@ -322,7 +322,7 @@ namespace TrainerTyrantTest
             marshal.PokemonData[0].Form = 0;
             marshal.PokemonData[0].Level = 56;
             marshal.PokemonData[0].Difficulty = 200;
-            marshal.PokemonData[0].Miscellaneous.Gender = "Random";
+            marshal.PokemonData[0].Miscellaneous.Gender = Gender.Random;
             marshal.PokemonData[0].Miscellaneous.Ability = 0;
             marshal.PokemonData[0].Moves = new string[] { "Storm Throw", "Rock Slide", "Bulk Up", "Earthquake" };
             marshal.PokemonData[0].Item = null;
