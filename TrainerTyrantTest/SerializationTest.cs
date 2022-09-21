@@ -335,6 +335,59 @@ namespace TrainerTyrantTest
         }
 
         [TestMethod]
+        public void Serialize()
+        {
+            TrainerRepresentation shauntal = TrainerRepresentation.DeserializeJSON(shauntalJSON);
+
+            string serialized = JsonConvert.SerializeObject(shauntal, Formatting.Indented);
+
+            TrainerRepresentation shauntal2 = TrainerRepresentation.DeserializeJSON(serialized);
+
+            Assert.IsNotNull(shauntal2);
+            Assert.AreEqual(38, shauntal2.TrainerData.Identification.NumberID);
+            Assert.AreEqual("Shauntal", shauntal2.TrainerData.Identification.NameID.Name);
+            Assert.AreEqual(0, shauntal2.TrainerData.Identification.NameID.Variation);
+            Assert.AreEqual(78, shauntal2.TrainerData.TrainerClass.NumberID);
+            Assert.AreEqual(BattleType.Single, shauntal2.TrainerData.BattleType);
+            Assert.IsTrue(shauntal2.TrainerData.Format.Moves);
+            Assert.IsTrue(shauntal2.TrainerData.Format.Items);
+            Assert.AreEqual(30, shauntal2.TrainerData.BaseMoney);
+            Assert.AreEqual(4, shauntal2.TrainerData.Items.Length);
+            Assert.AreEqual("Full Restore", shauntal2.TrainerData.Items[0]);
+            for (int i = 1; i < 4; i++)
+                Assert.AreEqual(null, shauntal2.TrainerData.Items[i]);
+            Assert.AreEqual(7, shauntal2.TrainerData.AIFlags.Bitmap);
+            Assert.IsFalse(shauntal2.TrainerData.Healer);
+            Assert.AreEqual(4, shauntal2.PokemonCount);
+            Assert.AreEqual(4, shauntal2.PokemonData.Length);
+            string[] monnames = { "Cofagrigus", "Drifblim", "Golurk", "Chandelure" };
+            for (int i = 0; i < 4; i++)
+            {
+                Assert.AreEqual(monnames[i], shauntal2.PokemonData[i].Pokemon);
+                Assert.AreEqual(0, shauntal2.PokemonData[i].Form);
+                Assert.AreEqual(Gender.Random, shauntal2.PokemonData[i].Miscellaneous.Gender);
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                Assert.AreEqual(56, shauntal2.PokemonData[i].Level);
+                Assert.AreEqual(200, shauntal2.PokemonData[i].Difficulty);
+                Assert.AreEqual(1, shauntal2.PokemonData[i].Miscellaneous.Ability);
+                Assert.AreEqual(null, shauntal2.PokemonData[i].Item);
+            }
+            Assert.AreEqual(58, shauntal2.PokemonData[3].Level);
+            Assert.AreEqual(250, shauntal2.PokemonData[3].Difficulty);
+            Assert.AreEqual(2, shauntal2.PokemonData[3].Miscellaneous.Ability);
+            Assert.AreEqual("Sitrus Berry", shauntal2.PokemonData[3].Item);
+            string[,] monmoves = { { "Will-O-Wisp", "Grass Knot", "Psychic", "Shadow Ball" },
+                                    { "Psychic", "Thunderbolt", "Acrobatics", "Shadow Ball" },
+                                    { "Heavy Slam", "Earthquake", "Brick Break", "Shadow Punch" },
+                                    { "Energy Ball", "Fire Blast", "Psychic", "Shadow Ball"} };
+            for (int i = 0; i < 4; i++)
+                for (int j = 0; j < 4; j++)
+                    Assert.AreEqual(monmoves[i, j], shauntal2.PokemonData[i].Moves[j]);
+        }
+
+        [TestMethod]
         public void BaseDeserializeWithStrangeProperties()
         {
             TrainerRepresentation shauntal = JsonConvert.DeserializeObject<TrainerRepresentation>(strangeJSON);
@@ -666,6 +719,22 @@ namespace TrainerTyrantTest
             Assert.AreEqual(38, shauntal.GetSlotID(slotList));
             Assert.AreEqual(378, hugh.GetSlotID(slotList));
         }
+
+        //[TestMethod]
+        //public void CheckTrainerRepresentationSetDeserialization()
+        //{
+        //    TrainerRepresentationSet set = new();
+
+        //    set.InitializeWithJSON(multiJSON);
+
+        //    List<TrainerRepresentation> multi = TrainerRepresentation.DeserializeListJSON(multiJSON);
+
+        //    Console.WriteLine(set.SerializeJSON());
+
+        //    List<TrainerRepresentation> fromSet = TrainerRepresentation.DeserializeListJSON(set.SerializeJSON());
+
+        //    Assert.IsNotNull(fromSet);
+        //}
     }
 
 }

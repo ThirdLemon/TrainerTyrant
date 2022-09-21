@@ -155,6 +155,13 @@ namespace TrainerTyrant
             return to_return;
         }
 
+        //The zeroth trainer slot is filled with this data.
+        public static void GetPlaceholderBytes(out byte[] TRData, out byte[] TRPoke)
+        {
+            TRData = new byte[16] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+            TRPoke = new byte[6] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+        }
+
         public byte[] GetTrainerBytes(ExternalItemList items)
         {
             byte[] to_return = new byte[20];
@@ -283,7 +290,7 @@ namespace TrainerTyrant
         public Identification Identification { get; set; }
         [JsonProperty(PropertyName = "Trainer Class")]
         public TrainerClass TrainerClass { get; set; }
-        [JsonProperty(PropertyName = "Battle Type")]
+        [JsonProperty(PropertyName = "Battle Type"), JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
         public BattleType BattleType { get; set; }
         public Format Format { get; set; }
         [JsonProperty(PropertyName = "Base Money")]
@@ -430,6 +437,7 @@ namespace TrainerTyrant
         }
 
         //Gender should be one of 'Random', 'Female', or 'Male'.
+        [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
         public Gender Gender { get; set; }
         //Ability should always fall within the range of 0-2.
         public int Ability { get; set; }
