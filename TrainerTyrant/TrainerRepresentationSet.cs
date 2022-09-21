@@ -118,5 +118,35 @@ namespace TrainerTyrant
         {
             _data.Sort((x, y) => x.GetSlotID(slots).CompareTo(y.GetSlotID(slots)));
         }
+
+        /**
+         * The set must pass both validation checks (ValidateNoDuplicates and ValidateAllSlotsUsed) for this to execute. It will simply return null if it doesn't pass these.
+         */
+        public void GetByteData(out byte[][] TRData, out byte[][] TRPoke, ExternalItemList items, ExternalMoveList moves, ExternalPokemonList pokemon, ExternalTrainerSlotList slots)
+        {
+            //If it doesn't pass these validation checks, then the output would be nonsense.
+            if (!ValidateAllSlotsUsed(slots) || !ValidateNoDuplicates(slots))
+            {
+                TRData = null;
+                TRPoke = null;
+                return;
+            }
+
+            TRData = new byte[_data.Count + 1][];
+            TRPoke = new byte[_data.Count + 1][];
+
+            //Sort the data.
+            SortData(slots);
+
+            //Fill the placeholder zeroth slot with the placeholder data
+            TrainerRepresentation.GetPlaceholderBytes(out TRData[0], out TRPoke[0]);
+
+            //fill in the rest of the data
+            for (int trainer = 0; trainer < _data.Count; trainer++)
+            {
+                TRData[trainer + 1] = _data[trainer].GetTrainerBytes(items);
+                TRPoke[trainer + 1] = _data[trainer].GetPokemonBytes(items, moves, pokemon);
+            }
+        }
     }
 }

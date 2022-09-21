@@ -14,6 +14,7 @@ namespace TrainerTyrantTest
         private string strangeJSON;
         private string incompleteJSON;
         private string multiJSON;
+        private string multi2JSON;
         private string biancaJSON;
         private string hugh9JSON;
         private string fletcherJSON;
@@ -25,6 +26,7 @@ namespace TrainerTyrantTest
         private string itemlistJSON;
         private string slotlistJSON;
         private string smallslotlistJSON;
+        private string smallslotlist2JSON;
         private string emptyJSON;
 
         [TestInitialize]
@@ -37,6 +39,8 @@ namespace TrainerTyrantTest
             incompleteJSON = File.ReadAllText("../../../SampleJSON/sampleJSON3.json");
 
             multiJSON = File.ReadAllText("../../../SampleJSON/sampleJSON4.json");
+
+            multi2JSON = File.ReadAllText("../../../SampleJSON/sampleJSON4b.json");
 
             biancaJSON = File.ReadAllText("../../../SampleJSON/sampleJSON5.json");
 
@@ -59,6 +63,8 @@ namespace TrainerTyrantTest
             slotlistJSON = File.ReadAllText("../../../SampleJSON/External/SlotList1.json");
 
             smallslotlistJSON = File.ReadAllText("../../../SampleJSON/External/SlotList2.json");
+
+            smallslotlist2JSON = File.ReadAllText("../../../SampleJSON/External/SlotList3.json");
 
             emptyJSON = File.ReadAllText("../../../SampleJSON/External/Empty.json");
         }
@@ -245,7 +251,6 @@ namespace TrainerTyrantTest
                 Assert.AreEqual(marshalmonnames[i], marshal.PokemonData[i].Pokemon);
                 Assert.AreEqual(0, marshal.PokemonData[i].Form);
                 Assert.AreEqual(Gender.Random, marshal.PokemonData[i].Miscellaneous.Gender);
-                Assert.AreEqual(1, marshal.PokemonData[i].Miscellaneous.Ability);
             }
             for (int i = 0; i < 3; i++)
             {
@@ -253,13 +258,17 @@ namespace TrainerTyrantTest
                 Assert.AreEqual(200, marshal.PokemonData[i].Difficulty);
                 Assert.AreEqual(null, marshal.PokemonData[i].Item);
             }
+            Assert.AreEqual(1, marshal.PokemonData[0].Miscellaneous.Ability);
+            Assert.AreEqual(1, marshal.PokemonData[1].Miscellaneous.Ability);
+            Assert.AreEqual(2, marshal.PokemonData[2].Miscellaneous.Ability);
+            Assert.AreEqual(1, marshal.PokemonData[3].Miscellaneous.Ability);
             Assert.AreEqual(58, marshal.PokemonData[3].Level);
             Assert.AreEqual(250, marshal.PokemonData[3].Difficulty);
             Assert.AreEqual("Sitrus Berry", marshal.PokemonData[3].Item);
-            string[,] marshalmonmoves = { { "Rock Tomb", "Bulldoze", "Storm Throw", "Payback" },
-                                    { "Payback", "Rock Slide", "Retaliate", "Brick Break" },
+            string[,] marshalmonmoves = { { "Storm Throw", "Bulldoze", "Rock Tomb", "Payback" },
+                                    { "Brick Break", "Retaliate", "Rock Slide", "Payback" },
                                     { "Hi Jump Kick", "U-Turn", "Bounce", "Retaliate" },
-                                    { "Stone Edge", "Hammer Arm", "Retaliate", "Bulk Up"} };
+                                    { "Hammer Arm", "Bulk Up", "Stone Edge", "Retaliate"} };
             for (int i = 0; i < 4; i++)
                 for (int j = 0; j < 4; j++)
                     Assert.AreEqual(marshalmonmoves[i, j], marshal.PokemonData[i].Moves[j]);
@@ -808,7 +817,6 @@ namespace TrainerTyrantTest
                 Assert.AreEqual(marshalmonnames[i], marshal.PokemonData[i].Pokemon);
                 Assert.AreEqual(0, marshal.PokemonData[i].Form);
                 Assert.AreEqual(Gender.Random, marshal.PokemonData[i].Miscellaneous.Gender);
-                Assert.AreEqual(1, marshal.PokemonData[i].Miscellaneous.Ability);
             }
             for (int i = 0; i < 3; i++)
             {
@@ -816,13 +824,17 @@ namespace TrainerTyrantTest
                 Assert.AreEqual(200, marshal.PokemonData[i].Difficulty);
                 Assert.AreEqual(null, marshal.PokemonData[i].Item);
             }
+            Assert.AreEqual(1, marshal.PokemonData[0].Miscellaneous.Ability);
+            Assert.AreEqual(1, marshal.PokemonData[1].Miscellaneous.Ability);
+            Assert.AreEqual(2, marshal.PokemonData[2].Miscellaneous.Ability);
+            Assert.AreEqual(1, marshal.PokemonData[3].Miscellaneous.Ability);
             Assert.AreEqual(58, marshal.PokemonData[3].Level);
             Assert.AreEqual(250, marshal.PokemonData[3].Difficulty);
             Assert.AreEqual("Sitrus Berry", marshal.PokemonData[3].Item);
-            string[,] marshalmonmoves = { { "Rock Tomb", "Bulldoze", "Storm Throw", "Payback" },
-                                    { "Payback", "Rock Slide", "Retaliate", "Brick Break" },
+            string[,] marshalmonmoves = { { "Storm Throw", "Bulldoze", "Rock Tomb", "Payback" },
+                                    { "Brick Break", "Retaliate", "Rock Slide", "Payback" },
                                     { "Hi Jump Kick", "U-Turn", "Bounce", "Retaliate" },
-                                    { "Stone Edge", "Hammer Arm", "Retaliate", "Bulk Up"} };
+                                    { "Hammer Arm", "Bulk Up", "Stone Edge", "Retaliate"} };
             for (int i = 0; i < 4; i++)
                 for (int j = 0; j < 4; j++)
                     Assert.AreEqual(marshalmonmoves[i, j], marshal.PokemonData[i].Moves[j]);
@@ -857,6 +869,71 @@ namespace TrainerTyrantTest
             Assert.IsTrue(elenaDan.ValidateAllSlotsUsed(smallSlots));
             Assert.IsFalse(elenaDanDan.ValidateAllSlotsUsed(smallSlots));
             Assert.IsFalse(elenaOnly.ValidateAllSlotsUsed(smallSlots));
+        }
+
+        [TestMethod]
+        public void CheckGetByteRepresentation()
+        {
+            ExternalTrainerSlotList slots = ExternalTrainerSlotList.DeserializeJSON(smallslotlist2JSON);
+
+            ExternalItemList items = ExternalItemList.DeserializeJSON(itemlistJSON);
+            ExternalMoveList moves = ExternalMoveList.DeserializeJSON(movelistJSON);
+            ExternalPokemonList pokemon = ExternalPokemonList.DeserializeJSON(pokemonlistJSON);
+
+            TrainerRepresentationSet set = new();
+
+            set.InitializeWithJSON(multi2JSON);
+
+            Assert.IsNotNull(set);
+
+            Assert.IsTrue(set.ValidateAllSlotsUsed(slots));
+            Assert.IsTrue(set.ValidateNoDuplicates(slots));
+
+            set.GetByteData(out byte[][] TRData, out byte[][] TRPoke, items, moves, pokemon, slots);
+
+            Assert.IsNotNull(TRData);
+            Assert.IsNotNull(TRPoke);
+
+            //Check that the zeroth items are placeholders and properly only filled with zeros
+            foreach (byte b in TRData[0])
+                Assert.AreEqual(0x00, b);
+            foreach (byte b in TRPoke[0])
+                Assert.AreEqual(0x00, b);
+
+            //Check that the data matches the data taken from the files
+            //the exact bytes used on file for shauntal.
+            byte[] shauntalTRData = new byte[] { 0x03, 0x4E, 0x00, 0x04, 0x17, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x00, 0x1E, 0x00, 0x00 };
+            //the exact bytes used on file for marshal
+            byte[] shauntalTRPoke = new byte[]
+            {
+                0xC8, 0x10, 0x38, 0x00, 0x33, 0x02, 0x00, 0x00, 0x00, 0x00, 0x05, 0x01, 0xBF, 0x01, 0x5E, 0x00, 0xF7, 0x00,
+                0xC8, 0x10, 0x38, 0x00, 0xAA, 0x01, 0x00, 0x00, 0x00, 0x00, 0x5E, 0x00, 0x55, 0x00, 0x00, 0x02, 0xF7, 0x00,
+                0xC8, 0x10, 0x38, 0x00, 0x6F, 0x02, 0x00, 0x00, 0x00, 0x00, 0xE4, 0x01, 0x59, 0x00, 0x18, 0x01, 0x45, 0x01,
+                0xFA, 0x20, 0x3A, 0x00, 0x61, 0x02, 0x00, 0x00, 0x9E, 0x00, 0x9C, 0x01, 0x7E, 0x00, 0x5E, 0x00, 0xF7, 0x00
+            };
+            byte[] marshalTRData = new byte[] { 0x03, 0x4F, 0x00, 0x04, 0x17, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x00, 0x1E, 0x00, 0x00 };
+            //the exact bytes used on file for marshal
+            byte[] marshalTRPoke = new byte[]
+            {
+                0xC8, 0x10, 0x38, 0x00, 0x1A, 0x02, 0x00, 0x00, 0x00, 0x00, 0xE0, 0x01, 0x0B, 0x02, 0x3D, 0x01, 0x73, 0x01,
+                0xC8, 0x10, 0x38, 0x00, 0x1B, 0x02, 0x00, 0x00, 0x00, 0x00, 0x18, 0x01, 0x02, 0x02, 0x9D, 0x00, 0x73, 0x01,
+                0xC8, 0x20, 0x38, 0x00, 0x6C, 0x02, 0x00, 0x00, 0x00, 0x00, 0x88, 0x00, 0x71, 0x01, 0x54, 0x01, 0x02, 0x02,
+                0xFA, 0x10, 0x3A, 0x00, 0x16, 0x02, 0x00, 0x00, 0x9E, 0x00, 0x67, 0x01, 0x53, 0x01, 0xBC, 0x01, 0x02, 0x02
+            };
+
+            Assert.AreEqual(shauntalTRData.Length, TRData[1].Length);
+            Assert.AreEqual(shauntalTRPoke.Length, TRPoke[1].Length);
+            Assert.AreEqual(marshalTRData.Length, TRData[2].Length);
+            Assert.AreEqual(marshalTRPoke.Length, TRPoke[2].Length);
+
+            for (int i = 0; i < shauntalTRData.Length; i++)
+                Assert.AreEqual(shauntalTRData[i], TRData[1][i]);
+            for (int i = 0; i < shauntalTRPoke.Length; i++)
+                Assert.AreEqual(shauntalTRPoke[i], TRPoke[1][i]);
+            for (int i = 0; i < marshalTRData.Length; i++)
+                Assert.AreEqual(marshalTRData[i], TRData[2][i]);
+            for (int i = 0; i < marshalTRPoke.Length; i++)
+                Assert.AreEqual(marshalTRPoke[i], TRPoke[2][i]);
         }
     }
 

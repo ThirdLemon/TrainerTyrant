@@ -1,0 +1,14 @@
+﻿{
+  "Slots": [
+    {
+      "Name": "Shauntal",
+      "Variation": 0,
+      "Export Name": "Shauntal"
+    },
+    {
+      "Name": "Marshal",
+      "Variation": 0,
+      "Export Name": "Marshal"
+    }
+  ]
+}
