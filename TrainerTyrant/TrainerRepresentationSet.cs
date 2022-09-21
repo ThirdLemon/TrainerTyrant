@@ -10,32 +10,32 @@ namespace TrainerTyrant
     public class TrainerRepresentationSet
     {
         private List<TrainerRepresentation> _data;
-        private bool _valid;
-        public bool Valid { get { return _valid; } }
+        private bool _initialized;
+        public bool Initialized { get { return _initialized; } }
 
         public TrainerRepresentationSet()
         {
             _data = null;
-            _valid = false;
+            _initialized = false;
         }
 
         public void InitializeWithJSON(string JSON)
         {
             //Don't initialize when already filled
-            if (Valid)
+            if (Initialized)
                 return;
 
             if (TrainerJSONValidator.ValidateTrainerListJSON(JSON))
             {
                 _data = JsonConvert.DeserializeObject<List<TrainerRepresentation>>(JSON);
-                _valid = true;
+                _initialized = true;
             }
         }
 
         public void InitializeWithJSON(string JSON, out IList<string> errors)
         {
             //Don't initialize when already filled
-            if (Valid)
+            if (Initialized)
             {
                 errors = new List<string> { "TrainerRepresentationSet has already been initialized." };
                 return;
@@ -44,14 +44,14 @@ namespace TrainerTyrant
             if (TrainerJSONValidator.ValidateTrainerListJSON(JSON, out errors))
             {
                 _data = JsonConvert.DeserializeObject<List<TrainerRepresentation>>(JSON);
-                _valid = true;
+                _initialized = true;
             }
         }
 
         public void InitializeWithExtractedFiles(byte[][] TRData, byte[][] TRPoke, ExternalItemList itemList, ExternalMoveList moveList, ExternalPokemonList monList, ExternalTrainerSlotList slotList)
         {
             //Don't initialize when already filled
-            if (Valid)
+            if (Initialized)
                 return;
 
             if (TRData.Length != TRPoke.Length)
@@ -65,7 +65,7 @@ namespace TrainerTyrant
                 _data.Add(tr);
             }
 
-            _valid = true;
+            _initialized = true;
         }
 
         public string SerializeJSON()
@@ -73,7 +73,7 @@ namespace TrainerTyrant
             return JsonConvert.SerializeObject(_data, Formatting.Indented);
         }
 
-        //Checks if there are any trainer's stored inside that overlap, returns true if there are no overlaps
+        //Checks if there are any trainer's stored inside that overlap, returns true if there are no overlaps. also returns false if the data doesn't show up in the list.
         public bool ValidateNoDuplicates(ExternalTrainerSlotList slots)
         {
             int[] occupiedSlots = new int[_data.Count];
@@ -91,5 +91,32 @@ namespace TrainerTyrant
             return true;
         }
 
+        public bool ValidateAllSlotsUsed(ExternalTrainerSlotList slots)
+        {
+            //If there is a mismatch, neither should be used.
+            if (_data.Count != slots.SlotData.Count)
+                return false;
+
+            for (int num = 0; num < _data.Count; num++)
+            {
+                bool found = false;
+                for (int trainer = 0; trainer < _data.Count; trainer++)
+                    if (_data[trainer].GetSlotID(slots) == num+1)
+                    {
+                        found = true;
+                        break;
+                    }
+                if (!found)
+                    return false;
+            }
+
+            return true;  
+        }
+
+        //Sorts the data
+        private void SortData(ExternalTrainerSlotList slots)
+        {
+            _data.Sort((x, y) => x.GetSlotID(slots).CompareTo(y.GetSlotID(slots)));
+        }
     }
 }

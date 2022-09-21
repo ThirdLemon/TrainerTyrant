@@ -17,10 +17,14 @@ namespace TrainerTyrantTest
         private string biancaJSON;
         private string hugh9JSON;
         private string fletcherJSON;
+        private string customelenaJSON;
+        private string customelenadanJSON;
+        private string customelenadan2JSON;
         private string movelistJSON;
         private string pokemonlistJSON;
         private string itemlistJSON;
         private string slotlistJSON;
+        private string smallslotlistJSON;
         private string emptyJSON;
 
         [TestInitialize]
@@ -40,6 +44,12 @@ namespace TrainerTyrantTest
 
             fletcherJSON = File.ReadAllText("../../../SampleJSON/sampleJSON7.json");
 
+            customelenaJSON = File.ReadAllText("../../../SampleJSON/sampleJSON8.json");
+
+            customelenadanJSON = File.ReadAllText("../../../SampleJSON/sampleJSON9.json");
+
+            customelenadan2JSON = File.ReadAllText("../../../SampleJSON/sampleJSON10.json");
+
             movelistJSON = File.ReadAllText("../../../SampleJSON/External/MoveList1.json");
 
             pokemonlistJSON = File.ReadAllText("../../../SampleJSON/External/PokemonList1.json");
@@ -47,6 +57,8 @@ namespace TrainerTyrantTest
             itemlistJSON = File.ReadAllText("../../../SampleJSON/External/ItemList1.json");
 
             slotlistJSON = File.ReadAllText("../../../SampleJSON/External/SlotList1.json");
+
+            smallslotlistJSON = File.ReadAllText("../../../SampleJSON/External/SlotList2.json");
 
             emptyJSON = File.ReadAllText("../../../SampleJSON/External/Empty.json");
         }
@@ -814,6 +826,37 @@ namespace TrainerTyrantTest
             for (int i = 0; i < 4; i++)
                 for (int j = 0; j < 4; j++)
                     Assert.AreEqual(marshalmonmoves[i, j], marshal.PokemonData[i].Moves[j]);
+        }
+
+        [TestMethod]
+        public void CheckTrainerSetValidation()
+        {
+            ExternalTrainerSlotList smallSlots = ExternalTrainerSlotList.DeserializeJSON(smallslotlistJSON);
+
+            TrainerRepresentationSet elenaOnly = new();
+            TrainerRepresentationSet elenaDan = new();
+            TrainerRepresentationSet elenaDanDan = new();
+            TrainerRepresentationSet shauntalMarshal = new();
+
+            elenaOnly.InitializeWithJSON(customelenaJSON);
+            elenaDan.InitializeWithJSON(customelenadanJSON);
+            elenaDanDan.InitializeWithJSON(customelenadan2JSON);
+            shauntalMarshal.InitializeWithJSON(multiJSON);
+
+            Assert.IsNotNull(elenaOnly);
+            Assert.IsNotNull(elenaDan);
+            Assert.IsNotNull(elenaDanDan);
+            Assert.IsNotNull(shauntalMarshal);
+
+            Assert.IsTrue(elenaOnly.ValidateNoDuplicates(smallSlots));
+            Assert.IsTrue(elenaDan.ValidateNoDuplicates(smallSlots));
+            Assert.IsFalse(elenaDanDan.ValidateNoDuplicates(smallSlots));
+            Assert.IsTrue(shauntalMarshal.ValidateNoDuplicates(smallSlots));
+
+            Assert.IsFalse(elenaOnly.ValidateAllSlotsUsed(smallSlots));
+            Assert.IsTrue(elenaDan.ValidateAllSlotsUsed(smallSlots));
+            Assert.IsFalse(elenaDanDan.ValidateAllSlotsUsed(smallSlots));
+            Assert.IsFalse(elenaOnly.ValidateAllSlotsUsed(smallSlots));
         }
     }
 

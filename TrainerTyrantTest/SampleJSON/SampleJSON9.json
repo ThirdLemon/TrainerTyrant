@@ -1,0 +1,96 @@
+﻿[
+  {
+    "Trainer Data": {
+      "Identification": {
+        "Name ID": {
+          "Name": "Elena",
+          "Variation": 0
+        }
+      },
+      "Trainer Class": {
+        "Number ID": 78
+      },
+      "Battle Type": "Single",
+      "Format": {
+        "Moves": false,
+        "Items": false
+      },
+      "Base Money": 30,
+      "Items": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "AI Flags": {
+        "Check Bad Moves": true,
+        "Evaluate Attacks": true,
+        "Expert": true,
+        "Setup First Turn": false,
+        "Risky": false,
+        "Prefer Strong Moves": false,
+        "Prefer Baton Pass": false,
+        "Double Battle": false
+      }
+    },
+    "Pokemon Data": [
+      {
+        "Pokemon": "Chimchar",
+        "Form": 0,
+        "Level": 5,
+        "Difficulty": 200,
+        "Miscellaneous": {
+          "Gender": "Random",
+          "Ability": 1
+        }
+      }
+    ]
+  },
+  {
+    "Trainer Data": {
+      "Identification": {
+        "Name ID": {
+          "Name": "Dan",
+          "Variation": 0
+        }
+      },
+      "Trainer Class": {
+        "Number ID": 78
+      },
+      "Battle Type": "Single",
+      "Format": {
+        "Moves": false,
+        "Items": false
+      },
+      "Base Money": 30,
+      "Items": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "AI Flags": {
+        "Check Bad Moves": true,
+        "Evaluate Attacks": true,
+        "Expert": true,
+        "Setup First Turn": false,
+        "Risky": false,
+        "Prefer Strong Moves": false,
+        "Prefer Baton Pass": false,
+        "Double Battle": false
+      }
+    },
+    "Pokemon Data": [
+      {
+        "Pokemon": "Piplup",
+        "Form": 0,
+        "Level": 5,
+        "Difficulty": 200,
+        "Miscellaneous": {
+          "Gender": "Random",
+          "Ability": 1
+        }
+      }
+    ]
+  }
+]
