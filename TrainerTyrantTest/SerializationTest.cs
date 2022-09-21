@@ -720,21 +720,101 @@ namespace TrainerTyrantTest
             Assert.AreEqual(378, hugh.GetSlotID(slotList));
         }
 
-        //[TestMethod]
-        //public void CheckTrainerRepresentationSetDeserialization()
-        //{
-        //    TrainerRepresentationSet set = new();
+        [TestMethod]
+        public void CheckTrainerRepresentationSetDeserialization()
+        {
+            TrainerRepresentationSet set = new();
 
-        //    set.InitializeWithJSON(multiJSON);
+            set.InitializeWithJSON(multiJSON);
 
-        //    List<TrainerRepresentation> multi = TrainerRepresentation.DeserializeListJSON(multiJSON);
+            List<TrainerRepresentation> fluxed = TrainerRepresentation.DeserializeListJSON(set.SerializeJSON());
 
-        //    Console.WriteLine(set.SerializeJSON());
+            Assert.AreEqual(2, fluxed.Count);
+            TrainerRepresentation shauntal = fluxed[0];
+            Assert.AreEqual(38, shauntal.TrainerData.Identification.NumberID);
+            Assert.AreEqual("Shauntal", shauntal.TrainerData.Identification.NameID.Name);
+            Assert.AreEqual(0, shauntal.TrainerData.Identification.NameID.Variation);
+            Assert.AreEqual(78, shauntal.TrainerData.TrainerClass.NumberID);
+            Assert.AreEqual(BattleType.Single, shauntal.TrainerData.BattleType);
+            Assert.IsTrue(shauntal.TrainerData.Format.Moves);
+            Assert.IsTrue(shauntal.TrainerData.Format.Items);
+            Assert.AreEqual(30, shauntal.TrainerData.BaseMoney);
+            Assert.AreEqual(4, shauntal.TrainerData.Items.Length);
+            Assert.AreEqual("Full Restore", shauntal.TrainerData.Items[0]);
+            for (int i = 1; i < 4; i++)
+                Assert.AreEqual(null, shauntal.TrainerData.Items[i]);
+            Assert.AreEqual(7, shauntal.TrainerData.AIFlags.Bitmap);
+            Assert.IsFalse(shauntal.TrainerData.Healer);
+            Assert.AreEqual(4, shauntal.PokemonCount);
+            Assert.AreEqual(4, shauntal.PokemonData.Length);
+            string[] monnames = { "Cofagrigus", "Drifblim", "Golurk", "Chandelure" };
+            for (int i = 0; i < 4; i++)
+            {
+                Assert.AreEqual(monnames[i], shauntal.PokemonData[i].Pokemon);
+                Assert.AreEqual(0, shauntal.PokemonData[i].Form);
+                Assert.AreEqual(Gender.Random, shauntal.PokemonData[i].Miscellaneous.Gender);
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                Assert.AreEqual(56, shauntal.PokemonData[i].Level);
+                Assert.AreEqual(200, shauntal.PokemonData[i].Difficulty);
+                Assert.AreEqual(1, shauntal.PokemonData[i].Miscellaneous.Ability);
+                Assert.AreEqual(null, shauntal.PokemonData[i].Item);
+            }
+            Assert.AreEqual(58, shauntal.PokemonData[3].Level);
+            Assert.AreEqual(250, shauntal.PokemonData[3].Difficulty);
+            Assert.AreEqual(2, shauntal.PokemonData[3].Miscellaneous.Ability);
+            Assert.AreEqual("Sitrus Berry", shauntal.PokemonData[3].Item);
+            string[,] monmoves = { { "Will-O-Wisp", "Grass Knot", "Psychic", "Shadow Ball" },
+                                    { "Psychic", "Thunderbolt", "Acrobatics", "Shadow Ball" },
+                                    { "Heavy Slam", "Earthquake", "Brick Break", "Shadow Punch" },
+                                    { "Energy Ball", "Fire Blast", "Psychic", "Shadow Ball"} };
+            for (int i = 0; i < 4; i++)
+                for (int j = 0; j < 4; j++)
+                    Assert.AreEqual(monmoves[i, j], shauntal.PokemonData[i].Moves[j]);
 
-        //    List<TrainerRepresentation> fromSet = TrainerRepresentation.DeserializeListJSON(set.SerializeJSON());
-
-        //    Assert.IsNotNull(fromSet);
-        //}
+            TrainerRepresentation marshal = fluxed[1];
+            Assert.AreEqual(39, marshal.TrainerData.Identification.NumberID);
+            Assert.AreEqual("Marshal", marshal.TrainerData.Identification.NameID.Name);
+            Assert.AreEqual(0, marshal.TrainerData.Identification.NameID.Variation);
+            Assert.AreEqual(79, marshal.TrainerData.TrainerClass.NumberID);
+            Assert.AreEqual(BattleType.Single, marshal.TrainerData.BattleType);
+            Assert.IsTrue(marshal.TrainerData.Format.Moves);
+            Assert.IsTrue(marshal.TrainerData.Format.Items);
+            Assert.AreEqual(30, marshal.TrainerData.BaseMoney);
+            Assert.AreEqual(4, marshal.TrainerData.Items.Length);
+            Assert.AreEqual("Full Restore", marshal.TrainerData.Items[0]);
+            for (int i = 1; i < 4; i++)
+                Assert.AreEqual(null, marshal.TrainerData.Items[i]);
+            Assert.AreEqual(7, marshal.TrainerData.AIFlags.Bitmap);
+            Assert.IsFalse(marshal.TrainerData.Healer);
+            Assert.AreEqual(4, marshal.PokemonCount);
+            Assert.AreEqual(4, marshal.PokemonData.Length);
+            string[] marshalmonnames = { "Throh", "Sawk", "Mienshao", "Conkeldurr" };
+            for (int i = 0; i < 4; i++)
+            {
+                Assert.AreEqual(marshalmonnames[i], marshal.PokemonData[i].Pokemon);
+                Assert.AreEqual(0, marshal.PokemonData[i].Form);
+                Assert.AreEqual(Gender.Random, marshal.PokemonData[i].Miscellaneous.Gender);
+                Assert.AreEqual(1, marshal.PokemonData[i].Miscellaneous.Ability);
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                Assert.AreEqual(56, marshal.PokemonData[i].Level);
+                Assert.AreEqual(200, marshal.PokemonData[i].Difficulty);
+                Assert.AreEqual(null, marshal.PokemonData[i].Item);
+            }
+            Assert.AreEqual(58, marshal.PokemonData[3].Level);
+            Assert.AreEqual(250, marshal.PokemonData[3].Difficulty);
+            Assert.AreEqual("Sitrus Berry", marshal.PokemonData[3].Item);
+            string[,] marshalmonmoves = { { "Rock Tomb", "Bulldoze", "Storm Throw", "Payback" },
+                                    { "Payback", "Rock Slide", "Retaliate", "Brick Break" },
+                                    { "Hi Jump Kick", "U-Turn", "Bounce", "Retaliate" },
+                                    { "Stone Edge", "Hammer Arm", "Retaliate", "Bulk Up"} };
+            for (int i = 0; i < 4; i++)
+                for (int j = 0; j < 4; j++)
+                    Assert.AreEqual(marshalmonmoves[i, j], marshal.PokemonData[i].Moves[j]);
+        }
     }
 
 }
