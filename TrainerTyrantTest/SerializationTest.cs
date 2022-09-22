@@ -365,7 +365,8 @@ namespace TrainerTyrantTest
             TrainerRepresentation shauntal2 = TrainerRepresentation.DeserializeJSON(serialized);
 
             Assert.IsNotNull(shauntal2);
-            Assert.AreEqual(38, shauntal2.TrainerData.Identification.NumberID);
+            //When NameID is set, numberID shouldn't be serialized.
+            Assert.AreEqual(-1, shauntal2.TrainerData.Identification.NumberID);
             Assert.AreEqual("Shauntal", shauntal2.TrainerData.Identification.NameID.Name);
             Assert.AreEqual(0, shauntal2.TrainerData.Identification.NameID.Variation);
             Assert.AreEqual(78, shauntal2.TrainerData.TrainerClass.NumberID);
@@ -752,7 +753,7 @@ namespace TrainerTyrantTest
 
             Assert.AreEqual(2, fluxed.Count);
             TrainerRepresentation shauntal = fluxed[0];
-            Assert.AreEqual(38, shauntal.TrainerData.Identification.NumberID);
+            Assert.AreEqual(-1, shauntal.TrainerData.Identification.NumberID);
             Assert.AreEqual("Shauntal", shauntal.TrainerData.Identification.NameID.Name);
             Assert.AreEqual(0, shauntal.TrainerData.Identification.NameID.Variation);
             Assert.AreEqual(78, shauntal.TrainerData.TrainerClass.NumberID);

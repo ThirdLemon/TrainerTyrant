@@ -298,8 +298,13 @@ namespace TrainerTyrant
         public string[] Items { get; set; }
         [JsonProperty(PropertyName = "AI Flags")]
         public AIFlags AIFlags { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public bool Healer { get; set; }
+
+        //This function controls the serialization of Healer.
+        public bool ShouldSerializeHealer()
+        {
+            return Healer;
+        }
 
         public int ItemIndex(ExternalItemList itemList, int itemIndex)
         {
@@ -321,6 +326,12 @@ namespace TrainerTyrant
         public int NumberID { get; set; }
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Name ID")]
         public NameID NameID { get; set; }
+
+        //This function controls ther serialization of NumberID
+        public bool ShouldSerializeNumberID()
+        {
+            return NameID == null;
+        }
     }
 
     public class NameID
