@@ -796,7 +796,7 @@ namespace TrainerTyrantTest
                     Assert.AreEqual(monmoves[i, j], shauntal.PokemonData[i].Moves[j]);
 
             TrainerRepresentation marshal = fluxed[1];
-            Assert.AreEqual(39, marshal.TrainerData.Identification.NumberID);
+            Assert.AreEqual(-1, marshal.TrainerData.Identification.NumberID);
             Assert.AreEqual("Marshal", marshal.TrainerData.Identification.NameID.Name);
             Assert.AreEqual(0, marshal.TrainerData.Identification.NameID.Variation);
             Assert.AreEqual(79, marshal.TrainerData.TrainerClass.NumberID);
