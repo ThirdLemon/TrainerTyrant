@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainerTyrant", "TrainerTyr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrainerTyrantTest", "TrainerTyrantTest\TrainerTyrantTest.csproj", "{1E62DC0F-EBE6-4569-B53B-03ACC8B16504}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainerTyrantForm", "TrainerTyrantForm\TrainerTyrantForm.csproj", "{31E2F7FC-0707-415F-BA44-F0D9A3203505}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD9BABE9-948B-4020-92D6-01B68D0F9FE6} = {CD9BABE9-948B-4020-92D6-01B68D0F9FE6}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +26,10 @@ Global
 		{1E62DC0F-EBE6-4569-B53B-03ACC8B16504}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E62DC0F-EBE6-4569-B53B-03ACC8B16504}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E62DC0F-EBE6-4569-B53B-03ACC8B16504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31E2F7FC-0707-415F-BA44-F0D9A3203505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31E2F7FC-0707-415F-BA44-F0D9A3203505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31E2F7FC-0707-415F-BA44-F0D9A3203505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31E2F7FC-0707-415F-BA44-F0D9A3203505}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
