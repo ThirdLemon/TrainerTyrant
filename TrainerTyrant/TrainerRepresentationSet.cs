@@ -93,11 +93,11 @@ namespace TrainerTyrant
 
         public bool ValidateAllSlotsUsed(ExternalTrainerSlotList slots)
         {
-            //If there is a mismatch, neither should be used.
-            if (_data.Count != slots.SlotData.Count)
+            //If the data count is smaller than the slot count, it logically cannot use up all slots
+            if (_data.Count < slots.SlotData.Count)
                 return false;
 
-            for (int num = 0; num < _data.Count; num++)
+            for (int num = 0; num < slots.SlotData.Count; num++)
             {
                 bool found = false;
                 for (int trainer = 0; trainer < _data.Count; trainer++)

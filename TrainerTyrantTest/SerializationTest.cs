@@ -21,6 +21,7 @@ namespace TrainerTyrantTest
         private string customelenaJSON;
         private string customelenadanJSON;
         private string customelenadan2JSON;
+        private string custom3JSON;
         private string movelistJSON;
         private string pokemonlistJSON;
         private string itemlistJSON;
@@ -50,9 +51,11 @@ namespace TrainerTyrantTest
 
             customelenaJSON = File.ReadAllText("../../../SampleJSON/sampleJSON8.json");
 
-            customelenadanJSON = File.ReadAllText("../../../SampleJSON/sampleJSON9.json");
+            customelenadanJSON = File.ReadAllText("../../../SampleJSON/sampleJSON8b.json");
 
-            customelenadan2JSON = File.ReadAllText("../../../SampleJSON/sampleJSON10.json");
+            customelenadan2JSON = File.ReadAllText("../../../SampleJSON/sampleJSON8c.json");
+
+            custom3JSON = File.ReadAllText("../../../SampleJSON/sampleJSON8d.json");
 
             movelistJSON = File.ReadAllText("../../../SampleJSON/External/MoveList1.json");
 
@@ -849,26 +852,31 @@ namespace TrainerTyrantTest
             TrainerRepresentationSet elenaOnly = new();
             TrainerRepresentationSet elenaDan = new();
             TrainerRepresentationSet elenaDanDan = new();
+            TrainerRepresentationSet elenaShauntalDan = new();
             TrainerRepresentationSet shauntalMarshal = new();
 
             elenaOnly.InitializeWithJSON(customelenaJSON);
             elenaDan.InitializeWithJSON(customelenadanJSON);
             elenaDanDan.InitializeWithJSON(customelenadan2JSON);
+            elenaShauntalDan.InitializeWithJSON(custom3JSON);
             shauntalMarshal.InitializeWithJSON(multiJSON);
 
             Assert.IsNotNull(elenaOnly);
             Assert.IsNotNull(elenaDan);
             Assert.IsNotNull(elenaDanDan);
+            Assert.IsNotNull(elenaShauntalDan);
             Assert.IsNotNull(shauntalMarshal);
 
             Assert.IsTrue(elenaOnly.ValidateNoDuplicates(smallSlots));
             Assert.IsTrue(elenaDan.ValidateNoDuplicates(smallSlots));
             Assert.IsFalse(elenaDanDan.ValidateNoDuplicates(smallSlots));
+            Assert.IsTrue(elenaShauntalDan.ValidateNoDuplicates(smallSlots));
             Assert.IsTrue(shauntalMarshal.ValidateNoDuplicates(smallSlots));
 
             Assert.IsFalse(elenaOnly.ValidateAllSlotsUsed(smallSlots));
             Assert.IsTrue(elenaDan.ValidateAllSlotsUsed(smallSlots));
-            Assert.IsFalse(elenaDanDan.ValidateAllSlotsUsed(smallSlots));
+            Assert.IsTrue(elenaDanDan.ValidateAllSlotsUsed(smallSlots));
+            Assert.IsTrue(elenaShauntalDan.ValidateAllSlotsUsed(smallSlots));
             Assert.IsFalse(elenaOnly.ValidateAllSlotsUsed(smallSlots));
         }
 
