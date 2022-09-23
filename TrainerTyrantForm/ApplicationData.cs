@@ -64,5 +64,105 @@ namespace TrainerTyrantForm
             _mainData = null;
         }
 
+        /**
+         * Returns true if successful, if it returns false, it will also return errors.
+         */
+        public bool LoadPokemonData(string fileLoc, out IList<string> errors)
+        {
+            //if the file exists
+            if (File.Exists(fileLoc))
+            {
+                ExternalPokemonList newData = ExternalPokemonList.DeserializeJSON(File.ReadAllText(fileLoc), out errors);
+                //If the file did not deserialize properly, stop loading new data and pre-emptively return false.
+                if (newData == null)
+                    return false;
+                //If execution reached here, set the values to match the new data.
+                _pokemonData = newData;
+                _pokemonDataLoc = fileLoc;
+                return true;
+            }
+            else
+            {
+                //if the file does not exist, return an error.
+                errors = new List<string> { "File does not exist." };
+                return false;
+            }
+        }
+
+        /**
+         * Returns true if successful, if it returns false, it will also return errors.
+         */
+        public bool LoadItemData(string fileLoc, out IList<string> errors)
+        {
+            //if the file exists
+            if (File.Exists(fileLoc))
+            {
+                ExternalItemList newData = ExternalItemList.DeserializeJSON(File.ReadAllText(fileLoc), out errors);
+                //If the file did not deserialize properly, stop loading new data and pre-emptively return false.
+                if (newData == null)
+                    return false;
+                //If execution reached here, set the values to match the new data.
+                _itemData = newData;
+                _itemDataLoc = fileLoc;
+                return true;
+            }
+            else
+            {
+                //if the file does not exist, return an error.
+                errors = new List<string> { "File does not exist." };
+                return false;
+            }
+        }
+
+        /**
+         * Returns true if successful, if it returns false, it will also return errors.
+         */
+        public bool LoadMoveData(string fileLoc, out IList<string> errors)
+        {
+            //if the file exists
+            if (File.Exists(fileLoc))
+            {
+                ExternalMoveList newData = ExternalMoveList.DeserializeJSON(File.ReadAllText(fileLoc), out errors);
+                //If the file did not deserialize properly, stop loading new data and pre-emptively return false.
+                if (newData == null)
+                    return false;
+                //If execution reached here, set the values to match the new data.
+                _moveData = newData;
+                _moveDataLoc = fileLoc;
+                return true;
+            }
+            else
+            {
+                //if the file does not exist, return an error.
+                errors = new List<string> { "File does not exist." };
+                return false;
+            }
+        }
+
+        /**
+         * Returns true if successful, if it returns false, it will also return errors.
+         */
+        public bool LoadSlotData(string fileLoc, out IList<string> errors)
+        {
+            //if the file exists
+            if (File.Exists(fileLoc))
+            {
+                ExternalTrainerSlotList newData = ExternalTrainerSlotList.DeserializeJSON(File.ReadAllText(fileLoc), out errors);
+                //If the file did not deserialize properly, stop loading new data and pre-emptively return false.
+                if (newData == null)
+                    return false;
+                //If execution reached here, set the values to match the new data.
+                _slotData = newData;
+                _slotDataLoc = fileLoc;
+                return true;
+            }
+            else
+            {
+                //if the file does not exist, return an error.
+                errors = new List<string> { "File does not exist." };
+                return false;
+            }
+        }
+
     }
 }
