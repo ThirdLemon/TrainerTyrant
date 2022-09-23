@@ -24,9 +24,10 @@ namespace TrainerTyrantForm
             wnd.Show();
         }
 
-        private void Application_Startup_1(object sender, StartupEventArgs e)
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
-
+            MessageBox.Show("An unhandled exception just occured: " + e.Exception.Message, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+            e.Handled = true;
         }
     }
 }
