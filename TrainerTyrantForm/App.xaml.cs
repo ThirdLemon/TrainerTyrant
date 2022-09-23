@@ -13,5 +13,20 @@ namespace TrainerTyrantForm
     /// </summary>
     public partial class App : Application
     {
+
+
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            MainWindow wnd = new MainWindow();
+
+            //load data?
+
+            wnd.Show();
+        }
+
+        private void Application_Startup_1(object sender, StartupEventArgs e)
+        {
+
+        }
     }
 }

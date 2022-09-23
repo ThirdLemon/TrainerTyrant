@@ -1,0 +1,4069 @@
+﻿{
+	"Slots": [
+		{
+			"Name": "Elena",
+			"Variation": 0,
+			"Export Name": "Elena - 1"
+		},
+		{
+			"Name": "Dan",
+			"Variation": 0,
+			"Export Name": "Dan - 1"
+		},
+		{
+			"Name": "Aspen",
+			"Variation": 0,
+			"Export Name": "Aspen - 1"
+		},
+		{
+			"Name": "Bianca",
+			"Variation": 0,
+			"Export Name": "Bianca - Reversal Mountain"
+		},
+		{
+			"Name": "N",
+			"Variation": 0,
+			"Export Name": "N - 1"
+		},
+		{
+			"Name": "N",
+			"Variation": 1,
+			"Export Name": "N - 2"
+		},
+		{
+			"Name": "Matthew",
+			"Variation": 0,
+			"Export Name": "Matthew - 1"
+		},
+		{
+			"Name": "Bobby",
+			"Variation": 0,
+			"Export Name": "Bobby - 1"
+		},
+		{
+			"Name": "John",
+			"Variation": 0,
+			"Export Name": "John - 1"
+		},
+		{
+			"Name": "Trisha",
+			"Variation": 0,
+			"Export Name": "Trisha - 1"
+		},
+		{
+			"Name": "Lou",
+			"Variation": 0,
+			"Export Name": "Lou - 1"
+		},
+		{
+			"Name": "Olwen",
+			"Variation": 0,
+			"Export Name": "Olwen - 1"
+		},
+		{
+			"Name": "Tony",
+			"Variation": 0,
+			"Export Name": "Tony - 1"
+		},
+		{
+			"Name": "Roberto",
+			"Variation": 0,
+			"Export Name": "Roberto - 1"
+		},
+		{
+			"Name": "Fletcher",
+			"Variation": 0,
+			"Export Name": "Fletcher - 1"
+		},
+		{
+			"Name": "Abe",
+			"Variation": 0,
+			"Export Name": "Abe - 1"
+		},
+		{
+			"Name": "Kevin",
+			"Variation": 0,
+			"Export Name": "Kevin - 1"
+		},
+		{
+			"Name": "Devon",
+			"Variation": 0,
+			"Export Name": "Devon - 1"
+		},
+		{
+			"Name": "Chaz",
+			"Variation": 0,
+			"Export Name": "Chaz - 1"
+		},
+		{
+			"Name": "Fredric",
+			"Variation": 0,
+			"Export Name": "Fredric - 1"
+		},
+		{
+			"Name": "Hawk & Dar",
+			"Variation": 0,
+			"Export Name": "Hawk & Dar - 1"
+		},
+		{
+			"Name": "Joe & Ross",
+			"Variation": 0,
+			"Export Name": "Joe & Ross - 1"
+		},
+		{
+			"Name": "Masa & Yas",
+			"Variation": 0,
+			"Export Name": "Masa & Yas - 1"
+		},
+		{
+			"Name": "Kay & Ali",
+			"Variation": 0,
+			"Export Name": "Kay & Ali - 1"
+		},
+		{
+			"Name": "Ami & Eira",
+			"Variation": 0,
+			"Export Name": "Ami & Eira - 1"
+		},
+		{
+			"Name": "Bob",
+			"Variation": 0,
+			"Export Name": "Bob - 1"
+		},
+		{
+			"Name": "Alain",
+			"Variation": 0,
+			"Export Name": "Alain - 1"
+		},
+		{
+			"Name": "Heidi",
+			"Variation": 0,
+			"Export Name": "Heidi - 1"
+		},
+		{
+			"Name": "Alex",
+			"Variation": 0,
+			"Export Name": "Alex - 1"
+		},
+		{
+			"Name": "Connor",
+			"Variation": 0,
+			"Export Name": "Connor - 1"
+		},
+		{
+			"Name": "Mariana",
+			"Variation": 0,
+			"Export Name": "Mariana - 1"
+		},
+		{
+			"Name": "Henry",
+			"Variation": 0,
+			"Export Name": "Henry - 1"
+		},
+		{
+			"Name": "Sibyl",
+			"Variation": 0,
+			"Export Name": "Sibyl - 1"
+		},
+		{
+			"Name": "Brad",
+			"Variation": 0,
+			"Export Name": "Brad - 1"
+		},
+		{
+			"Name": "Elizandra",
+			"Variation": 0,
+			"Export Name": "Elizandra - 1"
+		},
+		{
+			"Name": "Cassandra",
+			"Variation": 0,
+			"Export Name": "Cassandra - 1"
+		},
+		{
+			"Name": "Robert",
+			"Variation": 0,
+			"Export Name": "Robert - 1"
+		},
+		{
+			"Name": "Shauntal",
+			"Variation": 0,
+			"Export Name": "Shauntal - Elite Four (Normal Mode)"
+		},
+		{
+			"Name": "Marshal",
+			"Variation": 0,
+			"Export Name": "Marshal - Elite Four (Normal Mode)"
+		},
+		{
+			"Name": "Grimsley",
+			"Variation": 0,
+			"Export Name": "Grimsley - Elite Four (Normal Mode)"
+		},
+		{
+			"Name": "Caitlin",
+			"Variation": 0,
+			"Export Name": "Caitlin - Elite Four (Normal Mode)"
+		},
+		{
+			"Name": "Shaun",
+			"Variation": 0,
+			"Export Name": "Shaun - 1"
+		},
+		{
+			"Name": "Lucca",
+			"Variation": 0,
+			"Export Name": "Lucca - 1"
+		},
+		{
+			"Name": "Shel",
+			"Variation": 0,
+			"Export Name": "Shel - 1"
+		},
+		{
+			"Name": "Austin",
+			"Variation": 0,
+			"Export Name": "Austin - 1"
+		},
+		{
+			"Name": "Martin",
+			"Variation": 0,
+			"Export Name": "Martin - 1"
+		},
+		{
+			"Name": "Persephone",
+			"Variation": 0,
+			"Export Name": "Persephone - 1"
+		},
+		{
+			"Name": "Mari",
+			"Variation": 0,
+			"Export Name": "Mari - 1"
+		},
+		{
+			"Name": "Elena",
+			"Variation": 1,
+			"Export Name": "Elena - 2"
+		},
+		{
+			"Name": "Elena",
+			"Variation": 2,
+			"Export Name": "Elena - 3"
+		},
+		{
+			"Name": "Elena",
+			"Variation": 3,
+			"Export Name": "Elena - 4"
+		},
+		{
+			"Name": "Aspen",
+			"Variation": 1,
+			"Export Name": "Aspen - 2"
+		},
+		{
+			"Name": "Todd",
+			"Variation": 0,
+			"Export Name": "Todd - 1"
+		},
+		{
+			"Name": "Alex",
+			"Variation": 1,
+			"Export Name": "Alex - 2"
+		},
+		{
+			"Name": "Alex",
+			"Variation": 2,
+			"Export Name": "Alex - 3"
+		},
+		{
+			"Name": "Alex",
+			"Variation": 3,
+			"Export Name": "Alex - 4"
+		},
+		{
+			"Name": "Connor",
+			"Variation": 1,
+			"Export Name": "Connor - 2"
+		},
+		{
+			"Name": "Marco",
+			"Variation": 0,
+			"Export Name": "Marco - 1"
+		},
+		{
+			"Name": "Tony",
+			"Variation": 1,
+			"Export Name": "Tony - 2"
+		},
+		{
+			"Name": "Tony",
+			"Variation": 2,
+			"Export Name": "Tony - 3"
+		},
+		{
+			"Name": "Tony",
+			"Variation": 3,
+			"Export Name": "Tony - 4"
+		},
+		{
+			"Name": "Roberto",
+			"Variation": 1,
+			"Export Name": "Roberto - 2"
+		},
+		{
+			"Name": "Jonah",
+			"Variation": 0,
+			"Export Name": "Jonah - 1"
+		},
+		{
+			"Name": "Dan",
+			"Variation": 1,
+			"Export Name": "Dan - 2"
+		},
+		{
+			"Name": "Dan",
+			"Variation": 2,
+			"Export Name": "Dan - 3"
+		},
+		{
+			"Name": "Dan",
+			"Variation": 3,
+			"Export Name": "Dan - 4"
+		},
+		{
+			"Name": "Bob",
+			"Variation": 1,
+			"Export Name": "Bob - 2"
+		},
+		{
+			"Name": "Lamarcus",
+			"Variation": 0,
+			"Export Name": "Lamarcus - 1"
+		},
+		{
+			"Name": "Bobby",
+			"Variation": 1,
+			"Export Name": "Bobby - 2"
+		},
+		{
+			"Name": "Bobby",
+			"Variation": 2,
+			"Export Name": "Bobby - 3"
+		},
+		{
+			"Name": "Bobby",
+			"Variation": 3,
+			"Export Name": "Bobby - 4"
+		},
+		{
+			"Name": "John",
+			"Variation": 1,
+			"Export Name": "John - 2"
+		},
+		{
+			"Name": "Hawk & Dar",
+			"Variation": 1,
+			"Export Name": "Hawk & Dar - 2"
+		},
+		{
+			"Name": "Hawk & Dar",
+			"Variation": 2,
+			"Export Name": "Hawk & Dar - 3"
+		},
+		{
+			"Name": "Joe & Ross",
+			"Variation": 1,
+			"Export Name": "Joe & Ross - 2"
+		},
+		{
+			"Name": "Joe & Ross",
+			"Variation": 2,
+			"Export Name": "Joe & Ross - 3"
+		},
+		{
+			"Name": "Masa & Yas",
+			"Variation": 1,
+			"Export Name": "Masa & Yas - 2"
+		},
+		{
+			"Name": "Masa & Yas",
+			"Variation": 2,
+			"Export Name": "Masa & Yas - 3"
+		},
+		{
+			"Name": "Les & Web",
+			"Variation": 0,
+			"Export Name": "Les & Web - 1"
+		},
+		{
+			"Name": "Alf & Fred",
+			"Variation": 0,
+			"Export Name": "Alf & Fred - 1"
+		},
+		{
+			"Name": "Kay & Ali",
+			"Variation": 1,
+			"Export Name": "Kay & Ali - 2"
+		},
+		{
+			"Name": "Kay & Ali",
+			"Variation": 2,
+			"Export Name": "Kay & Ali - 3"
+		},
+		{
+			"Name": "Ami & Eira",
+			"Variation": 1,
+			"Export Name": "Ami & Eira - 2"
+		},
+		{
+			"Name": "Ami & Eira",
+			"Variation": 2,
+			"Export Name": "Ami & Eira - 3"
+		},
+		{
+			"Name": "Cam & Abby",
+			"Variation": 0,
+			"Export Name": "Cam & Abby - 1"
+		},
+		{
+			"Name": "Ai & Ciel",
+			"Variation": 0,
+			"Export Name": "Ai & Ciel - 1"
+		},
+		{
+			"Name": "Kat & Phae",
+			"Variation": 0,
+			"Export Name": "Kat & Phae - 1"
+		},
+		{
+			"Name": "Dana",
+			"Variation": 0,
+			"Export Name": "Dana - 1"
+		},
+		{
+			"Name": "Alan",
+			"Variation": 0,
+			"Export Name": "Alan - 1"
+		},
+		{
+			"Name": "Sally",
+			"Variation": 0,
+			"Export Name": "Sally - 1"
+		},
+		{
+			"Name": "Lucille",
+			"Variation": 0,
+			"Export Name": "Lucille - 1"
+		},
+		{
+			"Name": "Charlie",
+			"Variation": 0,
+			"Export Name": "Charlie - 1"
+		},
+		{
+			"Name": "Arlen",
+			"Variation": 0,
+			"Export Name": "Arlen - 1"
+		},
+		{
+			"Name": "Sayuri",
+			"Variation": 0,
+			"Export Name": "Sayuri - 1"
+		},
+		{
+			"Name": "Owen",
+			"Variation": 0,
+			"Export Name": "Owen - 1"
+		},
+		{
+			"Name": "Brooke",
+			"Variation": 0,
+			"Export Name": "Brooke - 1"
+		},
+		{
+			"Name": "Clint",
+			"Variation": 0,
+			"Export Name": "Clint - 1"
+		},
+		{
+			"Name": "Bonita",
+			"Variation": 0,
+			"Export Name": "Bonita - 1"
+		},
+		{
+			"Name": "Simon",
+			"Variation": 0,
+			"Export Name": "Simon - 1"
+		},
+		{
+			"Name": "Blythe",
+			"Variation": 0,
+			"Export Name": "Blythe - 1"
+		},
+		{
+			"Name": "Sophie",
+			"Variation": 0,
+			"Export Name": "Sophie - 1"
+		},
+		{
+			"Name": "Anthony",
+			"Variation": 0,
+			"Export Name": "Anthony - 1"
+		},
+		{
+			"Name": "Emilia",
+			"Variation": 0,
+			"Export Name": "Emilia - 1"
+		},
+		{
+			"Name": "Renaud",
+			"Variation": 0,
+			"Export Name": "Renaud - 1"
+		},
+		{
+			"Name": "Lao",
+			"Variation": 0,
+			"Export Name": "Lao - 1"
+		},
+		{
+			"Name": "Janie",
+			"Variation": 0,
+			"Export Name": "Janie - 1"
+		},
+		{
+			"Name": "Colin",
+			"Variation": 0,
+			"Export Name": "Colin - 1"
+		},
+		{
+			"Name": "Darcy",
+			"Variation": 0,
+			"Export Name": "Darcy - 1"
+		},
+		{
+			"Name": "Leonard",
+			"Variation": 0,
+			"Export Name": "Leonard - 1"
+		},
+		{
+			"Name": "Tyler",
+			"Variation": 0,
+			"Export Name": "Tyler - 1"
+		},
+		{
+			"Name": "Lilly",
+			"Variation": 0,
+			"Export Name": "Lilly - 1"
+		},
+		{
+			"Name": "Leah",
+			"Variation": 0,
+			"Export Name": "Leah - 1"
+		},
+		{
+			"Name": "Nelson",
+			"Variation": 0,
+			"Export Name": "Nelson - 1"
+		},
+		{
+			"Name": "Wren",
+			"Variation": 0,
+			"Export Name": "Wren - 1"
+		},
+		{
+			"Name": "Caleb",
+			"Variation": 0,
+			"Export Name": "Caleb - 1"
+		},
+		{
+			"Name": "Patty",
+			"Variation": 0,
+			"Export Name": "Patty - 1"
+		},
+		{
+			"Name": "Alexander",
+			"Variation": 0,
+			"Export Name": "Alexander - 1"
+		},
+		{
+			"Name": "Jules",
+			"Variation": 0,
+			"Export Name": "Jules - 1"
+		},
+		{
+			"Name": "Kirsten",
+			"Variation": 0,
+			"Export Name": "Kirsten - 1"
+		},
+		{
+			"Name": "Gerard",
+			"Variation": 0,
+			"Export Name": "Gerard - 1"
+		},
+		{
+			"Name": "Madhu",
+			"Variation": 0,
+			"Export Name": "Madhu - 1"
+		},
+		{
+			"Name": "Josh",
+			"Variation": 0,
+			"Export Name": "Josh - 1"
+		},
+		{
+			"Name": "Davey",
+			"Variation": 0,
+			"Export Name": "Davey - 1"
+		},
+		{
+			"Name": "Boris",
+			"Variation": 0,
+			"Export Name": "Boris - 1"
+		},
+		{
+			"Name": "Charley",
+			"Variation": 0,
+			"Export Name": "Charley - 1"
+		},
+		{
+			"Name": "Pierre",
+			"Variation": 0,
+			"Export Name": "Pierre - 1"
+		},
+		{
+			"Name": "Jeff",
+			"Variation": 0,
+			"Export Name": "Jeff - 1"
+		},
+		{
+			"Name": "Alica",
+			"Variation": 0,
+			"Export Name": "Alica - 1"
+		},
+		{
+			"Name": "Gwyneth",
+			"Variation": 0,
+			"Export Name": "Gwyneth - 1"
+		},
+		{
+			"Name": "Russel",
+			"Variation": 0,
+			"Export Name": "Russel - 1"
+		},
+		{
+			"Name": "Mia",
+			"Variation": 0,
+			"Export Name": "Mia - 1"
+		},
+		{
+			"Name": "Evan",
+			"Variation": 0,
+			"Export Name": "Evan - 1"
+		},
+		{
+			"Name": "Angi",
+			"Variation": 0,
+			"Export Name": "Angi - 1"
+		},
+		{
+			"Name": "Miguel",
+			"Variation": 0,
+			"Export Name": "Miguel - 1"
+		},
+		{
+			"Name": "Dudley",
+			"Variation": 0,
+			"Export Name": "Dudley - 1"
+		},
+		{
+			"Name": "Andy",
+			"Variation": 0,
+			"Export Name": "Andy - 1"
+		},
+		{
+			"Name": "Winter",
+			"Variation": 0,
+			"Export Name": "Winter - 1"
+		},
+		{
+			"Name": "Dirk",
+			"Variation": 0,
+			"Export Name": "Dirk - 1"
+		},
+		{
+			"Name": "Aurora",
+			"Variation": 0,
+			"Export Name": "Aurora - 1"
+		},
+		{
+			"Name": "Morimoto",
+			"Variation": 0,
+			"Export Name": "Morimoto - 1"
+		},
+		{
+			"Name": "Tanya",
+			"Variation": 0,
+			"Export Name": "Tanya - 1"
+		},
+		{
+			"Name": "Murphy",
+			"Variation": 0,
+			"Export Name": "Murphy - 1"
+		},
+		{
+			"Name": "Shauntal",
+			"Variation": 1,
+			"Export Name": "Shauntal - Rematch (Normal Mode)"
+		},
+		{
+			"Name": "Marshal",
+			"Variation": 1,
+			"Export Name": "Marshal - Rematch (Normal Mode)"
+		},
+		{
+			"Name": "Grimsley",
+			"Variation": 1,
+			"Export Name": "Grimsley - Rematch (Normal Mode)"
+		},
+		{
+			"Name": "Caitlin",
+			"Variation": 1,
+			"Export Name": "Caitlin - Rematch (Normal Mode)"
+		},
+		{
+			"Name": "Lina",
+			"Variation": 0,
+			"Export Name": "Lina - 1"
+		},
+		{
+			"Name": "Colette",
+			"Variation": 0,
+			"Export Name": "Colette - 1"
+		},
+		{
+			"Name": "Flynn",
+			"Variation": 0,
+			"Export Name": "Flynn - 1"
+		},
+		{
+			"Name": "Winslow",
+			"Variation": 0,
+			"Export Name": "Winslow - 1"
+		},
+		{
+			"Name": "Ewing",
+			"Variation": 0,
+			"Export Name": "Ewing - 1"
+		},
+		{
+			"Name": "Chase",
+			"Variation": 0,
+			"Export Name": "Chase - 1"
+		},
+		{
+			"Name": "Elesa",
+			"Variation": 0,
+			"Export Name": "Elesa - Nimbasa Gym Leader (Normal Mode)"
+		},
+		{
+			"Name": "Burgh",
+			"Variation": 0,
+			"Export Name": "Burgh - Castelia Gym Leader (Normal Mode)"
+		},
+		{
+			"Name": "Skyla",
+			"Variation": 0,
+			"Export Name": "Skyla - Mistralton Gym Leader (Normal Mode)"
+		},
+		{
+			"Name": "Cheren",
+			"Variation": 0,
+			"Export Name": "Cheren - Aspertia Gym Leader (Normal Mode)"
+		},
+		{
+			"Name": "Roxie",
+			"Variation": 0,
+			"Export Name": "Roxie - Virbank Gym Leader (Normal Mode)"
+		},
+		{
+			"Name": "Clay",
+			"Variation": 0,
+			"Export Name": "Clay - Driftveil Gym Leader (Normal Mode)"
+		},
+		{
+			"Name": "Drayden",
+			"Variation": 0,
+			"Export Name": "Drayden - Opelucid Gym Leader (Normal Mode)"
+		},
+		{
+			"Name": "Marlon",
+			"Variation": 0,
+			"Export Name": "Marlon - Humilau Gym Leader (Normal Mode)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 0,
+			"Export Name": "Hugh - Aspertia City (Player Chose Snivy)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 1,
+			"Export Name": "Hugh - Aspertia City (Player Chose Tepig)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 2,
+			"Export Name": "Hugh - Aspertia City (Player Chose Oshawott)"
+		},
+		{
+			"Name": "Terrell",
+			"Variation": 0,
+			"Export Name": "Terrell - 1"
+		},
+		{
+			"Name": "Isabel",
+			"Variation": 0,
+			"Export Name": "Isabel - 1"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 3,
+			"Export Name": "Hugh - Flocessy Ranch (Player Chose Snivy)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 4,
+			"Export Name": "Hugh - Flocessy Ranch (Player Chose Tepig)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 5,
+			"Export Name": "Hugh - Flocessy Ranch (Player Chose Oshawott)"
+		},
+		{
+			"Name": "Seymour",
+			"Variation": 0,
+			"Export Name": "Seymour - 1"
+		},
+		{
+			"Name": "Cassie",
+			"Variation": 0,
+			"Export Name": "Cassie - 1"
+		},
+		{
+			"Name": "Pedro",
+			"Variation": 0,
+			"Export Name": "Pedro - 1"
+		},
+		{
+			"Name": "Serena",
+			"Variation": 0,
+			"Export Name": "Serena - 1"
+		},
+		{
+			"Name": "Albert",
+			"Variation": 0,
+			"Export Name": "Albert - 1"
+		},
+		{
+			"Name": "Lin",
+			"Variation": 0,
+			"Export Name": "Lin - 1"
+		},
+		{
+			"Name": "Lia & Lily",
+			"Variation": 0,
+			"Export Name": "Lia & Lily - 1"
+		},
+		{
+			"Name": "Kimya",
+			"Variation": 0,
+			"Export Name": "Kimya - 1"
+		},
+		{
+			"Name": "Stonewall",
+			"Variation": 0,
+			"Export Name": "Stonewall - 1"
+		},
+		{
+			"Name": "Nicky",
+			"Variation": 0,
+			"Export Name": "Nicky - 1"
+		},
+		{
+			"Name": "Billy Jo",
+			"Variation": 0,
+			"Export Name": "Billy Jo - 1"
+		},
+		{
+			"Name": "Kenny",
+			"Variation": 0,
+			"Export Name": "Kenny - 1"
+		},
+		{
+			"Name": "Molly",
+			"Variation": 0,
+			"Export Name": "Molly - 1"
+		},
+		{
+			"Name": "Orville",
+			"Variation": 0,
+			"Export Name": "Orville - 1"
+		},
+		{
+			"Name": "Abigail",
+			"Variation": 0,
+			"Export Name": "Abigail - 1"
+		},
+		{
+			"Name": "Abed",
+			"Variation": 0,
+			"Export Name": "Abed - 1"
+		},
+		{
+			"Name": "Brent",
+			"Variation": 0,
+			"Export Name": "Brent - 1"
+		},
+		{
+			"Name": "Bess",
+			"Variation": 0,
+			"Export Name": "Bess - 1"
+		},
+		{
+			"Name": "Carleigh",
+			"Variation": 0,
+			"Export Name": "Carleigh - 1"
+		},
+		{
+			"Name": "Carlen",
+			"Variation": 0,
+			"Export Name": "Carlen - 1"
+		},
+		{
+			"Name": "Daniel",
+			"Variation": 0,
+			"Export Name": "Daniel - 1"
+		},
+		{
+			"Name": "Danelle",
+			"Variation": 0,
+			"Export Name": "Danelle - 1"
+		},
+		{
+			"Name": "Elie",
+			"Variation": 0,
+			"Export Name": "Elie - 1"
+		},
+		{
+			"Name": "Ellas",
+			"Variation": 0,
+			"Export Name": "Ellas - 1"
+		},
+		{
+			"Name": "Frederick",
+			"Variation": 0,
+			"Export Name": "Frederick - 1"
+		},
+		{
+			"Name": "Freira",
+			"Variation": 0,
+			"Export Name": "Freira - 1"
+		},
+		{
+			"Name": "Gail",
+			"Variation": 0,
+			"Export Name": "Gail - 1"
+		},
+		{
+			"Name": "Gaius",
+			"Variation": 0,
+			"Export Name": "Gaius - 1"
+		},
+		{
+			"Name": "Harmon",
+			"Variation": 0,
+			"Export Name": "Harmon - 1"
+		},
+		{
+			"Name": "Harmony",
+			"Variation": 0,
+			"Export Name": "Harmony - 1"
+		},
+		{
+			"Name": "Iria",
+			"Variation": 0,
+			"Export Name": "Iria - 1"
+		},
+		{
+			"Name": "Ira",
+			"Variation": 0,
+			"Export Name": "Ira - 1"
+		},
+		{
+			"Name": "Benga",
+			"Variation": 0,
+			"Export Name": "Benga - 1"
+		},
+		{
+			"Name": "Benga",
+			"Variation": 1,
+			"Export Name": "Benga - 2"
+		},
+		{
+			"Name": "Isaac",
+			"Variation": 0,
+			"Export Name": "Isaac - 1"
+		},
+		{
+			"Name": "Mitchell",
+			"Variation": 0,
+			"Export Name": "Mitchell - 1"
+		},
+		{
+			"Name": "Nathan",
+			"Variation": 0,
+			"Export Name": "Nathan - 1"
+		},
+		{
+			"Name": "Jerome",
+			"Variation": 0,
+			"Export Name": "Jerome - 1"
+		},
+		{
+			"Name": "Nikola",
+			"Variation": 0,
+			"Export Name": "Nikola - 1"
+		},
+		{
+			"Name": "Fleming",
+			"Variation": 0,
+			"Export Name": "Fleming - 1"
+		},
+		{
+			"Name": "Amp\u00c3\u00a8re",
+			"Variation": 0,
+			"Export Name": "Amp\u00c3\u00a8re - 1"
+		},
+		{
+			"Name": "Hubert",
+			"Variation": 0,
+			"Export Name": "Hubert - 1"
+		},
+		{
+			"Name": "Andrew",
+			"Variation": 0,
+			"Export Name": "Andrew - 1"
+		},
+		{
+			"Name": "Braven",
+			"Variation": 0,
+			"Export Name": "Braven - 1"
+		},
+		{
+			"Name": "Clifford",
+			"Variation": 0,
+			"Export Name": "Clifford - 1"
+		},
+		{
+			"Name": "Dell",
+			"Variation": 0,
+			"Export Name": "Dell - 1"
+		},
+		{
+			"Name": "Neagle",
+			"Variation": 0,
+			"Export Name": "Neagle - 1"
+		},
+		{
+			"Name": "Joey",
+			"Variation": 0,
+			"Export Name": "Joey - 1"
+		},
+		{
+			"Name": "Silvester",
+			"Variation": 0,
+			"Export Name": "Silvester - 1"
+		},
+		{
+			"Name": "Stanley",
+			"Variation": 0,
+			"Export Name": "Stanley - 1"
+		},
+		{
+			"Name": "Zeke",
+			"Variation": 0,
+			"Export Name": "Zeke - 1"
+		},
+		{
+			"Name": "Rob & Sal",
+			"Variation": 0,
+			"Export Name": "Rob & Sal - 1"
+		},
+		{
+			"Name": "Keenan",
+			"Variation": 0,
+			"Export Name": "Keenan - 1"
+		},
+		{
+			"Name": "Roland",
+			"Variation": 0,
+			"Export Name": "Roland - 1"
+		},
+		{
+			"Name": "Rachel",
+			"Variation": 0,
+			"Export Name": "Rachel - 1"
+		},
+		{
+			"Name": "Norbert",
+			"Variation": 0,
+			"Export Name": "Norbert - 1"
+		},
+		{
+			"Name": "Sachiko",
+			"Variation": 0,
+			"Export Name": "Sachiko - 1"
+		},
+		{
+			"Name": "Tara & Val",
+			"Variation": 0,
+			"Export Name": "Tara & Val - 1"
+		},
+		{
+			"Name": "Bob ",
+			"Variation": 0,
+			"Export Name": "Bob  - 1"
+		},
+		{
+			"Name": "Jonah ",
+			"Variation": 0,
+			"Export Name": "Jonah  - 1"
+		},
+		{
+			"Name": "Bob ",
+			"Variation": 1,
+			"Export Name": "Bob  - 2"
+		},
+		{
+			"Name": "Jonah ",
+			"Variation": 1,
+			"Export Name": "Jonah  - 2"
+		},
+		{
+			"Name": "Jonah ",
+			"Variation": 2,
+			"Export Name": "Jonah  - 3"
+		},
+		{
+			"Name": "Connor ",
+			"Variation": 0,
+			"Export Name": "Connor  - 1"
+		},
+		{
+			"Name": "Todd ",
+			"Variation": 0,
+			"Export Name": "Todd  - 1"
+		},
+		{
+			"Name": "Connor ",
+			"Variation": 1,
+			"Export Name": "Connor  - 2"
+		},
+		{
+			"Name": "Todd ",
+			"Variation": 1,
+			"Export Name": "Todd  - 2"
+		},
+		{
+			"Name": "Todd ",
+			"Variation": 2,
+			"Export Name": "Todd  - 3"
+		},
+		{
+			"Name": "Roberto ",
+			"Variation": 0,
+			"Export Name": "Roberto  - 1"
+		},
+		{
+			"Name": "Marco ",
+			"Variation": 0,
+			"Export Name": "Marco  - 1"
+		},
+		{
+			"Name": "Roberto ",
+			"Variation": 1,
+			"Export Name": "Roberto  - 2"
+		},
+		{
+			"Name": "Marco ",
+			"Variation": 1,
+			"Export Name": "Marco  - 2"
+		},
+		{
+			"Name": "Marco ",
+			"Variation": 2,
+			"Export Name": "Marco  - 3"
+		},
+		{
+			"Name": "John ",
+			"Variation": 0,
+			"Export Name": "John  - 1"
+		},
+		{
+			"Name": "Lamarcus ",
+			"Variation": 0,
+			"Export Name": "Lamarcus  - 1"
+		},
+		{
+			"Name": "John ",
+			"Variation": 1,
+			"Export Name": "John  - 2"
+		},
+		{
+			"Name": "Lamarcus ",
+			"Variation": 1,
+			"Export Name": "Lamarcus  - 2"
+		},
+		{
+			"Name": "Lamarcus ",
+			"Variation": 2,
+			"Export Name": "Lamarcus  - 3"
+		},
+		{
+			"Name": "Aspen ",
+			"Variation": 0,
+			"Export Name": "Aspen  - 1"
+		},
+		{
+			"Name": "Mari ",
+			"Variation": 0,
+			"Export Name": "Mari  - 1"
+		},
+		{
+			"Name": "Aspen ",
+			"Variation": 1,
+			"Export Name": "Aspen  - 2"
+		},
+		{
+			"Name": "Mari ",
+			"Variation": 1,
+			"Export Name": "Mari  - 2"
+		},
+		{
+			"Name": "Mari ",
+			"Variation": 2,
+			"Export Name": "Mari  - 3"
+		},
+		{
+			"Name": "Ava & Aya",
+			"Variation": 0,
+			"Export Name": "Ava & Aya - 1"
+		},
+		{
+			"Name": "Jenn",
+			"Variation": 0,
+			"Export Name": "Jenn - 1"
+		},
+		{
+			"Name": "Horton",
+			"Variation": 0,
+			"Export Name": "Horton - 1"
+		},
+		{
+			"Name": "Brian",
+			"Variation": 0,
+			"Export Name": "Brian - 1"
+		},
+		{
+			"Name": "Preston",
+			"Variation": 0,
+			"Export Name": "Preston - 1"
+		},
+		{
+			"Name": "Stu & Art",
+			"Variation": 0,
+			"Export Name": "Stu & Art - 1"
+		},
+		{
+			"Name": "Ivan",
+			"Variation": 0,
+			"Export Name": "Ivan - 1"
+		},
+		{
+			"Name": "Blossom",
+			"Variation": 0,
+			"Export Name": "Blossom - 1"
+		},
+		{
+			"Name": "Hector",
+			"Variation": 0,
+			"Export Name": "Hector - 1"
+		},
+		{
+			"Name": "Krissa",
+			"Variation": 0,
+			"Export Name": "Krissa - 1"
+		},
+		{
+			"Name": "Hank",
+			"Variation": 0,
+			"Export Name": "Hank - 1"
+		},
+		{
+			"Name": "Jacques",
+			"Variation": 0,
+			"Export Name": "Jacques - 1"
+		},
+		{
+			"Name": "Marissa",
+			"Variation": 0,
+			"Export Name": "Marissa - 1"
+		},
+		{
+			"Name": "Alvin",
+			"Variation": 0,
+			"Export Name": "Alvin - 1"
+		},
+		{
+			"Name": "Mara",
+			"Variation": 0,
+			"Export Name": "Mara - 1"
+		},
+		{
+			"Name": "Nicole",
+			"Variation": 0,
+			"Export Name": "Nicole - 1"
+		},
+		{
+			"Name": "Tihana",
+			"Variation": 0,
+			"Export Name": "Tihana - 1"
+		},
+		{
+			"Name": "Flo",
+			"Variation": 0,
+			"Export Name": "Flo - 1"
+		},
+		{
+			"Name": "Cody",
+			"Variation": 0,
+			"Export Name": "Cody - 1"
+		},
+		{
+			"Name": "Hollie",
+			"Variation": 0,
+			"Export Name": "Hollie - 1"
+		},
+		{
+			"Name": "Greg",
+			"Variation": 0,
+			"Export Name": "Greg - 1"
+		},
+		{
+			"Name": "Chrissy",
+			"Variation": 0,
+			"Export Name": "Chrissy - 1"
+		},
+		{
+			"Name": "Sola & Ana",
+			"Variation": 0,
+			"Export Name": "Sola & Ana - 1"
+		},
+		{
+			"Name": "Pat",
+			"Variation": 0,
+			"Export Name": "Pat - 1"
+		},
+		{
+			"Name": "Ian",
+			"Variation": 0,
+			"Export Name": "Ian - 1"
+		},
+		{
+			"Name": "Sheldon",
+			"Variation": 0,
+			"Export Name": "Sheldon - 1"
+		},
+		{
+			"Name": "Marian",
+			"Variation": 0,
+			"Export Name": "Marian - 1"
+		},
+		{
+			"Name": "Kipp",
+			"Variation": 0,
+			"Export Name": "Kipp - 1"
+		},
+		{
+			"Name": "Junko",
+			"Variation": 0,
+			"Export Name": "Junko - 1"
+		},
+		{
+			"Name": "Jay",
+			"Variation": 0,
+			"Export Name": "Jay - 1"
+		},
+		{
+			"Name": "Glinda",
+			"Variation": 0,
+			"Export Name": "Glinda - 1"
+		},
+		{
+			"Name": "Sid",
+			"Variation": 0,
+			"Export Name": "Sid - 1"
+		},
+		{
+			"Name": "Sinclair",
+			"Variation": 0,
+			"Export Name": "Sinclair - 1"
+		},
+		{
+			"Name": "Reece",
+			"Variation": 0,
+			"Export Name": "Reece - 1"
+		},
+		{
+			"Name": "Jones",
+			"Variation": 0,
+			"Export Name": "Jones - 1"
+		},
+		{
+			"Name": "Damon",
+			"Variation": 0,
+			"Export Name": "Damon - 1"
+		},
+		{
+			"Name": "Leroy",
+			"Variation": 0,
+			"Export Name": "Leroy - 1"
+		},
+		{
+			"Name": "Vince",
+			"Variation": 0,
+			"Export Name": "Vince - 1"
+		},
+		{
+			"Name": "Laura",
+			"Variation": 0,
+			"Export Name": "Laura - 1"
+		},
+		{
+			"Name": "Cleo & Rio",
+			"Variation": 0,
+			"Export Name": "Cleo & Rio - 1"
+		},
+		{
+			"Name": "Richard",
+			"Variation": 0,
+			"Export Name": "Richard - 1"
+		},
+		{
+			"Name": "Lois",
+			"Variation": 0,
+			"Export Name": "Lois - 1"
+		},
+		{
+			"Name": "Daryl",
+			"Variation": 0,
+			"Export Name": "Daryl - 1"
+		},
+		{
+			"Name": "Dianne",
+			"Variation": 0,
+			"Export Name": "Dianne - 1"
+		},
+		{
+			"Name": "Irene",
+			"Variation": 0,
+			"Export Name": "Irene - 1"
+		},
+		{
+			"Name": "Serenity",
+			"Variation": 0,
+			"Export Name": "Serenity - 1"
+		},
+		{
+			"Name": "Forrest",
+			"Variation": 0,
+			"Export Name": "Forrest - 1"
+		},
+		{
+			"Name": "Galen",
+			"Variation": 0,
+			"Export Name": "Galen - 1"
+		},
+		{
+			"Name": "Jeriel",
+			"Variation": 0,
+			"Export Name": "Jeriel - 1"
+		},
+		{
+			"Name": "Azra",
+			"Variation": 0,
+			"Export Name": "Azra - 1"
+		},
+		{
+			"Name": "Marcus",
+			"Variation": 0,
+			"Export Name": "Marcus - 1"
+		},
+		{
+			"Name": "Magnolia",
+			"Variation": 0,
+			"Export Name": "Magnolia - 1"
+		},
+		{
+			"Name": "Thalia",
+			"Variation": 0,
+			"Export Name": "Thalia - 1"
+		},
+		{
+			"Name": "Crofton",
+			"Variation": 0,
+			"Export Name": "Crofton - 1"
+		},
+		{
+			"Name": "Myra",
+			"Variation": 0,
+			"Export Name": "Myra - 1"
+		},
+		{
+			"Name": "Lowell",
+			"Variation": 0,
+			"Export Name": "Lowell - 1"
+		},
+		{
+			"Name": "Kyle",
+			"Variation": 0,
+			"Export Name": "Kyle - 1"
+		},
+		{
+			"Name": "Kaoru",
+			"Variation": 0,
+			"Export Name": "Kaoru - 1"
+		},
+		{
+			"Name": "Harold",
+			"Variation": 0,
+			"Export Name": "Harold - 1"
+		},
+		{
+			"Name": "Desiree",
+			"Variation": 0,
+			"Export Name": "Desiree - 1"
+		},
+		{
+			"Name": "Kenzo",
+			"Variation": 0,
+			"Export Name": "Kenzo - 1"
+		},
+		{
+			"Name": "Summer",
+			"Variation": 0,
+			"Export Name": "Summer - 1"
+		},
+		{
+			"Name": "Matt",
+			"Variation": 0,
+			"Export Name": "Matt - 1"
+		},
+		{
+			"Name": "Bart",
+			"Variation": 0,
+			"Export Name": "Bart - 1"
+		},
+		{
+			"Name": "Tim",
+			"Variation": 0,
+			"Export Name": "Tim - 1"
+		},
+		{
+			"Name": "Arissa",
+			"Variation": 0,
+			"Export Name": "Arissa - 1"
+		},
+		{
+			"Name": "Mitzi",
+			"Variation": 0,
+			"Export Name": "Mitzi - 1"
+		},
+		{
+			"Name": "Maynard",
+			"Variation": 0,
+			"Export Name": "Maynard - 1"
+		},
+		{
+			"Name": "Pasqual",
+			"Variation": 0,
+			"Export Name": "Pasqual - 1"
+		},
+		{
+			"Name": "Tibor",
+			"Variation": 0,
+			"Export Name": "Tibor - 1"
+		},
+		{
+			"Name": "Niel",
+			"Variation": 0,
+			"Export Name": "Niel - 1"
+		},
+		{
+			"Name": "Tavarius",
+			"Variation": 0,
+			"Export Name": "Tavarius - 1"
+		},
+		{
+			"Name": "Noel",
+			"Variation": 0,
+			"Export Name": "Noel - 1"
+		},
+		{
+			"Name": "Friedrich",
+			"Variation": 0,
+			"Export Name": "Friedrich - 1"
+		},
+		{
+			"Name": "Kenneth",
+			"Variation": 0,
+			"Export Name": "Kenneth - 1"
+		},
+		{
+			"Name": "Braid",
+			"Variation": 0,
+			"Export Name": "Braid - 1"
+		},
+		{
+			"Name": "Jim & Cas",
+			"Variation": 0,
+			"Export Name": "Jim & Cas - 1"
+		},
+		{
+			"Name": "Chance",
+			"Variation": 0,
+			"Export Name": "Chance - 1"
+		},
+		{
+			"Name": "Reese",
+			"Variation": 0,
+			"Export Name": "Reese - 1"
+		},
+		{
+			"Name": "Phillip",
+			"Variation": 0,
+			"Export Name": "Phillip - 1"
+		},
+		{
+			"Name": "Elron",
+			"Variation": 0,
+			"Export Name": "Elron - 1"
+		},
+		{
+			"Name": "Addison",
+			"Variation": 0,
+			"Export Name": "Addison - 1"
+		},
+		{
+			"Name": "Justin",
+			"Variation": 0,
+			"Export Name": "Justin - 1"
+		},
+		{
+			"Name": "Chris",
+			"Variation": 0,
+			"Export Name": "Chris - 1"
+		},
+		{
+			"Name": "Karl",
+			"Variation": 0,
+			"Export Name": "Karl - 1"
+		},
+		{
+			"Name": "Shannon",
+			"Variation": 0,
+			"Export Name": "Shannon - 1"
+		},
+		{
+			"Name": "Gough",
+			"Variation": 0,
+			"Export Name": "Gough - 1"
+		},
+		{
+			"Name": "Charles",
+			"Variation": 0,
+			"Export Name": "Charles - 1"
+		},
+		{
+			"Name": "Charles",
+			"Variation": 1,
+			"Export Name": "Charles - 2"
+		},
+		{
+			"Name": "Iris",
+			"Variation": 0,
+			"Export Name": "Iris - Champion (Normal Mode)"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 0,
+			"Export Name": "Grunt 2 - Castelia Sewers Tag Battle"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 1,
+			"Export Name": "Grunt 6 - Plasma Frigate B1F in Route 21 (Black 2 Only)"
+		},
+		{
+			"Name": "Colress",
+			"Variation": 0,
+			"Export Name": "Colress - Plasma Frigate"
+		},
+		{
+			"Name": "Ghetsis",
+			"Variation": 0,
+			"Export Name": "Ghetsis - Giant Chasm"
+		},
+		{
+			"Name": "Rood",
+			"Variation": 0,
+			"Export Name": "Rood - 1"
+		},
+		{
+			"Name": "Zinzolin",
+			"Variation": 0,
+			"Export Name": "Zinzolin - Plasma Frigate Tag Battle 2"
+		},
+		{
+			"Name": "Shadow",
+			"Variation": 0,
+			"Export Name": "Shadow - 1"
+		},
+		{
+			"Name": "Dean",
+			"Variation": 0,
+			"Export Name": "Dean - 1"
+		},
+		{
+			"Name": "Doyle",
+			"Variation": 0,
+			"Export Name": "Doyle - 1"
+		},
+		{
+			"Name": "Melina",
+			"Variation": 0,
+			"Export Name": "Melina - 1"
+		},
+		{
+			"Name": "Enzio",
+			"Variation": 0,
+			"Export Name": "Enzio - 1"
+		},
+		{
+			"Name": "Jeanne",
+			"Variation": 0,
+			"Export Name": "Jeanne - 1"
+		},
+		{
+			"Name": "Santino",
+			"Variation": 0,
+			"Export Name": "Santino - 1"
+		},
+		{
+			"Name": "Sable",
+			"Variation": 0,
+			"Export Name": "Sable - 1"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 2,
+			"Export Name": "Grunt 1 - Castelia Sewers Tag Battle"
+		},
+		{
+			"Name": "Nishino",
+			"Variation": 0,
+			"Export Name": "Nishino - 1"
+		},
+		{
+			"Name": "Colress",
+			"Variation": 1,
+			"Export Name": "Colress - Route 4"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 3,
+			"Export Name": "Grunt 1 - Nimbasa City"
+		},
+		{
+			"Name": "Nate",
+			"Variation": 0,
+			"Export Name": "Nate - 1"
+		},
+		{
+			"Name": "Nate",
+			"Variation": 1,
+			"Export Name": "Nate - 2"
+		},
+		{
+			"Name": "Nate",
+			"Variation": 2,
+			"Export Name": "Nate - 3"
+		},
+		{
+			"Name": "Rosa",
+			"Variation": 0,
+			"Export Name": "Rosa - 1"
+		},
+		{
+			"Name": "Rosa",
+			"Variation": 1,
+			"Export Name": "Rosa - 2"
+		},
+		{
+			"Name": "Rosa",
+			"Variation": 2,
+			"Export Name": "Rosa - 3"
+		},
+		{
+			"Name": "Charles",
+			"Variation": 2,
+			"Export Name": "Charles - 3"
+		},
+		{
+			"Name": "Charles",
+			"Variation": 3,
+			"Export Name": "Charles - 4"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 6,
+			"Export Name": "Hugh - Plasma Frigate in PWT Tag Battle 2 (Player Chose Snivy)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 7,
+			"Export Name": "Hugh - Plasma Frigate in PWT Tag Battle 2 (Player Chose Tepig)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 8,
+			"Export Name": "Hugh - Plasma Frigate in PWT Tag Battle 2 (Player Chose Oshawott)"
+		},
+		{
+			"Name": "Cheren",
+			"Variation": 1,
+			"Export Name": "Cheren - Plasma Frigate in PWT Tag Battle 1"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 4,
+			"Export Name": "Grunt 1 - Plasma Frigate in PWT"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 5,
+			"Export Name": "Grunt 2 - Plasma Frigate in PWT"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 6,
+			"Export Name": "Grunt 4 - Plasma Frigate in PWT Tag Battle 1"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 7,
+			"Export Name": "Grunt 3 - Plasma Frigate in PWT Tag Battle 1"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 8,
+			"Export Name": "Grunt 6 - Plasma Frigate in PWT Tag Battle 2"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 9,
+			"Export Name": "Grunt 5 - Plasma Frigate in PWT Tag Battle 2"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 9,
+			"Export Name": "Hugh - Undella Town (Player Chose Snivy)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 10,
+			"Export Name": "Hugh - Undella Town (Player Chose Tepig)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 11,
+			"Export Name": "Hugh - Undella Town (Player Chose Oshawott)"
+		},
+		{
+			"Name": "Lucius",
+			"Variation": 0,
+			"Export Name": "Lucius - 1"
+		},
+		{
+			"Name": "Jerry",
+			"Variation": 0,
+			"Export Name": "Jerry - 1"
+		},
+		{
+			"Name": "Rhona",
+			"Variation": 0,
+			"Export Name": "Rhona - 1"
+		},
+		{
+			"Name": "Ron",
+			"Variation": 0,
+			"Export Name": "Ron - 1"
+		},
+		{
+			"Name": "Denae",
+			"Variation": 0,
+			"Export Name": "Denae - 1"
+		},
+		{
+			"Name": "Leaf",
+			"Variation": 0,
+			"Export Name": "Leaf - 1"
+		},
+		{
+			"Name": "Naoko",
+			"Variation": 0,
+			"Export Name": "Naoko - 1"
+		},
+		{
+			"Name": "Bret",
+			"Variation": 0,
+			"Export Name": "Bret - 1"
+		},
+		{
+			"Name": "Malory",
+			"Variation": 0,
+			"Export Name": "Malory - 1"
+		},
+		{
+			"Name": "Boone",
+			"Variation": 0,
+			"Export Name": "Boone - 1"
+		},
+		{
+			"Name": "Lynette",
+			"Variation": 0,
+			"Export Name": "Lynette - 1"
+		},
+		{
+			"Name": "Petey",
+			"Variation": 0,
+			"Export Name": "Petey - 1"
+		},
+		{
+			"Name": "Edgar",
+			"Variation": 0,
+			"Export Name": "Edgar - 1"
+		},
+		{
+			"Name": "Marsha",
+			"Variation": 0,
+			"Export Name": "Marsha - 1"
+		},
+		{
+			"Name": "Autumn",
+			"Variation": 0,
+			"Export Name": "Autumn - 1"
+		},
+		{
+			"Name": "Buster",
+			"Variation": 0,
+			"Export Name": "Buster - 1"
+		},
+		{
+			"Name": "Eva",
+			"Variation": 0,
+			"Export Name": "Eva - 1"
+		},
+		{
+			"Name": "Tyrone",
+			"Variation": 0,
+			"Export Name": "Tyrone - 1"
+		},
+		{
+			"Name": "Bruce",
+			"Variation": 0,
+			"Export Name": "Bruce - 1"
+		},
+		{
+			"Name": "Mack",
+			"Variation": 0,
+			"Export Name": "Mack - 1"
+		},
+		{
+			"Name": "Jimmy",
+			"Variation": 0,
+			"Export Name": "Jimmy - 1"
+		},
+		{
+			"Name": "Mali",
+			"Variation": 0,
+			"Export Name": "Mali - 1"
+		},
+		{
+			"Name": "Oriana",
+			"Variation": 0,
+			"Export Name": "Oriana - 1"
+		},
+		{
+			"Name": "Rayne",
+			"Variation": 0,
+			"Export Name": "Rayne - 1"
+		},
+		{
+			"Name": "Shane",
+			"Variation": 0,
+			"Export Name": "Shane - 1"
+		},
+		{
+			"Name": "Jill",
+			"Variation": 0,
+			"Export Name": "Jill - 1"
+		},
+		{
+			"Name": "Mikey",
+			"Variation": 0,
+			"Export Name": "Mikey - 1"
+		},
+		{
+			"Name": "Henrietta",
+			"Variation": 0,
+			"Export Name": "Henrietta - 1"
+		},
+		{
+			"Name": "Rick",
+			"Variation": 0,
+			"Export Name": "Rick - 1"
+		},
+		{
+			"Name": "Audra",
+			"Variation": 0,
+			"Export Name": "Audra - 1"
+		},
+		{
+			"Name": "Sean",
+			"Variation": 0,
+			"Export Name": "Sean - 1"
+		},
+		{
+			"Name": "Cheyenne",
+			"Variation": 0,
+			"Export Name": "Cheyenne - 1"
+		},
+		{
+			"Name": "Lydon",
+			"Variation": 0,
+			"Export Name": "Lydon - 1"
+		},
+		{
+			"Name": "Bucky",
+			"Variation": 0,
+			"Export Name": "Bucky - 1"
+		},
+		{
+			"Name": "Wright",
+			"Variation": 0,
+			"Export Name": "Wright - 1"
+		},
+		{
+			"Name": "Jeffery",
+			"Variation": 0,
+			"Export Name": "Jeffery - 1"
+		},
+		{
+			"Name": "Ruth",
+			"Variation": 0,
+			"Export Name": "Ruth - 1"
+		},
+		{
+			"Name": "Dara",
+			"Variation": 0,
+			"Export Name": "Dara - 1"
+		},
+		{
+			"Name": "Stephen",
+			"Variation": 0,
+			"Export Name": "Stephen - 1"
+		},
+		{
+			"Name": "Vincent",
+			"Variation": 0,
+			"Export Name": "Vincent - 1"
+		},
+		{
+			"Name": "Chester",
+			"Variation": 0,
+			"Export Name": "Chester - 1"
+		},
+		{
+			"Name": "Maya",
+			"Variation": 0,
+			"Export Name": "Maya - 1"
+		},
+		{
+			"Name": "Gina",
+			"Variation": 0,
+			"Export Name": "Gina - 1"
+		},
+		{
+			"Name": "Zachary",
+			"Variation": 0,
+			"Export Name": "Zachary - 1"
+		},
+		{
+			"Name": "Wendy",
+			"Variation": 0,
+			"Export Name": "Wendy - 1"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 10,
+			"Export Name": "Grunt 4/7(B2/W2) - Plasma Frigate B1F in Route 21"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 11,
+			"Export Name": "Grunt 3/5(B2/W2) - Plasma Frigate B1F in Route 21"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 12,
+			"Export Name": "Grunt 7/3(B2/W2) - Plasma Frigate B1F in Route 21"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 13,
+			"Export Name": "Grunt 8/8(B2/W2) - Plasma Frigate B1F in Route 21"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 14,
+			"Export Name": "Grunt 1 - Plasma Frigate B2F in Giant Chasm"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 15,
+			"Export Name": "Grunt - 16 | this one could be in two entirely different areas im not doing the rest of them for now"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 16,
+			"Export Name": "Grunt - 17"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 17,
+			"Export Name": "Grunt - 18"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 18,
+			"Export Name": "Grunt - 19"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 19,
+			"Export Name": "Grunt - 20"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 20,
+			"Export Name": "Grunt - 21"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 21,
+			"Export Name": "Grunt - 22"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 22,
+			"Export Name": "Grunt - 23"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 23,
+			"Export Name": "Grunt - 24"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 24,
+			"Export Name": "Grunt - 25"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 25,
+			"Export Name": "Grunt - 26"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 26,
+			"Export Name": "Grunt - 27"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 27,
+			"Export Name": "Grunt - 28"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 28,
+			"Export Name": "Grunt - 29"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 29,
+			"Export Name": "Grunt - 30"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 30,
+			"Export Name": "Grunt - 31"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 31,
+			"Export Name": "Grunt - 32"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 32,
+			"Export Name": "Grunt - 33"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 33,
+			"Export Name": "Grunt - 34"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 34,
+			"Export Name": "Grunt - 35"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 35,
+			"Export Name": "Grunt - 36"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 36,
+			"Export Name": "Grunt - 37"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 37,
+			"Export Name": "Grunt - 38"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 38,
+			"Export Name": "Grunt - 39"
+		},
+		{
+			"Name": "Alberta",
+			"Variation": 0,
+			"Export Name": "Alberta - 1"
+		},
+		{
+			"Name": "Cynthia",
+			"Variation": 0,
+			"Export Name": "Cynthia - 1"
+		},
+		{
+			"Name": "Jan",
+			"Variation": 0,
+			"Export Name": "Jan - 1"
+		},
+		{
+			"Name": "Ilse",
+			"Variation": 0,
+			"Export Name": "Ilse - 1"
+		},
+		{
+			"Name": "Lana",
+			"Variation": 0,
+			"Export Name": "Lana - 1"
+		},
+		{
+			"Name": "Tammy",
+			"Variation": 0,
+			"Export Name": "Tammy - 1"
+		},
+		{
+			"Name": "Felix",
+			"Variation": 0,
+			"Export Name": "Felix - 1"
+		},
+		{
+			"Name": "Brady",
+			"Variation": 0,
+			"Export Name": "Brady - 1"
+		},
+		{
+			"Name": "Clarke",
+			"Variation": 0,
+			"Export Name": "Clarke - 1"
+		},
+		{
+			"Name": "Caroline",
+			"Variation": 0,
+			"Export Name": "Caroline - 1"
+		},
+		{
+			"Name": "Zack",
+			"Variation": 0,
+			"Export Name": "Zack - 1"
+		},
+		{
+			"Name": "Scott",
+			"Variation": 0,
+			"Export Name": "Scott - 1"
+		},
+		{
+			"Name": "Adelaide",
+			"Variation": 0,
+			"Export Name": "Adelaide - 1"
+		},
+		{
+			"Name": "Jeremiah",
+			"Variation": 0,
+			"Export Name": "Jeremiah - 1"
+		},
+		{
+			"Name": "Drago",
+			"Variation": 0,
+			"Export Name": "Drago - 1"
+		},
+		{
+			"Name": "Tia",
+			"Variation": 0,
+			"Export Name": "Tia - 1"
+		},
+		{
+			"Name": "Rich",
+			"Variation": 0,
+			"Export Name": "Rich - 1"
+		},
+		{
+			"Name": "Maki",
+			"Variation": 0,
+			"Export Name": "Maki - 1"
+		},
+		{
+			"Name": "Johan",
+			"Variation": 0,
+			"Export Name": "Johan - 1"
+		},
+		{
+			"Name": "Mikiko",
+			"Variation": 0,
+			"Export Name": "Mikiko - 1"
+		},
+		{
+			"Name": "Don",
+			"Variation": 0,
+			"Export Name": "Don - 1"
+		},
+		{
+			"Name": "Doug",
+			"Variation": 0,
+			"Export Name": "Doug - 1"
+		},
+		{
+			"Name": "Luke",
+			"Variation": 0,
+			"Export Name": "Luke - 1"
+		},
+		{
+			"Name": "Brenda",
+			"Variation": 0,
+			"Export Name": "Brenda - 1"
+		},
+		{
+			"Name": "Juliet",
+			"Variation": 0,
+			"Export Name": "Juliet - 1"
+		},
+		{
+			"Name": "Grant",
+			"Variation": 0,
+			"Export Name": "Grant - 1"
+		},
+		{
+			"Name": "Benjamin",
+			"Variation": 0,
+			"Export Name": "Benjamin - 1"
+		},
+		{
+			"Name": "Tiffany",
+			"Variation": 0,
+			"Export Name": "Tiffany - 1"
+		},
+		{
+			"Name": "Lena",
+			"Variation": 0,
+			"Export Name": "Lena - 1"
+		},
+		{
+			"Name": "Steve",
+			"Variation": 0,
+			"Export Name": "Steve - 1"
+		},
+		{
+			"Name": "Tom",
+			"Variation": 0,
+			"Export Name": "Tom - 1"
+		},
+		{
+			"Name": "Miki",
+			"Variation": 0,
+			"Export Name": "Miki - 1"
+		},
+		{
+			"Name": "Teppei",
+			"Variation": 0,
+			"Export Name": "Teppei - 1"
+		},
+		{
+			"Name": "Manuel",
+			"Variation": 0,
+			"Export Name": "Manuel - 1"
+		},
+		{
+			"Name": "Morgann",
+			"Variation": 0,
+			"Export Name": "Morgann - 1"
+		},
+		{
+			"Name": "Herman",
+			"Variation": 0,
+			"Export Name": "Herman - 1"
+		},
+		{
+			"Name": "Paul",
+			"Variation": 0,
+			"Export Name": "Paul - 1"
+		},
+		{
+			"Name": "Cliff",
+			"Variation": 0,
+			"Export Name": "Cliff - 1"
+		},
+		{
+			"Name": "Dusty",
+			"Variation": 0,
+			"Export Name": "Dusty - 1"
+		},
+		{
+			"Name": "Chili",
+			"Variation": 0,
+			"Export Name": "Chili - 1"
+		},
+		{
+			"Name": "Cress",
+			"Variation": 0,
+			"Export Name": "Cress - 1"
+		},
+		{
+			"Name": "Cilan",
+			"Variation": 0,
+			"Export Name": "Cilan - 1"
+		},
+		{
+			"Name": "Zinzolin",
+			"Variation": 1,
+			"Export Name": "Zinzolin - Plasma Frigate"
+		},
+		{
+			"Name": "Shadow",
+			"Variation": 1,
+			"Export Name": "Shadow - 2"
+		},
+		{
+			"Name": "Shadow",
+			"Variation": 2,
+			"Export Name": "Shadow - 3"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 39,
+			"Export Name": "Grunt - 40"
+		},
+		{
+			"Name": "Clemens",
+			"Variation": 0,
+			"Export Name": "Clemens - 1"
+		},
+		{
+			"Name": "Warren",
+			"Variation": 0,
+			"Export Name": "Warren - 1"
+		},
+		{
+			"Name": "Neil",
+			"Variation": 0,
+			"Export Name": "Neil - 1"
+		},
+		{
+			"Name": "Jariel",
+			"Variation": 0,
+			"Export Name": "Jariel - 1"
+		},
+		{
+			"Name": "Janna",
+			"Variation": 0,
+			"Export Name": "Janna - 1"
+		},
+		{
+			"Name": "Leo",
+			"Variation": 0,
+			"Export Name": "Leo - 1"
+		},
+		{
+			"Name": "Brand",
+			"Variation": 0,
+			"Export Name": "Brand - 1"
+		},
+		{
+			"Name": "Maxwell",
+			"Variation": 0,
+			"Export Name": "Maxwell - 1"
+		},
+		{
+			"Name": "Katie",
+			"Variation": 0,
+			"Export Name": "Katie - 1"
+		},
+		{
+			"Name": "Dua",
+			"Variation": 0,
+			"Export Name": "Dua - 1"
+		},
+		{
+			"Name": "Perry",
+			"Variation": 0,
+			"Export Name": "Perry - 1"
+		},
+		{
+			"Name": "Low",
+			"Variation": 0,
+			"Export Name": "Low - 1"
+		},
+		{
+			"Name": "Kiyo",
+			"Variation": 0,
+			"Export Name": "Kiyo - 1"
+		},
+		{
+			"Name": "Kumiko",
+			"Variation": 0,
+			"Export Name": "Kumiko - 1"
+		},
+		{
+			"Name": "Lewis",
+			"Variation": 0,
+			"Export Name": "Lewis - 1"
+		},
+		{
+			"Name": "Lewis",
+			"Variation": 1,
+			"Export Name": "Lewis - 2"
+		},
+		{
+			"Name": "Eliza",
+			"Variation": 0,
+			"Export Name": "Eliza - 1"
+		},
+		{
+			"Name": "Eliza",
+			"Variation": 1,
+			"Export Name": "Eliza - 2"
+		},
+		{
+			"Name": "Ray",
+			"Variation": 0,
+			"Export Name": "Ray - 1"
+		},
+		{
+			"Name": "Cora",
+			"Variation": 0,
+			"Export Name": "Cora - 1"
+		},
+		{
+			"Name": "Jared",
+			"Variation": 0,
+			"Export Name": "Jared - 1"
+		},
+		{
+			"Name": "Markus",
+			"Variation": 0,
+			"Export Name": "Markus - 1"
+		},
+		{
+			"Name": "Corey",
+			"Variation": 0,
+			"Export Name": "Corey - 1"
+		},
+		{
+			"Name": "Chan",
+			"Variation": 0,
+			"Export Name": "Chan - 1"
+		},
+		{
+			"Name": "Cairn",
+			"Variation": 0,
+			"Export Name": "Cairn - 1"
+		},
+		{
+			"Name": "Gus",
+			"Variation": 0,
+			"Export Name": "Gus - 1"
+		},
+		{
+			"Name": "Victor",
+			"Variation": 0,
+			"Export Name": "Victor - 1"
+		},
+		{
+			"Name": "Patton",
+			"Variation": 0,
+			"Export Name": "Patton - 1"
+		},
+		{
+			"Name": "Ryan",
+			"Variation": 0,
+			"Export Name": "Ryan - 1"
+		},
+		{
+			"Name": "Hunter",
+			"Variation": 0,
+			"Export Name": "Hunter - 1"
+		},
+		{
+			"Name": "Wade",
+			"Variation": 0,
+			"Export Name": "Wade - 1"
+		},
+		{
+			"Name": "Zach",
+			"Variation": 0,
+			"Export Name": "Zach - 1"
+		},
+		{
+			"Name": "Julia",
+			"Variation": 0,
+			"Export Name": "Julia - 1"
+		},
+		{
+			"Name": "Carter",
+			"Variation": 0,
+			"Export Name": "Carter - 1"
+		},
+		{
+			"Name": "Chloris",
+			"Variation": 0,
+			"Export Name": "Chloris - 1"
+		},
+		{
+			"Name": "Iris",
+			"Variation": 1,
+			"Export Name": "Iris - Rematch (Normal Mode)"
+		},
+		{
+			"Name": "Anna",
+			"Variation": 0,
+			"Export Name": "Anna - 1"
+		},
+		{
+			"Name": "Beverly",
+			"Variation": 0,
+			"Export Name": "Beverly - 1"
+		},
+		{
+			"Name": "Otto",
+			"Variation": 0,
+			"Export Name": "Otto - 1"
+		},
+		{
+			"Name": "Jeremy",
+			"Variation": 0,
+			"Export Name": "Jeremy - 1"
+		},
+		{
+			"Name": "Ronald",
+			"Variation": 0,
+			"Export Name": "Ronald - 1"
+		},
+		{
+			"Name": "Lumi",
+			"Variation": 0,
+			"Export Name": "Lumi - 1"
+		},
+		{
+			"Name": "Briana",
+			"Variation": 0,
+			"Export Name": "Briana - 1"
+		},
+		{
+			"Name": "Louis",
+			"Variation": 0,
+			"Export Name": "Louis - 1"
+		},
+		{
+			"Name": "Vicki",
+			"Variation": 0,
+			"Export Name": "Vicki - 1"
+		},
+		{
+			"Name": "Corky",
+			"Variation": 0,
+			"Export Name": "Corky - 1"
+		},
+		{
+			"Name": "Shaye",
+			"Variation": 0,
+			"Export Name": "Shaye - 1"
+		},
+		{
+			"Name": "Mary",
+			"Variation": 0,
+			"Export Name": "Mary - 1"
+		},
+		{
+			"Name": "Jude",
+			"Variation": 0,
+			"Export Name": "Jude - 1"
+		},
+		{
+			"Name": "Georgia",
+			"Variation": 0,
+			"Export Name": "Georgia - 1"
+		},
+		{
+			"Name": "Daniel",
+			"Variation": 1,
+			"Export Name": "Daniel - 2"
+		},
+		{
+			"Name": "Grace",
+			"Variation": 0,
+			"Export Name": "Grace - 1"
+		},
+		{
+			"Name": "Micki",
+			"Variation": 0,
+			"Export Name": "Micki - 1"
+		},
+		{
+			"Name": "Joyce",
+			"Variation": 0,
+			"Export Name": "Joyce - 1"
+		},
+		{
+			"Name": "Bryce",
+			"Variation": 0,
+			"Export Name": "Bryce - 1"
+		},
+		{
+			"Name": "Sarah",
+			"Variation": 0,
+			"Export Name": "Sarah - 1"
+		},
+		{
+			"Name": "Jaye",
+			"Variation": 0,
+			"Export Name": "Jaye - 1"
+		},
+		{
+			"Name": "Lurleen",
+			"Variation": 0,
+			"Export Name": "Lurleen - 1"
+		},
+		{
+			"Name": "Wes",
+			"Variation": 0,
+			"Export Name": "Wes - 1"
+		},
+		{
+			"Name": "Rae & Ula",
+			"Variation": 0,
+			"Export Name": "Rae & Ula - 1"
+		},
+		{
+			"Name": "Tobias",
+			"Variation": 0,
+			"Export Name": "Tobias - 1"
+		},
+		{
+			"Name": "Keith",
+			"Variation": 0,
+			"Export Name": "Keith - 1"
+		},
+		{
+			"Name": "Kendall",
+			"Variation": 0,
+			"Export Name": "Kendall - 1"
+		},
+		{
+			"Name": "Randall",
+			"Variation": 0,
+			"Export Name": "Randall - 1"
+		},
+		{
+			"Name": "Annie",
+			"Variation": 0,
+			"Export Name": "Annie - 1"
+		},
+		{
+			"Name": "Eileen",
+			"Variation": 0,
+			"Export Name": "Eileen - 1"
+		},
+		{
+			"Name": "Terrance",
+			"Variation": 0,
+			"Export Name": "Terrance - 1"
+		},
+		{
+			"Name": "Lumina",
+			"Variation": 0,
+			"Export Name": "Lumina - 1"
+		},
+		{
+			"Name": "Tully",
+			"Variation": 0,
+			"Export Name": "Tully - 1"
+		},
+		{
+			"Name": "Ena",
+			"Variation": 0,
+			"Export Name": "Ena - 1"
+		},
+		{
+			"Name": "Astor",
+			"Variation": 0,
+			"Export Name": "Astor - 1"
+		},
+		{
+			"Name": "Mai",
+			"Variation": 0,
+			"Export Name": "Mai - 1"
+		},
+		{
+			"Name": "Ingrid",
+			"Variation": 0,
+			"Export Name": "Ingrid - 1"
+		},
+		{
+			"Name": "Tyra",
+			"Variation": 0,
+			"Export Name": "Tyra - 1"
+		},
+		{
+			"Name": "Ryder",
+			"Variation": 0,
+			"Export Name": "Ryder - 1"
+		},
+		{
+			"Name": "Eustace",
+			"Variation": 0,
+			"Export Name": "Eustace - 1"
+		},
+		{
+			"Name": "Arnold",
+			"Variation": 0,
+			"Export Name": "Arnold - 1"
+		},
+		{
+			"Name": "Parker",
+			"Variation": 0,
+			"Export Name": "Parker - 1"
+		},
+		{
+			"Name": "Elaine",
+			"Variation": 0,
+			"Export Name": "Elaine - 1"
+		},
+		{
+			"Name": "Rocky",
+			"Variation": 0,
+			"Export Name": "Rocky - 1"
+		},
+		{
+			"Name": "Colress",
+			"Variation": 2,
+			"Export Name": "Colress - Placeholder"
+		},
+		{
+			"Name": "Alder",
+			"Variation": 0,
+			"Export Name": "Alder - 1"
+		},
+		{
+			"Name": "Shadow",
+			"Variation": 3,
+			"Export Name": "Shadow - 4"
+		},
+		{
+			"Name": "Zinzolin",
+			"Variation": 2,
+			"Export Name": "Zinzolin - Opelucid City"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 40,
+			"Export Name": "Grunt - 41"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 41,
+			"Export Name": "Grunt - 42"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 42,
+			"Export Name": "Grunt - 43"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 12,
+			"Export Name": "Hugh - Castelia Sewers Tag Battle (Player Chose Snivy)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 13,
+			"Export Name": "Hugh - Castelia Sewers Tag Battle (Player Chose Tepig)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 14,
+			"Export Name": "Hugh - Castelia Sewers Tag Battle (Player Chose Oshawott)"
+		},
+		{
+			"Name": "Nishino",
+			"Variation": 1,
+			"Export Name": "Nishino - 2"
+		},
+		{
+			"Name": "Morimoto",
+			"Variation": 1,
+			"Export Name": "Morimoto - 2"
+		},
+		{
+			"Name": "Keita",
+			"Variation": 0,
+			"Export Name": "Keita - 1"
+		},
+		{
+			"Name": "Billy",
+			"Variation": 0,
+			"Export Name": "Billy - 1"
+		},
+		{
+			"Name": "Alia",
+			"Variation": 0,
+			"Export Name": "Alia - 1"
+		},
+		{
+			"Name": "Jamie",
+			"Variation": 0,
+			"Export Name": "Jamie - 1"
+		},
+		{
+			"Name": "Al",
+			"Variation": 0,
+			"Export Name": "Al - 1"
+		},
+		{
+			"Name": "Beckett",
+			"Variation": 0,
+			"Export Name": "Beckett - 1"
+		},
+		{
+			"Name": "Shelly",
+			"Variation": 0,
+			"Export Name": "Shelly - 1"
+		},
+		{
+			"Name": "Cathy",
+			"Variation": 0,
+			"Export Name": "Cathy - 1"
+		},
+		{
+			"Name": "Logan",
+			"Variation": 0,
+			"Export Name": "Logan - 1"
+		},
+		{
+			"Name": "Webster",
+			"Variation": 0,
+			"Export Name": "Webster - 1"
+		},
+		{
+			"Name": "Shanta",
+			"Variation": 0,
+			"Export Name": "Shanta - 1"
+		},
+		{
+			"Name": "Sterling",
+			"Variation": 0,
+			"Export Name": "Sterling - 1"
+		},
+		{
+			"Name": "Portia",
+			"Variation": 0,
+			"Export Name": "Portia - 1"
+		},
+		{
+			"Name": "Caroll",
+			"Variation": 0,
+			"Export Name": "Caroll - 1"
+		},
+		{
+			"Name": "Martell",
+			"Variation": 0,
+			"Export Name": "Martell - 1"
+		},
+		{
+			"Name": "Elmer",
+			"Variation": 0,
+			"Export Name": "Elmer - 1"
+		},
+		{
+			"Name": "Chalina",
+			"Variation": 0,
+			"Export Name": "Chalina - 1"
+		},
+		{
+			"Name": "Pierce",
+			"Variation": 0,
+			"Export Name": "Pierce - 1"
+		},
+		{
+			"Name": "Chandra",
+			"Variation": 0,
+			"Export Name": "Chandra - 1"
+		},
+		{
+			"Name": "Hugo",
+			"Variation": 0,
+			"Export Name": "Hugo - 1"
+		},
+		{
+			"Name": "Mae",
+			"Variation": 0,
+			"Export Name": "Mae - 1"
+		},
+		{
+			"Name": "Claude",
+			"Variation": 0,
+			"Export Name": "Claude - 1"
+		},
+		{
+			"Name": "Cecile",
+			"Variation": 0,
+			"Export Name": "Cecile - 1"
+		},
+		{
+			"Name": "------",
+			"Variation": 0,
+			"Export Name": "------ - 1"
+		},
+		{
+			"Name": "------",
+			"Variation": 1,
+			"Export Name": "------ - 2"
+		},
+		{
+			"Name": "------",
+			"Variation": 2,
+			"Export Name": "------ - 3"
+		},
+		{
+			"Name": "------",
+			"Variation": 3,
+			"Export Name": "------ - 4"
+		},
+		{
+			"Name": "------",
+			"Variation": 4,
+			"Export Name": "------ - 5"
+		},
+		{
+			"Name": "Rolan",
+			"Variation": 0,
+			"Export Name": "Rolan - 1"
+		},
+		{
+			"Name": "Abe",
+			"Variation": 1,
+			"Export Name": "Abe - 2"
+		},
+		{
+			"Name": "Chaz",
+			"Variation": 1,
+			"Export Name": "Chaz - 2"
+		},
+		{
+			"Name": "Mariana",
+			"Variation": 1,
+			"Export Name": "Mariana - 2"
+		},
+		{
+			"Name": "Henry",
+			"Variation": 1,
+			"Export Name": "Henry - 2"
+		},
+		{
+			"Name": "Sibyl",
+			"Variation": 1,
+			"Export Name": "Sibyl - 2"
+		},
+		{
+			"Name": "Brad",
+			"Variation": 1,
+			"Export Name": "Brad - 2"
+		},
+		{
+			"Name": "Elizandra",
+			"Variation": 1,
+			"Export Name": "Elizandra - 2"
+		},
+		{
+			"Name": "Cassandra",
+			"Variation": 1,
+			"Export Name": "Cassandra - 2"
+		},
+		{
+			"Name": "Robert",
+			"Variation": 1,
+			"Export Name": "Robert - 2"
+		},
+		{
+			"Name": "Tanya",
+			"Variation": 1,
+			"Export Name": "Tanya - 2"
+		},
+		{
+			"Name": "Cheren",
+			"Variation": 2,
+			"Export Name": "Cheren - Pinwheel Forest Tag Battles"
+		},
+		{
+			"Name": "Keston",
+			"Variation": 0,
+			"Export Name": "Keston - 1"
+		},
+		{
+			"Name": "Millie",
+			"Variation": 0,
+			"Export Name": "Millie - 1"
+		},
+		{
+			"Name": "Kelsey",
+			"Variation": 0,
+			"Export Name": "Kelsey - 1"
+		},
+		{
+			"Name": "Kathrine",
+			"Variation": 0,
+			"Export Name": "Kathrine - 1"
+		},
+		{
+			"Name": "Kentaro",
+			"Variation": 0,
+			"Export Name": "Kentaro - 1"
+		},
+		{
+			"Name": "Lee",
+			"Variation": 0,
+			"Export Name": "Lee - 1"
+		},
+		{
+			"Name": "Ralph",
+			"Variation": 0,
+			"Export Name": "Ralph - 1"
+		},
+		{
+			"Name": "Dwayne",
+			"Variation": 0,
+			"Export Name": "Dwayne - 1"
+		},
+		{
+			"Name": "Melita",
+			"Variation": 0,
+			"Export Name": "Melita - 1"
+		},
+		{
+			"Name": "Hillary",
+			"Variation": 0,
+			"Export Name": "Hillary - 1"
+		},
+		{
+			"Name": "Sinan",
+			"Variation": 0,
+			"Export Name": "Sinan - 1"
+		},
+		{
+			"Name": "Rosaline",
+			"Variation": 0,
+			"Export Name": "Rosaline - 1"
+		},
+		{
+			"Name": "Keita",
+			"Variation": 1,
+			"Export Name": "Keita - 2"
+		},
+		{
+			"Name": "Nicholas",
+			"Variation": 0,
+			"Export Name": "Nicholas - 1"
+		},
+		{
+			"Name": "Ethel",
+			"Variation": 0,
+			"Export Name": "Ethel - 1"
+		},
+		{
+			"Name": "Jojo",
+			"Variation": 0,
+			"Export Name": "Jojo - 1"
+		},
+		{
+			"Name": "Jos\u00c3\u00a9",
+			"Variation": 0,
+			"Export Name": "Jos\u00c3\u00a9 - 1"
+		},
+		{
+			"Name": "Samantha",
+			"Variation": 0,
+			"Export Name": "Samantha - 1"
+		},
+		{
+			"Name": "Ally & Amy",
+			"Variation": 0,
+			"Export Name": "Ally & Amy - 1"
+		},
+		{
+			"Name": "Elliot",
+			"Variation": 0,
+			"Export Name": "Elliot - 1"
+		},
+		{
+			"Name": "Lydia",
+			"Variation": 0,
+			"Export Name": "Lydia - 1"
+		},
+		{
+			"Name": "Marie",
+			"Variation": 0,
+			"Export Name": "Marie - 1"
+		},
+		{
+			"Name": "Talon",
+			"Variation": 0,
+			"Export Name": "Talon - 1"
+		},
+		{
+			"Name": "Corin",
+			"Variation": 0,
+			"Export Name": "Corin - 1"
+		},
+		{
+			"Name": "Abraham",
+			"Variation": 0,
+			"Export Name": "Abraham - 1"
+		},
+		{
+			"Name": "Eddie",
+			"Variation": 0,
+			"Export Name": "Eddie - 1"
+		},
+		{
+			"Name": "Elle",
+			"Variation": 0,
+			"Export Name": "Elle - 1"
+		},
+		{
+			"Name": "Naoise",
+			"Variation": 0,
+			"Export Name": "Naoise - 1"
+		},
+		{
+			"Name": "Rich",
+			"Variation": 1,
+			"Export Name": "Rich - 2"
+		},
+		{
+			"Name": "Walt",
+			"Variation": 0,
+			"Export Name": "Walt - 1"
+		},
+		{
+			"Name": "Sam",
+			"Variation": 0,
+			"Export Name": "Sam - 1"
+		},
+		{
+			"Name": "Tami",
+			"Variation": 0,
+			"Export Name": "Tami - 1"
+		},
+		{
+			"Name": "Clara",
+			"Variation": 0,
+			"Export Name": "Clara - 1"
+		},
+		{
+			"Name": "Jaden",
+			"Variation": 0,
+			"Export Name": "Jaden - 1"
+		},
+		{
+			"Name": "Anja",
+			"Variation": 0,
+			"Export Name": "Anja - 1"
+		},
+		{
+			"Name": "Tommy",
+			"Variation": 0,
+			"Export Name": "Tommy - 1"
+		},
+		{
+			"Name": "Future",
+			"Variation": 0,
+			"Export Name": "Future - 1"
+		},
+		{
+			"Name": "Mariah",
+			"Variation": 0,
+			"Export Name": "Mariah - 1"
+		},
+		{
+			"Name": "Kit",
+			"Variation": 0,
+			"Export Name": "Kit - 1"
+		},
+		{
+			"Name": "Derek",
+			"Variation": 0,
+			"Export Name": "Derek - 1"
+		},
+		{
+			"Name": "Dixie",
+			"Variation": 0,
+			"Export Name": "Dixie - 1"
+		},
+		{
+			"Name": "Zaiem",
+			"Variation": 0,
+			"Export Name": "Zaiem - 1"
+		},
+		{
+			"Name": "Maggie",
+			"Variation": 0,
+			"Export Name": "Maggie - 1"
+		},
+		{
+			"Name": "Xiao",
+			"Variation": 0,
+			"Export Name": "Xiao - 1"
+		},
+		{
+			"Name": "Edward",
+			"Variation": 0,
+			"Export Name": "Edward - 1"
+		},
+		{
+			"Name": "Thomas",
+			"Variation": 0,
+			"Export Name": "Thomas - 1"
+		},
+		{
+			"Name": "Heath",
+			"Variation": 0,
+			"Export Name": "Heath - 1"
+		},
+		{
+			"Name": "Jebediah",
+			"Variation": 0,
+			"Export Name": "Jebediah - 1"
+		},
+		{
+			"Name": "Shelby",
+			"Variation": 0,
+			"Export Name": "Shelby - 1"
+		},
+		{
+			"Name": "Geoff",
+			"Variation": 0,
+			"Export Name": "Geoff - 1"
+		},
+		{
+			"Name": "Belle",
+			"Variation": 0,
+			"Export Name": "Belle - 1"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 15,
+			"Export Name": "Hugh - Victory Road (Player Chose Snivy)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 16,
+			"Export Name": "Hugh - Victory Road (Player Chose Tepig)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 17,
+			"Export Name": "Hugh - Victory Road (Player Chose Oshawott)"
+		},
+		{
+			"Name": "Shadow",
+			"Variation": 4,
+			"Export Name": "Shadow - 5"
+		},
+		{
+			"Name": "Shadow",
+			"Variation": 5,
+			"Export Name": "Shadow - 6"
+		},
+		{
+			"Name": "Shadow",
+			"Variation": 6,
+			"Export Name": "Shadow - 7"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 43,
+			"Export Name": "Grunt - 44"
+		},
+		{
+			"Name": "Britney",
+			"Variation": 0,
+			"Export Name": "Britney - 1"
+		},
+		{
+			"Name": "Gilligan",
+			"Variation": 0,
+			"Export Name": "Gilligan - 1"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 18,
+			"Export Name": "Hugh - Post-Game Undella Town (Player Chose Snivy)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 19,
+			"Export Name": "Hugh - Post-Game Undella Town (Player Chose Tepig)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 20,
+			"Export Name": "Hugh - Post-Game Undella Town (Player Chose Oshawott)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 21,
+			"Export Name": "Hugh - Post-Game Driftveil City (Player Chose Snivy)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 22,
+			"Export Name": "Hugh - Post-Game Driftveil City (Player Chose Tepig)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 23,
+			"Export Name": "Hugh - Post-Game Driftveil City (Player Chose Oshawott)"
+		},
+		{
+			"Name": "Diana",
+			"Variation": 0,
+			"Export Name": "Diana - 1"
+		},
+		{
+			"Name": "Diana",
+			"Variation": 1,
+			"Export Name": "Diana - 2"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 24,
+			"Export Name": "Hugh - Lacunosa Town Tag Battle (Player Chose Snivy)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 25,
+			"Export Name": "Hugh - Lacunosa Town Tag Battle (Player Chose Tepig)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 26,
+			"Export Name": "Hugh - Lacunosa Town Tag Battle (Player Chose Oshawott)"
+		},
+		{
+			"Name": "Zinzolin",
+			"Variation": 3,
+			"Export Name": "Zinzolin - Lacunosa Town Tag Battle"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 44,
+			"Export Name": "Grunt - Lacunosa Town Tag Battle"
+		},
+		{
+			"Name": "Bianca",
+			"Variation": 1,
+			"Export Name": "Bianca - Memory Link (Player Chose Snivy)"
+		},
+		{
+			"Name": "Bianca",
+			"Variation": 2,
+			"Export Name": "Bianca - Memory Link (Player Chose Tepig)"
+		},
+		{
+			"Name": "Bianca",
+			"Variation": 3,
+			"Export Name": "Bianca - Memory Link (Player Chose Oshawott)"
+		},
+		{
+			"Name": "Cheren",
+			"Variation": 3,
+			"Export Name": "Cheren - Memory Link (Player Chose Snivy)"
+		},
+		{
+			"Name": "Cheren",
+			"Variation": 4,
+			"Export Name": "Cheren -  Memory Link (Player Chose Tepig)"
+		},
+		{
+			"Name": "Cheren",
+			"Variation": 5,
+			"Export Name": "Cheren - Memory Link (Player Chose Oshawott)"
+		},
+		{
+			"Name": "Rodrigo",
+			"Variation": 0,
+			"Export Name": "Rodrigo - 1"
+		},
+		{
+			"Name": "Gordon",
+			"Variation": 0,
+			"Export Name": "Gordon - 1"
+		},
+		{
+			"Name": "Andrey",
+			"Variation": 0,
+			"Export Name": "Andrey - 1"
+		},
+		{
+			"Name": "Grigor",
+			"Variation": 0,
+			"Export Name": "Grigor - 1"
+		},
+		{
+			"Name": "Donny",
+			"Variation": 0,
+			"Export Name": "Donny - 1"
+		},
+		{
+			"Name": "Mathis",
+			"Variation": 0,
+			"Export Name": "Mathis - 1"
+		},
+		{
+			"Name": "Natasha",
+			"Variation": 0,
+			"Export Name": "Natasha - 1"
+		},
+		{
+			"Name": "Nina",
+			"Variation": 0,
+			"Export Name": "Nina - 1"
+		},
+		{
+			"Name": "Eve",
+			"Variation": 0,
+			"Export Name": "Eve - 1"
+		},
+		{
+			"Name": "Trish",
+			"Variation": 0,
+			"Export Name": "Trish - 1"
+		},
+		{
+			"Name": "Jacqueline",
+			"Variation": 0,
+			"Export Name": "Jacqueline - 1"
+		},
+		{
+			"Name": "Layla",
+			"Variation": 0,
+			"Export Name": "Layla - 1"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 45,
+			"Export Name": "Grunt - 46"
+		},
+		{
+			"Name": "Carol",
+			"Variation": 0,
+			"Export Name": "Carol - 1"
+		},
+		{
+			"Name": "Derrick",
+			"Variation": 0,
+			"Export Name": "Derrick - 1"
+		},
+		{
+			"Name": "Lizzy",
+			"Variation": 0,
+			"Export Name": "Lizzy - 1"
+		},
+		{
+			"Name": "Amy",
+			"Variation": 0,
+			"Export Name": "Amy - 1"
+		},
+		{
+			"Name": "Nicholas",
+			"Variation": 1,
+			"Export Name": "Nicholas - 2"
+		},
+		{
+			"Name": "Wesley",
+			"Variation": 0,
+			"Export Name": "Wesley - 1"
+		},
+		{
+			"Name": "Alize",
+			"Variation": 0,
+			"Export Name": "Alize - 1"
+		},
+		{
+			"Name": "Ingo",
+			"Variation": 0,
+			"Export Name": "Ingo - 1"
+		},
+		{
+			"Name": "Emmet",
+			"Variation": 0,
+			"Export Name": "Emmet - 1"
+		},
+		{
+			"Name": "Clarence",
+			"Variation": 0,
+			"Export Name": "Clarence - 1"
+		},
+		{
+			"Name": "Jack",
+			"Variation": 0,
+			"Export Name": "Jack - 1"
+		},
+		{
+			"Name": "Gary",
+			"Variation": 0,
+			"Export Name": "Gary - 1"
+		},
+		{
+			"Name": "Anders",
+			"Variation": 0,
+			"Export Name": "Anders - 1"
+		},
+		{
+			"Name": "Daya",
+			"Variation": 0,
+			"Export Name": "Daya - 1"
+		},
+		{
+			"Name": "William",
+			"Variation": 0,
+			"Export Name": "William - 1"
+		},
+		{
+			"Name": "Rita",
+			"Variation": 0,
+			"Export Name": "Rita - 1"
+		},
+		{
+			"Name": "Olesia",
+			"Variation": 0,
+			"Export Name": "Olesia - 1"
+		},
+		{
+			"Name": "Nandor",
+			"Variation": 0,
+			"Export Name": "Nandor - 1"
+		},
+		{
+			"Name": "Athena",
+			"Variation": 0,
+			"Export Name": "Athena - 1"
+		},
+		{
+			"Name": "Franklin",
+			"Variation": 0,
+			"Export Name": "Franklin - 1"
+		},
+		{
+			"Name": "Masahiro",
+			"Variation": 0,
+			"Export Name": "Masahiro - 1"
+		},
+		{
+			"Name": "Waylon",
+			"Variation": 0,
+			"Export Name": "Waylon - 1"
+		},
+		{
+			"Name": "Seymour",
+			"Variation": 1,
+			"Export Name": "Seymour - 2"
+		},
+		{
+			"Name": "Cassie",
+			"Variation": 1,
+			"Export Name": "Cassie - 2"
+		},
+		{
+			"Name": "Seymour",
+			"Variation": 2,
+			"Export Name": "Seymour - 3"
+		},
+		{
+			"Name": "Cassie",
+			"Variation": 2,
+			"Export Name": "Cassie - 3"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 46,
+			"Export Name": "Grunt - 47"
+		},
+		{
+			"Name": "April",
+			"Variation": 0,
+			"Export Name": "April - 1"
+		},
+		{
+			"Name": "May & Mal",
+			"Variation": 0,
+			"Export Name": "May & Mal - 1"
+		},
+		{
+			"Name": "Ricky",
+			"Variation": 0,
+			"Export Name": "Ricky - 1"
+		},
+		{
+			"Name": "Jean-Paul",
+			"Variation": 0,
+			"Export Name": "Jean-Paul - 1"
+		},
+		{
+			"Name": "Tina",
+			"Variation": 0,
+			"Export Name": "Tina - 1"
+		},
+		{
+			"Name": "Ernest",
+			"Variation": 0,
+			"Export Name": "Ernest - 1"
+		},
+		{
+			"Name": "Eli",
+			"Variation": 0,
+			"Export Name": "Eli - 1"
+		},
+		{
+			"Name": "Donnaven",
+			"Variation": 0,
+			"Export Name": "Donnaven - 1"
+		},
+		{
+			"Name": "Crispin",
+			"Variation": 0,
+			"Export Name": "Crispin - 1"
+		},
+		{
+			"Name": "Joseph",
+			"Variation": 0,
+			"Export Name": "Joseph - 1"
+		},
+		{
+			"Name": "Wain",
+			"Variation": 0,
+			"Export Name": "Wain - 1"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 47,
+			"Export Name": "Grunt - 48"
+		},
+		{
+			"Name": "Cheren",
+			"Variation": 6,
+			"Export Name": "Cheren - Aspertia Gym Leader (Challenge Mode)"
+		},
+		{
+			"Name": "Roxie",
+			"Variation": 1,
+			"Export Name": "Roxie - Virbank Gym Leader (Challenge Mode)"
+		},
+		{
+			"Name": "Burgh",
+			"Variation": 1,
+			"Export Name": "Burgh - Castelia Gym Leader (Challenge Mode)"
+		},
+		{
+			"Name": "Elesa",
+			"Variation": 1,
+			"Export Name": "Elesa - Nimbasa Gym Leader (Challenge Mode)"
+		},
+		{
+			"Name": "Clay",
+			"Variation": 1,
+			"Export Name": "Clay - Driftveil Gym Leader (Challenge Mode)"
+		},
+		{
+			"Name": "Skyla",
+			"Variation": 1,
+			"Export Name": "Skyla - Mistralton Gym Leader (Challenge Mode)"
+		},
+		{
+			"Name": "Drayden",
+			"Variation": 1,
+			"Export Name": "Drayden - Opelucid Gym Leader (Challenge Mode)"
+		},
+		{
+			"Name": "Marlon",
+			"Variation": 1,
+			"Export Name": "Marlon - Humilau Gym Leader (Challenge Mode)"
+		},
+		{
+			"Name": "Shauntal",
+			"Variation": 2,
+			"Export Name": "Shauntal - Elite Four (Challenge Mode)"
+		},
+		{
+			"Name": "Grimsley",
+			"Variation": 2,
+			"Export Name": "Grimsley - Elite Four (Challenge Mode)"
+		},
+		{
+			"Name": "Marshal",
+			"Variation": 2,
+			"Export Name": "Marshal - Elite Four (Challenge Mode)"
+		},
+		{
+			"Name": "Caitlin",
+			"Variation": 2,
+			"Export Name": "Caitlin - Elite Four (Challenge Mode)"
+		},
+		{
+			"Name": "Iris",
+			"Variation": 2,
+			"Export Name": "Iris - Champion (Challenge Mode)"
+		},
+		{
+			"Name": "Shauntal",
+			"Variation": 3,
+			"Export Name": "Shauntal - Rematch (Challenge Mode)"
+		},
+		{
+			"Name": "Grimsley",
+			"Variation": 3,
+			"Export Name": "Grimsley - Rematch (Challenge Mode)"
+		},
+		{
+			"Name": "Marshal",
+			"Variation": 3,
+			"Export Name": "Marshal - Rematch (Challenge Mode)"
+		},
+		{
+			"Name": "Caitlin",
+			"Variation": 3,
+			"Export Name": "Caitlin - Rematch (Challenge Mode)"
+		},
+		{
+			"Name": "Iris",
+			"Variation": 3,
+			"Export Name": "Iris - Rematch (Challenge Mode)"
+		},
+		{
+			"Name": "N",
+			"Variation": 2,
+			"Export Name": "N - 3"
+		},
+		{
+			"Name": "N",
+			"Variation": 3,
+			"Export Name": "N - 4"
+		},
+		{
+			"Name": "N",
+			"Variation": 4,
+			"Export Name": "N - 5"
+		},
+		{
+			"Name": "N",
+			"Variation": 5,
+			"Export Name": "N - 6"
+		},
+		{
+			"Name": "Ray",
+			"Variation": 1,
+			"Export Name": "Ray - 2"
+		},
+		{
+			"Name": "Cora",
+			"Variation": 1,
+			"Export Name": "Cora - 2"
+		},
+		{
+			"Name": "Kiyo",
+			"Variation": 1,
+			"Export Name": "Kiyo - 2"
+		},
+		{
+			"Name": "Kumiko",
+			"Variation": 1,
+			"Export Name": "Kumiko - 2"
+		},
+		{
+			"Name": "Rosalyn",
+			"Variation": 0,
+			"Export Name": "Rosalyn - 1"
+		},
+		{
+			"Name": "Ike",
+			"Variation": 0,
+			"Export Name": "Ike - 1"
+		},
+		{
+			"Name": "Henley",
+			"Variation": 0,
+			"Export Name": "Henley - 1"
+		},
+		{
+			"Name": "Helia",
+			"Variation": 0,
+			"Export Name": "Helia - 1"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 27,
+			"Export Name": "Hugh - Plasma Frigate Tag Battle 2 (Player Chose Snivy)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 28,
+			"Export Name": "Hugh - Plasma Frigate Tag Battle 2 (Player Chose Tepig)"
+		},
+		{
+			"Name": "Hugh",
+			"Variation": 29,
+			"Export Name": "Hugh - Plasma Frigate Tag Battle 2 (Player Chose Oshawott)"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 48,
+			"Export Name": "Grunt - 49"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 49,
+			"Export Name": "Grunt - 50"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 50,
+			"Export Name": "Grunt - 51"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 51,
+			"Export Name": "Grunt - 52"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 52,
+			"Export Name": "Grunt - 53"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 53,
+			"Export Name": "Grunt - 54"
+		},
+		{
+			"Name": "June",
+			"Variation": 0,
+			"Export Name": "June - 1"
+		},
+		{
+			"Name": "December",
+			"Variation": 0,
+			"Export Name": "December - 1"
+		},
+		{
+			"Name": "Augustin",
+			"Variation": 0,
+			"Export Name": "Augustin - 1"
+		},
+		{
+			"Name": "January",
+			"Variation": 0,
+			"Export Name": "January - 1"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 54,
+			"Export Name": "Grunt - 55"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 55,
+			"Export Name": "Grunt - 56"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 56,
+			"Export Name": "Grunt - 57"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 57,
+			"Export Name": "Grunt - 58"
+		},
+		{
+			"Name": "Julius",
+			"Variation": 0,
+			"Export Name": "Julius - 1"
+		},
+		{
+			"Name": "Colress",
+			"Variation": 3,
+			"Export Name": "Colress - Post-Game Rematch Plasma Frigate"
+		},
+		{
+			"Name": "Grunt",
+			"Variation": 58,
+			"Export Name": "Grunt - 59"
+		}
+	]
+}
