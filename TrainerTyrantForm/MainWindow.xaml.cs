@@ -22,13 +22,16 @@ namespace TrainerTyrantForm
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static readonly string openFileDialogFilter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
+        private static readonly string openJSONFileDialogFilter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
         private static readonly string getPokemonFile = "Open Pokemon JSON";
         private static readonly string getTrainerSlotFile = "Open Trainer JSON";
         private static readonly string getMovesFile = "Open Moves JSON";
         private static readonly string getItemsFile = "Open Items JSON";
+        private static readonly string getTRDataFolder = "Open TRData Folder";
+        private static readonly string getTRPokeFolder = "Open TRPoke Folder";
 
-        private string dialogDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        private string jsonDialogDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        private string narcDialogDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
         private ApplicationData _appData;
 
@@ -43,15 +46,15 @@ namespace TrainerTyrantForm
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = openFileDialogFilter,
+                Filter = openJSONFileDialogFilter,
                 Title = getPokemonFile,
-                InitialDirectory = dialogDirectory
+                InitialDirectory = jsonDialogDirectory
             };
 
             if (openFileDialog.ShowDialog() == true)
             {
                 //update the dialogDirectory so the next file dialog opens in the same location as this ends
-                dialogDirectory = new FileInfo(openFileDialog.FileName).DirectoryName;
+                jsonDialogDirectory = new FileInfo(openFileDialog.FileName).DirectoryName;
 
                 bool success = _appData.LoadPokemonData(openFileDialog.FileName, out IList<string> errors);
 
@@ -64,15 +67,15 @@ namespace TrainerTyrantForm
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = openFileDialogFilter,
+                Filter = openJSONFileDialogFilter,
                 Title = getTrainerSlotFile,
-                InitialDirectory = dialogDirectory
+                InitialDirectory = jsonDialogDirectory
             };
 
             if (openFileDialog.ShowDialog() == true)
             {
                 //update the dialogDirectory so the next file dialog opens in the same location as this ends
-                dialogDirectory = new FileInfo(openFileDialog.FileName).DirectoryName;
+                jsonDialogDirectory = new FileInfo(openFileDialog.FileName).DirectoryName;
 
                 bool success = _appData.LoadSlotData(openFileDialog.FileName, out IList<string> errors);
 
@@ -85,15 +88,15 @@ namespace TrainerTyrantForm
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = openFileDialogFilter,
+                Filter = openJSONFileDialogFilter,
                 Title = getMovesFile,
-                InitialDirectory = dialogDirectory
+                InitialDirectory = jsonDialogDirectory
             };
 
             if (openFileDialog.ShowDialog() == true)
             {
                 //update the dialogDirectory so the next file dialog opens in the same location as this ends
-                dialogDirectory = new FileInfo(openFileDialog.FileName).DirectoryName;
+                jsonDialogDirectory = new FileInfo(openFileDialog.FileName).DirectoryName;
 
                 bool success = _appData.LoadMoveData(openFileDialog.FileName, out IList<string> errors);
 
@@ -106,21 +109,35 @@ namespace TrainerTyrantForm
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = openFileDialogFilter,
+                Filter = openJSONFileDialogFilter,
                 Title = getItemsFile,
-                InitialDirectory = dialogDirectory
+                InitialDirectory = jsonDialogDirectory
             };
 
             if (openFileDialog.ShowDialog() == true)
             {
                 //update the dialogDirectory so the next file dialog opens in the same location as this ends
-                dialogDirectory = new FileInfo(openFileDialog.FileName).DirectoryName;
+                jsonDialogDirectory = new FileInfo(openFileDialog.FileName).DirectoryName;
 
                 bool success = _appData.LoadItemData(openFileDialog.FileName, out IList<string> errors);
 
                 if (!success)
                     MessageBox.Show(errors[0], "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+        }
+
+        private void btnLoadTRData_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = getTRDataFolder,
+                InitialDirectory = narcDialogDirectory
+            };
+        }
+
+        private void btnLoadTRPoke_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

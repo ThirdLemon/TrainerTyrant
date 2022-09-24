@@ -5,20 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrainerTyrantForm"
         mc:Ignorable="d"
-        Title="TrainerTyrant" Height="300" Width="600" Background="WhiteSmoke">
+        Title="TrainerTyrant" Height="300" Width="400" Background="WhiteSmoke">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Name="btnOpenPokemonFile" Grid.Column="0" Grid.Row="0" Click="btnOpenPokemonFile_Click" Content="Open Pokemon JSON" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Name="btnOpenPokemonFile" Grid.Column="0" Grid.Row="0" Click="btnOpenPokemonFile_Click" Content="Open Pokemon JSON" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,10,0"/>
         <Button Name="btnOpenTrainerFile" Grid.Column="0" Grid.Row="1" Click="btnOpenTrainerFile_Click" Content="Open Trainer JSON" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Button Name="btnOpenMovesFile" Grid.Column="1" Grid.Row="0" Click="btnOpenMovesFile_Click" Content="Open Moves JSON" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Button Name="btnOpenItemsFile" Grid.Column="1" Grid.Row="1" Click="btnOpenItemsFile_Click" Content="Open Items JSON" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Name="btnOpenMovesFile" Grid.Column="0" Grid.Row="2" Click="btnOpenMovesFile_Click" Content="Open Moves JSON" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Name="btnOpenItemsFile" Grid.Column="0" Grid.Row="3" Click="btnOpenItemsFile_Click" Content="Open Items JSON" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Name="btnLoadTRData" Grid.Row="0" Click="btnLoadTRData_Click" Content="Load TRData Folder" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+            <Button Name="btnLoadTRPoke" Grid.Row="1" Click="btnLoadTRPoke_Click" Content="Load TRPoke Folder" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+        </Grid>
     </Grid>
 </Window>

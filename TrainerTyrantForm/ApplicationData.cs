@@ -19,8 +19,10 @@ namespace TrainerTyrantForm
         private ExternalTrainerSlotList _slotData;
         private string _slotDataLoc = "DefaultJSON/DefaultSlots.json";
 
-        //The main data;
-        private TrainerRepresentationSet _mainData;
+        //The location of the folder containing the extracted TRData narc, set by the user
+        private string _trDataLoc = null;
+        //The location of the folder containing the extracted TRPoke narc, set by the user
+        private string _trPokeLoc = null;
 
         public ApplicationData()
         {
@@ -60,8 +62,7 @@ namespace TrainerTyrantForm
                 _slotData = null;
                 _slotDataLoc = null;
             }
-
-            _mainData = null;
+            _trDataLoc = _trPokeLoc = null;
         }
 
         /**
