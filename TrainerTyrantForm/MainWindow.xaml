@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrainerTyrantForm"
         mc:Ignorable="d"
-        Title="TrainerTyrant" Height="500" Width="400">
+        Title="TrainerTyrant" Height="300" Width="600" Background="WhiteSmoke">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Name="btnOpenPokemonFile" Grid.Column="0" Grid.Row="0" Click="btnOpenPokemonFile_Click" Content="Open Pokemon JSON" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Name="btnOpenTrainerFile" Grid.Column="0" Grid.Row="1" Click="btnOpenTrainerFile_Click" Content="Open Trainer JSON" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Name="btnOpenMovesFile" Grid.Column="1" Grid.Row="0" Click="btnOpenMovesFile_Click" Content="Open Moves JSON" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Name="btnOpenItemsFile" Grid.Column="1" Grid.Row="1" Click="btnOpenItemsFile_Click" Content="Open Items JSON" VerticalAlignment="Center" HorizontalAlignment="Center"/>
     </Grid>
 </Window>
