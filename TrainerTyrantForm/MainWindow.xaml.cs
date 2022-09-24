@@ -149,6 +149,9 @@ namespace TrainerTyrantForm
                 narcDialogDirectory = new DirectoryInfo(dialog.FileName).Parent.FullName;
 
                 _appData.LoadTRData(dialog.FileName);
+
+                if (_appData.CanDecompNARCs)
+                    btnDecompileNarcs.IsEnabled = true;
             }
         }
 
@@ -174,7 +177,15 @@ namespace TrainerTyrantForm
                 narcDialogDirectory = new DirectoryInfo(dialog.FileName).Parent.FullName;
 
                 _appData.LoadTRPoke(dialog.FileName);
+
+                if (_appData.CanDecompNARCs)
+                    btnDecompileNarcs.IsEnabled = true;
             }
+        }
+
+        private void btnDecompileNarcs_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
