@@ -365,7 +365,10 @@ namespace TrainerTyrantTest
 
             string serialized = JsonConvert.SerializeObject(shauntal, Formatting.Indented);
 
-            TrainerRepresentation shauntal2 = TrainerRepresentation.DeserializeJSON(serialized);
+            TrainerRepresentation shauntal2 = TrainerRepresentation.DeserializeJSON(serialized, out IList<string> errors);
+
+            foreach (string l in errors)
+                Console.WriteLine(l);
 
             Assert.IsNotNull(shauntal2);
             //When NameID is set, numberID shouldn't be serialized.

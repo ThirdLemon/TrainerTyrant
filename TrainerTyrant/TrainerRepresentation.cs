@@ -446,6 +446,12 @@ namespace TrainerTyrant
         public Miscellaneous Miscellaneous { get; set; }
         public string[] Moves { get; set; }
         public string Item { get; set; }
+
+        //dont' serialize moves when unnecessary. This hinges on the idea that if moves are enabled, the pokemon will always have moves in their data.
+        public bool ShouldSerializeMoves()
+        {
+            return !(Moves[0] == null && Moves[1] == null && Moves[2] == null && Moves[3] == null);
+        }
     }
 
     public class Miscellaneous
