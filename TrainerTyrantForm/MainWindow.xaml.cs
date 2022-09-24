@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace TrainerTyrantForm
 {
@@ -128,16 +129,52 @@ namespace TrainerTyrantForm
 
         private void btnLoadTRData_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog
+            //If the operating system does not support the file dialog, show an error and exit out. In the future this will be updated to just use a support, worse folder picker.
+            if(!CommonFileDialog.IsPlatformSupported)
             {
+                MessageBox.Show("Operating system does not support browsing for folders.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog
+            {
+                IsFolderPicker = true,
                 Title = getTRDataFolder,
                 InitialDirectory = narcDialogDirectory
             };
+
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                //Have to use full name here to get the desired effect. Why? Unsure.
+                narcDialogDirectory = new DirectoryInfo(dialog.FileName).Parent.FullName;
+
+                _appData.LoadTRData(dialog.FileName);
+            }
         }
 
         private void btnLoadTRPoke_Click(object sender, RoutedEventArgs e)
         {
+            //If the operating system does not support the file dialog, show an error and exit out. In the future this will be updated to just use a support, worse folder picker.
+            if (!CommonFileDialog.IsPlatformSupported)
+            {
+                MessageBox.Show("Operating system does not support browsing for folders.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog
+            {
+                IsFolderPicker = true,
+                Title = getTRPokeFolder,
+                InitialDirectory = narcDialogDirectory
+            };
+
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                //Have to use full name here to get the desired effect. Why? Unsure.
+                narcDialogDirectory = new DirectoryInfo(dialog.FileName).Parent.FullName;
+
+                _appData.LoadTRPoke(dialog.FileName);
+            }
         }
     }
 }

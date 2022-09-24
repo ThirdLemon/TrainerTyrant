@@ -24,6 +24,8 @@ namespace TrainerTyrantForm
         //The location of the folder containing the extracted TRPoke narc, set by the user
         private string _trPokeLoc = null;
 
+        public bool CanDecompNARCs { get { return _trDataLoc != null && _trPokeLoc != null; } }
+
         public ApplicationData()
         {
             if (File.Exists(_pokemonDataLoc))
@@ -165,5 +167,24 @@ namespace TrainerTyrantForm
             }
         }
 
+        public bool LoadTRData(string dirLoc)
+        {
+            if (Directory.Exists(dirLoc))
+            {
+                _trDataLoc = dirLoc;
+                return true;
+            }
+            return false;
+        }
+
+        public bool LoadTRPoke(string dirLoc)
+        {
+            if(Directory.Exists(dirLoc))
+            {
+                _trPokeLoc = dirLoc;
+                return true;
+            }
+            return false;
+        }
     }
 }
