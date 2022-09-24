@@ -148,6 +148,8 @@ namespace TrainerTyrant
             //Store trainer slot data
             to_return.TrainerData.Identification.NumberID = slotID;
             TrainerSlotData tSlotData = trainers.GetSlot(slotID);
+            if (tSlotData == null)
+                throw new Exception("Trainer slot " + slotID + " did not compute.");
             to_return.TrainerData.Identification.NameID = new NameID();
             to_return.TrainerData.Identification.NameID.Name = tSlotData.Name;
             to_return.TrainerData.Identification.NameID.Variation = tSlotData.Variation;

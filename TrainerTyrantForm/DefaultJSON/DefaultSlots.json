@@ -4056,14 +4056,14 @@
 			"Export Name": "Julius - 1"
 		},
 		{
-			"Name": "Colress",
-			"Variation": 3,
-			"Export Name": "Colress - Post-Game Rematch Plasma Frigate"
-		},
-		{
 			"Name": "Grunt",
 			"Variation": 58,
 			"Export Name": "Grunt - 59"
+		},
+		{
+			"Name": "Colress",
+			"Variation": 3,
+			"Export Name": "Colress - Post-Game Rematch Plasma Frigate"
 		}
 	]
 }

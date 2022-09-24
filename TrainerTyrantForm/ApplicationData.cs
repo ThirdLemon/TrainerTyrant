@@ -212,7 +212,7 @@ namespace TrainerTyrantForm
         }
 
         //Should only run when confirmed valid
-        private void ConvertNarcFolders(out byte[][] TRData, out byte[][]TRPoke)
+        private void ConvertNarcFoldersToByte(out byte[][] TRData, out byte[][]TRPoke)
         {
             FileInfo[] TRDataFiles = new DirectoryInfo(_trDataLoc).GetFiles();
             FileInfo[] TRPokeFiles = new DirectoryInfo(_trPokeLoc).GetFiles();
@@ -231,6 +231,18 @@ namespace TrainerTyrantForm
                 temp = File.ReadAllBytes(TRPokeFiles[fileNum].FullName);
                 TRPoke[fileNum] = temp.Take(108).ToArray();
             }
+        }
+
+        public bool DecompileNarcFolders(string saveLoc)
+        {
+            ConvertNarcFoldersToByte(out byte[][] TRData, out byte[][] TRPoke);
+
+            TrainerRepresentationSet export = new TrainerRepresentationSet();
+            export.InitializeWithExtractedFiles(TRData, TRPoke, _itemData, _moveData, _pokemonData, _slotData);
+
+            File.WriteAllText(saveLoc, export.SerializeJSON());
+
+            return true;
         }
     }
 }

@@ -24,15 +24,18 @@ namespace TrainerTyrantForm
     public partial class MainWindow : Window
     {
         private static readonly string openJSONFileDialogFilter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
+        private static readonly string saveJSONFileDialogFilter = "JSON files (*.json)|*.json";
         private static readonly string getPokemonFile = "Open Pokemon JSON";
         private static readonly string getTrainerSlotFile = "Open Trainer JSON";
         private static readonly string getMovesFile = "Open Moves JSON";
         private static readonly string getItemsFile = "Open Items JSON";
         private static readonly string getTRDataFolder = "Open TRData Folder";
         private static readonly string getTRPokeFolder = "Open TRPoke Folder";
+        private static readonly string saveDecompedJSON = "Save JSON File";
 
         private string jsonDialogDirectory = AppDomain.CurrentDomain.BaseDirectory;
         private string narcDialogDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        private string saveDialogDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
         private ApplicationData _appData;
 
@@ -136,19 +139,19 @@ namespace TrainerTyrantForm
                 return;
             }
 
-            CommonOpenFileDialog dialog = new CommonOpenFileDialog
+            CommonOpenFileDialog openFolderDialog = new CommonOpenFileDialog
             {
                 IsFolderPicker = true,
                 Title = getTRDataFolder,
                 InitialDirectory = narcDialogDirectory
             };
 
-            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            if (openFolderDialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 //Have to use full name here to get the desired effect. Why? Unsure.
-                narcDialogDirectory = new DirectoryInfo(dialog.FileName).Parent.FullName;
+                narcDialogDirectory = new DirectoryInfo(openFolderDialog.FileName).Parent.FullName;
 
-                _appData.LoadTRData(dialog.FileName);
+                _appData.LoadTRData(openFolderDialog.FileName);
 
                 if (_appData.CanDecompNARCs)
                     btnDecompileNarcs.IsEnabled = true;
@@ -164,19 +167,19 @@ namespace TrainerTyrantForm
                 return;
             }
 
-            CommonOpenFileDialog dialog = new CommonOpenFileDialog
+            CommonOpenFileDialog openFolderDialog = new CommonOpenFileDialog
             {
                 IsFolderPicker = true,
                 Title = getTRPokeFolder,
                 InitialDirectory = narcDialogDirectory
             };
 
-            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            if (openFolderDialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 //Have to use full name here to get the desired effect. Why? Unsure.
-                narcDialogDirectory = new DirectoryInfo(dialog.FileName).Parent.FullName;
+                narcDialogDirectory = new DirectoryInfo(openFolderDialog.FileName).Parent.FullName;
 
-                _appData.LoadTRPoke(dialog.FileName);
+                _appData.LoadTRPoke(openFolderDialog.FileName);
 
                 if (_appData.CanDecompNARCs)
                     btnDecompileNarcs.IsEnabled = true;
@@ -189,6 +192,18 @@ namespace TrainerTyrantForm
             {
                 MessageBox.Show(error, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Title = saveDialogDirectory,
+                Filter = saveJSONFileDialogFilter,
+                InitialDirectory = saveDialogDirectory
+            };
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                _appData.DecompileNarcFolders(saveFileDialog.FileName);
             }
         }
     }

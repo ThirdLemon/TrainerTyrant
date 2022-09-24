@@ -151,7 +151,7 @@ namespace TrainerTyrant
          */
         public TrainerSlotData GetSlot(int index)
         {
-            if (index > 0 && index < SlotData.Count)
+            if (index > 0 && index <= SlotData.Count)
                 return SlotData[index-1];
             return null;
         }

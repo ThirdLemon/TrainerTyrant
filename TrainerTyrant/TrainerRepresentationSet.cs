@@ -59,6 +59,8 @@ namespace TrainerTyrant
             if (TRData.Length < 1)
                 throw new ArgumentException("TRData and TRPoke must have more than 1 file.");
 
+            _data = new List<TrainerRepresentation>();
+
             for (int trainer = 1; trainer < TRData.Length; trainer++)
             {
                 TrainerRepresentation tr = TrainerRepresentation.BuildFromBytes(TRData[trainer], TRPoke[trainer], trainer, itemList, moveList, monList, slotList);
