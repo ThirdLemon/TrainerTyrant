@@ -185,7 +185,11 @@ namespace TrainerTyrantForm
 
         private void btnDecompileNarcs_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!_appData.ValidateNarcFolders(out string error))
+            {
+                MessageBox.Show(error, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
         }
     }
 }

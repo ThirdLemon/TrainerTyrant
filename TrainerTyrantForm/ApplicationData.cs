@@ -186,5 +186,51 @@ namespace TrainerTyrantForm
             }
             return false;
         }
+
+        public bool ValidateNarcFolders(out string error)
+        {
+            //If either does not exist, don't pass
+            if (!Directory.Exists(_trDataLoc) || !Directory.Exists(_trPokeLoc))
+            {
+                error = "One of the specified folders do not exist.";
+                return false;
+            }
+
+            FileInfo[] TRDataFiles = new DirectoryInfo(_trDataLoc).GetFiles();
+            FileInfo[] TRPokeFiles = new DirectoryInfo(_trPokeLoc).GetFiles();
+
+            //If the given folders do not contain enough data to match the slot data, do not pass
+            if ((TRDataFiles.Length != _slotData.SlotData.Count + 1) || (TRPokeFiles.Length != _slotData.SlotData.Count + 1))
+            {
+                error = "The amount of files within the given folders does not sync with the trainer JSON.";
+                return false;
+            }
+
+            //Otherwise, valid.
+            error = null;
+            return true;
+        }
+
+        //Should only run when confirmed valid
+        private void ConvertNarcFolders(out byte[][] TRData, out byte[][]TRPoke)
+        {
+            FileInfo[] TRDataFiles = new DirectoryInfo(_trDataLoc).GetFiles();
+            FileInfo[] TRPokeFiles = new DirectoryInfo(_trPokeLoc).GetFiles();
+
+            //set these to fill the length of the folders.
+            TRData = new byte[TRDataFiles.Length][];
+            TRPoke = new byte[TRPokeFiles.Length][];
+
+            //pull out data from every file
+            for(int fileNum = 0; fileNum < TRDataFiles.Length; fileNum++)
+            {
+                byte[] temp = File.ReadAllBytes(TRDataFiles[fileNum].FullName);
+                //in order to save memory, keep only the first 20 bytes of the file, as that is all that will ever be used.
+                TRData[fileNum] = temp.Take(20).ToArray();
+                //repeat the same thing with trpoke, but this time keeping up to 6 * 18 bytes(108) to match the max trpoke will hit.
+                temp = File.ReadAllBytes(TRPokeFiles[fileNum].FullName);
+                TRPoke[fileNum] = temp.Take(108).ToArray();
+            }
+        }
     }
 }
