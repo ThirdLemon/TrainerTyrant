@@ -302,6 +302,12 @@ namespace TrainerTyrant
         public AIFlags AIFlags { get; set; }
         public bool Healer { get; set; }
 
+        //This function controls the serailization of the Items. Don't serialize them when the array only contains null to save space.
+        public bool ShouldSerializeItems()
+        {
+            return !(Items[0] == null && Items[1] == null && Items[2] == null && Items[3] == null);
+        }
+
         //This function controls the serialization of Healer.
         public bool ShouldSerializeHealer()
         {
@@ -398,6 +404,7 @@ namespace TrainerTyrant
         [JsonProperty(PropertyName = "Double Battle")]
         public bool DoubleBattle { get; set; }
 
+        [JsonIgnore]
         public byte Bitmap 
         {
             get

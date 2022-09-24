@@ -754,6 +754,7 @@ namespace TrainerTyrantTest
 
             List<TrainerRepresentation> fluxed = TrainerRepresentation.DeserializeListJSON(set.SerializeJSON());
 
+            Assert.IsNotNull(fluxed);
             Assert.AreEqual(2, fluxed.Count);
             TrainerRepresentation shauntal = fluxed[0];
             Assert.AreEqual(-1, shauntal.TrainerData.Identification.NumberID);

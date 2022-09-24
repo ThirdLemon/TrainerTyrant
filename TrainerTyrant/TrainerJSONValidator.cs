@@ -165,7 +165,6 @@ namespace TrainerTyrant
                           'Battle Type',
                           'Format',
                           'Base Money',
-                          'Items',
                           'AI Flags'
                         ]
                       },
