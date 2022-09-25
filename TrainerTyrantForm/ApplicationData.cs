@@ -187,6 +187,26 @@ namespace TrainerTyrantForm
             return false;
         }
 
+        public bool ValidateExternalData(out string error)
+        {
+
+            //If any of the definitions don't exist, don't pass
+            if (_itemData == null || _moveData == null || _pokemonData == null || _slotData == null)
+            {
+                if (_itemData == null)
+                    error = "There is no item data loaded.";
+                else if (_moveData == null)
+                    error = "There is no move data loaded.";
+                else if (_pokemonData == null)
+                    error = "There is no pokemon data loaded.";
+                else
+                    error = "There is no trainer data loaded.";
+                return false;
+            }
+            error = null;
+            return true;
+        }
+
         public bool ValidateNarcFolders(out string error)
         {
             //If either does not exist, don't pass
@@ -209,6 +229,11 @@ namespace TrainerTyrantForm
             //Otherwise, valid.
             error = null;
             return true;
+        }
+
+        public bool ValidateTrainerJSON(string jsonFileLoc, out IList<string> errors)
+        {
+            return TrainerJSONValidator.ValidateTrainerListJSON(File.ReadAllText(jsonFileLoc), out errors);
         }
 
         //Should only run when confirmed valid
@@ -241,6 +266,41 @@ namespace TrainerTyrantForm
             export.InitializeWithExtractedFiles(TRData, TRPoke, _itemData, _moveData, _pokemonData, _slotData);
 
             File.WriteAllText(saveLoc, export.SerializeJSON());
+
+            return true;
+        }
+
+        public bool CompileNarcFolder(string fileLoc)
+        {
+            //simple safeguard
+            if (!File.Exists(fileLoc))
+                return false;
+
+            TrainerRepresentationSet export = new TrainerRepresentationSet();
+            export.InitializeWithJSON(File.ReadAllText(fileLoc));
+            if (export == null)
+                return false;
+
+            export.GetByteData(out byte[][] TRData, out byte[][] TRPoke, _itemData, _moveData, _pokemonData, _slotData);
+
+            //don't rewrite this a million times.
+            string strippedName = Path.GetFileNameWithoutExtension(fileLoc);
+            //get folder names for TRData and TRPoke
+            string TRDataFolder = Path.GetDirectoryName(fileLoc) + "/" + strippedName + "_TRData";
+            string TRPokeFolder = Path.GetDirectoryName(fileLoc) + "/" + strippedName + "_TRPoke";
+            //create the directory
+            if (!Directory.Exists(TRDataFolder))
+                Directory.CreateDirectory(TRDataFolder);
+            if (!Directory.Exists(TRPokeFolder))
+                Directory.CreateDirectory(TRPokeFolder);
+            //get the amount of zeroes that need to be padded
+            int maxNumLength = TRData.Length.ToString().Length;
+
+            for (int dataNum = 0; dataNum < TRData.Length; dataNum++)
+            {
+                File.WriteAllBytes(TRDataFolder + "/" + strippedName + "_" + dataNum.ToString().PadLeft(maxNumLength, '0'), TRData[dataNum]);
+                File.WriteAllBytes(TRPokeFolder + "/" + strippedName + "_" + dataNum.ToString().PadLeft(maxNumLength, '0'), TRPoke[dataNum]);
+            }
 
             return true;
         }

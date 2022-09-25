@@ -32,6 +32,7 @@ namespace TrainerTyrantForm
         private static readonly string getTRDataFolder = "Open TRData Folder";
         private static readonly string getTRPokeFolder = "Open TRPoke Folder";
         private static readonly string saveDecompedJSON = "Save JSON File";
+        private static readonly string getDecompedJSON = "Open JSON File";
 
         private string jsonDialogDirectory = AppDomain.CurrentDomain.BaseDirectory;
         private string narcDialogDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -188,7 +189,15 @@ namespace TrainerTyrantForm
 
         private void btnDecompileNarcs_Click(object sender, RoutedEventArgs e)
         {
-            if (!_appData.ValidateNarcFolders(out string error))
+            //Check that all external data is loaded. 
+            if(!_appData.ValidateExternalData(out string error))
+            {
+                MessageBox.Show(error, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            //Check that the narc folders are valid.
+            if (!_appData.ValidateNarcFolders(out error))
             {
                 MessageBox.Show(error, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -196,7 +205,7 @@ namespace TrainerTyrantForm
 
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
-                Title = saveDialogDirectory,
+                Title = saveDecompedJSON,
                 Filter = saveJSONFileDialogFilter,
                 InitialDirectory = saveDialogDirectory
             };
@@ -204,6 +213,56 @@ namespace TrainerTyrantForm
             if (saveFileDialog.ShowDialog() == true)
             {
                 _appData.DecompileNarcFolders(saveFileDialog.FileName);
+            }
+        }
+
+        private void btnCompileNarcs_Click(object sender, RoutedEventArgs e)
+        {
+            //Check that all external data is loaded. 
+            if (!_appData.ValidateExternalData(out string error))
+            {
+                MessageBox.Show(error, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = getDecompedJSON,
+                Filter = openJSONFileDialogFilter,
+                InitialDirectory = jsonDialogDirectory
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                jsonDialogDirectory = new FileInfo(openFileDialog.FileName).DirectoryName;
+
+                bool validJSON = _appData.ValidateTrainerJSON(openFileDialog.FileName, out IList<string> errors);
+
+                //if it does not validate, show an error message and exit out early
+                if (validJSON == false)
+                {
+                    if (errors.Count == 1)
+                    {
+                        MessageBox.Show("Provided JSON did not validate.\n" + errors[0], "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                    else
+                    {
+                        string errorMessage = "Provided Json did not validate.\n" + errors.Count + " errors occurred. Check the log file.";
+                        File.WriteAllLines("Log.txt", errors);
+                        
+                        MessageBox.Show(errorMessage, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                    return;
+                }
+                else
+                {
+                    bool success = _appData.CompileNarcFolder(openFileDialog.FileName);
+
+                    if (success == false)
+                    {
+                        MessageBox.Show("An error occurred while compiling the narc.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
             }
         }
     }
