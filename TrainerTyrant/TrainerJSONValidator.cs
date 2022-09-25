@@ -94,7 +94,7 @@ namespace TrainerTyrant
                 'type': 'integer',
                             'description': 'The base amount of money this trainer gives.',
                             'minimum': 0,
-                            'maximum': 65535
+                            'maximum': 255
                           },
                           'Items': {
                 'type': 'array',
@@ -412,7 +412,7 @@ namespace TrainerTyrant
                 'type': 'integer',
                             'description': 'The base amount of money this trainer gives.',
                             'minimum': 0,
-                            'maximum': 65535
+                            'maximum': 255
                           },
                           'Items': {
                 'type': 'array',
