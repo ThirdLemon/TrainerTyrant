@@ -468,6 +468,7 @@ namespace TrainerTyrant
         //Ability should always fall within the range of 0-2.
         public int Ability { get; set; }
 
+        [JsonIgnore]
         public byte Byte { get { return (byte)((int)Gender + (16 * Ability));  } set { Ability = (value / 16); Gender = (Gender)(value - value / 16 * 16); } }
     }
 
