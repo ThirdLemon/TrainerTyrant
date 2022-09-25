@@ -185,11 +185,11 @@ namespace TrainerTyrant
             to_return[6] = (byte)(id - id / 256 * 256);
             to_return[7] = (byte)(id / 256);
             //Write item 3's id to the ninth and tenth bytes
-            id = TrainerData.ItemIndex(items, 1);
+            id = TrainerData.ItemIndex(items, 2);
             to_return[8] = (byte)(id - id / 256 * 256);
             to_return[9] = (byte)(id / 256);
             //Write item 4's id to the eleventh and twelth bytes
-            id = TrainerData.ItemIndex(items, 1);
+            id = TrainerData.ItemIndex(items, 3);
             to_return[10] = (byte)(id - id / 256 * 256);
             to_return[11] = (byte)(id / 256);
             //Write the ai value to the thirteenth byte
