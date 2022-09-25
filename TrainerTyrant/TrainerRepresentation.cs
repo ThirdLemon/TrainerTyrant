@@ -89,7 +89,9 @@ namespace TrainerTyrant
             to_return.TrainerData.Healer = Convert.ToBoolean(TRData[16]);
             //The eigteenth byte stored base money
             to_return.TrainerData.BaseMoney = TRData[17];
-            //The use of the nineteenth and twentieth bytes are currently unknown
+            //Write the nineteenth and twentieth bytes to the space specified for them(their exact use is unknown)
+            to_return.TrainerData.Unknown.Nineteen = TRData[18];
+            to_return.TrainerData.Unknown.Twenty = TRData[19];
 
             //Go onto the TRPoke data
             //store segment length
@@ -199,7 +201,9 @@ namespace TrainerTyrant
             to_return[16] = Convert.ToByte(TrainerData.Healer);
             //Write basemoney to the eigtheenth byte
             to_return[17] = (byte)TrainerData.BaseMoney;
-            //Write nothing to the nineteenth and twentieth bytes
+            //Write the unknown values to the nineteenth and twentieth bytes
+            to_return[18] = (byte)TrainerData.Unknown.Nineteen;
+            to_return[19] = (byte)TrainerData.Unknown.Twenty;
 
             return to_return;
         }
@@ -287,6 +291,7 @@ namespace TrainerTyrant
             Items = new string[] { null, null, null, null };
             AIFlags = new AIFlags();
             Healer = false;
+            Unknown = new UnknownBytes();
         }
 
         public Identification Identification { get; set; }
@@ -302,16 +307,24 @@ namespace TrainerTyrant
         public AIFlags AIFlags { get; set; }
         public bool Healer { get; set; }
 
+        public UnknownBytes Unknown { get; set; }
+
         //This function controls the serailization of the Items. Don't serialize them when the array only contains null to save space.
         public bool ShouldSerializeItems()
         {
             return !(Items[0] == null && Items[1] == null && Items[2] == null && Items[3] == null);
         }
 
-        //This function controls the serialization of Healer.
+        //Only serialize Healer when its true.
         public bool ShouldSerializeHealer()
         {
             return Healer;
+        }
+
+        //Only serialize Unknown when it contains a non-zero value
+        public bool ShouldSerializeUnknown()
+        {
+            return Unknown.Nineteen != 0 || Unknown.Twenty != 0;
         }
 
         public int ItemIndex(ExternalItemList itemList, int itemIndex)
@@ -423,6 +436,25 @@ namespace TrainerTyrant
                 PreferBatonPass     =   (value & 0x40) == 0x40;
                 DoubleBattle        =   (value & 0x80) == 0x80;
             }
+        }
+    }
+
+    public class UnknownBytes
+    {
+        [JsonProperty(PropertyName = "Byte Nineteen")]
+        public int Nineteen { get; set; }
+        [JsonProperty(PropertyName = "Byte Twenty")]
+        public int Twenty { get; set; }
+
+        //don't serialize the values if they are zero
+        public bool ShouldSerializeNineteen()
+        {
+            return Nineteen != 0;
+        }
+
+        public bool ShouldSerializeTwenty()
+        {
+            return Twenty != 0;
         }
     }
 
