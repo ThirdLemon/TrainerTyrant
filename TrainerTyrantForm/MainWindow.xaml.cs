@@ -33,6 +33,8 @@ namespace TrainerTyrantForm
         private static readonly string getTRPokeFolder = "Open TRPoke Folder";
         private static readonly string saveDecompedJSON = "Save JSON File";
         private static readonly string getDecompedJSON = "Open JSON File";
+        private static readonly string getSourceJSON = "Open Base JSON File";
+        private static readonly string getSecondaryJSON = "Open JSON File to be Merged";
 
         private string jsonDialogDirectory = AppDomain.CurrentDomain.BaseDirectory;
         private string narcDialogDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -261,6 +263,57 @@ namespace TrainerTyrantForm
                     if (success == false)
                     {
                         MessageBox.Show("An error occurred while compiling the narc.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
+            }
+        }
+
+        private void btnAlterJSON_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = getSourceJSON,
+                Filter = openJSONFileDialogFilter,
+                InitialDirectory = jsonDialogDirectory
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                OpenFileDialog secondaryFileDialog = new OpenFileDialog
+                {
+                    Title = getSecondaryJSON,
+                    Filter = openJSONFileDialogFilter,
+                    InitialDirectory = jsonDialogDirectory
+                };
+
+                if (secondaryFileDialog.ShowDialog() == true)
+                {
+                    bool validJSON = _appData.ValidateTrainerJSON(openFileDialog.FileName, out IList<string> errors);
+
+                    //if it does not validate, show an error message and exit out early
+                    if (validJSON == false)
+                    {
+                        if (errors.Count == 1)
+                        {
+                            MessageBox.Show("Provided source JSON did not validate.\n" + errors[0], "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
+                        else
+                        {
+                            string errorMessage = "Provided source Json did not validate.\n" + errors.Count + " errors occurred. Check the log file.";
+                            File.WriteAllLines("Log.txt", errors);
+
+                            MessageBox.Show(errorMessage, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
+                        return;
+                    }
+                    else
+                    {
+                        bool success = _appData.AlterJSON(openFileDialog.FileName, secondaryFileDialog.FileName);
+
+                        if (success == false)
+                        {
+                            MessageBox.Show("An error occurred while altering the JSON.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
                     }
                 }
             }

@@ -304,5 +304,25 @@ namespace TrainerTyrantForm
 
             return true;
         }
+
+        public bool AlterJSON(string sourceFile, string addedFile)
+        {
+            //simple safeguard
+            if (!File.Exists(sourceFile) || !File.Exists(addedFile))
+                return false;
+
+            TrainerRepresentationSet source = new TrainerRepresentationSet();
+            source.InitializeWithJSON(File.ReadAllText(sourceFile));
+            if (source == null)
+                return false;
+
+            bool success = source.AlterWithJSON(File.ReadAllText(addedFile));
+
+            if (success == false)
+                return false;
+
+            File.WriteAllText(sourceFile, source.SerializeJSON());
+            return true;
+        }
     }
 }
