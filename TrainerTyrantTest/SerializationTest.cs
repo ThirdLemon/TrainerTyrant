@@ -11,6 +11,7 @@ namespace TrainerTyrantTest
     public class SerializationTest
     {
         private string shauntalJSON;
+        private string shauntalweakJSON;
         private string strangeJSON;
         private string incompleteJSON;
         private string multiJSON;
@@ -34,6 +35,8 @@ namespace TrainerTyrantTest
         public void TestInit()
         {
             shauntalJSON = File.ReadAllText("../../../SampleJSON/sampleJSON1.json");
+
+            shauntalweakJSON = File.ReadAllText("../../../SampleJSON/sampleJSON1b.json");
 
             strangeJSON = File.ReadAllText("../../../SampleJSON/sampleJSON2.json");
 
@@ -947,6 +950,28 @@ namespace TrainerTyrantTest
                 Assert.AreEqual(marshalTRData[i], TRData[2][i]);
             for (int i = 0; i < marshalTRPoke.Length; i++)
                 Assert.AreEqual(marshalTRPoke[i], TRPoke[2][i]);
+        }
+
+        [TestMethod]
+        public void AlterTrainerRepresentationSet()
+        {
+            TrainerRepresentationSet set = new();
+
+            set.InitializeWithJSON(multi2JSON);
+
+            set.AlterWithJSON(shauntalweakJSON);
+
+            List<TrainerRepresentation> listSet = TrainerRepresentation.DeserializeListJSON(set.SerializeJSON());
+
+            Assert.IsNotNull(listSet);
+            Assert.AreEqual(2, listSet.Count);
+
+            Assert.AreEqual(1, listSet[0].PokemonCount);
+            Assert.AreEqual(1, listSet[0].PokemonData.Length);
+            Assert.AreEqual("Duskull", listSet[0].PokemonData[0].Pokemon);
+            Assert.AreEqual(5, listSet[0].PokemonData[0].Level);
+            Assert.AreEqual(0, listSet[0].PokemonData[0].Difficulty);
+            Assert.IsFalse(listSet[0].TrainerData.Format.Items);
         }
     }
 

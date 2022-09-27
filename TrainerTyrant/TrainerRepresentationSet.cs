@@ -70,6 +70,37 @@ namespace TrainerTyrant
             _initialized = true;
         }
 
+        public void AlterWithJSON(string JSON)
+        {
+            //Doesn't work when there is not pre-existing data
+            if (!Initialized)
+                return;
+
+            if (TrainerJSONValidator.ValidateTrainerListJSON(JSON))
+            {
+                List<TrainerRepresentation> newData = JsonConvert.DeserializeObject<List<TrainerRepresentation>>(JSON);
+                foreach(TrainerRepresentation trainer in newData)
+                {
+                    int matchIndex;
+                    if (trainer.TrainerData.Identification.NumberID != -1)
+                        matchIndex = _data.FindIndex(i => i.TrainerData.Identification.NumberID == trainer.TrainerData.Identification.NumberID);
+                    // if the trainer has a number id of -1, it must have a nameid, otherwise it wouldn't pass the validation
+                    else
+                        //Assumably the check that its not null will prevent the other checks from running and throwing null exception errors due to the nature of && 
+                        matchIndex = _data.FindIndex(i => i.TrainerData.Identification.NameID != null && i.TrainerData.Identification.NameID.Name.Equals(trainer.TrainerData.Identification.NameID.Name) &&
+                            i.TrainerData.Identification.NameID.Variation == trainer.TrainerData.Identification.NameID.Variation);
+
+                    //if no copy is found, simply add the trainer to the list
+                    if (matchIndex == -1)
+                        _data.Append(trainer);
+                    else
+                        //if it was found, overwrite the given trainer.
+                        _data[matchIndex] = trainer;
+                   
+                }
+            }
+        }
+
         public string SerializeJSON()
         {
             return JsonConvert.SerializeObject(_data, Formatting.Indented);
