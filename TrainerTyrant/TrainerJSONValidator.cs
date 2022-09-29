@@ -158,24 +158,10 @@ namespace TrainerTyrant
                 'type': 'boolean',
                             'description': 'Whether the trainer is a healer, like a doctor or a nurse trainer. Implicitly assumed to be false if not set.'
                           },
-              'Unknown': {
-                'type': 'object',
-                'description': 'Extra data stored for a trainer, with unknown purpose.',
-                'properties': {
-                  'Byte Nineteen': {
-                    'type': 'integer',
-                    'description': 'The byte stored in the nineteenth byte.',
-                    'minimum': 0,
-                    'maximum': 255
-                  },
-                  'Byte Twenty': {
-                    'type': 'integer',
-                    'description': 'The byte stored in the twentieth byte.',
-                    'minimum': 0,
-                    'maximum': 255
-                  }
-                }
-              }
+                          'Reward': {
+                'type': ['string', 'null'],
+                            'description': 'Item given as a reward for beating the trainer, such as by small court trainers or rangers.'
+                          }
                         },
                         'required': [
                           'Identification',
@@ -476,24 +462,10 @@ namespace TrainerTyrant
                 'type': 'boolean',
                             'description': 'Whether the trainer is a healer, like a doctor or a nurse trainer. Implicitly assumed to be false if not set.'
                           },
-              'Unknown': {
-                'type': 'object',
-                'description': 'Extra data stored for a trainer, with unknown purpose.',
-                'properties': {
-                  'Byte Nineteen': {
-                    'type': 'integer',
-                    'description': 'The byte stored in the nineteenth byte.',
-                    'minimum': 0,
-                    'maximum': 255
-                  },
-                  'Byte Twenty': {
-                    'type': 'integer',
-                    'description': 'The byte stored in the twentieth byte.',
-                    'minimum': 0,
-                    'maximum': 255
-                  }
-                }
-              }
+                          'Reward': {
+                'type': ['string', 'null'],
+                            'description': 'Item given as a reward for beating the trainer, such as by small court trainers or rangers.'
+                          }
                         },
                         'required': [
                           'Identification',

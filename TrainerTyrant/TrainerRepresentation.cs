@@ -89,9 +89,9 @@ namespace TrainerTyrant
             to_return.TrainerData.Healer = Convert.ToBoolean(TRData[16]);
             //The eigteenth byte stored base money
             to_return.TrainerData.BaseMoney = TRData[17];
-            //Write the nineteenth and twentieth bytes to the space specified for them(their exact use is unknown)
-            to_return.TrainerData.Unknown.Nineteen = TRData[18];
-            to_return.TrainerData.Unknown.Twenty = TRData[19];
+            //The nineteenth and twentieth bytes store the item reward
+            to_return.TrainerData.Reward = items.GetItem(TRData[18] + TRData[19] * 256);
+
 
             //Go onto the TRPoke data
             //store segment length
@@ -201,9 +201,10 @@ namespace TrainerTyrant
             to_return[16] = Convert.ToByte(TrainerData.Healer);
             //Write basemoney to the eigtheenth byte
             to_return[17] = (byte)TrainerData.BaseMoney;
-            //Write the unknown values to the nineteenth and twentieth bytes
-            to_return[18] = (byte)TrainerData.Unknown.Nineteen;
-            to_return[19] = (byte)TrainerData.Unknown.Twenty;
+            //Write the item reward to the nineteenth and tewentieth bytes
+            id = items.GetIndexOfItem(TrainerData.Reward);
+            to_return[18] = (byte)(id - id / 256 * 256);
+            to_return[19] = (byte)(id / 256);
 
             return to_return;
         }
@@ -291,7 +292,7 @@ namespace TrainerTyrant
             Items = new string[] { null, null, null, null };
             AIFlags = new AIFlags();
             Healer = false;
-            Unknown = new UnknownBytes();
+            Reward = null;
         }
 
         public Identification Identification { get; set; }
@@ -306,8 +307,8 @@ namespace TrainerTyrant
         [JsonProperty(PropertyName = "AI Flags")]
         public AIFlags AIFlags { get; set; }
         public bool Healer { get; set; }
-
-        public UnknownBytes Unknown { get; set; }
+        
+        public string Reward { get; set; }
 
         //This function controls the serailization of the Items. Don't serialize them when the array only contains null to save space.
         public bool ShouldSerializeItems()
@@ -321,10 +322,10 @@ namespace TrainerTyrant
             return Healer;
         }
 
-        //Only serialize Unknown when it contains a non-zero value
-        public bool ShouldSerializeUnknown()
+        //Only serialize reward when its an item
+        public bool ShouldSerializeReward()
         {
-            return Unknown.Nineteen != 0 || Unknown.Twenty != 0;
+            return Reward != null;
         }
 
         public int ItemIndex(ExternalItemList itemList, int itemIndex)
@@ -436,25 +437,6 @@ namespace TrainerTyrant
                 PreferBatonPass     =   (value & 0x40) == 0x40;
                 DoubleBattle        =   (value & 0x80) == 0x80;
             }
-        }
-    }
-
-    public class UnknownBytes
-    {
-        [JsonProperty(PropertyName = "Byte Nineteen")]
-        public int Nineteen { get; set; }
-        [JsonProperty(PropertyName = "Byte Twenty")]
-        public int Twenty { get; set; }
-
-        //don't serialize the values if they are zero
-        public bool ShouldSerializeNineteen()
-        {
-            return Nineteen != 0;
-        }
-
-        public bool ShouldSerializeTwenty()
-        {
-            return Twenty != 0;
         }
     }
 
