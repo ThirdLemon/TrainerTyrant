@@ -270,6 +270,21 @@ namespace TrainerTyrant
             return to_return;
         }
 
+        public string ProduceDocumentation(ExternalTrainerSlotList slotList)
+        {
+            //top line is the export name
+            string to_return = slotList.GetSlot(slotList.GetIndexOfSlot(TrainerData.Identification.NameID.Name, TrainerData.Identification.NameID.Variation)).ExportName + "\n";
+
+            for (int mon = 0; mon < PokemonCount; mon++)
+            {
+                to_return += PokemonData[mon].ProduceDocumentation(TrainerData.Format.Moves, TrainerData.Format.Items);
+                if (mon < PokemonCount - 1)
+                    to_return += "\n";
+            }
+
+            return to_return;
+        }
+
         //Not necessarily the slot in the list, as the list is missing the "null" item 0.
         public int GetSlotID(ExternalTrainerSlotList slotList)
         {
@@ -465,6 +480,42 @@ namespace TrainerTyrant
         public bool ShouldSerializeMoves()
         {
             return !(Moves[0] == null && Moves[1] == null && Moves[2] == null && Moves[3] == null);
+        }
+
+        public string ProduceDocumentation(bool movesEnabled, bool itemsEnabled)
+        {
+            string to_return = Pokemon;
+            if (Form != 0)
+                to_return += "(Form " + Form + ")";
+            to_return += " Lv." + Level;
+            if (Item != null && itemsEnabled)
+                to_return += " @" + Item;
+            to_return += ": ";
+            if (movesEnabled)
+            {
+                for (int moveNum = 0; moveNum < 4; moveNum++)
+                {
+                    //support for less than 4 moves
+                    if (Moves[moveNum] == null)
+                        break;
+
+                    to_return += Moves[moveNum];
+                    //only add comma if there's text after it
+                    if (moveNum < 3 && Moves[moveNum + 1] != null)
+                        to_return += ",";
+                    to_return += " ";
+                }
+            }
+
+            if (Miscellaneous.Ability == 3)
+                to_return += "[Hidden Ability]";
+            else if (Miscellaneous.Ability == 1 || Miscellaneous.Ability == 2)
+                to_return += "[Ability " + Miscellaneous.Ability + "]";
+
+            if (Difficulty < 255)
+                to_return += "[" + (int)(Difficulty / 255 * 31) + "]";
+
+            return to_return;
         }
     }
 
