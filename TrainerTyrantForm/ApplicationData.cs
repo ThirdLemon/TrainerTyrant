@@ -169,7 +169,7 @@ namespace TrainerTyrantForm
 
         public bool LoadTRData(string dirLoc)
         {
-            if (Directory.Exists(dirLoc))
+            if (File.Exists(dirLoc))
             {
                 _trDataLoc = dirLoc;
                 return true;
@@ -179,7 +179,7 @@ namespace TrainerTyrantForm
 
         public bool LoadTRPoke(string dirLoc)
         {
-            if(Directory.Exists(dirLoc))
+            if(File.Exists(dirLoc))
             {
                 _trPokeLoc = dirLoc;
                 return true;
@@ -207,66 +207,29 @@ namespace TrainerTyrantForm
             return true;
         }
 
-        public bool ValidateNarcFolders(out string error)
-        {
-            //If either does not exist, don't pass
-            if (!Directory.Exists(_trDataLoc) || !Directory.Exists(_trPokeLoc))
-            {
-                error = "One of the specified folders do not exist.";
-                return false;
-            }
-
-            FileInfo[] TRDataFiles = new DirectoryInfo(_trDataLoc).GetFiles();
-            FileInfo[] TRPokeFiles = new DirectoryInfo(_trPokeLoc).GetFiles();
-
-            //If the given folders do not contain enough data to match the slot data, do not pass
-            if ((TRDataFiles.Length != _slotData.SlotData.Count + 1) || (TRPokeFiles.Length != _slotData.SlotData.Count + 1))
-            {
-                error = "The amount of files within the given folders does not sync with the trainer JSON.";
-                return false;
-            }
-
-            //Otherwise, valid.
-            error = null;
-            return true;
-        }
-
         public bool ValidateTrainerJSON(string jsonFileLoc, out IList<string> errors)
         {
             return TrainerJSONValidator.ValidateTrainerListJSON(File.ReadAllText(jsonFileLoc), out errors);
         }
 
-        //Should only run when confirmed valid
-        private void ConvertNarcFoldersToByte(out byte[][] TRData, out byte[][]TRPoke)
+        /**
+         * <summary>When the app data has been given its Narc locations, this function takes them and decompiles them to a JSON file.</summary>
+         * <exception cref="InvalidDataException">Thrown when the narcs are not formatted correctly.</exception>
+         * <param name="saveloc">The location for the decompiled JSON to be written to.</param>
+         */
+        public bool DecompileNarcs(string saveloc)
         {
-            FileInfo[] TRDataFiles = new DirectoryInfo(_trDataLoc).GetFiles();
-            FileInfo[] TRPokeFiles = new DirectoryInfo(_trPokeLoc).GetFiles();
-
-            //set these to fill the length of the folders.
-            TRData = new byte[TRDataFiles.Length][];
-            TRPoke = new byte[TRPokeFiles.Length][];
-
-            //pull out data from every file
-            for(int fileNum = 0; fileNum < TRDataFiles.Length; fileNum++)
-            {
-                byte[] temp = File.ReadAllBytes(TRDataFiles[fileNum].FullName);
-                //in order to save memory, keep only the first 20 bytes of the file, as that is all that will ever be used.
-                TRData[fileNum] = temp.Take(20).ToArray();
-                //repeat the same thing with trpoke, but this time keeping up to 6 * 18 bytes(108) to match the max trpoke will hit.
-                temp = File.ReadAllBytes(TRPokeFiles[fileNum].FullName);
-                TRPoke[fileNum] = temp.Take(108).ToArray();
-            }
-        }
-
-        public bool DecompileNarcFolders(string saveLoc)
-        {
-            ConvertNarcFoldersToByte(out byte[][] TRData, out byte[][] TRPoke);
-
             TrainerRepresentationSet export = new TrainerRepresentationSet();
-            export.InitializeWithExtractedFiles(TRData, TRPoke, _itemData, _moveData, _pokemonData, _slotData);
+            try
+            {
+                export.InitializeWithNarc(_trDataLoc, _trPokeLoc, _itemData, _moveData, _pokemonData, _slotData);
+            }
+            catch (Exception e)
+            {
+                throw new InvalidDataException("An error occurred when parsing the given NARCs.", e);
+            }
 
-            File.WriteAllText(saveLoc, export.SerializeJSON());
-
+            File.WriteAllText(saveloc, export.SerializeJSON());
             return true;
         }
 

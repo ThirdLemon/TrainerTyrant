@@ -30,8 +30,8 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Name="btnLoadTRData" Grid.Row="0" Click="btnLoadTRData_Click" Content="Load TRData Folder" HorizontalAlignment="Center" Margin="0,10,0,10"/>
-            <Button Name="btnLoadTRPoke" Grid.Row="1" Click="btnLoadTRPoke_Click" Content="Load TRPoke Folder" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <Button Name="btnLoadTRData" Grid.Row="0" Click="btnLoadTRData_Click" Content="Load TRData NARC" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+            <Button Name="btnLoadTRPoke" Grid.Row="1" Click="btnLoadTRPoke_Click" Content="Load TRPoke NARC" HorizontalAlignment="Center" Margin="0,0,0,10"/>
             <Button Name="btnDecompileNarcs" Grid.Row="2" Click="btnDecompileNarcs_Click" Content="Convert NARCs" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False"/>
         </Grid>
         <Grid Grid.Column="2">

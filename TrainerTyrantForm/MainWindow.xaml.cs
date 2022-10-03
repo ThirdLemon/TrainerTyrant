@@ -24,13 +24,14 @@ namespace TrainerTyrantForm
     public partial class MainWindow : Window
     {
         private static readonly string openJSONFileDialogFilter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
+        private static readonly string openNARCFileDialogFilter = "NARC files (*.narc)|*.narc|All files (*.*)|*.*";
         private static readonly string saveJSONFileDialogFilter = "JSON files (*.json)|*.json";
         private static readonly string getPokemonFile = "Open Pokemon JSON";
         private static readonly string getTrainerSlotFile = "Open Trainer JSON";
         private static readonly string getMovesFile = "Open Moves JSON";
         private static readonly string getItemsFile = "Open Items JSON";
-        private static readonly string getTRDataFolder = "Open TRData Folder";
-        private static readonly string getTRPokeFolder = "Open TRPoke Folder";
+        private static readonly string getTRDataNARC = "Open TRData NARC";
+        private static readonly string getTRPokeNARC = "Open TRPoke NARC";
         private static readonly string saveDecompedJSON = "Save JSON File";
         private static readonly string getDecompedJSON = "Open JSON File";
         private static readonly string getSourceJSON = "Open Base JSON File";
@@ -135,26 +136,19 @@ namespace TrainerTyrantForm
 
         private void btnLoadTRData_Click(object sender, RoutedEventArgs e)
         {
-            //If the operating system does not support the file dialog, show an error and exit out. In the future this will be updated to just use a support, worse folder picker.
-            if(!CommonFileDialog.IsPlatformSupported)
+            OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                MessageBox.Show("Operating system does not support browsing for folders.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            CommonOpenFileDialog openFolderDialog = new CommonOpenFileDialog
-            {
-                IsFolderPicker = true,
-                Title = getTRDataFolder,
+                Filter = openNARCFileDialogFilter,
+                Title = getTRDataNARC,
                 InitialDirectory = narcDialogDirectory
             };
 
-            if (openFolderDialog.ShowDialog() == CommonFileDialogResult.Ok)
+            if (openFileDialog.ShowDialog() == true)
             {
                 //Have to use full name here to get the desired effect. Why? Unsure.
-                narcDialogDirectory = new DirectoryInfo(openFolderDialog.FileName).Parent.FullName;
+                narcDialogDirectory = new FileInfo(openFileDialog.FileName).DirectoryName;
 
-                _appData.LoadTRData(openFolderDialog.FileName);
+                _appData.LoadTRData(openFileDialog.FileName);
 
                 if (_appData.CanDecompNARCs)
                     btnDecompileNarcs.IsEnabled = true;
@@ -163,26 +157,19 @@ namespace TrainerTyrantForm
 
         private void btnLoadTRPoke_Click(object sender, RoutedEventArgs e)
         {
-            //If the operating system does not support the file dialog, show an error and exit out. In the future this will be updated to just use a support, worse folder picker.
-            if (!CommonFileDialog.IsPlatformSupported)
+            OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                MessageBox.Show("Operating system does not support browsing for folders.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            CommonOpenFileDialog openFolderDialog = new CommonOpenFileDialog
-            {
-                IsFolderPicker = true,
-                Title = getTRPokeFolder,
+                Filter = openNARCFileDialogFilter,
+                Title = getTRPokeNARC,
                 InitialDirectory = narcDialogDirectory
             };
 
-            if (openFolderDialog.ShowDialog() == CommonFileDialogResult.Ok)
+            if (openFileDialog.ShowDialog() == true)
             {
                 //Have to use full name here to get the desired effect. Why? Unsure.
-                narcDialogDirectory = new DirectoryInfo(openFolderDialog.FileName).Parent.FullName;
+                narcDialogDirectory = new FileInfo(openFileDialog.FileName).DirectoryName;
 
-                _appData.LoadTRPoke(openFolderDialog.FileName);
+                _appData.LoadTRPoke(openFileDialog.FileName);
 
                 if (_appData.CanDecompNARCs)
                     btnDecompileNarcs.IsEnabled = true;
@@ -198,13 +185,6 @@ namespace TrainerTyrantForm
                 return;
             }
 
-            //Check that the narc folders are valid.
-            if (!_appData.ValidateNarcFolders(out error))
-            {
-                MessageBox.Show(error, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
                 Title = saveDecompedJSON,
@@ -214,7 +194,14 @@ namespace TrainerTyrantForm
 
             if (saveFileDialog.ShowDialog() == true)
             {
-                _appData.DecompileNarcFolders(saveFileDialog.FileName);
+                try
+                {
+                    _appData.DecompileNarcs(saveFileDialog.FileName);
+                }
+                catch(InvalidDataException err)
+                {
+                    MessageBox.Show(err.Message, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
         }
 
