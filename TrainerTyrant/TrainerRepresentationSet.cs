@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using NARCLord;
 
 namespace TrainerTyrant
 {
@@ -219,6 +220,39 @@ namespace TrainerTyrant
                 TRData[trainer + 1] = _data[trainer].GetTrainerBytes(items);
                 TRPoke[trainer + 1] = _data[trainer].GetPokemonBytes(items, moves, pokemon);
             }
+        }
+
+        public void GetNarc(out byte[] TRData, out byte[] TRPoke, ExternalItemList items, ExternalMoveList moves, ExternalPokemonList pokemon, ExternalTrainerSlotList slots)
+        {
+            //If it doesn't pass these validation checks, then the output would be nonsense.
+            if (!ValidateAllSlotsUsed(slots) || !ValidateNoDuplicates(slots))
+            {
+                TRData = null;
+                TRPoke = null;
+                return;
+            }
+
+            //start
+            NARC trdataNarc = new NARC();
+            NARC trpokeNarc = new NARC();
+
+            //sort the data so that its 'filed' in correct order
+            SortData(slots);
+
+            //first, fill the placeholder zeroth slot with the placeholder data
+            TrainerRepresentation.GetPlaceholderBytes(out byte[] placeholderTRData, out byte[] placeholderTRPoke);
+            trdataNarc.Add(placeholderTRData);
+            trpokeNarc.Add(placeholderTRPoke);
+
+            //fill in the rest of the data
+            for (int trainer = 0; trainer < _data.Count; trainer++)
+            {
+                trdataNarc.Add(_data[trainer].GetTrainerBytes(items));
+                trpokeNarc.Add(_data[trainer].GetPokemonBytes(items, moves, pokemon));
+            }
+
+            TRData = trdataNarc.Compile();
+            TRPoke = trpokeNarc.Compile();
         }
     }
 }
