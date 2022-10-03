@@ -245,7 +245,7 @@ namespace TrainerTyrantForm
                 }
                 else
                 {
-                    bool success = _appData.CompileNarcFolder(openFileDialog.FileName);
+                    bool success = _appData.CompileNarcs(openFileDialog.FileName);
 
                     if (success == false)
                     {

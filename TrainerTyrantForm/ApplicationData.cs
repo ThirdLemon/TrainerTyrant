@@ -268,6 +268,29 @@ namespace TrainerTyrantForm
             return true;
         }
 
+        /**
+         * <summary>Take a decompiled JSON file and compile it to a NARC file.</summary>
+         * <param name="fileLoc">The JSON file to compile.</param>
+         */
+        public bool CompileNarcs(string fileLoc)
+        {
+            //simple safeguard
+            if (!File.Exists(fileLoc))
+                return false;
+
+            TrainerRepresentationSet export = new TrainerRepresentationSet();
+            export.InitializeWithJSON(File.ReadAllText(fileLoc));
+            if (export == null)
+                return false;
+
+            export.GetNarc(out byte[] TRData, out byte[] TRPoke, _itemData, _moveData, _pokemonData, _slotData);
+
+            File.WriteAllBytes(Path.GetDirectoryName(fileLoc) + "/" + Path.GetFileNameWithoutExtension(fileLoc) + "_TRData.narc", TRData);
+            File.WriteAllBytes(Path.GetDirectoryName(fileLoc) + "/" + Path.GetFileNameWithoutExtension(fileLoc) + "_TRPoke.narc", TRPoke);
+
+            return true;
+        }
+
         public bool AlterJSON(string sourceFile, string addedFile)
         {
             //simple safeguard
