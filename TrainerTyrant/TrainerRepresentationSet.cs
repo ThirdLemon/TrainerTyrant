@@ -56,7 +56,7 @@ namespace TrainerTyrant
                 return;
 
             if (TRData.Length != TRPoke.Length)
-                throw new ArgumentException("TRData and TRPoke must be the same length.");
+                throw new ArgumentException("TRData and TRPoke must have the same amount of files.");
             if (TRData.Length < 1)
                 throw new ArgumentException("TRData and TRPoke must have more than 1 file.");
 
@@ -65,6 +65,40 @@ namespace TrainerTyrant
             for (int trainer = 1; trainer < TRData.Length; trainer++)
             {
                 TrainerRepresentation tr = TrainerRepresentation.BuildFromBytes(TRData[trainer], TRPoke[trainer], trainer, itemList, moveList, monList, slotList);
+                _data.Add(tr);
+            }
+
+            _initialized = true;
+        }
+
+        public void InitializeWithNarc(string TRDataFile, string TRPokeFile, ExternalItemList itemList, ExternalMoveList moveList, ExternalPokemonList pokemonList, ExternalTrainerSlotList slotList)
+        {
+            //Don't initialize when already filled
+            if (Initialized)
+                return;
+
+            NARC trDataNarc, trPokeNarc;
+
+            try
+            {
+                trDataNarc = NARC.Build(TRDataFile);
+                trPokeNarc = NARC.Build(TRPokeFile);
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("An error occured while parsing the narc.", e);
+            }
+
+            if (trDataNarc.Length != trPokeNarc.Length)
+                throw new ArgumentException("TRData and TRPoke must have the same amount of files.");
+            if (trDataNarc.Length < 1)
+                throw new ArgumentException("TRData and TRPoke must have more than 1 file.");
+
+            _data = new List<TrainerRepresentation>();
+
+            for (int trainer = 1; trainer < trDataNarc.Length; trainer++)
+            {
+                TrainerRepresentation tr = TrainerRepresentation.BuildFromBytes(trDataNarc[trainer], trPokeNarc[trainer], trainer, itemList, moveList, pokemonList, slotList);
                 _data.Add(tr);
             }
 
