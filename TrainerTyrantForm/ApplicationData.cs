@@ -233,41 +233,6 @@ namespace TrainerTyrantForm
             return true;
         }
 
-        public bool CompileNarcFolder(string fileLoc)
-        {
-            //simple safeguard
-            if (!File.Exists(fileLoc))
-                return false;
-
-            TrainerRepresentationSet export = new TrainerRepresentationSet();
-            export.InitializeWithJSON(File.ReadAllText(fileLoc));
-            if (export == null)
-                return false;
-
-            export.GetByteData(out byte[][] TRData, out byte[][] TRPoke, _itemData, _moveData, _pokemonData, _slotData);
-
-            //don't rewrite this a million times.
-            string strippedName = Path.GetFileNameWithoutExtension(fileLoc);
-            //get folder names for TRData and TRPoke
-            string TRDataFolder = Path.GetDirectoryName(fileLoc) + "/" + strippedName + "_TRData";
-            string TRPokeFolder = Path.GetDirectoryName(fileLoc) + "/" + strippedName + "_TRPoke";
-            //create the directory
-            if (!Directory.Exists(TRDataFolder))
-                Directory.CreateDirectory(TRDataFolder);
-            if (!Directory.Exists(TRPokeFolder))
-                Directory.CreateDirectory(TRPokeFolder);
-            //get the amount of zeroes that need to be padded
-            int maxNumLength = TRData.Length.ToString().Length;
-
-            for (int dataNum = 0; dataNum < TRData.Length; dataNum++)
-            {
-                File.WriteAllBytes(TRDataFolder + "/" + strippedName + "_" + dataNum.ToString().PadLeft(maxNumLength, '0'), TRData[dataNum]);
-                File.WriteAllBytes(TRPokeFolder + "/" + strippedName + "_" + dataNum.ToString().PadLeft(maxNumLength, '0'), TRPoke[dataNum]);
-            }
-
-            return true;
-        }
-
         /**
          * <summary>Take a decompiled JSON file and compile it to a NARC file.</summary>
          * <param name="fileLoc">The JSON file to compile.</param>
