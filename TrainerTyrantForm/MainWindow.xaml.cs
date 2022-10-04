@@ -148,7 +148,10 @@ namespace TrainerTyrantForm
                 //Have to use full name here to get the desired effect. Why? Unsure.
                 narcDialogDirectory = new FileInfo(openFileDialog.FileName).DirectoryName;
 
-                _appData.LoadTRData(openFileDialog.FileName);
+                bool loaded = _appData.LoadTRData(openFileDialog.FileName);
+
+                if (loaded)
+                    imgLoadTRDataMark.Visibility = Visibility.Visible;
 
                 if (_appData.CanDecompNARCs)
                     btnDecompileNarcs.IsEnabled = true;
@@ -169,7 +172,10 @@ namespace TrainerTyrantForm
                 //Have to use full name here to get the desired effect. Why? Unsure.
                 narcDialogDirectory = new FileInfo(openFileDialog.FileName).DirectoryName;
 
-                _appData.LoadTRPoke(openFileDialog.FileName);
+                bool loaded = _appData.LoadTRPoke(openFileDialog.FileName);
+
+                if (loaded)
+                    imgLoadTRPokeMark.Visibility = Visibility.Visible;
 
                 if (_appData.CanDecompNARCs)
                     btnDecompileNarcs.IsEnabled = true;

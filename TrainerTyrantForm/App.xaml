@@ -5,6 +5,6 @@
              DispatcherUnhandledException="Application_DispatcherUnhandledException"
              Startup="Application_Startup">
     <Application.Resources>
-         
+        <BitmapImage x:Key="Checkmark" UriSource="/Resources/Checkmark.png"/>
     </Application.Resources>
 </Application>

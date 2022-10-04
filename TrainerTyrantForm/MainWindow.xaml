@@ -30,9 +30,15 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Name="btnLoadTRData" Grid.Row="0" Click="btnLoadTRData_Click" Content="Load TRData NARC" HorizontalAlignment="Center" Margin="0,10,0,10"/>
-            <Button Name="btnLoadTRPoke" Grid.Row="1" Click="btnLoadTRPoke_Click" Content="Load TRPoke NARC" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-            <Button Name="btnDecompileNarcs" Grid.Row="2" Click="btnDecompileNarcs_Click" Content="Convert NARCs" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="btnLoadTRData" Grid.Row="0" Grid.Column="1" Click="btnLoadTRData_Click" Content="Load TRData NARC" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+            <Button Name="btnLoadTRPoke" Grid.Row="1" Grid.Column="1" Click="btnLoadTRPoke_Click" Content="Load TRPoke NARC" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <Button Name="btnDecompileNarcs" Grid.Row="2" Grid.Column="1" Click="btnDecompileNarcs_Click" Content="Convert NARCs" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False"/>
+            <Image Name="imgLoadTRDataMark" Grid.Row="0" Grid.Column="0" Source="{StaticResource Checkmark}" Width="16" Margin="0,0,2,0" Visibility="Hidden"/>
+            <Image Name="imgLoadTRPokeMark" Grid.Row="1" Grid.Column="0" Source="{StaticResource Checkmark}" Width="16" Margin="0,0,2,0" Visibility="Hidden"/>
         </Grid>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
