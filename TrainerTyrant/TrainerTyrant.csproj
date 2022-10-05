@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LearnsetSet.cs" />
+    <Compile Include="LearnsetSetJSONValidator.cs" />
     <Compile Include="TrainerRepresentationSet.cs" />
     <Compile Include="ExternalDataJSONValidator.cs" />
     <Compile Include="ExternalData.cs" />

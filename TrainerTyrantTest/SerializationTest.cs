@@ -31,6 +31,8 @@ namespace TrainerTyrantTest
         private string smallslotlist2JSON;
         private string emptyJSON;
 
+        private string bulbasaurlineJSON;
+
         private string simpleTRPoke;
         private string simpleTRData;
 
@@ -76,6 +78,8 @@ namespace TrainerTyrantTest
             smallslotlist2JSON = File.ReadAllText("../../../SampleJSON/External/SlotList3.json");
 
             emptyJSON = File.ReadAllText("../../../SampleJSON/External/Empty.json");
+
+            bulbasaurlineJSON = File.ReadAllText("../../../SampleJSON/SampleJSON9.json");
 
             simpleTRData = "../../../SampleNARCs/TRData1.narc";
 
@@ -1110,6 +1114,12 @@ namespace TrainerTyrantTest
             for (int i = 0; i < 4; i++)
                 for (int j = 0; j < 4; j++)
                     Assert.AreEqual(marshalmonmoves[i, j], marshal.PokemonData[i].Moves[j]);
+        }
+
+        [TestMethod]
+        public void CheckLearnsetSetValidation()
+        {
+            Assert.IsTrue(LearnsetSetJSONValidator.ValidateLearnsetSetJSON(bulbasaurlineJSON));
         }
     }
 
