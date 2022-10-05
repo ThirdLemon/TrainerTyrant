@@ -31,7 +31,8 @@ namespace TrainerTyrantTest
         private string smallslotlist2JSON;
         private string emptyJSON;
 
-        private string bulbasaurlineJSON;
+        private string bulbalineJSON;
+        private string bulbalinewrongJSON;
 
         private string simpleTRPoke;
         private string simpleTRData;
@@ -79,7 +80,9 @@ namespace TrainerTyrantTest
 
             emptyJSON = File.ReadAllText("../../../SampleJSON/External/Empty.json");
 
-            bulbasaurlineJSON = File.ReadAllText("../../../SampleJSON/SampleJSON9.json");
+            bulbalineJSON = File.ReadAllText("../../../SampleJSON/SampleJSON9.json");
+
+            bulbalinewrongJSON = File.ReadAllText("../../../SampleJSON/SampleJSON9b.json");
 
             simpleTRData = "../../../SampleNARCs/TRData1.narc";
 
@@ -1119,8 +1122,12 @@ namespace TrainerTyrantTest
         [TestMethod]
         public void CheckLearnsetSetValidation()
         {
-            Assert.IsTrue(LearnsetSetJSONValidator.ValidateLearnsetSetJSON(bulbasaurlineJSON));
+            Assert.IsTrue(LearnsetSetJSONValidator.ValidateLearnsetSetJSON(bulbalineJSON));
+            Assert.IsFalse(LearnsetSetJSONValidator.ValidateLearnsetSetJSON(bulbalinewrongJSON));
+
+            Assert.IsTrue(LearnsetSetJSONValidator.ValidateLearnsetSetJSON(bulbalineJSON, out IList<string> errors));
+            Assert.IsFalse(LearnsetSetJSONValidator.ValidateLearnsetSetJSON(bulbalinewrongJSON, out errors));
+            Assert.AreEqual(1, errors.Count);
         }
     }
-
 }
