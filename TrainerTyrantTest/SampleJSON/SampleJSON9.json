@@ -31,7 +31,7 @@
     { "Level": 31, "Move": "Double-Edge" },
     { "Level": 36, "Move": "Worry Seed" },
     { "Level": 39, "Move": "Synthesis" },
-    { "Level": 44, "Move": "Seed Bomb" }
+    { "Level": 44, "Move": "SolarBeam" }
   ],
   "Venusaur": [
     { "Level": 1, "Move": "Tackle" },
@@ -47,9 +47,10 @@
     { "Level": 20, "Move": "Razor Leaf" },
     { "Level": 23, "Move": "Sweet Scent" },
     { "Level": 28, "Move": "Growth" },
+	{ "Level": 31, "Move": "Double-Edge" },
     { "Level": 32, "Move": "Petal Dance" },
     { "Level": 39, "Move": "Worry Seed" },
     { "Level": 45, "Move": "Synthesis" },
-    { "Level": 53, "Move": "Seed Bomb" }
+    { "Level": 53, "Move": "SolarBeam" }
   ]
 }

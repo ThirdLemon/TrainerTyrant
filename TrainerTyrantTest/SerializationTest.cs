@@ -25,6 +25,7 @@ namespace TrainerTyrantTest
         private string custom3JSON;
         private string movelistJSON;
         private string pokemonlistJSON;
+        private string bulbapokemonlistJSON;
         private string itemlistJSON;
         private string slotlistJSON;
         private string smallslotlistJSON;
@@ -36,6 +37,7 @@ namespace TrainerTyrantTest
 
         private string simpleTRPoke;
         private string simpleTRData;
+        private string simpleLearnset;
 
         [TestInitialize]
         public void TestInit()
@@ -70,6 +72,8 @@ namespace TrainerTyrantTest
 
             pokemonlistJSON = File.ReadAllText("../../../SampleJSON/External/PokemonList1.json");
 
+            bulbapokemonlistJSON = File.ReadAllText("../../../SampleJSON/External/PokemonList2.json");
+
             itemlistJSON = File.ReadAllText("../../../SampleJSON/External/ItemList1.json");
 
             slotlistJSON = File.ReadAllText("../../../SampleJSON/External/SlotList1.json");
@@ -87,6 +91,8 @@ namespace TrainerTyrantTest
             simpleTRData = "../../../SampleNARCs/TRData1.narc";
 
             simpleTRPoke = "../../../SampleNARCs/TRPoke1.narc";
+
+            simpleLearnset = "../../../SampleNARCs/Learnset1.narc";
         }
 
         [TestMethod]
@@ -1128,6 +1134,47 @@ namespace TrainerTyrantTest
             Assert.IsTrue(LearnsetSetJSONValidator.ValidateLearnsetSetJSON(bulbalineJSON, out IList<string> errors));
             Assert.IsFalse(LearnsetSetJSONValidator.ValidateLearnsetSetJSON(bulbalinewrongJSON, out errors));
             Assert.AreEqual(1, errors.Count);
+        }
+
+        [TestMethod]
+        public void CheckLearnsetCompiling()
+        {
+            ExternalPokemonList pokemon = ExternalPokemonList.DeserializeJSON(bulbapokemonlistJSON);
+            ExternalMoveList moves = ExternalMoveList.DeserializeJSON(movelistJSON);
+
+            LearnsetSet set = new LearnsetSet();
+
+            set.InitializeWithJSON(bulbalineJSON);
+
+            Assert.IsNotNull(set);
+
+            Assert.IsTrue(set.ValidateAllSlotsUsed(pokemon));
+
+            byte[] narcData = set.GetNarcData(moves, pokemon);
+
+            Assert.IsNotNull(narcData);
+
+            byte[] desired = File.ReadAllBytes(simpleLearnset);
+
+            Assert.AreEqual(desired.Length, narcData.Length, "The length of the produced file does not match with the desired file.");
+
+            for (int i = 0; i < desired.Length; i++)
+                Assert.AreEqual(desired[i], narcData[i], "Byte " + i + " does not match between desired and produced.");
+        }
+
+        [TestMethod]
+        public void CheckLearnsetSerialization()
+        {
+            LearnsetSet set = new LearnsetSet();
+
+            set.InitializeWithJSON(bulbalineJSON);
+
+            Assert.IsNotNull(set);
+
+            string returned = set.SerializeJSON();
+
+            //Compare the two strings while ignoring capitalization and whitespace
+            Assert.IsTrue(String.Compare(bulbalineJSON, returned, System.Globalization.CultureInfo.CurrentCulture, System.Globalization.CompareOptions.IgnoreCase | System.Globalization.CompareOptions.IgnoreSymbols) == 0);
         }
     }
 }
