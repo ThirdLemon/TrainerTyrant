@@ -32,6 +32,7 @@ namespace TrainerTyrantForm
         private static readonly string getItemsFile = "Open Items JSON";
         private static readonly string getTRDataNARC = "Open TRData NARC";
         private static readonly string getTRPokeNARC = "Open TRPoke NARC";
+        private static readonly string getLearnsetNARC = "Open Learnset NARC";
         private static readonly string saveDecompedJSON = "Save JSON File";
         private static readonly string getDecompedJSON = "Open JSON File";
         private static readonly string getSourceJSON = "Open Base JSON File";
@@ -279,6 +280,95 @@ namespace TrainerTyrantForm
                         {
                             MessageBox.Show("An error occurred while altering the JSON.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
+                    }
+                }
+            }
+        }
+
+        private void btnDecompileLearnset_Click(object sender, RoutedEventArgs e)
+        {
+            //Check that all external data is loaded. 
+            if (!_appData.ValidateExternalData(out string error))
+            {
+                MessageBox.Show(error, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            OpenFileDialog openNarcDialog = new OpenFileDialog
+            {
+                Title = getLearnsetNARC,
+                Filter = openNARCFileDialogFilter,
+                InitialDirectory = narcDialogDirectory
+            };
+
+            if (openNarcDialog.ShowDialog() == true)
+            {
+                SaveFileDialog saveJSONDialog = new SaveFileDialog
+                {
+                    Title = saveDecompedJSON,
+                    Filter = saveJSONFileDialogFilter,
+                    InitialDirectory = saveDialogDirectory
+                };
+
+                if (saveJSONDialog.ShowDialog() == true)
+                {
+                    try
+                    {
+                        _appData.DecompileLearnsets(saveJSONDialog.FileName, openNarcDialog.FileName);
+                    }
+                    catch (InvalidDataException err)
+                    {
+                        MessageBox.Show(err.Message, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
+            }
+        }
+
+        private void btnCompileLearnset_Click(object sender, RoutedEventArgs e)
+        {
+            //Check that all external data is loaded. 
+            if (!_appData.ValidateExternalData(out string error))
+            {
+                MessageBox.Show(error, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            OpenFileDialog openJSONDialog = new OpenFileDialog
+            {
+                Title = getDecompedJSON,
+                Filter = openJSONFileDialogFilter,
+                InitialDirectory = jsonDialogDirectory
+            };
+
+            if (openJSONDialog.ShowDialog() == true)
+            {
+                jsonDialogDirectory = new FileInfo(openJSONDialog.FileName).DirectoryName;
+
+                bool validJSON = _appData.ValidateLearnsetJSON(openJSONDialog.FileName, out IList<string> errors);
+
+                //if it does not validate, show an error message and exit out early
+                if (validJSON == false)
+                {
+                    if (errors.Count == 1)
+                    {
+                        MessageBox.Show("Provided JSON did not validate.\n" + errors[0], "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                    else
+                    {
+                        string errorMessage = "Provided Json did not validate.\n" + errors.Count + " errors occurred. Check the log file.";
+                        File.WriteAllLines("Log.txt", errors);
+
+                        MessageBox.Show(errorMessage, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                    return;
+                }
+                else
+                {
+                    bool success = _appData.CompileLearnsets(openJSONDialog.FileName);
+
+                    if (success == false)
+                    {
+                        MessageBox.Show("An error occurred while compiling the narc.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 }
             }

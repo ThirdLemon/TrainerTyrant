@@ -42,11 +42,16 @@
         </Grid>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
-            
+            <Button Name="btnDecompileLearnset" Grid.Row="0" Click="btnDecompileLearnset_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock TextWrapping="Wrap" Text="Decompile Learnset NARC to JSON" TextAlignment="Center"/>
+            </Button>
+            <Button Name="btnCompileLearnset" Grid.Row="1" Click="btnCompileLearnset_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock TextWrapping="Wrap" Text="Compile Learnset JSON to NARC" TextAlignment="Center"/>
+            </Button>
         </Grid>
     </Grid>
 </Window>

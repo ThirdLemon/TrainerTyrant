@@ -73,7 +73,7 @@ namespace TrainerTyrant
             _data = new Dictionary<string, List<LevelUpMove>>();
 
             if (pokemon.PokemonData.Count != learnsetNarc.Length)
-                throw new ArgumentException("The narc file does not contain data on every pokemon.");
+                throw new ArgumentException("The narc file and external pokemon list have differing pokemon counts. " + pokemon.PokemonData.Count + " vs " + learnsetNarc.Length);
 
             for (int monNum = 1; monNum < learnsetNarc.Length; monNum++)
             {

@@ -184,6 +184,11 @@ namespace TrainerTyrantForm
             return TrainerJSONValidator.ValidateTrainerListJSON(File.ReadAllText(jsonFileLoc), out errors);
         }
 
+        public bool ValidateLearnsetJSON(string jsonFileLoc, out IList<string> errors)
+        {
+            return LearnsetSetJSONValidator.ValidateLearnsetSetJSON(File.ReadAllText(jsonFileLoc), out errors);
+        }
+
         /**
          * <summary>When the app data has been given its Narc locations, this function takes them and decompiles them to a JSON file.</summary>
          * <exception cref="InvalidDataException">Thrown when the narcs are not formatted correctly.</exception>
@@ -207,6 +212,23 @@ namespace TrainerTyrantForm
             return true;
         }
 
+        public bool DecompileLearnsets(string saveloc, string narcLoc)
+        {
+            LearnsetSet learnsets = new LearnsetSet();
+            try
+            {
+                learnsets.InitializeWithNarc(narcLoc, _moveData, _pokemonData);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw new InvalidDataException("An error occured when parsing the given NARC.", e);
+            }
+
+            File.WriteAllText(saveloc, learnsets.SerializeJSON());
+            return true;
+        }
+
         /**
          * <summary>Take a decompiled JSON file and compile it to a NARC file.</summary>
          * <param name="fileLoc">The JSON file to compile.</param>
@@ -219,13 +241,31 @@ namespace TrainerTyrantForm
 
             TrainerRepresentationSet export = new TrainerRepresentationSet();
             export.InitializeWithJSON(File.ReadAllText(fileLoc));
-            if (export == null)
+            if (export.Initialized == false)
                 return false;
 
             export.GetNarc(out byte[] TRData, out byte[] TRPoke, _itemData, _moveData, _pokemonData, _slotData);
 
             File.WriteAllBytes(Path.GetDirectoryName(fileLoc) + "/" + Path.GetFileNameWithoutExtension(fileLoc) + "_TRData.narc", TRData);
             File.WriteAllBytes(Path.GetDirectoryName(fileLoc) + "/" + Path.GetFileNameWithoutExtension(fileLoc) + "_TRPoke.narc", TRPoke);
+
+            return true;
+        }
+
+        public bool CompileLearnsets(string fileLoc)
+        {
+            //simple safeguard
+            if (!File.Exists(fileLoc))
+                return false;
+
+            LearnsetSet learnsets = new LearnsetSet();
+            learnsets.InitializeWithJSON(File.ReadAllText(fileLoc));
+            if (learnsets.Initialized == false)
+                return false;
+
+            byte[] narc = learnsets.GetNarcData(_moveData, _pokemonData);
+
+            File.WriteAllBytes(Path.GetDirectoryName(fileLoc) + "/" + Path.GetFileNameWithoutExtension(fileLoc) + "_Learnset.narc", narc);
 
             return true;
         }
@@ -249,5 +289,7 @@ namespace TrainerTyrantForm
             File.WriteAllText(sourceFile, source.SerializeJSON());
             return true;
         }
+
+        
     }
 }
