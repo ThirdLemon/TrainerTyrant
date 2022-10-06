@@ -1176,5 +1176,32 @@ namespace TrainerTyrantTest
             //Compare the two strings while ignoring capitalization and whitespace
             Assert.IsTrue(String.Compare(bulbalineJSON, returned, System.Globalization.CultureInfo.CurrentCulture, System.Globalization.CompareOptions.IgnoreCase | System.Globalization.CompareOptions.IgnoreSymbols) == 0);
         }
+
+        [TestMethod]
+        public void CheckLearnsetDecompiling()
+        {
+            ExternalPokemonList pokemon = ExternalPokemonList.DeserializeJSON(bulbapokemonlistJSON);
+            ExternalMoveList moves = ExternalMoveList.DeserializeJSON(movelistJSON);
+
+            LearnsetSet set = new LearnsetSet();
+
+            set.InitializeWithNarc(simpleLearnset, moves, pokemon);
+
+            Assert.IsTrue(set.Initialized);
+
+            string returned = set.SerializeJSON();
+
+            //Compare the two strings while ignoring capitalization and whitespace
+            Assert.IsTrue(String.Compare(bulbalineJSON, returned, System.Globalization.CultureInfo.CurrentCulture, System.Globalization.CompareOptions.IgnoreCase | System.Globalization.CompareOptions.IgnoreSymbols) == 0);
+
+            byte[] narcData = set.GetNarcData(moves, pokemon);
+
+            byte[] desired = File.ReadAllBytes(simpleLearnset);
+
+            Assert.AreEqual(desired.Length, narcData.Length, "The length of the produced file does not match with the desired file.");
+
+            for (int i = 0; i < desired.Length; i++)
+                Assert.AreEqual(desired[i], narcData[i], "Byte " + i + " does not match between desired and produced.");
+        }
     }
 }

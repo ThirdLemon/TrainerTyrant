@@ -53,6 +53,36 @@ namespace TrainerTyrant
             }
         }
 
+        public void InitializeWithNarc(string narcFile, ExternalMoveList moves, ExternalPokemonList pokemon)
+        {
+            //Don't initialize when already filled
+            if (Initialized)
+                return;
+
+            NARC learnsetNarc;
+
+            try
+            {
+                learnsetNarc = NARC.Build(narcFile);
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("An error occured while parsing the narc.", e);
+            }
+
+            _data = new Dictionary<string, List<LevelUpMove>>();
+
+            if (pokemon.PokemonData.Count != learnsetNarc.Length)
+                throw new ArgumentException("The narc file does not contain data on every pokemon.");
+
+            for (int monNum = 1; monNum < learnsetNarc.Length; monNum++)
+            {
+                _data.Add(pokemon.GetPokemon(monNum), BuildLearnsetFromFile(learnsetNarc[monNum], moves));
+            }
+
+            _initialized = true;
+        }
+
         public string SerializeJSON()
         {
             //TODO: make it so that the level up moves only take up one line of space
@@ -112,6 +142,23 @@ namespace TrainerTyrant
                 to_return[learnset.Count * 4 + i] = 0xFF;
 
             return to_return;
+        }
+
+        private static List<LevelUpMove> BuildLearnsetFromFile(byte[] file, ExternalMoveList moves)
+        {
+            List<LevelUpMove> toReturn = new List<LevelUpMove>();
+
+            for(int move = 0; move < (file.Length / 4) - 1; move++)
+            {
+                LevelUpMove newMove = new LevelUpMove
+                {
+                    Move = moves.GetMove(file[move * 4] + file[move * 4 + 1] * 256),
+                    Level = file[move * 4 + 2]
+                };
+                toReturn.Add(newMove);
+            }
+
+            return toReturn;
         }
     }
 
