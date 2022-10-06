@@ -86,7 +86,9 @@ namespace TrainerTyrant
         public string SerializeJSON()
         {
             //TODO: make it so that the level up moves only take up one line of space
-            return JsonConvert.SerializeObject(_data, Formatting.Indented);
+            string JSON = JsonConvert.SerializeObject(_data, Formatting.Indented);
+
+            return JSON.Replace("{\r\n      \"Level", "{ \"Level").Replace(",\r\n      \"Move", ", \"Move").Replace("\"\r\n    }", "\" }");
         }
 
         /**
