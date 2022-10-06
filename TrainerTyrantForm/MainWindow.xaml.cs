@@ -211,6 +211,55 @@ namespace TrainerTyrantForm
             }
         }
 
+        private void btnDecompileNarcsNew_Click(object sender, RoutedEventArgs e)
+        {
+            //Check that all external data is loaded. 
+            if (!_appData.ValidateExternalData(out string error))
+            {
+                MessageBox.Show(error, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            OpenFileDialog openTRDataDialog = new OpenFileDialog
+            {
+                Title = getTRDataNARC,
+                Filter = openNARCFileDialogFilter,
+                InitialDirectory = narcDialogDirectory
+            };
+
+            if (openTRDataDialog.ShowDialog() == true)
+            {
+                OpenFileDialog openTRPokeDialog = new OpenFileDialog
+                {
+                    Title = getTRPokeNARC,
+                    Filter = openNARCFileDialogFilter,
+                    InitialDirectory = narcDialogDirectory
+                };
+
+                if (openTRPokeDialog.ShowDialog() == true)
+                {
+                    SaveFileDialog saveFileDialog = new SaveFileDialog
+                    {
+                        Title = saveDecompedJSON,
+                        Filter = saveJSONFileDialogFilter,
+                        InitialDirectory = saveDialogDirectory
+                    };
+
+                    if (saveFileDialog.ShowDialog() == true)
+                    {
+                        try
+                        {
+                            _appData.DecompileNarcs(saveFileDialog.FileName, openTRDataDialog.FileName, openTRPokeDialog.FileName);
+                        }
+                        catch (InvalidDataException err)
+                        {
+                            MessageBox.Show(err.Message, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
+                    }
+                }
+            }
+        }
+
         private void btnCompileNarcs_Click(object sender, RoutedEventArgs e)
         {
             //Check that all external data is loaded. 

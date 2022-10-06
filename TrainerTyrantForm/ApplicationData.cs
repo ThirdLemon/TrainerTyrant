@@ -234,6 +234,29 @@ namespace TrainerTyrantForm
         }
 
         /**
+         * <summary>When the app data has been given its Narc locations, this function takes them and decompiles them to a JSON file.</summary>
+         * <exception cref="InvalidDataException">Thrown when the narcs are not formatted correctly.</exception>
+         * <param name="saveloc">The location for the decompiled JSON to be written to.</param>
+         * <param name="trDataLoc">The location of the TRData narc</param>
+         * <param name="trPokeLoc">The location of the TRPoke narc</param>
+         */
+        public bool DecompileNarcs(string saveloc, string trDataLoc, string trPokeLoc)
+        {
+            TrainerRepresentationSet export = new TrainerRepresentationSet();
+            try
+            {
+                export.InitializeWithNarc(trDataLoc, trPokeLoc, _itemData, _moveData, _pokemonData, _slotData);
+            }
+            catch (Exception e)
+            {
+                throw new InvalidDataException("An error occurred when parsing the given NARCs.", e);
+            }
+
+            File.WriteAllText(saveloc, export.SerializeJSON());
+            return true;
+        }
+
+        /**
          * <summary>Take a decompiled JSON file and compile it to a NARC file.</summary>
          * <param name="fileLoc">The JSON file to compile.</param>
          */
