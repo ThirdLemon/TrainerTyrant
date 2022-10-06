@@ -1,5 +1,5 @@
 # TrainerTyrant
-This is a project aimed at high-accessibility manipulation of trainer data in Generation 5 Pokemon Games(B/W/B2/W2).
+This is a project aimed at high-accessibility manipulation of trainer data and learnset data in Generation 5 Pokemon Games(B/W/B2/W2).
 
 TrainerTyrant aims to transform the high-density, computer readable information of game code and extracted NARC files and make them editable through more human-readable interface. Primarily JSON, however support for spreadsheets will come in the future. A benefit of being able to manipulate JSON to write trainer data is the ability for users to write their own code to trivially edit trainer data through JSON. The hope is to continue improving on TrainerTyrant until most knowledge and interface barriers are removed, to reduce the risk of human error while editting trainer data and increasing the accessibility of romhacking for new users. 
 
@@ -36,9 +36,12 @@ Once you have editted your JSON file to your liking, return to the TrainerTyrant
 ## Reinserting data to your ROM
 Use your DS ROM browser to navigate back to the folder a/0/9 in your ROM, then select the corresponding file to your TRData and TRPoke narcs and then re-insert the narcs.
 
+# Changing Learnset Data
+Learnset data follows much of the same route as trainer data. For both Black/White and Black 2/White 2, the Learnset narc is located at a/0/1/8. Before decompiling the narc with TrainerTyrant, make sure to load the pokemon definition file, "PokemonWithForms," as there are unique learnsets for different forms. The decompiled JSON for learnsets is significantly more simple than for trainer data, simply containing a dictionary of each pokemon's name with an array of pairs of level and move names. Recompiling works the same way with Learnsets as with Trainer Data, and the same with re-insertion of the narc.
+
 # Advanced Tricks
 It's possible to use a single JSON file to hold multiple 'games' of information. By inserting extra trainers into your converted JSON file, but with Name ID's that aren't in the vanilla game, the extra data won't be converted into the narc when you're finished editting. But by creating a duplicate Trainer Definition file, and changing the Name IDs of select trainers to match the extra trainer's IDs, the extra trainers will be converted in place of the original trainers. This can be used to store 'difficulty levels' within the same file. 
 
 For example, in vanilla white 2, there is only one ghetsis fight. You can then place another ghetsis fight in the JSON file, with the same name but a variation of 1, and stronger pokemon without changing the fight normally. But if you load a trainer definition file that says that Ghetsis's slot is looking for a name ID of Ghetsis with a varation of 1, the buffed ghetsis fight will then take the place of ghetsis instead.
 
-There is an 'Alter JSON' option provided in TrainerTyrant, which lets you merge a smaller JSON file into a source JSON file. The fight(s) in the smaller JSON file will be added to the source file, if the source file doesn't contain them, or overwrite them otherwise. This can be useful for keeping things organize with a file system.
+There is an 'Alter JSON' option provided in TrainerTyrant, which lets you merge a smaller Trainer JSON file into a source TrainerJSON file. The fight(s) in the smaller JSON file will be added to the source file, if the source file doesn't contain them, or overwrite them otherwise. This can be useful for keeping things organize with a file system.
