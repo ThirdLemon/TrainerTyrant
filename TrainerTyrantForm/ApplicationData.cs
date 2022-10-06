@@ -19,13 +19,6 @@ namespace TrainerTyrantForm
         private ExternalTrainerSlotList _slotData;
         private string _slotDataLoc = "DefaultJSON/DefaultSlots.json";
 
-        //The location of the folder containing the extracted TRData narc, set by the user
-        private string _trDataLoc = null;
-        //The location of the folder containing the extracted TRPoke narc, set by the user
-        private string _trPokeLoc = null;
-
-        public bool CanDecompNARCs { get { return _trDataLoc != null && _trPokeLoc != null; } }
-
         public ApplicationData()
         {
             if (File.Exists(_pokemonDataLoc))
@@ -64,7 +57,6 @@ namespace TrainerTyrantForm
                 _slotData = null;
                 _slotDataLoc = null;
             }
-            _trDataLoc = _trPokeLoc = null;
         }
 
         /**
@@ -167,26 +159,6 @@ namespace TrainerTyrantForm
             }
         }
 
-        public bool LoadTRData(string dirLoc)
-        {
-            if (File.Exists(dirLoc))
-            {
-                _trDataLoc = dirLoc;
-                return true;
-            }
-            return false;
-        }
-
-        public bool LoadTRPoke(string dirLoc)
-        {
-            if(File.Exists(dirLoc))
-            {
-                _trPokeLoc = dirLoc;
-                return true;
-            }
-            return false;
-        }
-
         public bool ValidateExternalData(out string error)
         {
 
@@ -210,27 +182,6 @@ namespace TrainerTyrantForm
         public bool ValidateTrainerJSON(string jsonFileLoc, out IList<string> errors)
         {
             return TrainerJSONValidator.ValidateTrainerListJSON(File.ReadAllText(jsonFileLoc), out errors);
-        }
-
-        /**
-         * <summary>When the app data has been given its Narc locations, this function takes them and decompiles them to a JSON file.</summary>
-         * <exception cref="InvalidDataException">Thrown when the narcs are not formatted correctly.</exception>
-         * <param name="saveloc">The location for the decompiled JSON to be written to.</param>
-         */
-        public bool DecompileNarcs(string saveloc)
-        {
-            TrainerRepresentationSet export = new TrainerRepresentationSet();
-            try
-            {
-                export.InitializeWithNarc(_trDataLoc, _trPokeLoc, _itemData, _moveData, _pokemonData, _slotData);
-            }
-            catch (Exception e)
-            {
-                throw new InvalidDataException("An error occurred when parsing the given NARCs.", e);
-            }
-
-            File.WriteAllText(saveloc, export.SerializeJSON());
-            return true;
         }
 
         /**
