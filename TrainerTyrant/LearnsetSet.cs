@@ -96,6 +96,9 @@ namespace TrainerTyrant
          */
         public bool ValidateAllSlotsUsed(ExternalPokemonList pokemon)
         {
+            if (pokemon.PokemonData.Count != _data.Count + 1)
+                return false;
+
             for (int mon = 1; mon < pokemon.PokemonData.Count; mon++) 
                 if (!_data.ContainsKey(pokemon.PokemonData[mon]))
                     return false;
@@ -108,7 +111,7 @@ namespace TrainerTyrant
             //if it does not validate, don't pass
             if (!ValidateAllSlotsUsed(pokemon))
             {
-                return null;
+                throw new ArgumentException("The file does not sync with the given pokemon definition file.");
             }
 
             //Start

@@ -223,11 +223,14 @@ namespace TrainerTyrantForm
                 }
                 else
                 {
-                    bool success = _appData.CompileNarcs(openFileDialog.FileName);
-
-                    if (success == false)
+                    try
                     {
-                        MessageBox.Show("An error occurred while compiling the narc.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        _appData.CompileNarcs(openFileDialog.FileName);
+                    }
+                    catch(Exception err)
+                    {
+                        MessageBox.Show(err.Message + "\nCheck the log file.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        File.WriteAllText("Log.txt", err.ToString());
                     }
                 }
             }
@@ -363,11 +366,14 @@ namespace TrainerTyrantForm
                 }
                 else
                 {
-                    bool success = _appData.CompileLearnsets(openJSONDialog.FileName);
-
-                    if (success == false)
+                    try
                     {
-                        MessageBox.Show("An error occurred while compiling the narc.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        _appData.CompileLearnsets(openJSONDialog.FileName);
+                    }
+                    catch(Exception err)
+                    {
+                        MessageBox.Show(err.Message + "\nCheck the log file.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        File.WriteAllText("Log.txt", err.ToString());
                     }
                 }
             }

@@ -233,41 +233,53 @@ namespace TrainerTyrantForm
          * <summary>Take a decompiled JSON file and compile it to a NARC file.</summary>
          * <param name="fileLoc">The JSON file to compile.</param>
          */
-        public bool CompileNarcs(string fileLoc)
+        public void CompileNarcs(string fileLoc)
         {
             //simple safeguard
             if (!File.Exists(fileLoc))
-                return false;
+                throw new InvalidDataException("The narc selected does not exist.");
 
             TrainerRepresentationSet export = new TrainerRepresentationSet();
             export.InitializeWithJSON(File.ReadAllText(fileLoc));
             if (export.Initialized == false)
-                return false;
+                throw new InvalidDataException("An error occurred when loading the json.");
 
-            export.GetNarc(out byte[] TRData, out byte[] TRPoke, _itemData, _moveData, _pokemonData, _slotData);
+            try
+            {
+                export.GetNarc(out byte[] TRData, out byte[] TRPoke, _itemData, _moveData, _pokemonData, _slotData);
 
-            File.WriteAllBytes(Path.GetDirectoryName(fileLoc) + "/" + Path.GetFileNameWithoutExtension(fileLoc) + "_TRData.narc", TRData);
-            File.WriteAllBytes(Path.GetDirectoryName(fileLoc) + "/" + Path.GetFileNameWithoutExtension(fileLoc) + "_TRPoke.narc", TRPoke);
-
-            return true;
+                File.WriteAllBytes(Path.GetDirectoryName(fileLoc) + "/" + Path.GetFileNameWithoutExtension(fileLoc) + "_TRData.narc", TRData);
+                File.WriteAllBytes(Path.GetDirectoryName(fileLoc) + "/" + Path.GetFileNameWithoutExtension(fileLoc) + "_TRPoke.narc", TRPoke);
+            }
+            catch (ArgumentException e)
+            {
+                throw new InvalidDataException("An error occurred when compiling the narc.", e);
+            }
         }
 
-        public bool CompileLearnsets(string fileLoc)
+        public void CompileLearnsets(string fileLoc)
         {
             //simple safeguard
             if (!File.Exists(fileLoc))
-                return false;
+                throw new InvalidDataException("The narc selected does not exist.");
 
             LearnsetSet learnsets = new LearnsetSet();
             learnsets.InitializeWithJSON(File.ReadAllText(fileLoc));
             if (learnsets.Initialized == false)
-                return false;
+                throw new InvalidDataException("An error occurred when loading the json.");
 
-            byte[] narc = learnsets.GetNarcData(_moveData, _pokemonData);
+            byte[] narc;
+
+            try
+            {
+                narc = learnsets.GetNarcData(_moveData, _pokemonData);
+            }
+            catch (ArgumentException e)
+            {
+                throw new InvalidDataException("An error occurred when compiling the narc.", e);
+            }
 
             File.WriteAllBytes(Path.GetDirectoryName(fileLoc) + "/" + Path.GetFileNameWithoutExtension(fileLoc) + "_Learnset.narc", narc);
-
-            return true;
         }
 
         public bool AlterJSON(string sourceFile, string addedFile)

@@ -259,11 +259,13 @@ namespace TrainerTyrant
         public void GetNarc(out byte[] TRData, out byte[] TRPoke, ExternalItemList items, ExternalMoveList moves, ExternalPokemonList pokemon, ExternalTrainerSlotList slots)
         {
             //If it doesn't pass these validation checks, then the output would be nonsense.
-            if (!ValidateAllSlotsUsed(slots) || !ValidateNoDuplicates(slots))
+            if (!ValidateAllSlotsUsed(slots))
             {
-                TRData = null;
-                TRPoke = null;
-                return;
+                throw new ArgumentException("The file does not contain data on every trainer in the definition file.");
+            }
+            if (!ValidateNoDuplicates(slots))
+            {
+                throw new ArgumentException("There are duplicate trainers within the file.");
             }
 
             //start
