@@ -26,25 +26,27 @@
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button Name="btnDecompileNarcs" Grid.Row="2" Grid.Column="1" Click="btnDecompileNarcs_Click" Content="Convert NARCs" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Name="btnDecompileNarcs" Grid.Row="0" Click="btnDecompileNarcs_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Decompile Trainer NARCs to JSON"/>
+            </Button>
+            <Button Name="btnCompileNarcs" Grid.Row="1" Click="btnCompileNarcs_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock TextWrapping="Wrap" Text="Compile Trainer JSON to NARCs" TextAlignment="Center"/>
+            </Button>
+            <Button Name="btnAlterJSON" Grid.Row="2" Click="btnAlterJSON_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock TextWrapping="Wrap" Text="Merge Trainer JSON files" TextAlignment="Center"/>
+            </Button>
         </Grid>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Name="btnCompileNarcs" Grid.Row="0" Click="btnCompileNarcs_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock TextWrapping="Wrap" Text="Convert JSON to NARCs" TextAlignment="Center"/>
-            </Button>
-            <Button Name="btnAlterJSON" Grid.Row="1" Click="btnAlterJSON_Click" Content="Merge JSON files" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            
+            
         </Grid>
     </Grid>
 </Window>
