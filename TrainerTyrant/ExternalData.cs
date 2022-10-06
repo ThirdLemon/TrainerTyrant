@@ -63,7 +63,7 @@ namespace TrainerTyrant
             if (movename == null)
                 return 0;
 
-            int r = MoveData.FindIndex(a => a.Equals(movename, StringComparison.OrdinalIgnoreCase));
+            int r = MoveData.FindIndex(a => String.Compare(a, movename, System.Globalization.CultureInfo.CurrentCulture, System.Globalization.CompareOptions.IgnoreCase | System.Globalization.CompareOptions.IgnoreSymbols) == 0);
 
             return r == -1 ? 0 : r;
         }
