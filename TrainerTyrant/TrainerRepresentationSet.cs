@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using Newtonsoft.Json;
 using NARCLord;
+using System.Text.RegularExpressions;
 
 namespace TrainerTyrant
 {
@@ -18,6 +20,16 @@ namespace TrainerTyrant
         {
             _data = null;
             _initialized = false;
+        }
+
+        /**
+         * <returns>Returns -1 if trainer not found.</returns>
+         */
+        private int GetTrainerIndex(string name, int variation)
+        {
+            //Assumably the check that its not null will prevent the other checks from running and throwing null exception errors due to the nature of && 
+            return _data.FindIndex(i => i.TrainerData.Identification.NameID != null && i.TrainerData.Identification.NameID.Name.Equals(name) &&
+                            i.TrainerData.Identification.NameID.Variation == variation);
         }
 
         public void InitializeWithJSON(string JSON)
@@ -121,9 +133,7 @@ namespace TrainerTyrant
                         matchIndex = _data.FindIndex(i => i.TrainerData.Identification.NumberID == trainer.TrainerData.Identification.NumberID);
                     // if the trainer has a number id of -1, it must have a nameid, otherwise it wouldn't pass the validation
                     else
-                        //Assumably the check that its not null will prevent the other checks from running and throwing null exception errors due to the nature of && 
-                        matchIndex = _data.FindIndex(i => i.TrainerData.Identification.NameID != null && i.TrainerData.Identification.NameID.Name.Equals(trainer.TrainerData.Identification.NameID.Name) &&
-                            i.TrainerData.Identification.NameID.Variation == trainer.TrainerData.Identification.NameID.Variation);
+                        matchIndex = GetTrainerIndex(trainer.TrainerData.Identification.NameID.Name, trainer.TrainerData.Identification.NameID.Variation);
 
                     //if no copy is found, simply add the trainer to the list
                     if (matchIndex == -1)
@@ -157,9 +167,7 @@ namespace TrainerTyrant
                         matchIndex = _data.FindIndex(i => i.TrainerData.Identification.NumberID == trainer.TrainerData.Identification.NumberID);
                     // if the trainer has a number id of -1, it must have a nameid, otherwise it wouldn't pass the validation
                     else
-                        //Assumably the check that its not null will prevent the other checks from running and throwing null exception errors due to the nature of && 
-                        matchIndex = _data.FindIndex(i => i.TrainerData.Identification.NameID != null && i.TrainerData.Identification.NameID.Name.Equals(trainer.TrainerData.Identification.NameID.Name) &&
-                            i.TrainerData.Identification.NameID.Variation == trainer.TrainerData.Identification.NameID.Variation);
+                        matchIndex = GetTrainerIndex(trainer.TrainerData.Identification.NameID.Name, trainer.TrainerData.Identification.NameID.Variation);
 
                     //if no copy is found, simply add the trainer to the list
                     if (matchIndex == -1)
@@ -289,6 +297,44 @@ namespace TrainerTyrant
 
             TRData = trdataNarc.Compile();
             TRPoke = trpokeNarc.Compile();
+        }
+
+        public void ProduceDocumentation(ExternalTrainerSlotList trainers, Stream fileInput, string fileOutput)
+        {
+            
+
+            using (StreamReader inputReader = new StreamReader(fileInput))
+            {
+                using (FileStream outputStream = File.OpenWrite(fileOutput))
+                {
+                    using (StreamWriter outputWriter = new StreamWriter(outputStream))
+                    {
+                        string line;
+                        while ((line = inputReader.ReadLine()) != null)
+                        {
+                            MatchCollection matches = Regex.Matches(line, @"{([\w\s&]+):(\d+)}");
+
+                            if (matches != null)
+                            {
+                                for (int matchNum = 0; matchNum < matches.Count; matchNum++)
+                                {
+
+                                    string name = matches[matchNum].Groups[1].Value;
+                                    int variation = int.Parse(matches[matchNum].Groups[2].Value);
+                                    int index = GetTrainerIndex(name, variation);
+                                    if (index >= 0)
+                                    {
+                                        string trainerDocu = _data[index].ProduceDocumentation(trainers);
+                                        line = line.Replace(matches[matchNum].Value, trainerDocu);
+                                    }
+                                }
+                            }
+
+                            outputWriter.WriteLine(line);
+                        }
+                    }
+                }
+            }
         }
     }
 }

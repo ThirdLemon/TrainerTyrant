@@ -511,9 +511,11 @@ namespace TrainerTyrant
                 to_return += "[Hidden Ability]";
             else if (Miscellaneous.Ability == 1 || Miscellaneous.Ability == 2)
                 to_return += "[Ability " + Miscellaneous.Ability + "]";
+            else
+                to_return += "[Random Ability]";
 
             if (Difficulty < 255)
-                to_return += "[" + (int)(Difficulty / 255 * 31) + "]";
+                to_return += "[" + (int)(Difficulty * 31 / 255) + "]";
 
             return to_return;
         }

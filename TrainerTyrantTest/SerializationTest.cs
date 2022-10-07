@@ -35,6 +35,9 @@ namespace TrainerTyrantTest
         private string bulbalineJSON;
         private string bulbalinewrongJSON;
 
+        private string shorte4Doc;
+        private string docOutput;
+
         private string simpleTRPoke;
         private string simpleTRData;
         private string simpleLearnset;
@@ -88,11 +91,22 @@ namespace TrainerTyrantTest
 
             bulbalinewrongJSON = File.ReadAllText("../../../SampleJSON/SampleJSON9b.json");
 
+            shorte4Doc = "../../../SampleDocs/SampleDoc1.txt";
+
+            docOutput = "../../../SampleDocs/output.txt";
+
             simpleTRData = "../../../SampleNARCs/TRData1.narc";
 
             simpleTRPoke = "../../../SampleNARCs/TRPoke1.narc";
 
             simpleLearnset = "../../../SampleNARCs/Learnset1.narc";
+        }
+
+        [TestCleanup]
+        public void TestCleanup()
+        {
+            if (File.Exists(docOutput))
+                File.Delete(docOutput);
         }
 
         [TestMethod]
@@ -1202,6 +1216,24 @@ namespace TrainerTyrantTest
 
             for (int i = 0; i < desired.Length; i++)
                 Assert.AreEqual(desired[i], narcData[i], "Byte " + i + " does not match between desired and produced.");
+        }
+
+        [TestMethod]
+        public void CheckProduceDocumentation()
+        {
+            ExternalTrainerSlotList slots = ExternalTrainerSlotList.DeserializeJSON(slotlistJSON);
+
+            TrainerRepresentationSet set = new TrainerRepresentationSet();
+
+            set.InitializeWithJSON(multi2JSON);
+
+            FileStream input = new FileStream(shorte4Doc, FileMode.Open, FileAccess.Read);
+
+            set.ProduceDocumentation(slots, input, docOutput);
+
+            Assert.IsTrue(File.Exists(docOutput));
+
+            Console.WriteLine(File.ReadAllText(docOutput));
         }
     }
 }
