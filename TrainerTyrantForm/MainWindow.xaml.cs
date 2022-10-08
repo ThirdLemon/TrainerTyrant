@@ -179,6 +179,7 @@ namespace TrainerTyrantForm
                         catch (InvalidDataException err)
                         {
                             MessageBox.Show(err.Message, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            File.WriteAllText("Log.txt", err.ToString());
                         }
                     }
                 }
@@ -323,6 +324,7 @@ namespace TrainerTyrantForm
                     catch (InvalidDataException err)
                     {
                         MessageBox.Show(err.Message, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        File.WriteAllText("Log.txt", err.ToString());
                     }
                 }
             }
