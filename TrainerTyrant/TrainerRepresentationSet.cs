@@ -304,6 +304,8 @@ namespace TrainerTyrant
 
             using (StreamReader inputReader = new StreamReader(fileInput))
             {
+                File.Delete(fileOutput);
+
                 using (FileStream outputStream = File.OpenWrite(fileOutput))
                 {
                     using (StreamWriter outputWriter = new StreamWriter(outputStream))
