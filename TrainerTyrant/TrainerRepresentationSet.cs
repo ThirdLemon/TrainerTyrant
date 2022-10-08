@@ -13,13 +13,12 @@ namespace TrainerTyrant
     public class TrainerRepresentationSet
     {
         private List<TrainerRepresentation> _data;
-        private bool _initialized;
-        public bool Initialized { get { return _initialized; } }
+        public bool Initialized { get; private set; }
 
         public TrainerRepresentationSet()
         {
             _data = null;
-            _initialized = false;
+            Initialized = false;
         }
 
         /**
@@ -41,7 +40,7 @@ namespace TrainerTyrant
             if (TrainerJSONValidator.ValidateTrainerListJSON(JSON))
             {
                 _data = JsonConvert.DeserializeObject<List<TrainerRepresentation>>(JSON);
-                _initialized = true;
+                Initialized = true;
             }
         }
 
@@ -57,7 +56,7 @@ namespace TrainerTyrant
             if (TrainerJSONValidator.ValidateTrainerListJSON(JSON, out errors))
             {
                 _data = JsonConvert.DeserializeObject<List<TrainerRepresentation>>(JSON);
-                _initialized = true;
+                Initialized = true;
             }
         }
 
@@ -80,7 +79,7 @@ namespace TrainerTyrant
                 _data.Add(tr);
             }
 
-            _initialized = true;
+            Initialized = true;
         }
 
         public void InitializeWithNarc(string TRDataFile, string TRPokeFile, ExternalItemList itemList, ExternalMoveList moveList, ExternalPokemonList pokemonList, ExternalTrainerSlotList slotList)
@@ -114,7 +113,7 @@ namespace TrainerTyrant
                 _data.Add(tr);
             }
 
-            _initialized = true;
+            Initialized = true;
         }
 
         public bool AlterWithJSON(string JSON)

@@ -14,13 +14,12 @@ namespace TrainerTyrant
     public class LearnsetSet
     {
         private Dictionary<string, List<LevelUpMove>> _data;
-        private bool _initialized;
-        public bool Initialized { get { return _initialized; } }
+        public bool Initialized { get; private set; }
 
         public LearnsetSet()
         {
             _data = null;
-            _initialized = false;
+            Initialized = false;
         }
 
         public void InitializeWithJSON(string JSON)
@@ -33,7 +32,7 @@ namespace TrainerTyrant
             if (LearnsetSetJSONValidator.ValidateLearnsetSetJSON(JSON))
             {
                 _data = JsonConvert.DeserializeObject<Dictionary<string, List<LevelUpMove>>>(JSON);
-                _initialized = true;
+                Initialized = true;
             }
         }
 
@@ -49,7 +48,7 @@ namespace TrainerTyrant
             if (LearnsetSetJSONValidator.ValidateLearnsetSetJSON(JSON, out errors))
             {
                 _data = JsonConvert.DeserializeObject<Dictionary<string, List<LevelUpMove>>>(JSON);
-                _initialized = true;
+                Initialized = true;
             }
         }
 
@@ -80,7 +79,7 @@ namespace TrainerTyrant
                 _data.Add(pokemon.GetPokemon(monNum), BuildLearnsetFromFile(learnsetNarc[monNum], moves));
             }
 
-            _initialized = true;
+            Initialized = true;
         }
 
         public string SerializeJSON()
