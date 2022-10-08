@@ -164,6 +164,30 @@ namespace TrainerTyrant
 
             return toReturn;
         }
+
+        /**
+         * <returns>An array of up to 4 moves that the pokemon would know at the given level. Returns null if the pokemon is not found.</returns>
+         */
+        public List<string> GetMovesetAtLevel(string pokemon, int level)
+        {
+            if (!_data.ContainsKey(pokemon))
+                return null;
+
+            List<string> toReturn = new List<string>();
+
+            for(int i = 0; i < _data[pokemon].Count; i++)
+            {
+                //We assume that every learnset is ordered from lowest level to highest
+                if (_data[pokemon][i].Level > level)
+                    break;
+
+                toReturn.Append(_data[pokemon][i].Move);
+                if (toReturn.Count > 4)
+                    toReturn.RemoveAt(0);
+            }
+
+            return toReturn;
+        }
     }
 
     /**
