@@ -24,6 +24,7 @@ namespace TrainerTyrantForm
     {
         private static readonly string openJSONFileDialogFilter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
         private static readonly string openNARCFileDialogFilter = "NARC files (*.narc)|*.narc|All files (*.*)|*.*";
+        private static readonly string openTxtFileDialogFilter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
         private static readonly string saveJSONFileDialogFilter = "JSON files (*.json)|*.json";
         private static readonly string getPokemonFile = "Open Pokemon JSON";
         private static readonly string getTrainerSlotFile = "Open Trainer JSON";
@@ -36,6 +37,7 @@ namespace TrainerTyrantForm
         private static readonly string getDecompedJSON = "Open JSON File";
         private static readonly string getSourceJSON = "Open Base JSON File";
         private static readonly string getSecondaryJSON = "Open JSON File to be Merged";
+        private static readonly string getTemplateTextFile = "Open Text File";
 
         private string jsonDialogDirectory = AppDomain.CurrentDomain.BaseDirectory;
         private string narcDialogDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -375,6 +377,37 @@ namespace TrainerTyrantForm
                         MessageBox.Show(err.Message + "\nCheck the log file.", "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
                         File.WriteAllText("Log.txt", err.ToString());
                     }
+                }
+            }
+        }
+
+        private void btnExportDocumentation_Click(object sender, RoutedEventArgs e)
+        {
+            //Check that all external data is loaded. 
+            if (!_appData.ValidateExternalData(out string error))
+            {
+                MessageBox.Show(error, "TrainerTyrant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            OpenFileDialog openJSONDialog = new OpenFileDialog
+            {
+                Title = getDecompedJSON,
+                Filter = openJSONFileDialogFilter,
+                InitialDirectory = jsonDialogDirectory
+            };
+
+            if (openJSONDialog.ShowDialog() == true)
+            {
+                OpenFileDialog openTemplateDialog = new OpenFileDialog
+                {
+                    Title = getTemplateTextFile,
+                    Filter = openTxtFileDialogFilter
+                };
+
+                if (openTemplateDialog.ShowDialog() == true)
+                {
+                    _appData.ProduceTrainerDataDocumentation(openJSONDialog.FileName, openTemplateDialog.FileName);
                 }
             }
         }

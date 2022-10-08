@@ -302,6 +302,19 @@ namespace TrainerTyrantForm
             return true;
         }
 
-        
+        /**
+         * <param name="trainerJSONloc">The full path of the json file that contains the trainer data.</param>
+         * <param name="templateLoc">The full path of a text file that will be used as a template.</param>
+         */
+        public void ProduceTrainerDataDocumentation(string trainerJSONloc, string templateLoc)
+        {
+            TrainerRepresentationSet data = new TrainerRepresentationSet();
+
+            data.InitializeWithJSON(File.ReadAllText(trainerJSONloc));
+
+            string outLoc = Path.GetDirectoryName(templateLoc) + "/" + Path.GetFileNameWithoutExtension(templateLoc) + "_output.txt";
+
+            data.ProduceDocumentation(_slotData, new FileStream(templateLoc, FileMode.Open), outLoc);
+        }
     }
 }
