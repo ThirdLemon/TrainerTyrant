@@ -1,0 +1,164 @@
+﻿[
+	{
+		"Trainer Data": {
+			"Identification": {
+				"Name ID": {
+					"Name": "Shauntal",
+					"Variation": 0
+				}
+			},
+			"Trainer Class": {
+				"Number ID": 78
+			},
+			"Battle Type": "Single",
+			"Format": {
+				"Moves": false,
+				"Items": true
+			},
+			"Base Money": 30,
+			"Items": [
+				"Full Restore",
+				null,
+				null,
+				null
+			],
+			"AI Flags": {
+				"Check Bad Moves": true,
+				"Evaluate Attacks": true,
+				"Expert": true,
+				"Setup First Turn": false,
+				"Risky": false,
+				"Prefer Strong Moves": false,
+				"Prefer Baton Pass": false,
+				"Double Battle": false
+			}
+		},
+		"Pokemon Data": [
+			{
+				"Pokemon": "Cofagrigus",
+				"Form": 0,
+				"Level": 56,
+				"Difficulty": 200,
+				"Miscellaneous": {
+					"Gender": "Random",
+					"Ability": 1
+				},
+				"Item": null
+			},
+			{
+				"Pokemon": "Drifblim",
+				"Form": 0,
+				"Level": 56,
+				"Difficulty": 200,
+				"Miscellaneous": {
+					"Gender": "Random",
+					"Ability": 1
+				},
+				"Item": null
+			},
+			{
+				"Pokemon": "Golurk",
+				"Form": 0,
+				"Level": 56,
+				"Difficulty": 200,
+				"Miscellaneous": {
+					"Gender": "Random",
+					"Ability": 1
+				},
+				"Item": null
+			},
+			{
+				"Pokemon": "Chandelure",
+				"Form": 0,
+				"Level": 58,
+				"Difficulty": 250,
+				"Miscellaneous": {
+					"Gender": "Random",
+					"Ability": 2
+				},
+				"Item": "Sitrus Berry"
+			}
+		]
+	},
+	{
+		"Trainer Data": {
+			"Identification": {
+				"Name ID": {
+					"Name": "Marshal",
+					"Variation": 0
+				}
+			},
+			"Trainer Class": {
+				"Number ID": 79
+			},
+			"Battle Type": "Single",
+			"Format": {
+				"Moves": false,
+				"Items": true
+			},
+			"Base Money": 30,
+			"Items": [
+				"Full Restore",
+				null,
+				null,
+				null
+			],
+			"AI Flags": {
+				"Check Bad Moves": true,
+				"Evaluate Attacks": true,
+				"Expert": true,
+				"Setup First Turn": false,
+				"Risky": false,
+				"Prefer Strong Moves": false,
+				"Prefer Baton Pass": false,
+				"Double Battle": false
+			}
+		},
+		"Pokemon Data": [
+			{
+				"Pokemon": "Throh",
+				"Form": 0,
+				"Level": 56,
+				"Difficulty": 200,
+				"Miscellaneous": {
+					"Gender": "Random",
+					"Ability": 1
+				},
+				"Item": null
+			},
+			{
+				"Pokemon": "Sawk",
+				"Form": 0,
+				"Level": 56,
+				"Difficulty": 200,
+				"Miscellaneous": {
+					"Gender": "Random",
+					"Ability": 1
+				},
+				"Item": null
+			},
+			{
+				"Pokemon": "Mienshao",
+				"Form": 0,
+				"Level": 56,
+				"Difficulty": 200,
+				"Miscellaneous": {
+					"Gender": "Random",
+					"Ability": 2
+				},
+				"Item": null
+			},
+			{
+				"Pokemon": "Conkeldurr",
+				"Form": 0,
+				"Level": 58,
+				"Difficulty": 250,
+				"Miscellaneous": {
+					"Gender": "Random",
+					"Ability": 1
+				},
+				"Item": "Sitrus Berry"
+			}
+		]
+	}
+]

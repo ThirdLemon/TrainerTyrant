@@ -300,7 +300,7 @@ namespace TrainerTyrant
 
         public void ProduceDocumentation(ExternalTrainerSlotList trainers, Stream fileInput, string fileOutput)
         {
-            
+
 
             using (StreamReader inputReader = new StreamReader(fileInput))
             {
@@ -325,7 +325,47 @@ namespace TrainerTyrant
                                     int index = GetTrainerIndex(name, variation);
                                     if (index >= 0)
                                     {
-                                        string trainerDocu = _data[index].ProduceDocumentation(trainers);
+                                        string trainerDocu = _data[index].ProduceDocumentation(trainers, null);
+                                        line = line.Replace(matches[matchNum].Value, trainerDocu);
+                                    }
+                                }
+                            }
+
+                            outputWriter.WriteLine(line);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void ProduceDocumentation(ExternalTrainerSlotList trainers, Stream fileInput, string fileOutput, LearnsetSet learnsets)
+        {
+
+
+            using (StreamReader inputReader = new StreamReader(fileInput))
+            {
+                File.Delete(fileOutput);
+
+                using (FileStream outputStream = File.OpenWrite(fileOutput))
+                {
+                    using (StreamWriter outputWriter = new StreamWriter(outputStream))
+                    {
+                        string line;
+                        while ((line = inputReader.ReadLine()) != null)
+                        {
+                            MatchCollection matches = Regex.Matches(line, @"{([\w\s&]+):(\d+)}");
+
+                            if (matches != null)
+                            {
+                                for (int matchNum = 0; matchNum < matches.Count; matchNum++)
+                                {
+
+                                    string name = matches[matchNum].Groups[1].Value;
+                                    int variation = int.Parse(matches[matchNum].Groups[2].Value);
+                                    int index = GetTrainerIndex(name, variation);
+                                    if (index >= 0)
+                                    {
+                                        string trainerDocu = _data[index].ProduceDocumentation(trainers, learnsets);
                                         line = line.Replace(matches[matchNum].Value, trainerDocu);
                                     }
                                 }

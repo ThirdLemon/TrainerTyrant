@@ -16,6 +16,7 @@ namespace TrainerTyrantTest
         private string incompleteJSON;
         private string multiJSON;
         private string multi2JSON;
+        private string multimovelessJSON;
         private string biancaJSON;
         private string hugh9JSON;
         private string fletcherJSON;
@@ -34,6 +35,7 @@ namespace TrainerTyrantTest
 
         private string bulbalineJSON;
         private string bulbalinewrongJSON;
+        private string halfe4JSON;
 
         private string shorte4Doc;
         private string docOutput;
@@ -56,6 +58,8 @@ namespace TrainerTyrantTest
             multiJSON = File.ReadAllText("../../../SampleJSON/sampleJSON4.json");
 
             multi2JSON = File.ReadAllText("../../../SampleJSON/sampleJSON4b.json");
+
+            multimovelessJSON = File.ReadAllText("../../../SampleJSON/sampleJSON4c.json");
 
             biancaJSON = File.ReadAllText("../../../SampleJSON/sampleJSON5.json");
 
@@ -90,6 +94,8 @@ namespace TrainerTyrantTest
             bulbalineJSON = File.ReadAllText("../../../SampleJSON/SampleJSON9.json");
 
             bulbalinewrongJSON = File.ReadAllText("../../../SampleJSON/SampleJSON9b.json");
+
+            halfe4JSON = File.ReadAllText("../../../SampleJSON/SampleJSON10.json");
 
             shorte4Doc = "../../../SampleDocs/SampleDoc1.txt";
 
@@ -1230,6 +1236,32 @@ namespace TrainerTyrantTest
             FileStream input = new FileStream(shorte4Doc, FileMode.Open, FileAccess.Read);
 
             set.ProduceDocumentation(slots, input, docOutput);
+
+            Assert.IsTrue(File.Exists(docOutput));
+
+            Console.WriteLine(File.ReadAllText(docOutput));
+        }
+
+        [TestMethod]
+        public void CheckProduceDocumentationWLearnsets()
+        {
+            ExternalTrainerSlotList slots = ExternalTrainerSlotList.DeserializeJSON(slotlistJSON);
+
+            TrainerRepresentationSet set = new TrainerRepresentationSet();
+
+            set.InitializeWithJSON(multimovelessJSON);
+
+            Assert.IsTrue(set.Initialized);
+
+            LearnsetSet learnsets = new LearnsetSet();
+
+            learnsets.InitializeWithJSON(halfe4JSON);
+
+            Assert.IsTrue(learnsets.Initialized);
+
+            FileStream input = new FileStream(shorte4Doc, FileMode.Open, FileAccess.Read);
+
+            set.ProduceDocumentation(slots, input, docOutput, learnsets);
 
             Assert.IsTrue(File.Exists(docOutput));
 

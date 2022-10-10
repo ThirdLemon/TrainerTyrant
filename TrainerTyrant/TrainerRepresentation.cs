@@ -270,14 +270,14 @@ namespace TrainerTyrant
             return to_return;
         }
 
-        public string ProduceDocumentation(ExternalTrainerSlotList slotList)
+        public string ProduceDocumentation(ExternalTrainerSlotList slotList, LearnsetSet learnsets)
         {
             //top line is the export name
             string to_return = slotList.GetSlot(slotList.GetIndexOfSlot(TrainerData.Identification.NameID.Name, TrainerData.Identification.NameID.Variation)).ExportName + "\n";
 
             for (int mon = 0; mon < PokemonCount; mon++)
             {
-                to_return += PokemonData[mon].ProduceDocumentation(TrainerData.Format.Moves, TrainerData.Format.Items);
+                to_return += PokemonData[mon].ProduceDocumentation(TrainerData.Format.Moves, TrainerData.Format.Items, learnsets);
                 if (mon < PokemonCount - 1)
                     to_return += "\n";
             }
@@ -482,7 +482,7 @@ namespace TrainerTyrant
             return !(Moves[0] == null && Moves[1] == null && Moves[2] == null && Moves[3] == null);
         }
 
-        public string ProduceDocumentation(bool movesEnabled, bool itemsEnabled)
+        public string ProduceDocumentation(bool movesEnabled, bool itemsEnabled, LearnsetSet learnsets)
         {
             string to_return = Pokemon;
             if (Form != 0)
@@ -502,6 +502,18 @@ namespace TrainerTyrant
                     to_return += Moves[moveNum];
                     //only add comma if there's text after it
                     if (moveNum < 3 && Moves[moveNum + 1] != null)
+                        to_return += ",";
+                    to_return += " ";
+                }
+            }
+            else if (learnsets != null)
+            {
+                List<string> levelupMoves = learnsets.GetMovesetAtLevel(Pokemon, Level);
+                for (int moveNum = 0; moveNum < levelupMoves.Count; moveNum++)
+                {
+                    to_return += levelupMoves[moveNum];
+                    //only add comma if there's text after it
+                    if (moveNum < levelupMoves.Count - 1)
                         to_return += ",";
                     to_return += " ";
                 }

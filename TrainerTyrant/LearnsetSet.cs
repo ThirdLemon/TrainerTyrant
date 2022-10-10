@@ -177,11 +177,12 @@ namespace TrainerTyrant
 
             for(int i = 0; i < _data[pokemon].Count; i++)
             {
+
                 //We assume that every learnset is ordered from lowest level to highest
                 if (_data[pokemon][i].Level > level)
                     break;
 
-                toReturn.Append(_data[pokemon][i].Move);
+                toReturn.Add(_data[pokemon][i].Move);
                 if (toReturn.Count > 4)
                     toReturn.RemoveAt(0);
             }
