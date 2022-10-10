@@ -23,12 +23,12 @@
 		{
 			"Name": "N",
 			"Variation": 0,
-			"Export Name": "N - 1"
+			"Export Name": "N - First Battle (Black 2)'"
 		},
 		{
 			"Name": "N",
 			"Variation": 1,
-			"Export Name": "N - 2"
+			"Export Name": "N - First Battle (White 2)"
 		},
 		{
 			"Name": "Matthew",
@@ -208,7 +208,7 @@
 		{
 			"Name": "Shaun",
 			"Variation": 0,
-			"Export Name": "Shaun - 1"
+			"Export Name": "Veteran Shaun - Wellspring Cave B1F"
 		},
 		{
 			"Name": "Lucca",
@@ -913,102 +913,102 @@
 		{
 			"Name": "Abigail",
 			"Variation": 0,
-			"Export Name": "Abigail - 1"
+			"Export Name": "Boss Trainer Abigail - White Treehollow Area 1"
 		},
 		{
 			"Name": "Abed",
 			"Variation": 0,
-			"Export Name": "Abed - 1"
+			"Export Name": "Boss Trainer Abed - Black Tower Area 1"
 		},
 		{
 			"Name": "Brent",
 			"Variation": 0,
-			"Export Name": "Brent - 1"
+			"Export Name": "Boss Trainer Brent - White Treehollow Area 2"
 		},
 		{
 			"Name": "Bess",
 			"Variation": 0,
-			"Export Name": "Bess - 1"
+			"Export Name": "Boss Trainer Bess - Black Tower Area 2"
 		},
 		{
 			"Name": "Carleigh",
 			"Variation": 0,
-			"Export Name": "Carleigh - 1"
+			"Export Name": "Boss Trainer Carleigh - White Treehollow Area 3"
 		},
 		{
 			"Name": "Carlen",
 			"Variation": 0,
-			"Export Name": "Carlen - 1"
+			"Export Name": "Boss Trainer Carlen - Black Tower Area 3"
 		},
 		{
-			"Name": "Daniel",
+			"Name": "Daneil",
 			"Variation": 0,
-			"Export Name": "Daniel - 1"
+			"Export Name": "Boss Trainer Daneil - White Treehollow Area 4"
 		},
 		{
 			"Name": "Danelle",
 			"Variation": 0,
-			"Export Name": "Danelle - 1"
+			"Export Name": "Boss Trainer Danelle - Black Tower Area 4"
 		},
 		{
 			"Name": "Elie",
 			"Variation": 0,
-			"Export Name": "Elie - 1"
+			"Export Name": "Boss Trainer Elie - White Treehollow Area 5"
 		},
 		{
 			"Name": "Ellas",
 			"Variation": 0,
-			"Export Name": "Ellas - 1"
+			"Export Name": "Boss Trainer Ellas - Black Tower Area 5"
 		},
 		{
 			"Name": "Frederick",
 			"Variation": 0,
-			"Export Name": "Frederick - 1"
+			"Export Name": "Boss Trainer Frederick - White Treehollow Area 6"
 		},
 		{
 			"Name": "Freira",
 			"Variation": 0,
-			"Export Name": "Freira - 1"
+			"Export Name": "Boss Trainer Freira - Black Tower Area 6"
 		},
 		{
 			"Name": "Gail",
 			"Variation": 0,
-			"Export Name": "Gail - 1"
+			"Export Name": "Boss Trainer Gail - White Treehollow Area 7"
 		},
 		{
 			"Name": "Gaius",
 			"Variation": 0,
-			"Export Name": "Gaius - 1"
+			"Export Name": "Boss Trainer Gaius - Black Tower Area 7"
 		},
 		{
 			"Name": "Harmon",
 			"Variation": 0,
-			"Export Name": "Harmon - 1"
+			"Export Name": "Boss Trainer Harmon - White Treehollow Area 8"
 		},
 		{
 			"Name": "Harmony",
 			"Variation": 0,
-			"Export Name": "Harmony - 1"
+			"Export Name": "Boss Trainer Harmony - Black Tower Area 8"
 		},
 		{
 			"Name": "Iria",
 			"Variation": 0,
-			"Export Name": "Iria - 1"
+			"Export Name": "Boss Trainer Iria - White Treehollow Area 9"
 		},
 		{
 			"Name": "Ira",
 			"Variation": 0,
-			"Export Name": "Ira - 1"
+			"Export Name": "Boss Trainer Ira - Black Tower Area 9"
 		},
 		{
 			"Name": "Benga",
 			"Variation": 0,
-			"Export Name": "Benga - 1"
+			"Export Name": "Benga - White Treehollow Area 10"
 		},
 		{
 			"Name": "Benga",
 			"Variation": 1,
-			"Export Name": "Benga - 2"
+			"Export Name": "Benga - Black Tower Area 10"
 		},
 		{
 			"Name": "Isaac",
@@ -1683,7 +1683,7 @@
 		{
 			"Name": "Shannon",
 			"Variation": 0,
-			"Export Name": "Shannon - 1"
+			"Export Name": "Lass Shannon - Route 3"
 		},
 		{
 			"Name": "Gough",
@@ -1928,22 +1928,22 @@
 		{
 			"Name": "Leaf",
 			"Variation": 0,
-			"Export Name": "Leaf - 1"
+			"Export Name": "Ranger Leaf - Route 20"
 		},
 		{
 			"Name": "Naoko",
 			"Variation": 0,
-			"Export Name": "Naoko - 1"
+			"Export Name": "Ranger Naoko - Route 20"
 		},
 		{
 			"Name": "Bret",
 			"Variation": 0,
-			"Export Name": "Bret - 1"
+			"Export Name": "Ranger Bret - Route 20"
 		},
 		{
 			"Name": "Malory",
 			"Variation": 0,
-			"Export Name": "Malory - 1"
+			"Export Name": "Ranger Malory - Route 20"
 		},
 		{
 			"Name": "Boone",
@@ -1963,167 +1963,167 @@
 		{
 			"Name": "Edgar",
 			"Variation": 0,
-			"Export Name": "Edgar - 1"
+			"Export Name": "School Kid Edgar - Route 3"
 		},
 		{
 			"Name": "Marsha",
 			"Variation": 0,
-			"Export Name": "Marsha - 1"
+			"Export Name": "School Kid Marsha - Route 3"
 		},
 		{
 			"Name": "Autumn",
 			"Variation": 0,
-			"Export Name": "Autumn - 1"
+			"Export Name": "Nursery Aide Autumn - Route 3"
 		},
 		{
 			"Name": "Buster",
 			"Variation": 0,
-			"Export Name": "Buster - 1"
+			"Export Name": "Preschooler Buster - Route 3"
 		},
 		{
 			"Name": "Eva",
 			"Variation": 0,
-			"Export Name": "Eva - 1"
+			"Export Name": "Preschooler Eva - Route 3"
 		},
 		{
 			"Name": "Tyrone",
 			"Variation": 0,
-			"Export Name": "Tyrone - 1"
+			"Export Name": "Preschooler Tyrone - Route 3"
 		},
 		{
 			"Name": "Bruce",
 			"Variation": 0,
-			"Export Name": "Bruce - 1"
+			"Export Name": "Fisherman Bruce - Route 3"
 		},
 		{
 			"Name": "Mack",
 			"Variation": 0,
-			"Export Name": "Mack - 1"
+			"Export Name": "Fisherman Mack - Route 3"
 		},
 		{
 			"Name": "Jimmy",
 			"Variation": 0,
-			"Export Name": "Jimmy - 1"
+			"Export Name": "Youngster Jimmy - Route 2"
 		},
 		{
 			"Name": "Mali",
 			"Variation": 0,
-			"Export Name": "Mali - 1"
+			"Export Name": "Lass Mali - Route 2"
 		},
 		{
 			"Name": "Oriana",
 			"Variation": 0,
-			"Export Name": "Oriana - 1"
+			"Export Name": "Veteran Oriana - Route 2"
 		},
 		{
 			"Name": "Rayne",
 			"Variation": 0,
-			"Export Name": "Rayne - 1"
+			"Export Name": "Veteran Rayne - Route 2"
 		},
 		{
 			"Name": "Shane",
 			"Variation": 0,
-			"Export Name": "Shane - 1"
+			"Export Name": "Backpacker Shane - Route 1"
 		},
 		{
 			"Name": "Jill",
 			"Variation": 0,
-			"Export Name": "Jill - 1"
+			"Export Name": "Backpacker Jill - Route 1"
 		},
 		{
 			"Name": "Mikey",
 			"Variation": 0,
-			"Export Name": "Mikey - 1"
+			"Export Name": "Youngster Mikey - Route 2"
 		},
 		{
 			"Name": "Henrietta",
 			"Variation": 0,
-			"Export Name": "Henrietta - 1"
+			"Export Name": "Lass Henrietta - Route 2"
 		},
 		{
 			"Name": "Rick",
 			"Variation": 0,
-			"Export Name": "Rick - 1"
+			"Export Name": "Ranger Rick - Route 1"
 		},
 		{
 			"Name": "Audra",
 			"Variation": 0,
-			"Export Name": "Audra - 1"
+			"Export Name": "Ranger Audra - Route 1"
 		},
 		{
 			"Name": "Sean",
 			"Variation": 0,
-			"Export Name": "Sean - 1"
+			"Export Name": "Ace Trainer Sean - Route 1"
 		},
 		{
 			"Name": "Cheyenne",
 			"Variation": 0,
-			"Export Name": "Cheyenne - 1"
+			"Export Name": "Ace Trainer Cheyenne - Route 1"
 		},
 		{
 			"Name": "Lydon",
 			"Variation": 0,
-			"Export Name": "Lydon - 1"
+			"Export Name": "Fisherman Lydon - Route 17"
 		},
 		{
 			"Name": "Bucky",
 			"Variation": 0,
-			"Export Name": "Bucky - 1"
+			"Export Name": "Fisherman Bucky - Route 17"
 		},
 		{
 			"Name": "Wright",
 			"Variation": 0,
-			"Export Name": "Wright - 1"
+			"Export Name": "Swimmer Wright - Route 17"
 		},
 		{
 			"Name": "Jeffery",
 			"Variation": 0,
-			"Export Name": "Jeffery - 1"
+			"Export Name": "Swimmer Jeffery - Route 17"
 		},
 		{
 			"Name": "Ruth",
 			"Variation": 0,
-			"Export Name": "Ruth - 1"
+			"Export Name": "Swimmer Ruth - Route 17"
 		},
 		{
 			"Name": "Dara",
 			"Variation": 0,
-			"Export Name": "Dara - 1"
+			"Export Name": "Swimmer Dara - Route 17"
 		},
 		{
 			"Name": "Stephen",
 			"Variation": 0,
-			"Export Name": "Stephen - 1"
+			"Export Name": "Hiker Stephen - Route 18"
 		},
 		{
 			"Name": "Vincent",
 			"Variation": 0,
-			"Export Name": "Vincent - 1"
+			"Export Name": "Veteran Vincent - Route 18"
 		},
 		{
 			"Name": "Chester",
 			"Variation": 0,
-			"Export Name": "Chester - 1"
+			"Export Name": "Veteran Chester - Route 18"
 		},
 		{
 			"Name": "Maya",
 			"Variation": 0,
-			"Export Name": "Maya - 1"
+			"Export Name": "Veteran Maya - Route 18"
 		},
 		{
 			"Name": "Gina",
 			"Variation": 0,
-			"Export Name": "Gina - 1"
+			"Export Name": "Veteran Gina - Route 18"
 		},
 		{
 			"Name": "Zachary",
 			"Variation": 0,
-			"Export Name": "Zachary - 1"
+			"Export Name": "Black Belt Zachary - Route 18"
 		},
 		{
 			"Name": "Wendy",
 			"Variation": 0,
-			"Export Name": "Wendy - 1"
+			"Export Name": "Battle Girl Wendy - Route 18"
 		},
 		{
 			"Name": "Grunt",
@@ -2458,27 +2458,27 @@
 		{
 			"Name": "Cliff",
 			"Variation": 0,
-			"Export Name": "Cliff - 1"
+			"Export Name": "Worker Cliff - Twist Mountain"
 		},
 		{
 			"Name": "Dusty",
 			"Variation": 0,
-			"Export Name": "Dusty - 1"
+			"Export Name": "Ace Trainer Dusty - Striaton City"
 		},
 		{
 			"Name": "Chili",
 			"Variation": 0,
-			"Export Name": "Chili - 1"
+			"Export Name": "Chili - Striaton City Restaurant"
 		},
 		{
 			"Name": "Cress",
 			"Variation": 0,
-			"Export Name": "Cress - 1"
+			"Export Name": "Cress - Striaton City Restaurant"
 		},
 		{
 			"Name": "Cilan",
 			"Variation": 0,
-			"Export Name": "Cilan - 1"
+			"Export Name": "Cilan - Striaton City Restaurant"
 		},
 		{
 			"Name": "Zinzolin",
@@ -2518,7 +2518,7 @@
 		{
 			"Name": "Jariel",
 			"Variation": 0,
-			"Export Name": "Jariel - 1"
+			"Export Name": "Boss Trainer Jariel - White Treehollow Area 10"
 		},
 		{
 			"Name": "Janna",
@@ -2623,57 +2623,57 @@
 		{
 			"Name": "Cairn",
 			"Variation": 0,
-			"Export Name": "Cairn - 1"
+			"Export Name": "Worker Cairn - Twist Mountain"
 		},
 		{
 			"Name": "Gus",
 			"Variation": 0,
-			"Export Name": "Gus - 1"
+			"Export Name": "Worker Gus - Twist Mountain"
 		},
 		{
 			"Name": "Victor",
 			"Variation": 0,
-			"Export Name": "Victor - 1"
+			"Export Name": "Worker Victor - Twist Mountain (Non-Winter Only)"
 		},
 		{
 			"Name": "Patton",
 			"Variation": 0,
-			"Export Name": "Patton - 1"
+			"Export Name": "Worker Patton - Twist Mountain"
 		},
 		{
 			"Name": "Ryan",
 			"Variation": 0,
-			"Export Name": "Ryan - 1"
+			"Export Name": "Worker Ryan - Twist Mountain (Winter Only)"
 		},
 		{
 			"Name": "Hunter",
 			"Variation": 0,
-			"Export Name": "Hunter - 1"
+			"Export Name": "Hiker Hunter - Twist Mountain (Non-Winter Only)"
 		},
 		{
 			"Name": "Wade",
 			"Variation": 0,
-			"Export Name": "Wade - 1"
+			"Export Name": "Hiker Wade - Twist Mountain"
 		},
 		{
 			"Name": "Zach",
 			"Variation": 0,
-			"Export Name": "Zach - 1"
+			"Export Name": "Veteran Zach - Twist Mountain (Winter Only)"
 		},
 		{
 			"Name": "Julia",
 			"Variation": 0,
-			"Export Name": "Julia - 1"
+			"Export Name": "Veteran Julia - Twist Mountain"
 		},
 		{
 			"Name": "Carter",
 			"Variation": 0,
-			"Export Name": "Carter - 1"
+			"Export Name": "Veteran Carter - Twist Mountain"
 		},
 		{
 			"Name": "Chloris",
 			"Variation": 0,
-			"Export Name": "Chloris - 1"
+			"Export Name": "Veteran Chloris - Twist Mountain"
 		},
 		{
 			"Name": "Iris",
@@ -2752,7 +2752,7 @@
 		},
 		{
 			"Name": "Daniel",
-			"Variation": 1,
+			"Variation": 0,
 			"Export Name": "Gentleman Daniel - Celestial Tower 4F"
 		},
 		{
@@ -2853,47 +2853,47 @@
 		{
 			"Name": "Astor",
 			"Variation": 0,
-			"Export Name": "Astor - 1"
+			"Export Name": "Youngster Astor - Route 8"
 		},
 		{
 			"Name": "Mai",
 			"Variation": 0,
-			"Export Name": "Mai - 1"
+			"Export Name": "Lass Mai - Route 8"
 		},
 		{
 			"Name": "Ingrid",
 			"Variation": 0,
-			"Export Name": "Ingrid - 1"
+			"Export Name": "Parasol Lady Ingrid - Route 8"
 		},
 		{
 			"Name": "Tyra",
 			"Variation": 0,
-			"Export Name": "Tyra - 1"
+			"Export Name": "Parasol Lady Tyra - Route 8"
 		},
 		{
 			"Name": "Ryder",
 			"Variation": 0,
-			"Export Name": "Ryder - 1"
+			"Export Name": "Fisherman Ryder - Route 8"
 		},
 		{
 			"Name": "Eustace",
 			"Variation": 0,
-			"Export Name": "Eustace - 1"
+			"Export Name": "Fisherman Eustace - Moor of Icirrus"
 		},
 		{
 			"Name": "Arnold",
 			"Variation": 0,
-			"Export Name": "Arnold - 1"
+			"Export Name": "Fisherman Arnold - Moor of Icirrus"
 		},
 		{
 			"Name": "Parker",
 			"Variation": 0,
-			"Export Name": "Parker - 1"
+			"Export Name": "Ranger Parker - Moor of Icirrus"
 		},
 		{
 			"Name": "Elaine",
 			"Variation": 0,
-			"Export Name": "Elaine - 1"
+			"Export Name": "Ranger Elaine - Moor of Icirrus"
 		},
 		{
 			"Name": "Rocky",
@@ -2903,12 +2903,12 @@
 		{
 			"Name": "Colress",
 			"Variation": 2,
-			"Export Name": "Colress - Placeholder"
+			"Export Name": "Colress - Placeholder Fight"
 		},
 		{
 			"Name": "Alder",
 			"Variation": 0,
-			"Export Name": "Alder - 1"
+			"Export Name": "Alder - Floccesy Town"
 		},
 		{
 			"Name": "Shadow",
@@ -2963,7 +2963,7 @@
 		{
 			"Name": "Keita",
 			"Variation": 0,
-			"Export Name": "Keita - 1"
+			"Export Name": "Youngster Keita - Upper Dreamyard"
 		},
 		{
 			"Name": "Billy",
@@ -3163,67 +3163,67 @@
 		{
 			"Name": "Keston",
 			"Variation": 0,
-			"Export Name": "Keston - 1"
+			"Export Name": "School Kid Keston - Outer Pinwheel Forest"
 		},
 		{
 			"Name": "Millie",
 			"Variation": 0,
-			"Export Name": "Millie - 1"
+			"Export Name": "School Kid Millie - Outer Pinwheel Forest"
 		},
 		{
 			"Name": "Kelsey",
 			"Variation": 0,
-			"Export Name": "Kelsey - 1"
+			"Export Name": "Ace Trainer Kelsey - Outer Pinwheel Forest"
 		},
 		{
 			"Name": "Kathrine",
 			"Variation": 0,
-			"Export Name": "Kathrine - 1"
+			"Export Name": "Ace Trainer Kathrine - Outer Pinwheel Forest"
 		},
 		{
 			"Name": "Kentaro",
 			"Variation": 0,
-			"Export Name": "Kentaro - 1"
+			"Export Name": "Black Belt Kentaro - Outer Pinwheel Forest"
 		},
 		{
 			"Name": "Lee",
 			"Variation": 0,
-			"Export Name": "Lee - 1"
+			"Export Name": "Battle Girl Lee - Outer Pinwheel Forest"
 		},
 		{
 			"Name": "Ralph",
 			"Variation": 0,
-			"Export Name": "Ralph - 1"
+			"Export Name": "Ranger Ralph - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Dwayne",
 			"Variation": 0,
-			"Export Name": "Dwayne - 1"
+			"Export Name": "Ranger Dwayne - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Melita",
 			"Variation": 0,
-			"Export Name": "Melita - 1"
+			"Export Name": "Ranger Melita - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Hillary",
 			"Variation": 0,
-			"Export Name": "Hillary - 1"
+			"Export Name": "Ranger Hillary - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Sinan",
 			"Variation": 0,
-			"Export Name": "Sinan - 1"
+			"Export Name": "Veteran Sinan - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Rosaline",
 			"Variation": 0,
-			"Export Name": "Rosaline - 1"
+			"Export Name": "Veteran Rosaline - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Keita",
 			"Variation": 1,
-			"Export Name": "Keita - 2"
+			"Export Name": "Youngster Keita - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Nicolas",
@@ -3233,52 +3233,52 @@
 		{
 			"Name": "Ethel",
 			"Variation": 0,
-			"Export Name": "Ethel - 1"
+			"Export Name": "Nursery Aide Ethel - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Jojo",
 			"Variation": 0,
-			"Export Name": "Jojo - 1"
+			"Export Name": "Preschooler Jojo - Inner Pinwheel Forest"
 		},
 		{
-			"Name": "Jos\u00c3\u00a9",
+			"Name": "Jose",
 			"Variation": 0,
-			"Export Name": "Jos\u00c3\u00a9 - 1"
+			"Export Name": "Preschooler Jose - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Samantha",
 			"Variation": 0,
-			"Export Name": "Samantha - 1"
+			"Export Name": "Preschooler Samantha - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Ally & Amy",
 			"Variation": 0,
-			"Export Name": "Ally & Amy - 1"
+			"Export Name": "Twins Ally & Amy - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Elliot",
 			"Variation": 0,
-			"Export Name": "Elliot - 1"
+			"Export Name": "Pokefan Elliot - Route 15"
 		},
 		{
 			"Name": "Lydia",
 			"Variation": 0,
-			"Export Name": "Lydia - 1"
+			"Export Name": "Pokefan Lydia - Route 15"
 		},
 		{
 			"Name": "Marie",
 			"Variation": 0,
-			"Export Name": "Marie - 1"
+			"Export Name": "Scientist Marie - Route 15"
 		},
 		{
 			"Name": "Talon",
 			"Variation": 0,
-			"Export Name": "Talon - 1"
+			"Export Name": "Backpacker Talon - Route 15"
 		},
 		{
 			"Name": "Corin",
 			"Variation": 0,
-			"Export Name": "Corin - 1"
+			"Export Name": "Backpacker Corin - Route 15"
 		},
 		{
 			"Name": "Abraham",
@@ -3368,27 +3368,27 @@
 		{
 			"Name": "Zaiem",
 			"Variation": 0,
-			"Export Name": "Zaiem - 1"
+			"Export Name": "Hiker Zaiem - Wellspring Cave 1F"
 		},
 		{
 			"Name": "Maggie",
 			"Variation": 0,
-			"Export Name": "Maggie - 1"
+			"Export Name": "Battle Girl Maggie - Wellspring Cave 1F"
 		},
 		{
 			"Name": "Xiao",
 			"Variation": 0,
-			"Export Name": "Xiao - 1"
+			"Export Name": "Battle Girl Xiao - Wellspring Cave B1F"
 		},
 		{
 			"Name": "Edward",
 			"Variation": 0,
-			"Export Name": "Edward - 1"
+			"Export Name": "Black Belt Edward - Wellspring Cave B1F"
 		},
 		{
 			"Name": "Thomas",
 			"Variation": 0,
-			"Export Name": "Thomas - 1"
+			"Export Name": "Black Belt Thomas - Wellspring Cave B1F"
 		},
 		{
 			"Name": "Heath",
@@ -3433,17 +3433,17 @@
 		{
 			"Name": "Shadow",
 			"Variation": 4,
-			"Export Name": "Shadow - 5"
+			"Export Name": "Shadow 1 - Icirrus City"
 		},
 		{
 			"Name": "Shadow",
 			"Variation": 5,
-			"Export Name": "Shadow - 6"
+			"Export Name": "Shadow 2 - Icirrus City"
 		},
 		{
 			"Name": "Shadow",
 			"Variation": 6,
-			"Export Name": "Shadow - 7"
+			"Export Name": "Shadow 3 - Icirrus City"
 		},
 		{
 			"Name": "Grunt",
@@ -3493,12 +3493,12 @@
 		{
 			"Name": "Diana",
 			"Variation": 0,
-			"Export Name": "Diana - 1"
+			"Export Name": "Lass Diana - Accumula Town (After trading Excadrill)"
 		},
 		{
 			"Name": "Diana",
 			"Variation": 1,
-			"Export Name": "Diana - 2"
+			"Export Name": "Lass Diana - Accumula Town (After trading Hippowdon)"
 		},
 		{
 			"Name": "Hugh",
@@ -3623,7 +3623,7 @@
 		{
 			"Name": "Carol",
 			"Variation": 0,
-			"Export Name": "Carol - 1"
+			"Export Name": "Nurse Carol - Twist Mountain"
 		},
 		{
 			"Name": "Derrick",
@@ -3642,8 +3642,8 @@
 		},
 		{
 			"Name": "Nicholas",
-			"Variation": 1,
-			"Export Name": "Nicholas - 2"
+			"Variation": 0,
+			"Export Name": "Youngster Nicholas - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Wesley",
@@ -3693,32 +3693,32 @@
 		{
 			"Name": "William",
 			"Variation": 0,
-			"Export Name": "William - 1"
+			"Export Name": "School Kid William - Upper Dreamyard"
 		},
 		{
 			"Name": "Rita",
 			"Variation": 0,
-			"Export Name": "Rita - 1"
+			"Export Name": "School Kid Rita - Upper Dreamyard"
 		},
 		{
 			"Name": "Olesia",
 			"Variation": 0,
-			"Export Name": "Olesia - 1"
+			"Export Name": "Psychic Olesia - Lower Dreamyard"
 		},
 		{
 			"Name": "Nandor",
 			"Variation": 0,
-			"Export Name": "Nandor - 1"
+			"Export Name": "Psychic Nandor - Lower Dreamyard"
 		},
 		{
 			"Name": "Athena",
 			"Variation": 0,
-			"Export Name": "Athena - 1"
+			"Export Name": "Scientist Athena - Lower Dreamyard"
 		},
 		{
 			"Name": "Franklin",
 			"Variation": 0,
-			"Export Name": "Franklin - 1"
+			"Export Name": "Scientist Franklin - Lower Dreamyard"
 		},
 		{
 			"Name": "Masahiro",
@@ -3763,7 +3763,7 @@
 		{
 			"Name": "May & Mal",
 			"Variation": 0,
-			"Export Name": "May & Mal - 1"
+			"Export Name": "Backers May & Mal - Route 3"
 		},
 		{
 			"Name": "Ricky",
@@ -3908,22 +3908,22 @@
 		{
 			"Name": "N",
 			"Variation": 2,
-			"Export Name": "N - 3"
+			"Export Name": "N - N's Castle (Spring)'"
 		},
 		{
 			"Name": "N",
 			"Variation": 3,
-			"Export Name": "N - 4"
+			"Export Name": "N - N's Castle (Summer)'"
 		},
 		{
 			"Name": "N",
 			"Variation": 4,
-			"Export Name": "N - 5"
+			"Export Name": "N - N's Castle (Autumn)"
 		},
 		{
 			"Name": "N",
 			"Variation": 5,
-			"Export Name": "N - 6"
+			"Export Name": "N - N's Castle (Winter)'"
 		},
 		{
 			"Name": "Ray",
@@ -3948,22 +3948,22 @@
 		{
 			"Name": "Rosalyn",
 			"Variation": 0,
-			"Export Name": "Rosalyn - 1"
+			"Export Name": "Nursery Aide Rosalyn - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Ike",
 			"Variation": 0,
-			"Export Name": "Ike - 1"
+			"Export Name": "Preschooler Ike - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Henley",
 			"Variation": 0,
-			"Export Name": "Henley - 1"
+			"Export Name": "Youngster Henley - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Helia",
 			"Variation": 0,
-			"Export Name": "Helia - 1"
+			"Export Name": "Lass Helia - Inner Pinwheel Forest"
 		},
 		{
 			"Name": "Hugh",
