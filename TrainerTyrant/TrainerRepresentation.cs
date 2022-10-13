@@ -29,7 +29,7 @@ namespace TrainerTyrant
         public static TrainerRepresentation DeserializeJSON(string JSON)
         {
             //Validate the JSON
-            if (TrainerJSONValidator.ValidateTrainerJSON(JSON))
+            if (JSONValidatorTrainer.ValidateTrainerJSON(JSON))
                 return JsonConvert.DeserializeObject<TrainerRepresentation>(JSON);
 
             return null;
@@ -37,7 +37,7 @@ namespace TrainerTyrant
 
         public static TrainerRepresentation DeserializeJSON(string JSON, out IList<string> errors)
         {
-            if (TrainerJSONValidator.ValidateTrainerJSON(JSON, out errors))
+            if (JSONValidatorTrainer.ValidateTrainerJSON(JSON, out errors))
                 return JsonConvert.DeserializeObject<TrainerRepresentation>(JSON);
 
             return null;
@@ -45,7 +45,7 @@ namespace TrainerTyrant
 
         public static List<TrainerRepresentation> DeserializeListJSON(string JSON)
         {
-            if (TrainerJSONValidator.ValidateTrainerListJSON(JSON))
+            if (JSONValidatorTrainer.ValidateTrainerListJSON(JSON))
                 return JsonConvert.DeserializeObject<List<TrainerRepresentation>>(JSON);
 
             return null;
@@ -53,7 +53,7 @@ namespace TrainerTyrant
 
         public static List<TrainerRepresentation> DeserializeListJSON(string JSON, out IList<string> errors)
         {
-            bool valid = TrainerJSONValidator.ValidateTrainerListJSON(JSON, out errors);
+            bool valid = JSONValidatorTrainer.ValidateTrainerListJSON(JSON, out errors);
 
             if (valid)
                 return JsonConvert.DeserializeObject<List<TrainerRepresentation>>(JSON);

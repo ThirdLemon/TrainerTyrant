@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 
 namespace TrainerTyrant
 {
-    public class ExternalDataJSONValidator
+    public class JSONValidatorExternalData
     {
         private static readonly string MoveListSchema = @"{
                                                             'properties': {

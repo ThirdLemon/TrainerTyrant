@@ -29,7 +29,7 @@ namespace TrainerTyrant
                 return;
 
             //specifically only initialize if the json validates
-            if (LearnsetSetJSONValidator.ValidateLearnsetSetJSON(JSON))
+            if (JSONValidatorLearnsetSet.ValidateLearnsetSetJSON(JSON))
             {
                 _data = JsonConvert.DeserializeObject<Dictionary<string, List<LevelUpMove>>>(JSON);
                 Initialized = true;
@@ -45,7 +45,7 @@ namespace TrainerTyrant
                 return;
             }
 
-            if (LearnsetSetJSONValidator.ValidateLearnsetSetJSON(JSON, out errors))
+            if (JSONValidatorLearnsetSet.ValidateLearnsetSetJSON(JSON, out errors))
             {
                 _data = JsonConvert.DeserializeObject<Dictionary<string, List<LevelUpMove>>>(JSON);
                 Initialized = true;

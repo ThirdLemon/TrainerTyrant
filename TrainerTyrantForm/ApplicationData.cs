@@ -181,12 +181,12 @@ namespace TrainerTyrantForm
 
         public bool ValidateTrainerJSON(string jsonFileLoc, out IList<string> errors)
         {
-            return TrainerJSONValidator.ValidateTrainerListJSON(File.ReadAllText(jsonFileLoc), out errors);
+            return JSONValidatorTrainer.ValidateTrainerListJSON(File.ReadAllText(jsonFileLoc), out errors);
         }
 
         public bool ValidateLearnsetJSON(string jsonFileLoc, out IList<string> errors)
         {
-            return LearnsetSetJSONValidator.ValidateLearnsetSetJSON(File.ReadAllText(jsonFileLoc), out errors);
+            return JSONValidatorLearnsetSet.ValidateLearnsetSetJSON(File.ReadAllText(jsonFileLoc), out errors);
         }
 
         /**

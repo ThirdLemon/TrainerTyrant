@@ -470,36 +470,36 @@ namespace TrainerTyrantTest
         [TestMethod]
         public void ValidateCorrectJSON()
         {
-            Assert.IsTrue(TrainerJSONValidator.ValidateTrainerListJSON(multiJSON));
-            Assert.IsTrue(TrainerJSONValidator.ValidateTrainerJSON(shauntalJSON));
-            Assert.IsTrue(TrainerJSONValidator.ValidateTrainerJSON(shauntalJSON, out IList<string> errors));
+            Assert.IsTrue(JSONValidatorTrainer.ValidateTrainerListJSON(multiJSON));
+            Assert.IsTrue(JSONValidatorTrainer.ValidateTrainerJSON(shauntalJSON));
+            Assert.IsTrue(JSONValidatorTrainer.ValidateTrainerJSON(shauntalJSON, out IList<string> errors));
             Assert.AreEqual(errors.Count, 0);
-            Assert.IsTrue(TrainerJSONValidator.ValidateTrainerListJSON(multiJSON, out errors));
+            Assert.IsTrue(JSONValidatorTrainer.ValidateTrainerListJSON(multiJSON, out errors));
             Assert.AreEqual(errors.Count, 0);
         }
 
         [TestMethod]
         public void FailIncorrectJSON()
         {
-            Assert.IsFalse(TrainerJSONValidator.ValidateTrainerJSON(multiJSON));
-            Assert.IsFalse(TrainerJSONValidator.ValidateTrainerListJSON(shauntalJSON));
-            Assert.IsFalse(TrainerJSONValidator.ValidateTrainerJSON(multiJSON, out IList<string> errors));
+            Assert.IsFalse(JSONValidatorTrainer.ValidateTrainerJSON(multiJSON));
+            Assert.IsFalse(JSONValidatorTrainer.ValidateTrainerListJSON(shauntalJSON));
+            Assert.IsFalse(JSONValidatorTrainer.ValidateTrainerJSON(multiJSON, out IList<string> errors));
             Assert.AreEqual(errors.Count, 1);
-            Assert.IsFalse(TrainerJSONValidator.ValidateTrainerListJSON(shauntalJSON, out errors));
+            Assert.IsFalse(JSONValidatorTrainer.ValidateTrainerListJSON(shauntalJSON, out errors));
             Assert.AreEqual(errors.Count, 1);
         }
 
         [TestMethod]
         public void ValidateCorrectButStrangeJSON()
         {
-            Assert.IsTrue(TrainerJSONValidator.ValidateTrainerJSON(strangeJSON));
+            Assert.IsTrue(JSONValidatorTrainer.ValidateTrainerJSON(strangeJSON));
         }
 
         [TestMethod]
         public void FailToValidateIncompleteJSON()
         {
-            Assert.IsFalse(TrainerJSONValidator.ValidateTrainerJSON(incompleteJSON));
-            Assert.IsFalse(TrainerJSONValidator.ValidateTrainerJSON(incompleteJSON, out IList<string> errors));
+            Assert.IsFalse(JSONValidatorTrainer.ValidateTrainerJSON(incompleteJSON));
+            Assert.IsFalse(JSONValidatorTrainer.ValidateTrainerJSON(incompleteJSON, out IList<string> errors));
             Console.WriteLine(errors.Count);
             Console.WriteLine(errors[0]);
             // There are more mistakes with the json than 1 mistake, but only 1 error is written to the IList. Why is this? Is this correct behaviour?
@@ -509,33 +509,33 @@ namespace TrainerTyrantTest
         [TestMethod]
         public void ValidateCorrectExternalDataJSON()
         {
-            Assert.IsTrue(ExternalDataJSONValidator.ValidateItemListJSON(itemlistJSON));
-            Assert.IsTrue(ExternalDataJSONValidator.ValidateMoveListJSON(movelistJSON));
-            Assert.IsTrue(ExternalDataJSONValidator.ValidatePokemonListJSON(pokemonlistJSON));
-            Assert.IsTrue(ExternalDataJSONValidator.ValidateSlotListJSON(slotlistJSON));
+            Assert.IsTrue(JSONValidatorExternalData.ValidateItemListJSON(itemlistJSON));
+            Assert.IsTrue(JSONValidatorExternalData.ValidateMoveListJSON(movelistJSON));
+            Assert.IsTrue(JSONValidatorExternalData.ValidatePokemonListJSON(pokemonlistJSON));
+            Assert.IsTrue(JSONValidatorExternalData.ValidateSlotListJSON(slotlistJSON));
 
-            Assert.IsTrue(ExternalDataJSONValidator.ValidateItemListJSON(itemlistJSON, out IList<string> errors));
+            Assert.IsTrue(JSONValidatorExternalData.ValidateItemListJSON(itemlistJSON, out IList<string> errors));
             Assert.AreEqual(0, errors.Count);
-            Assert.IsTrue(ExternalDataJSONValidator.ValidateMoveListJSON(movelistJSON, out errors));
+            Assert.IsTrue(JSONValidatorExternalData.ValidateMoveListJSON(movelistJSON, out errors));
             Assert.AreEqual(0, errors.Count);
-            Assert.IsTrue(ExternalDataJSONValidator.ValidatePokemonListJSON(pokemonlistJSON, out errors));
+            Assert.IsTrue(JSONValidatorExternalData.ValidatePokemonListJSON(pokemonlistJSON, out errors));
             Assert.AreEqual(0, errors.Count);
-            Assert.IsTrue(ExternalDataJSONValidator.ValidateSlotListJSON(slotlistJSON, out errors));
+            Assert.IsTrue(JSONValidatorExternalData.ValidateSlotListJSON(slotlistJSON, out errors));
             Assert.AreEqual(0, errors.Count);
         }
 
         [TestMethod]
         public void FailIncorrectExternalDataJSON()
         {
-            Assert.IsFalse(ExternalDataJSONValidator.ValidateItemListJSON(emptyJSON));
-            Assert.IsFalse(ExternalDataJSONValidator.ValidateMoveListJSON(emptyJSON));
-            Assert.IsFalse(ExternalDataJSONValidator.ValidatePokemonListJSON(emptyJSON));
-            Assert.IsFalse(ExternalDataJSONValidator.ValidateSlotListJSON(emptyJSON));
+            Assert.IsFalse(JSONValidatorExternalData.ValidateItemListJSON(emptyJSON));
+            Assert.IsFalse(JSONValidatorExternalData.ValidateMoveListJSON(emptyJSON));
+            Assert.IsFalse(JSONValidatorExternalData.ValidatePokemonListJSON(emptyJSON));
+            Assert.IsFalse(JSONValidatorExternalData.ValidateSlotListJSON(emptyJSON));
 
-            Assert.IsFalse(ExternalDataJSONValidator.ValidateItemListJSON(emptyJSON, out IList<string> errors));
-            Assert.IsFalse(ExternalDataJSONValidator.ValidateMoveListJSON(emptyJSON, out errors));
-            Assert.IsFalse(ExternalDataJSONValidator.ValidatePokemonListJSON(emptyJSON, out errors));
-            Assert.IsFalse(ExternalDataJSONValidator.ValidateSlotListJSON(emptyJSON, out errors));
+            Assert.IsFalse(JSONValidatorExternalData.ValidateItemListJSON(emptyJSON, out IList<string> errors));
+            Assert.IsFalse(JSONValidatorExternalData.ValidateMoveListJSON(emptyJSON, out errors));
+            Assert.IsFalse(JSONValidatorExternalData.ValidatePokemonListJSON(emptyJSON, out errors));
+            Assert.IsFalse(JSONValidatorExternalData.ValidateSlotListJSON(emptyJSON, out errors));
         }
 
         [TestMethod]
@@ -1148,11 +1148,11 @@ namespace TrainerTyrantTest
         [TestMethod]
         public void CheckLearnsetSetValidation()
         {
-            Assert.IsTrue(LearnsetSetJSONValidator.ValidateLearnsetSetJSON(bulbalineJSON));
-            Assert.IsFalse(LearnsetSetJSONValidator.ValidateLearnsetSetJSON(bulbalinewrongJSON));
+            Assert.IsTrue(JSONValidatorLearnsetSet.ValidateLearnsetSetJSON(bulbalineJSON));
+            Assert.IsFalse(JSONValidatorLearnsetSet.ValidateLearnsetSetJSON(bulbalinewrongJSON));
 
-            Assert.IsTrue(LearnsetSetJSONValidator.ValidateLearnsetSetJSON(bulbalineJSON, out IList<string> errors));
-            Assert.IsFalse(LearnsetSetJSONValidator.ValidateLearnsetSetJSON(bulbalinewrongJSON, out errors));
+            Assert.IsTrue(JSONValidatorLearnsetSet.ValidateLearnsetSetJSON(bulbalineJSON, out IList<string> errors));
+            Assert.IsFalse(JSONValidatorLearnsetSet.ValidateLearnsetSetJSON(bulbalinewrongJSON, out errors));
             Assert.AreEqual(1, errors.Count);
         }
 

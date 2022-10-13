@@ -7,7 +7,7 @@ using Newtonsoft.Json.Schema;
 
 namespace TrainerTyrant
 {
-    public class LearnsetSetJSONValidator
+    public class JSONValidatorLearnsetSet
     {
         private static readonly string PlainTextSchema = @"{
               'patternProperties': {

@@ -51,11 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LearnsetSet.cs" />
-    <Compile Include="LearnsetSetJSONValidator.cs" />
+    <Compile Include="JSONValidatorLearnsetSet.cs" />
     <Compile Include="TrainerRepresentationSet.cs" />
-    <Compile Include="ExternalDataJSONValidator.cs" />
+    <Compile Include="JSONValidatorExternalData.cs" />
     <Compile Include="ExternalData.cs" />
-    <Compile Include="TrainerJSONValidator.cs" />
+    <Compile Include="JSONValidatorTrainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrainerRepresentation.cs" />
   </ItemGroup>

@@ -37,7 +37,7 @@ namespace TrainerTyrant
             if (Initialized)
                 return;
 
-            if (TrainerJSONValidator.ValidateTrainerListJSON(JSON))
+            if (JSONValidatorTrainer.ValidateTrainerListJSON(JSON))
             {
                 _data = JsonConvert.DeserializeObject<List<TrainerRepresentation>>(JSON);
                 Initialized = true;
@@ -53,7 +53,7 @@ namespace TrainerTyrant
                 return;
             }
 
-            if (TrainerJSONValidator.ValidateTrainerListJSON(JSON, out errors))
+            if (JSONValidatorTrainer.ValidateTrainerListJSON(JSON, out errors))
             {
                 _data = JsonConvert.DeserializeObject<List<TrainerRepresentation>>(JSON);
                 Initialized = true;
@@ -122,7 +122,7 @@ namespace TrainerTyrant
             if (!Initialized)
                 return false;
 
-            if (TrainerJSONValidator.ValidateTrainerListJSON(JSON))
+            if (JSONValidatorTrainer.ValidateTrainerListJSON(JSON))
             {
                 List<TrainerRepresentation> newData = JsonConvert.DeserializeObject<List<TrainerRepresentation>>(JSON);
                 foreach(TrainerRepresentation trainer in newData)
@@ -156,7 +156,7 @@ namespace TrainerTyrant
                 return false;
             }
 
-            if (TrainerJSONValidator.ValidateTrainerListJSON(JSON, out errors))
+            if (JSONValidatorTrainer.ValidateTrainerListJSON(JSON, out errors))
             {
                 List<TrainerRepresentation> newData = JsonConvert.DeserializeObject<List<TrainerRepresentation>>(JSON);
                 foreach (TrainerRepresentation trainer in newData)

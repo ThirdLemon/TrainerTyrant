@@ -8,7 +8,7 @@ using Newtonsoft.Json.Schema;
 
 namespace TrainerTyrant
 {
-    public class TrainerJSONValidator
+    public class JSONValidatorTrainer
     {
         private static readonly string PlainTextSchema = @"{
                 'allOf': [
